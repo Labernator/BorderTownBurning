@@ -363,6 +363,411 @@
                 }
             ]
         },
+		{
+            "name": "Pit Fighter",
+            "startingCapital": 500,
+            "sizeLimit": 15,
+            "alignments": [
+                "Lawful/Neutral",
+                "Neutral",
+                "Neutral/Chaotic"
+            ],
+            "objectives": [
+                "The Celestial Protectorate"
+            ],
+            "armyRules": [
+				"Free the Slaves!",
+                "In the Pit!"
+				],
+            "units": [
+                {
+                    "name": "Pit King",
+                    "Characteristics": {
+                        "Movement": 4,
+                        "WeaponSkill": 4,
+                        "BallisticSkill": 3,
+                        "Strength": 4,
+                        "Toughness": 4,
+                        "Wounds": 1,
+                        "Initiative": 4,
+                        "Attacks": 2,
+                        "Leadership": 8
+                    },
+                    "Price": 80,
+                    "isHero": true,
+                    "isLarge": false,
+                    "Skills": [
+                        "Leader",
+                        "Pit Fighter"
+                    ],
+                    "SkillLists": [
+                        "Academic",
+                        "Strength",
+                        "Combat",
+                        "Speed",
+                        "Pit Fighter"
+                    ],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": "PitFighterEquipment",
+                    "include": [
+                        1,
+                        1
+                    ],
+                    "experience": 20,
+                    "equipment": [
+                        "Dagger"
+                    ]
+                },
+                {
+                    "name": "Pit Fighter Veteran",
+                    "Characteristics": {
+                        "Movement": 4,
+                        "WeaponSkill": 4,
+                        "BallisticSkill": 3,
+                        "Strength": 3,
+                        "Toughness": 3,
+                        "Wounds": 1,
+                        "Initiative": 4,
+                        "Attacks": 1,
+                        "Leadership": 7
+                    },
+                    "Price": 35,
+                    "isHero": true,
+                    "isLarge": false,
+                    "Skills": [
+                        "Pit Fighter"
+                    ],
+                    "SkillLists": [
+                        "Strength",
+                        "Combat",
+                        "Pit Fighter"
+                    ],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": "PitFighterEquipment",
+                    "include": [
+                        0,
+                        2
+                    ],
+                    "experience": 8,
+                    "equipment": [
+                        "Dagger"
+                    ]
+                },
+                {
+                    "name": "Dwarf Troll Slayer",
+                    "Characteristics": {
+                        "Movement": 3,
+                        "WeaponSkill": 4,
+                        "BallisticSkill": 3,
+                        "Strength": 3,
+                        "Toughness": 4,
+                        "Wounds": 1,
+                        "Initiative": 2,
+                        "Attacks": 1,
+                        "Leadership": 9
+                    },
+                    "Price": 50,
+                    "isHero": true,
+                    "isLarge": false,
+                    "Skills": [
+                        "Pit Fighter", 
+						"Hard to Kill", 
+						"Hard Head", 
+						"Hate Orcs and Goblins", 
+						"Grudgebearers", 
+						"Death Wish"
+                    ],
+                    "SkillLists": [
+                        "Strength",
+                        "Combat",
+                        "Academic",
+                        "Speed",
+                        "Troll Slayer",
+                        "Pit Fighter"
+                    ],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": [
+                        "PitFighterEquipment",
+                        "TrollSlayerEquipment"
+                    ],
+                    "include": [
+                        0,
+                        1
+                    ],
+                    "experience": 8,
+                    "equipment": [
+                        "Dagger"
+                    ]
+                },
+                {
+                    "name": "Pit Fighter Initiate",
+                    "Characteristics": {
+                        "Movement": 4,
+                        "WeaponSkill": 2,
+                        "BallisticSkill": 2,
+                        "Strength": 3,
+                        "Toughness": 3,
+                        "Wounds": 1,
+                        "Initiative": 3,
+                        "Attacks": 1,
+                        "Leadership": 6
+                    },
+                    "Price": 15,
+                    "isHero": true,
+                    "isLarge": false,
+                    "Skills": [],
+                    "SkillLists": [
+                        "Strength",
+                        "Combat",
+                        "Pit Fighter"
+                    ],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": "PitFighterEquipment",
+                    "include": [
+                        0,
+                        2
+                    ],
+                    "experience": 0,
+                    "equipment": [
+                        "Dagger"
+                    ]
+                },
+                {
+                    "name": "Pursuer",
+                    "Characteristics": {
+                        "Movement": 4,
+                        "WeaponSkill": 3,
+                        "BallisticSkill": 3,
+                        "Strength": 3,
+                        "Toughness": 3,
+                        "Wounds": 1,
+                        "Initiative": 3,
+                        "Attacks": 1,
+                        "Leadership": 7
+                    },
+                    "Price": 25,
+                    "isHero": false,
+                    "isLarge": false,
+                    "Skills": [
+                        "Pit Fighter"
+                    ],
+                    "SkillLists": [],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": "PursuerEquipment",
+                    "include": [
+                        0,
+                        7
+                    ],
+                    "experience": 0,
+                    "equipment": [
+                        "Dagger"
+                    ]
+                },
+                {
+                    "name": "Pit Fighter",
+                    "Characteristics": {
+                        "Movement": 4,
+                        "WeaponSkill": 4,
+                        "BallisticSkill": 3,
+                        "Strength": 3,
+                        "Toughness": 4,
+                        "Wounds": 1,
+                        "Initiative": 3,
+                        "Attacks": 1,
+                        "Leadership": 7
+                    },
+                    "Price": 35,
+                    "isHero": false,
+                    "isLarge": false,
+                    "Skills": [
+                        "Pit Fighter",
+                        "Arms master"
+                    ],
+                    "SkillLists": [],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": "PitFighterEquipment",
+                    "include": [
+                        0,
+                        5
+                    ],
+                    "experience": 0,
+                    "equipment": [
+                        "Dagger"
+                    ]
+                },
+                {
+                    "name": "Minotaur",
+                    "Characteristics": {
+                        "Movement": 6,
+                        "WeaponSkill": 3,
+                        "BallisticSkill": 2,
+                        "Strength": 4,
+                        "Toughness": 4,
+                        "Wounds": 3,
+                        "Initiative": 3,
+                        "Attacks": 2,
+                        "Leadership": 7
+                    },
+                    "Price": 165,
+                    "isHero": false,
+                    "isLarge": true,
+                    "Skills": [
+                        "Fear",
+                        "Skills",
+                        "Slow Witted",
+                        "Large",
+                        "Tough"
+                    ],
+                    "SkillLists": [],
+                    "Spells": [],
+                    "SpellLists": [],
+                    "allowedEquipment": "PitFighterEquipment",
+                    "include": [
+                        0,
+                        1
+                    ],
+                    "experience": 0,
+                    "equipment": []
+                }
+            ],
+            "allowedEquipment": [
+                {
+                    "name": "BeastBaseEquipment",
+                    "equipment": [
+                        {
+                            "name": "Dagger",
+                            "cost": 2
+                        },
+                        {
+                            "name": "Club",
+                            "cost": 3
+                        },
+                        {
+                            "name": "Hammer",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Mace",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Axe",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Sword",
+                            "cost": 10
+                        },
+                        {
+                            "name": "Shield",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Spear",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Buckler",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Light Armour",
+                            "cost": 20
+                        },
+                        {
+                            "name": "Helmet",
+                            "cost": 10
+                        }
+                    ],
+                    "modificationOptions": []
+                },
+                {
+                    "name": "PursuerEquipment",
+                    "equipment": [
+                        {
+                            "name": "Hardened Leather",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Net",
+                            "cost": 5
+                        },
+                        {
+                            "name": "Javelin",
+                            "cost": 10
+                        },
+                        {
+                            "name": "Throwing Knives",
+                            "cost": 15
+                        },
+                        {
+                            "name": "Trident",
+                            "cost": 15
+                        }
+                    ],
+                    "modificationOptions": []
+                },
+                {
+                    "name": "PitFighterEquipment",
+                    "equipment": [
+                        {
+                            "name": "Halberd",
+                            "cost": 15
+                        },
+                        {
+                            "name": "Double-handed Weapon",
+                            "cost": 15
+                        },
+                        {
+                            "name": "Morning Star",
+                            "cost": 15
+                        },
+                        {
+                            "name": "Flail",
+                            "cost": 15
+                        },
+                        {
+                            "name": "War Chain",
+                            "cost": 20
+                        },
+                        {
+                            "name": "Fist Spike",
+                            "cost": 15
+                        },
+                        {
+                            "name": "Brass Knuckles",
+                            "cost": 20
+                        },
+                        {
+                            "name": "Heavy Armour",
+                            "cost": 50
+                        }
+                    ],
+                    "modificationOptions": []
+                },				
+                {
+                    "name": "TrollSlayerEquipment",
+                    "equipment": [
+                        {
+                            "name": "Dwarf Axe",
+                            "cost": 15
+                        }
+                    ],
+                    "modificationOptions": [
+                        {
+                            "name": "Gromril",
+                            "factor": 3
+                        }
+					]
+                }
+            ]
+        },
         {
             "name": "Dwarven Rangers",
             "startingCapital": 500,
