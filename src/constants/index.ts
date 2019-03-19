@@ -2,6 +2,10 @@ export interface ICharTable {
     characteristics: ICharacteristics;
 }
 
+export interface IEquiList {
+    names: string[];
+}
+
 export const initSelectionState: ISelectionState = {
     selectedArmy: "",
     selectedAlignment: "",
@@ -92,4 +96,36 @@ export interface ICharacteristics {
     Initiative: number;
     Attacks: number;
     Leadership: number;
+}
+
+export interface IEquipment {
+    MeleeWeapons: IMeleeWeapon[];
+    MissileWeapons: IMissileWeapon[];
+    Armour: IArmour[];
+
+}
+
+export interface IMeleeWeapon extends IEquip {
+    weaponType: string;
+    strengthModifier: string;
+}
+
+export interface IMissileWeapon extends IEquip {
+    weaponType: string;
+    strength: string;
+    range: number;
+}
+
+export interface IArmour extends IEquip {
+    armourType: string;
+    strength: string;
+    armour: number;
+}
+
+interface IEquip {
+    name: string;
+    cost: number;
+    rarity: number;
+    rules: string[];
+    restrictions: string[];
 }

@@ -126,10 +126,11 @@
                 {
                     "name": "Pistol",
                     "cost": 15,
+                    "rarity": 8,
                     "weaponType": "Shooting",
                     "rules": [
                         "Prepare Shot",
-                        "Save Modifier",
+                        "Cutting Edge",
                         "Hand-to-Hand",
                         "Blackpowder"
                     ],
@@ -140,10 +141,11 @@
                 {
                     "name": "Brace of Pistols",
                     "cost": 30,
+                    "rarity": 8,
                     "weaponType": "Shooting",
                     "rules": [
                         "Prepare Shot",
-                        "Save Modifier",
+                        "Cutting Edge",
                         "Hand-to-Hand",
                         "Blackpowder"
                     ],
@@ -154,6 +156,7 @@
                 {
                     "name": "Crossbow",
                     "cost": 25,
+                    "rarity": 0,
                     "weaponType": "Shooting",
                     "rules": [
                         "Move or Fire"
@@ -161,18 +164,84 @@
                     "strength": 4,
                     "range": 30,
                     "restrictions": []
+                },
+                {
+                    "name": "Crossbow Pistol",
+                    "cost": 35,
+                    "rarity": 9,
+                    "weaponType": "Shooting",
+                    "rules": [
+                        "Hand-to-Hand"
+                    ],
+                    "strength": 4,
+                    "range": 10,
+                    "restrictions": []
+                },
+                {
+                    "name": "Short Bow",
+                    "cost": 5,
+                    "rarity": 0,
+                    "weaponType": "Shooting",
+                    "rules": [],
+                    "strength": 3,
+                    "range": 16,
+                    "restrictions": []
+                },
+                {
+                    "name": "Bow",
+                    "cost": 10,
+                    "rarity": 0,
+                    "weaponType": "Shooting",
+                    "rules": [],
+                    "strength": 3,
+                    "range": 24,
+                    "restrictions": []
+                },
+                {
+                    "name": "Long Bow",
+                    "cost": 15,
+                    "rarity": 0,
+                    "weaponType": "Shooting",
+                    "rules": [],
+                    "strength": 3,
+                    "range": 30,
+                    "restrictions": []
+                },
+                {
+                    "name": "Elf Bow",
+                    "cost": "35 + 3D6",
+                    "rarity": 12,
+                    "weaponType": "Shooting",
+                    "rules": [
+                        "Cutting Edge"
+                    ],
+                    "strength": 3,
+                    "range": 36,
+                    "restrictions": []
+                },
+                {
+                    "name": "Javelins",
+                    "cost": 15,
+                    "rarity": 0,
+                    "weaponType": "Shooting",
+                    "rules": [
+                        "Thrown Weapon"
+                    ],
+                    "strength": "As User",
+                    "range": 8,
+                    "restrictions": []
                 }
             ]
         },
         {
-            "Armour": [
+            "armour": [
                 {
                     "name": "Light Armour",
                     "cost": 20,
                     "rarity": 0,
                     "armourType": "Suit",
                     "rules": [],
-                    "Armour": 2,
+                    "armour": 2,
                     "restrictions": []
                 },
                 {
@@ -181,7 +250,7 @@
                     "rarity": 0,
                     "armourType": "Suit",
                     "rules": [],
-                    "Armour": 3,
+                    "armour": 3,
                     "restrictions": []
                 },
                 {
@@ -192,7 +261,7 @@
                     "rules": [
                         "Gromril"
                     ],
-                    "Armour": 4,
+                    "armour": 4,
                     "restrictions": [
                         "Dwarves only"
                     ]
@@ -203,7 +272,7 @@
                     "rarity": 9,
                     "armourType": "Suit",
                     "rules": [],
-                    "Armour": 4,
+                    "armour": 4,
                     "restrictions": []
                 },
                 {
@@ -214,7 +283,7 @@
                     "rules": [
                         "Avoid Stun"
                     ],
-                    "Armour": 0,
+                    "armour": 0,
                     "restrictions": []
                 },
                 {
@@ -223,7 +292,7 @@
                     "rarity": 0,
                     "armourType": "Shield",
                     "rules": [],
-                    "Armour": 1,
+                    "armour": 1,
                     "restrictions": []
                 },
                 {
@@ -234,7 +303,7 @@
                     "rules": [
                         "Parry"
                     ],
-                    "Armour": 0,
+                    "armour": 0,
                     "restrictions": []
                 },
                 {
@@ -245,7 +314,7 @@
                     "rules": [
                         "Cover"
                     ],
-                    "Armour": 0,
+                    "armour": 0,
                     "restrictions": []
                 },
                 {
@@ -256,7 +325,7 @@
                     "rules": [
                         "Easy to Move in"
                     ],
-                    "Armour": 1,
+                    "armour": 1,
                     "restrictions": []
                 },
                 {
@@ -267,7 +336,7 @@
                     "rules": [
                         "Light Armour"
                     ],
-                    "Armour": 3,
+                    "armour": 3,
                     "restrictions": []
                 },
                 {
@@ -281,7 +350,7 @@
                         "Gift of Chaos",
                         "Spellcasters"
                     ],
-                    "Armour": 4,
+                    "armour": 4,
                     "restrictions": []
                 },
                 {
@@ -294,7 +363,7 @@
                         "Parry",
                         "Easy to Move in"
                     ],
-                    "Armour": 0,
+                    "armour": 0,
                     "restrictions": []
                 }
             ]

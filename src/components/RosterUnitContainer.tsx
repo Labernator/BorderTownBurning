@@ -6,6 +6,7 @@ import { REMOVE_UNIT_FROM_ROSTER, ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_UNITLIST, S
 import { IUnit, ISelectionState } from "../constants";
 import { getEquipment } from "../utilities/utils";
 import { CharacteristicTable } from "./CharacteristicTable";
+import { EquipmentTable } from "./EquipmentTable";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     const unitDivs = warbandRoster.map((unit) => {
@@ -30,6 +31,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <div>Unit Type {unit.name}</div>
                     <div>Exp {unit.experience}</div>
                     <div>Equipment {unit.equipment}</div>
+                    <EquipmentTable names={equipmentNames}></EquipmentTable>
                     <div>allowed Equipment {equipmentNames}</div>
                     <div>SkillLists {unit.SkillLists}</div>
                     <div>Skills {unit.Skills}</div>

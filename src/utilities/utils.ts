@@ -1,10 +1,28 @@
-import { IArmy, IUnit, Equipment } from "../constants";
+import { IArmy, IUnit, Equipment, IMeleeWeapon, IEquipment, IMissileWeapon, IArmour } from "../constants";
 import { store } from "..";
 
 
 const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
+const EquipmentList: IEquipment = require("../constants/Equipment.json").equipment;
 
-export function getArmyList(): string[] {
+export const getMeleeWeapons = (): IMeleeWeapon[] => {
+    return EquipmentList.MeleeWeapons;
+}
+
+export const filterMeleeWeapons = (filterList: string[]): IMeleeWeapon[] => {
+    const MeleeWeapons = getMeleeWeapons();
+    return MeleeWeapons.filter(weapon => filterList.includes(weapon.name));
+}
+
+export const getMissileWeapons = (): IMissileWeapon[] => {
+    return EquipmentList.MissileWeapons;
+}
+
+export const getArmours = (): IArmour[] => {
+    return EquipmentList.Armour;
+}
+
+export const getArmyList = (): string[] => {
     return ArmyList.map((army) => army.name);
 }
 
