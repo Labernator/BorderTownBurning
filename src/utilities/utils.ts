@@ -3,10 +3,12 @@ import { store } from "..";
 
 
 const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
-const EquipmentList: IEquipment = require("../constants/Equipment.json").equipment;
+const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
+const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;
+const ArmourEquipment: IArmour[] = require("../constants/Equipment.json").equipment[2].Armour;
 
 export const getMeleeWeapons = (): IMeleeWeapon[] => {
-    return EquipmentList.MeleeWeapons;
+    return MeleeEquipment;
 }
 
 export const filterMeleeWeapons = (filterList: string[]): IMeleeWeapon[] => {
@@ -15,11 +17,21 @@ export const filterMeleeWeapons = (filterList: string[]): IMeleeWeapon[] => {
 }
 
 export const getMissileWeapons = (): IMissileWeapon[] => {
-    return EquipmentList.MissileWeapons;
+    return RangeEquipment;
+}
+
+export const filterMissileWeapons = (filterList: string[]): IMissileWeapon[] => {
+    const RangeEquipment = getMissileWeapons();
+    return RangeEquipment.filter(weapon => filterList.includes(weapon.name));
 }
 
 export const getArmours = (): IArmour[] => {
-    return EquipmentList.Armour;
+    return ArmourEquipment;
+}
+
+export const filterArmour = (filterList: string[]): IArmour[] => {
+    const Armour = getArmours();
+    return Armour.filter(armour => filterList.includes(armour.name));
 }
 
 export const getArmyList = (): string[] => {
@@ -36,13 +48,16 @@ export function getRestrictedAlignmentList(selectedArmy: string): string[] {
 }
 
 
-export function getEquipment(equipmentListName: string): Equipment[] {
+export function getEquipment(equipmentListNames: string[]): Equipment[] {
     const Army = ArmyList.find((army) => army.name === store.getState().selectedArmy);
     if (Army !== undefined) {
-        const equipmentList = Army.allowedEquipment.find(equipmentList => equipmentList.name === equipmentListName)
-        if (equipmentList) {
-            return equipmentList.equipment;
-        }
+        return equipmentListNames.reduce((filteredArr, equipmentListName) => {
+            const equipmentList = Army.allowedEquipment.find(equipmentList => equipmentList.name === equipmentListName)
+            if (equipmentList) {
+                filteredArr = filteredArr.concat(equipmentList.equipment);
+            }
+            return filteredArr;
+        }, [] as Equipment[]);
     }
     return [];
 }

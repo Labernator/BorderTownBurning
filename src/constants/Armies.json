@@ -39,7 +39,10 @@
                     ],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "BeastmenEquipment",
+                    "allowedEquipment": [
+                        "BeastmenEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         1,
                         1
@@ -77,7 +80,10 @@
                     "SpellLists": [
                         "Chaos Rituals"
                     ],
-                    "allowedEquipment": "BeastmenEquipment",
+                    "allowedEquipment": [
+                        "BeastmenEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         0,
                         1
@@ -116,7 +122,10 @@
                     ],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "UngorEquipment",
+                    "allowedEquipment": [
+                        "UngorEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         0,
                         1
@@ -150,7 +159,10 @@
                     ],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "BeastmenEquipment",
+                    "allowedEquipment": [
+                        "BeastmenEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         0,
                         2
@@ -183,7 +195,10 @@
                     "SkillLists": [],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "UngorEquipment",
+                    "allowedEquipment": [
+                        "UngorEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         0,
                         100
@@ -215,7 +230,10 @@
                     "SkillLists": [],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "BeastmenEquipment",
+                    "allowedEquipment": [
+                        "BeastmenEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         0,
                         5
@@ -281,7 +299,10 @@
                     "SkillLists": [],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "BeastmenEquipment",
+                    "allowedEquipment": [
+                        "BeastmenEquipment",
+                        "BeastBaseEquipment"
+                    ],
                     "include": [
                         0,
                         1

@@ -124,6 +124,19 @@
         {
             "MissileWeapons": [
                 {
+                    "name": "Sling",
+                    "cost": 2,
+                    "rarity": 0,
+                    "weaponType": "Shooting",
+                    "rules": [
+                        "Armour yield",
+                        "Fire Twice"
+                    ],
+                    "strength": 3,
+                    "range": 18,
+                    "restrictions": []
+                },
+                {
                     "name": "Pistol",
                     "cost": 15,
                     "rarity": 8,
@@ -234,7 +247,7 @@
             ]
         },
         {
-            "armour": [
+            "Armour": [
                 {
                     "name": "Light Armour",
                     "cost": 20,

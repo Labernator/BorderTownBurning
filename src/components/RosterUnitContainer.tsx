@@ -27,6 +27,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <button onClick={() => handleClick()} style={{ width: 250 }}>
                         Remove selected Unit from warband roster
                     </button>
+                    <div><div>Unit Name</div><input></input></div>
                     <div>Unit Cost {unit.Price}</div>
                     <div>Unit Type {unit.name}</div>
                     <div>Exp {unit.experience}</div>

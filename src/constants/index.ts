@@ -80,7 +80,7 @@ export interface IUnit {
     isLarge: boolean;
     Skills: string[];
     SkillLists: string[];
-    allowedEquipment: string;
+    allowedEquipment: string[];
     include: number[];
     experience: number;
     equipment: string[];
