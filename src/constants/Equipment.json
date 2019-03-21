@@ -380,6 +380,52 @@
                     "restrictions": []
                 }
             ]
+        },
+		{
+            "Miscallaneous": [
+                {
+                    "name": "Dark Venom",
+                    "cost": "30+2D6",
+                    "rarity": 8,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": ["Not Sisters of Sigmar", "Not Witch Hunters", "Not Warrior Priests"]
+                },
+                {
+                    "name": "Garlic",
+                    "cost": "1",
+                    "rarity": 0,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": ["Not Undead"]
+                },
+                {
+                    "name": "Elven Wine",
+                    "cost": "50+3D6",
+                    "rarity": 10,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": ["Shadow Warriors only"]
+                },
+				{
+                    "name": "Holy Relic",
+                    "cost": "15+3D6",
+                    "rarity": 6,
+                    "type": "Books & Scrolls",
+                    "restrictions": ["Sisters of Sigmar", "Warrior Priests"]
+                },
+				{
+                    "name": "Holy Tomb",
+                    "cost": "100+10*D6",
+                    "rarity": 10,
+                    "type": "Books & Scrolls",
+                    "restrictions": ["Sisters of Sigmar", "Warrior Priests"]
+                },
+				                {
+                    "name": "Blessed Water",
+                    "cost": "10+3D6",
+                    "rarity": 6,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": ["Not Undead"]
+                },
+            ]
         }
     ]
 }
