@@ -390,6 +390,13 @@
                     "type": "Drugs, Poison & Potions",
                     "restrictions": ["Not Sisters of Sigmar", "Not Witch Hunters", "Not Warrior Priests"]
                 },
+				                {
+                    "name": "Black Lotus",
+                    "cost": "10+D6",
+                    "rarity": 9,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": ["Not Sisters of Sigmar", "Not Witch Hunters", "Not Warrior Priests"]
+                },
                 {
                     "name": "Garlic",
                     "cost": "1",
@@ -418,12 +425,103 @@
                     "type": "Books & Scrolls",
                     "restrictions": ["Sisters of Sigmar", "Warrior Priests"]
                 },
-				                {
+				{
                     "name": "Blessed Water",
                     "cost": "10+3D6",
                     "rarity": 6,
                     "type": "Drugs, Poison & Potions",
                     "restrictions": ["Not Undead"]
+                },
+								{
+                    "name": "Bugman's Ale",
+                    "cost": "50+3D6",
+                    "rarity": 9,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Crimson Shade",
+                    "cost": "35+D6",
+                    "rarity": 8,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Healing Herbs",
+                    "cost": "20+2D6",
+                    "rarity": 8,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Healing Potion",
+                    "cost": "30+D6",
+                    "rarity": 9,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Liquor Flask",
+                    "cost": "30+D6",
+                    "rarity": 7,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Madcap Mushrooms",
+                    "cost": "30+3D6",
+                    "rarity": 9,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Mandrake Root",
+                    "cost": "25+D6",
+                    "rarity": 8,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+												{
+                    "name": "Potion of Strength",
+                    "cost": "30+D6",
+                    "rarity": 6,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+																{
+                    "name": "Potion of Speed",
+                    "cost": "40+D6",
+                    "rarity": 10,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+																{
+                    "name": "Spider's Poison",
+                    "cost": "25+2D6",
+                    "rarity": 8,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+																{
+                    "name": "Tears of Shallaya",
+                    "cost": "10+2D6",
+                    "rarity": 7,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+																{
+                    "name": "Vial of Pestilence",
+                    "cost": "25+2D6",
+                    "rarity": 9,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
+                },
+																{
+                    "name": "Vodka",
+                    "cost": "35+2D6",
+                    "rarity": 8,
+                    "type": "Drugs, Poison & Potions",
+                    "restrictions": [???]
                 },
             ]
         }
