@@ -1,4 +1,4 @@
-import { IArmy, IUnit, Equipment, IMeleeWeapon, IEquipment, IMissileWeapon, IArmour } from "../constants";
+import { IArmy, IUnit, Equipment, IMeleeWeapon, IEquipment, IMissileWeapon, IArmour, IMiscallaneous } from "../constants";
 import { store } from "..";
 
 
@@ -6,14 +6,14 @@ const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
 const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
 const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;
 const ArmourEquipment: IArmour[] = require("../constants/Equipment.json").equipment[2].Armour;
-
+const MiscallaneousEquipment: IMiscallaneous[] = require("../constants/Equipment.json").equipment[3].Miscallaneous;
 export const getMeleeWeapons = (): IMeleeWeapon[] => {
     return MeleeEquipment;
 }
 
 export const filterMeleeWeapons = (filterList: string[]): IMeleeWeapon[] => {
     const MeleeWeapons = getMeleeWeapons();
-    return MeleeWeapons.filter(weapon => filterList.includes(weapon.name));
+    return MeleeWeapons ? MeleeWeapons.filter(weapon => filterList.includes(weapon.name)) : [];
 }
 
 export const getMissileWeapons = (): IMissileWeapon[] => {
@@ -22,7 +22,7 @@ export const getMissileWeapons = (): IMissileWeapon[] => {
 
 export const filterMissileWeapons = (filterList: string[]): IMissileWeapon[] => {
     const RangeEquipment = getMissileWeapons();
-    return RangeEquipment.filter(weapon => filterList.includes(weapon.name));
+    return RangeEquipment ? RangeEquipment.filter(weapon => filterList.includes(weapon.name)) : [];
 }
 
 export const getArmours = (): IArmour[] => {
@@ -31,7 +31,16 @@ export const getArmours = (): IArmour[] => {
 
 export const filterArmour = (filterList: string[]): IArmour[] => {
     const Armour = getArmours();
-    return Armour.filter(armour => filterList.includes(armour.name));
+    return Armour ? Armour.filter(armour => filterList.includes(armour.name)) : [];
+}
+
+export const getMisc = (): IMiscallaneous[] => {
+    return MiscallaneousEquipment;
+}
+
+export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
+    const MiscallaneousEquipment = getMisc();
+    return MiscallaneousEquipment ? MiscallaneousEquipment.filter(misc => filterList.includes(misc.name)) : [];
 }
 
 export const getArmyList = (): string[] => {
@@ -46,7 +55,6 @@ export function getRestrictedAlignmentList(selectedArmy: string): string[] {
         return [];
     }
 }
-
 
 export function getEquipment(equipmentListNames: string[]): Equipment[] {
     const Army = ArmyList.find((army) => army.name === store.getState().selectedArmy);

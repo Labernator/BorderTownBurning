@@ -384,7 +384,7 @@
                 }
             ]
         },
-		{
+        {
             "name": "Pit Fighter",
             "startingCapital": 500,
             "sizeLimit": 15,
@@ -397,9 +397,9 @@
                 "The Celestial Protectorate"
             ],
             "armyRules": [
-				"Free the Slaves!",
+                "Free the Slaves!",
                 "In the Pit!"
-				],
+            ],
             "units": [
                 {
                     "name": "Pit King",
@@ -493,12 +493,12 @@
                     "isHero": true,
                     "isLarge": false,
                     "Skills": [
-                        "Pit Fighter", 
-						"Hard to Kill", 
-						"Hard Head", 
-						"Hate Orcs and Goblins", 
-						"Grudgebearers", 
-						"Death Wish"
+                        "Pit Fighter",
+                        "Hard to Kill",
+                        "Hard Head",
+                        "Hate Orcs and Goblins",
+                        "Grudgebearers",
+                        "Death Wish"
                     ],
                     "SkillLists": [
                         "Strength",
@@ -771,7 +771,7 @@
                         }
                     ],
                     "modificationOptions": []
-                },				
+                },
                 {
                     "name": "TrollSlayerEquipment",
                     "equipment": [
@@ -785,7 +785,7 @@
                             "name": "Gromril",
                             "factor": 3
                         }
-					]
+                    ]
                 }
             ]
         },
@@ -1471,10 +1471,6 @@
                         },
                         {
                             "name": "Club",
-                            "cost": 3
-                        },
-                        {
-                            "name": "Staff",
                             "cost": 3
                         },
                         {

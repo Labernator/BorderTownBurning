@@ -122,6 +122,9 @@ export interface IArmour extends IEquip {
     armour: number;
 }
 
+export interface IMiscallaneous extends IEquip {
+    type: string
+}
 interface IEquip {
     name: string;
     cost: number;

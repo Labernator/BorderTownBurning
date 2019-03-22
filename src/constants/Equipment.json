@@ -12,7 +12,14 @@
                         "Off-Hand"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Mace",
@@ -23,7 +30,33 @@
                         "Concussion"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Flail",
+                    "cost": 15,
+                    "rarity": 0,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Heavy",
+                        "Two-handed"
+                    ],
+                    "strengthModifier": "+2",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Hammer",
@@ -34,7 +67,14 @@
                         "Concussion"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Club",
@@ -45,7 +85,14 @@
                         "Concussion"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Axe",
@@ -56,7 +103,14 @@
                         "Cutting Edge"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Spear",
@@ -69,7 +123,14 @@
                         "Cavalry Bonus(1)"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Halberd",
@@ -80,7 +141,14 @@
                         "Two-Handed"
                     ],
                     "strengthModifier": "+1",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Dwarf Axe",
@@ -93,7 +161,15 @@
                     ],
                     "strengthModifier": "",
                     "restrictions": [
-                        "Dwarves only"
+                        {
+                            "include": [
+                                "Dwarven Rangers",
+                                "Dwarven Treasure Hunters"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -105,7 +181,14 @@
                         "Parry"
                     ],
                     "strengthModifier": "",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Double-handed Weapon",
@@ -117,7 +200,54 @@
                         "Strike Last"
                     ],
                     "strengthModifier": "+2",
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Steel Whip",
+                    "cost": 10,
+                    "rarity": 0,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Cannot Be Parried",
+                        "Whipcrack"
+                    ],
+                    "strengthModifier": "",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Sigmarite Warhammer",
+                    "cost": 25,
+                    "rarity": 0,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Concussion",
+                        "Holy Weapon"
+                    ],
+                    "strengthModifier": "+1",
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Sisters of Sigmar"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 }
             ]
         },
@@ -134,7 +264,14 @@
                     ],
                     "strength": 3,
                     "range": 18,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Pistol",
@@ -149,7 +286,14 @@
                     ],
                     "strength": 4,
                     "range": 6,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Brace of Pistols",
@@ -164,7 +308,14 @@
                     ],
                     "strength": 4,
                     "range": 6,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Crossbow",
@@ -176,7 +327,14 @@
                     ],
                     "strength": 4,
                     "range": 30,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Crossbow Pistol",
@@ -188,7 +346,14 @@
                     ],
                     "strength": 4,
                     "range": 10,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Short Bow",
@@ -198,7 +363,14 @@
                     "rules": [],
                     "strength": 3,
                     "range": 16,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Bow",
@@ -208,7 +380,14 @@
                     "rules": [],
                     "strength": 3,
                     "range": 24,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Long Bow",
@@ -218,7 +397,14 @@
                     "rules": [],
                     "strength": 3,
                     "range": 30,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Elf Bow",
@@ -230,7 +416,14 @@
                     ],
                     "strength": 3,
                     "range": 36,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Javelins",
@@ -242,7 +435,14 @@
                     ],
                     "strength": "As User",
                     "range": 8,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 }
             ]
         },
@@ -255,7 +455,14 @@
                     "armourType": "Suit",
                     "rules": [],
                     "armour": 2,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Heavy Armour",
@@ -264,7 +471,14 @@
                     "armourType": "Suit",
                     "rules": [],
                     "armour": 3,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Gromril Armour",
@@ -286,7 +500,14 @@
                     "armourType": "Suit",
                     "rules": [],
                     "armour": 4,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Helmet",
@@ -297,7 +518,14 @@
                         "Avoid Stun"
                     ],
                     "armour": 0,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Shield",
@@ -306,7 +534,14 @@
                     "armourType": "Shield",
                     "rules": [],
                     "armour": 1,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Buckler",
@@ -317,7 +552,14 @@
                         "Parry"
                     ],
                     "armour": 0,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Pavise",
@@ -328,7 +570,14 @@
                         "Cover"
                     ],
                     "armour": 0,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Toughened Leathers",
@@ -339,7 +588,14 @@
                         "Easy to Move in"
                     ],
                     "armour": 1,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Ithilmar Armour",
@@ -350,7 +606,14 @@
                         "Light Armour"
                     ],
                     "armour": 3,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Chaos Armour",
@@ -364,7 +627,14 @@
                         "Spellcasters"
                     ],
                     "armour": 4,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
                 {
                     "name": "Bracers",
@@ -377,152 +647,223 @@
                         "Easy to Move in"
                     ],
                     "armour": 0,
-                    "restrictions": []
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 }
             ]
         },
-		{
+        {
             "Miscallaneous": [
                 {
                     "name": "Dark Venom",
                     "cost": "30+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": ["Not Sisters of Sigmar", "Not Witch Hunters", "Not Warrior Priests"]
-                },
-				                {
-                    "name": "Black Lotus",
-                    "cost": "10+D6",
-                    "rarity": 9,
-                    "type": "Drugs, Poison & Potions",
-                    "restrictions": ["Not Sisters of Sigmar", "Not Witch Hunters", "Not Warrior Priests"]
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": [
+                                "Sisters of Sigmar",
+                                "Warrior Priests",
+                                "Witch Hunters"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Garlic",
                     "cost": "1",
                     "rarity": 0,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": ["Not Undead"]
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": [
+                                "Undead"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Elven Wine",
                     "cost": "50+3D6",
                     "rarity": 10,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": ["Shadow Warriors only"]
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Shadow Warriors"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
-				{
+                {
                     "name": "Holy Relic",
                     "cost": "15+3D6",
                     "rarity": 6,
                     "type": "Books & Scrolls",
-                    "restrictions": ["Sisters of Sigmar", "Warrior Priests"]
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Sisters of Sigmar",
+                                "Warrior Priests"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
-				{
+                {
                     "name": "Holy Tomb",
                     "cost": "100+10*D6",
                     "rarity": 10,
                     "type": "Books & Scrolls",
-                    "restrictions": ["Sisters of Sigmar", "Warrior Priests"]
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Sisters of Sigmar",
+                                "Warrior Priests"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 },
-				{
+                {
                     "name": "Blessed Water",
                     "cost": "10+3D6",
                     "rarity": 6,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": ["Not Undead"]
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": [
+                                "Undead"
+                            ]
+                        }
+                    ]
                 },
-								{
+                {
                     "name": "Bugman's Ale",
                     "cost": "50+3D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Crimson Shade",
                     "cost": "35+D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Healing Herbs",
                     "cost": "20+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Healing Potion",
                     "cost": "30+D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Liquor Flask",
                     "cost": "30+D6",
                     "rarity": 7,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Madcap Mushrooms",
                     "cost": "30+3D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Mandrake Root",
                     "cost": "25+D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-												{
+                {
                     "name": "Potion of Strength",
                     "cost": "30+D6",
                     "rarity": 6,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-																{
+                {
                     "name": "Potion of Speed",
                     "cost": "40+D6",
                     "rarity": 10,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-																{
+                {
                     "name": "Spider's Poison",
                     "cost": "25+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-																{
+                {
                     "name": "Tears of Shallaya",
                     "cost": "10+2D6",
                     "rarity": 7,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-																{
+                {
                     "name": "Vial of Pestilence",
                     "cost": "25+2D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
+                    "restrictions": [???
+                    ]
                 },
-																{
+                {
                     "name": "Vodka",
                     "cost": "35+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???]
-                },
+                    "restrictions": [???
+                    ]
+                }
             ]
         }
     ]
