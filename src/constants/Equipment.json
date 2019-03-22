@@ -490,7 +490,15 @@
                     ],
                     "armour": 4,
                     "restrictions": [
-                        "Dwarves only"
+                        {
+                            "include": [
+                                "Dwarven Rangers",
+                                "Dwarven Treasure Hunters"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -584,13 +592,13 @@
                     "cost": 5,
                     "rarity": 0,
                     "armourType": "Suit",
-                    "rules": [
-                        "Easy to Move in"
-                    ],
+                    "rules": [],
                     "armour": 1,
                     "restrictions": [
                         {
-                            "include": []
+                            "include": [
+                                "Used by All"
+                            ]
                         },
                         {
                             "exclude": []
@@ -643,13 +651,113 @@
                     "armourType": "Special",
                     "rules": [
                         "Suit and Shield",
-                        "Parry",
-                        "Easy to Move in"
+                        "Parry"
                     ],
                     "armour": 0,
                     "restrictions": [
                         {
+                            "include": [
+                                "Used by All"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Reinforced Plate Armour",
+                    "cost": 95,
+                    "rarity": 9,
+                    "armourType": "Suit",
+                    "rules": [
+                        "Cumbersome",
+                        "Save"
+                    ],
+                    "armour": 3,
+                    "restrictions": [
+                        {
                             "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Sea Dragon Cloak",
+                    "cost": "50 + 2D6",
+                    "rarity": 10,
+                    "armourType": "Cloak",
+                    "rules": [
+                        "Scales"
+                    ],
+                    "armour": 2,
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Dark Elves"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Elven Cloak",
+                    "cost": "100 + 10*D6",
+                    "rarity": 12,
+                    "armourType": "Cloak",
+                    "rules": [
+                        "Hard Target"
+                    ],
+                    "armour": 2,
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Used by All"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Forest Cloak",
+                    "cost": "50",
+                    "rarity": 10,
+                    "armourType": "Cloak",
+                    "rules": [
+                        "One with the Forest"
+                    ],
+                    "armour": 2,
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Used by All"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Cathayan Silk Clothes",
+                    "cost": "75 + 10*D6",
+                    "rarity": 12,
+                    "armourType": "Cloak",
+                    "rules": [
+                        "Hard Target"
+                    ],
+                    "armour": 2,
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Used by All"
+                            ]
                         },
                         {
                             "exclude": []
@@ -728,7 +836,7 @@
                     ]
                 },
                 {
-                    "name": "Holy Tomb",
+                    "name": "Holy Tome",
                     "cost": "100+10*D6",
                     "rarity": 10,
                     "type": "Books & Scrolls",
@@ -765,7 +873,17 @@
                     "cost": "50+3D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": [
+                                "Dark Elves",
+                                "Shadow Warriors",
+                                "Forest Walker"
+                            ]
+                        }
                     ]
                 },
                 {
@@ -773,7 +891,13 @@
                     "cost": "35+D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -781,7 +905,13 @@
                     "cost": "20+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -789,7 +919,13 @@
                     "cost": "30+D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -797,7 +933,13 @@
                     "cost": "30+D6",
                     "rarity": 7,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -805,7 +947,13 @@
                     "cost": "30+3D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -813,7 +961,13 @@
                     "cost": "25+D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -821,7 +975,13 @@
                     "cost": "30+D6",
                     "rarity": 6,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -829,7 +989,13 @@
                     "cost": "40+D6",
                     "rarity": 10,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -837,7 +1003,13 @@
                     "cost": "25+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -845,7 +1017,16 @@
                     "cost": "10+2D6",
                     "rarity": 7,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": [
+                                "Possessed",
+                                "Undead"
+                            ]
+                        }
                     ]
                 },
                 {
@@ -853,7 +1034,15 @@
                     "cost": "25+2D6",
                     "rarity": 9,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Skaven"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 },
                 {
@@ -861,7 +1050,15 @@
                     "cost": "35+2D6",
                     "rarity": 8,
                     "type": "Drugs, Poison & Potions",
-                    "restrictions": [???
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Kislevit"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
                     ]
                 }
             ]

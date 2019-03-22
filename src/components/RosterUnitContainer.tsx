@@ -7,6 +7,7 @@ import { IUnit, ISelectionState } from "../constants";
 import { getEquipment } from "../utilities/utils";
 import { CharacteristicTable } from "./CharacteristicTable";
 import { EquipmentTable } from "./EquipmentTable";
+import { SkillLists } from "./SkillLists";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     const unitDivs = warbandRoster.map((unit) => {
@@ -33,8 +34,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <div>Exp {unit.experience}</div>
                     <div>Equipment {unit.equipment}</div>
                     <EquipmentTable names={equipmentNames}></EquipmentTable>
-                    <div>allowed Equipment {equipmentNames}</div>
-                    <div>SkillLists {unit.SkillLists}</div>
+                    <SkillLists names={unit.SkillLists}></SkillLists>
                     <div>Skills {unit.Skills}</div>
                     <CharacteristicTable characteristics={unit.Characteristics} ></CharacteristicTable>
                 </div>

@@ -57,47 +57,59 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
             )
         })
     }
+    createTh(input: string) {
+        return (
+            <tr>
+                <th>{input}</th>
+                <th>Cost</th>
+            </tr>
+        )
+    }
+    createTableHeader(input: string) {
+        return (
+            <tr>
+                <th colSpan={3}>{input}</th>
+            </tr>
+        )
+    }
 
     render() {
         const meleeTableRows = this.createMeleeTableRows();
+        let meleeHeader, meleeTableHeader, missileHeader, missileTableHeader, armourHeader, armourTableHeader, miscTableHeader, miscHeader;
+        if (meleeTableRows.length) {
+            meleeTableHeader = this.createTableHeader("Melee Weapons");
+            meleeHeader = this.createTh("Weapon");
+        }
         const missileTableRows = this.createMissileTableRows();
+        if (missileTableRows.length) {
+            missileTableHeader = this.createTableHeader("Missile Weapons");
+            missileHeader = this.createTh("Weapon");
+        }
         const armourRows = this.createArmorTableRows();
+        if (armourRows.length) {
+            armourTableHeader = this.createTableHeader("Armour");
+            armourHeader = this.createTh("Armour");
+        }
         const miscRows = this.createMiscTableRows();
+        if (miscRows.length) {
+            miscTableHeader = this.createTableHeader("Miscallaneous Equipment");
+            miscHeader = this.createTh("Misc");
+        }
         return (
             <div >
                 <table>
                     <tbody>
-                        <tr>
-                            <th colSpan={3}>Melee Weapons</th>
-                        </tr>
-                        <tr>
-                            <th>Weapon</th>
-                            <th>Cost</th>
-                        </tr>
+                        {meleeTableHeader}
+                        {meleeHeader}
                         {meleeTableRows}
-                        <tr>
-                            <th colSpan={3}>Missile Weapons</th>
-                        </tr>
-                        <tr>
-                            <th>Weapon</th>
-                            <th>Cost</th>
-                        </tr>
+                        {missileTableHeader}
+                        {missileHeader}
                         {missileTableRows}
-                        <tr>
-                            <th colSpan={3}>Armour</th>
-                        </tr>
-                        <tr>
-                            <th>Armour</th>
-                            <th>Cost</th>
-                        </tr>
+                        {armourTableHeader}
+                        {armourHeader}
                         {armourRows}
-                        <tr>
-                            <th colSpan={3}>Misc</th>
-                        </tr>
-                        <tr>
-                            <th>Misc</th>
-                            <th>Cost</th>
-                        </tr>
+                        {miscTableHeader}
+                        {miscHeader}
                         {miscRows}
                     </tbody>
                 </table>
