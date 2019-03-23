@@ -1,7 +1,6 @@
 import { IArmy, IUnit, Equipment, IMeleeWeapon, IEquipment, IMissileWeapon, IArmour, IMiscallaneous } from "../constants";
 import { store } from "..";
 
-
 const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
 const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
 const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;

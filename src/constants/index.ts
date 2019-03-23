@@ -6,6 +6,10 @@ export interface IEquiList {
     names: string[];
 }
 
+export interface IUnitEquipment {
+    unit: IUnit,
+}
+
 export const initSelectionState: ISelectionState = {
     selectedArmy: "",
     selectedAlignment: "",

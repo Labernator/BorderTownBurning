@@ -1,4 +1,4 @@
-import { StateActions, SET_ARMY, SET_ALIGNMENT, SET_OBJECTIVE, RESTRICT_ALIGNMENTS, RESTRICT_OBJECTIVES, RESTRICT_UNITS, SET_UNIT, ADD_MONEY_TO_TREASURY, SUBTRACT_MONEY_FROM_TREASURY, ADD_UNIT_TO_ROSTER, REMOVE_UNIT_FROM_ROSTER, REMOVE_UNIT_FROM_UNITLIST, ADD_WARBAND_RATING, RESET_TREASURY, ADD_UNIT_TO_UNITLIST, SUBTRACT_WARBAND_RATING } from "../actions";
+import { StateActions, SET_ARMY, SET_ALIGNMENT, SET_OBJECTIVE, RESTRICT_ALIGNMENTS, RESTRICT_OBJECTIVES, RESTRICT_UNITS, SET_UNIT, ADD_MONEY_TO_TREASURY, SUBTRACT_MONEY_FROM_TREASURY, ADD_UNIT_TO_ROSTER, REMOVE_UNIT_FROM_ROSTER, REMOVE_UNIT_FROM_UNITLIST, ADD_WARBAND_RATING, RESET_TREASURY, ADD_UNIT_TO_UNITLIST, SUBTRACT_WARBAND_RATING, UPDATE_UNIT } from "../actions";
 import { initSelectionState, ISelectionState, IUnit } from "../constants";
 const getUnitRating = (unit: IUnit) => {
     let rating = 0;
@@ -47,6 +47,9 @@ export function stateReducer(state: ISelectionState = initSelectionState, action
             return { ...state, warbandRating: state.warbandRating + getUnitRating(action.payload) };
         case SUBTRACT_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating - getUnitRating(action.payload) };
+        case UPDATE_UNIT:
+            const unitIndex = state.warbandRoster.findIndex((unit) => unit.name === action.payload.name);
+            return { ...state, warbandRoster: [...state.warbandRoster.slice(0, unitIndex), action.payload, ...state.warbandRoster.slice(unitIndex + 1)] }
         default:
             return state;
     }

@@ -6,9 +6,10 @@ import { REMOVE_UNIT_FROM_ROSTER, ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_UNITLIST, S
 import { IUnit, ISelectionState } from "../constants";
 import { getEquipment } from "../utilities/utils";
 import { CharacteristicTable } from "./CharacteristicTable";
-import { EquipmentTable } from "./EquipmentTable";
 import { SkillLists } from "./SkillLists";
 import { Skills } from "./Skills";
+import { UnitEquipment } from "./UnitEquipment";
+import { Equipment } from "./Equipment";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     let counter = 0;
@@ -24,8 +25,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                 }
                 return undefined;
             };
-            const availableEquipment = getEquipment(unit.allowedEquipment);
-            const equipmentNames = availableEquipment.map(equipment => equipment.name)
+
             return (
                 <div key={unit.name + counter} style={{ border: "solid" }}>
                     <button onClick={() => handleClick()} style={{ width: 250 }}>
@@ -35,8 +35,8 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <div>Unit Cost {unit.Price}</div>
                     <div>Unit Type {unit.name}</div>
                     <div>Exp {unit.experience}</div>
-                    <div>Equipment {unit.equipment}</div>
-                    <EquipmentTable names={equipmentNames}></EquipmentTable>
+                    <Equipment names={unit.equipment}></Equipment>
+                    <UnitEquipment unit={unit}></UnitEquipment>
                     <SkillLists names={unit.SkillLists}></SkillLists>
                     <Skills names={unit.Skills}></Skills>
                     <CharacteristicTable characteristics={unit.Characteristics} ></CharacteristicTable>

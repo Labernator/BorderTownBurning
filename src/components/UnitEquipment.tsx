@@ -1,17 +1,28 @@
 import React from 'react';
-import { IMeleeWeapon, IEquiList, IMissileWeapon, IArmour, IMiscallaneous } from '../constants';
-import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous } from '../utilities/utils';
-export class EquipmentTable extends React.Component<IEquiList, {}> {
+import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitEquipment } from '../constants';
+import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from '../utilities/utils';
+import { store } from '..';
+import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY, SUBTRACT_MONEY_FROM_TREASURY } from '../actions';
+export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
     private meleeEquipment: IMeleeWeapon[];
     private missileEquipment: IMissileWeapon[];
     private armourEquipment: IArmour[];
     private miscEquipment: IMiscallaneous[];
-    constructor(props: IEquiList) {
+    constructor(props: IUnitEquipment) {
         super(props);
-        this.meleeEquipment = filterMeleeWeapons(props.names);
-        this.missileEquipment = filterMissileWeapons(props.names);
-        this.armourEquipment = filterArmour(props.names);
-        this.miscEquipment = filterMiscallaneous(props.names);
+        const availableEquipment = getEquipment(props.unit.allowedEquipment);
+        const equipmentNames = availableEquipment.map(equipment => equipment.name)
+        this.meleeEquipment = filterMeleeWeapons(equipmentNames);
+        this.missileEquipment = filterMissileWeapons(equipmentNames);
+        this.armourEquipment = filterArmour(equipmentNames);
+        this.miscEquipment = filterMiscallaneous(equipmentNames);
+    }
+
+    addArmourToUnit(armour: IArmour) {
+        const updateUnit = this.props.unit;
+        updateUnit.equipment.push(armour.name);
+        store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
+        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: armour.cost });
     }
     createMeleeTableRows() {
         return this.meleeEquipment.map((weapon) => {
@@ -19,7 +30,9 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
                 <tr key={weapon.name}>
                     <td>{weapon.name}</td>
                     <td>{weapon.cost}</td>
-                    <td><button>Add</button></td>
+                    <td>
+                        <button>Add</button>
+                    </td>
                 </tr>
             )
         })
@@ -30,18 +43,22 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
                 <tr key={weapon.name}>
                     <td>{weapon.name}</td>
                     <td>{weapon.cost}</td>
-                    <td><button>Add</button></td>
+                    <td>
+                        <button>Add</button>
+                    </td>
                 </tr>
             )
         })
     }
     createArmorTableRows() {
-        return this.armourEquipment.map((armor) => {
+        return this.armourEquipment.map((armour) => {
             return (
-                <tr key={armor.name}>
-                    <td>{armor.name}</td>
-                    <td>{armor.cost}</td>
-                    <td><button>Add</button></td>
+                <tr key={armour.name}>
+                    <td>{armour.name}</td>
+                    <td>{armour.cost}</td>
+                    <td>
+                        <button onClick={() => this.addArmourToUnit(armour)}>Add</button>
+                    </td>
                 </tr>
             )
         })
@@ -52,7 +69,9 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
                 <tr key={misc.name}>
                     <td>{misc.name}</td>
                     <td>{misc.cost}</td>
-                    <td><button>Add</button></td>
+                    <td>
+                        <button>Add</button>
+                    </td>
                 </tr>
             )
         })
@@ -96,7 +115,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
             miscHeader = this.createTh("Misc");
         }
         return (
-            <div >
+            <div id="equipmentTable" style={{ display: "none", border: "solid" }}>
                 <table>
                     <tbody>
                         {meleeTableHeader}
