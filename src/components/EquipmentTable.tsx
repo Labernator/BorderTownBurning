@@ -16,7 +16,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
     createMeleeTableRows() {
         return this.meleeEquipment.map((weapon) => {
             return (
-                <tr>
+                <tr key={weapon.name}>
                     <td>{weapon.name}</td>
                     <td>{weapon.cost}</td>
                     <td><button>Add</button></td>
@@ -27,7 +27,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
     createMissileTableRows() {
         return this.missileEquipment.map((weapon) => {
             return (
-                <tr>
+                <tr key={weapon.name}>
                     <td>{weapon.name}</td>
                     <td>{weapon.cost}</td>
                     <td><button>Add</button></td>
@@ -38,7 +38,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
     createArmorTableRows() {
         return this.armourEquipment.map((armor) => {
             return (
-                <tr>
+                <tr key={armor.name}>
                     <td>{armor.name}</td>
                     <td>{armor.cost}</td>
                     <td><button>Add</button></td>
@@ -49,7 +49,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
     createMiscTableRows() {
         return this.miscEquipment.map((misc) => {
             return (
-                <tr>
+                <tr key={misc.name}>
                     <td>{misc.name}</td>
                     <td>{misc.cost}</td>
                     <td><button>Add</button></td>
@@ -59,7 +59,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
     }
     createTh(input: string) {
         return (
-            <tr>
+            <tr key={input}>
                 <th>{input}</th>
                 <th>Cost</th>
             </tr>
@@ -67,7 +67,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
     }
     createTableHeader(input: string) {
         return (
-            <tr>
+            <tr key={input}>
                 <th colSpan={3}>{input}</th>
             </tr>
         )
@@ -87,7 +87,7 @@ export class EquipmentTable extends React.Component<IEquiList, {}> {
         }
         const armourRows = this.createArmorTableRows();
         if (armourRows.length) {
-            armourTableHeader = this.createTableHeader("Armour");
+            armourTableHeader = this.createTableHeader("Armours");
             armourHeader = this.createTh("Armour");
         }
         const miscRows = this.createMiscTableRows();

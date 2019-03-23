@@ -432,6 +432,7 @@
                     "SpellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
+                        "PitFighterArmourEquipment",
                         "PitFighterBaseEquipment"
                     ],
                     "include": [
@@ -471,6 +472,7 @@
                     "SpellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
+                        "PitFighterArmourEquipment",
                         "PitFighterBaseEquipment"
                     ],
                     "include": [
@@ -555,6 +557,7 @@
                     "SpellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
+                        "PitFighterArmourEquipment",
                         "PitFighterBaseEquipment"
                     ],
                     "include": [
@@ -590,6 +593,7 @@
                     "SpellLists": [],
                     "allowedEquipment": [
                         "PursuerEquipment",
+                        "PitFighterArmourEquipment",
                         "PitFighterBaseEquipment"
                     ],
                     "include": [
@@ -626,6 +630,7 @@
                     "SpellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
+                        "PitFighterArmourEquipment",
                         "PitFighterBaseEquipment"
                     ],
                     "include": [
@@ -665,6 +670,7 @@
                     "SpellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
+                        "PitFighterArmourEquipment",
                         "PitFighterBaseEquipment"
                     ],
                     "include": [
@@ -702,15 +708,21 @@
                             "cost": 5
                         },
                         {
-                            "name": "Sword",
-                            "cost": 10
-                        },
-                        {
-                            "name": "Shield",
+                            "name": "Spear",
                             "cost": 5
                         },
                         {
-                            "name": "Spear",
+                            "name": "Sword",
+                            "cost": 10
+                        }
+                    ],
+                    "modificationOptions": []
+                },
+                {
+                    "name": "PitFighterArmourEquipment",
+                    "equipment": [
+                        {
+                            "name": "Shield",
                             "cost": 5
                         },
                         {
@@ -778,7 +790,7 @@
                             "cost": 20
                         },
                         {
-                            "name": "Fist Spike",
+                            "name": "Spiked Gauntlet",
                             "cost": 15
                         },
                         {

@@ -9,8 +9,8 @@ export class SkillLists extends React.Component<IEquiList, {}> {
     createSkillListsTableRows() {
         return this.skillLists.map((skillList) => {
             return (
-                <tr>
-                    <td>{skillList}</td>
+                <tr key={skillList}>
+                    <td >{skillList}</td>
                 </tr>
             )
         })

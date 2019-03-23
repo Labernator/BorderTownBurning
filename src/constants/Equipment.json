@@ -267,6 +267,88 @@
                             "exclude": []
                         }
                     ]
+                },
+                {
+                    "name": "Spiked Gauntlet",
+                    "cost": 15,
+                    "rarity": 7,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Parry"
+                    ],
+                    "strengthModifier": "",
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Pit Figher"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Brass Knuckles",
+                    "cost": 20,
+                    "rarity": 6,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Pair",
+                        "Cumbersome"
+                    ],
+                    "strengthModifier": "+1",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "War Chain",
+                    "cost": 20,
+                    "rarity": 0,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Cannot Be Parried",
+                        "Entangle",
+                        "Reach"
+                    ],
+                    "strengthModifier": "+1",
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Pit Figher"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Trident",
+                    "cost": 15,
+                    "rarity": 7,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Strike First",
+                        "Parry"
+                    ],
+                    "strengthModifier": "",
+                    "restrictions": [
+                        {
+                            "include": [
+                                "Pit Figher"
+                            ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
                 }
             ]
         },

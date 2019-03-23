@@ -11,7 +11,9 @@ import { SkillLists } from "./SkillLists";
 import { Skills } from "./Skills";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
+    let counter = 0;
     const unitDivs = warbandRoster.map((unit) => {
+        counter++;
         if (unit.name !== "") {
             const handleClick = () => {
                 store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: unit });
@@ -25,7 +27,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
             const availableEquipment = getEquipment(unit.allowedEquipment);
             const equipmentNames = availableEquipment.map(equipment => equipment.name)
             return (
-                <div style={{ border: "solid" }}>
+                <div key={unit.name + counter} style={{ border: "solid" }}>
                     <button onClick={() => handleClick()} style={{ width: 250 }}>
                         Remove selected Unit from warband roster
                     </button>
