@@ -151,6 +151,25 @@
                     ]
                 },
                 {
+                    "name": "Morning Star",
+                    "cost": 15,
+                    "rarity": 0,
+                    "weaponType": "Melee",
+                    "rules": [
+                        "Heavy",
+                        "Difficult to Use"
+                    ],
+                    "strengthModifier": "+1",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
                     "name": "Dwarf Axe",
                     "cost": 15,
                     "rarity": 8,
@@ -435,6 +454,25 @@
                     ],
                     "strength": "As User",
                     "range": 8,
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Throwing Knives",
+                    "cost": 15,
+                    "rarity": 5,
+                    "weaponType": "Shooting",
+                    "rules": [
+                        "Thrown Weapon"
+                    ],
+                    "strength": "As User",
+                    "range": 6,
                     "restrictions": [
                         {
                             "include": []
@@ -1055,6 +1093,76 @@
                             "include": [
                                 "Kislevit"
                             ]
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Net",
+                    "cost": "5",
+                    "rarity": 0,
+                    "type": "Other Equipment",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Rope & Hook",
+                    "cost": "5",
+                    "rarity": 0,
+                    "type": "Other Equipment",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Lantern",
+                    "cost": "10",
+                    "rarity": 0,
+                    "type": "Other Equipment",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Torch",
+                    "cost": "2",
+                    "rarity": 0,
+                    "type": "Other Equipment",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Lock Picks",
+                    "cost": "15",
+                    "rarity": 8,
+                    "type": "Other Equipment",
+                    "restrictions": [
+                        {
+                            "include": []
                         },
                         {
                             "exclude": []

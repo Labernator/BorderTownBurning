@@ -8,6 +8,7 @@ import { getEquipment } from "../utilities/utils";
 import { CharacteristicTable } from "./CharacteristicTable";
 import { EquipmentTable } from "./EquipmentTable";
 import { SkillLists } from "./SkillLists";
+import { Skills } from "./Skills";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     const unitDivs = warbandRoster.map((unit) => {
@@ -35,7 +36,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <div>Equipment {unit.equipment}</div>
                     <EquipmentTable names={equipmentNames}></EquipmentTable>
                     <SkillLists names={unit.SkillLists}></SkillLists>
-                    <div>Skills {unit.Skills}</div>
+                    <Skills names={unit.Skills}></Skills>
                     <CharacteristicTable characteristics={unit.Characteristics} ></CharacteristicTable>
                 </div>
             )

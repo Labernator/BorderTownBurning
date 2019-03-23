@@ -430,7 +430,10 @@
                     ],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "PitFighterEquipment",
+                    "allowedEquipment": [
+                        "PitFighterEquipment",
+                        "PitFighterBaseEquipment"
+                    ],
                     "include": [
                         1,
                         1
@@ -466,7 +469,10 @@
                     ],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "PitFighterEquipment",
+                    "allowedEquipment": [
+                        "PitFighterEquipment",
+                        "PitFighterBaseEquipment"
+                    ],
                     "include": [
                         0,
                         2
@@ -547,7 +553,10 @@
                     ],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "PitFighterEquipment",
+                    "allowedEquipment": [
+                        "PitFighterEquipment",
+                        "PitFighterBaseEquipment"
+                    ],
                     "include": [
                         0,
                         2
@@ -579,7 +588,10 @@
                     "SkillLists": [],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "PursuerEquipment",
+                    "allowedEquipment": [
+                        "PursuerEquipment",
+                        "PitFighterBaseEquipment"
+                    ],
                     "include": [
                         0,
                         7
@@ -612,7 +624,10 @@
                     "SkillLists": [],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "PitFighterEquipment",
+                    "allowedEquipment": [
+                        "PitFighterEquipment",
+                        "PitFighterBaseEquipment"
+                    ],
                     "include": [
                         0,
                         5
@@ -623,7 +638,7 @@
                     ]
                 },
                 {
-                    "name": "Minotaur",
+                    "name": "Ogre",
                     "Characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 3,
@@ -648,18 +663,23 @@
                     "SkillLists": [],
                     "Spells": [],
                     "SpellLists": [],
-                    "allowedEquipment": "PitFighterEquipment",
+                    "allowedEquipment": [
+                        "PitFighterEquipment",
+                        "PitFighterBaseEquipment"
+                    ],
                     "include": [
                         0,
                         1
                     ],
                     "experience": 0,
-                    "equipment": []
+                    "equipment": [
+                        "Dagger"
+                    ]
                 }
             ],
             "allowedEquipment": [
                 {
-                    "name": "BeastBaseEquipment",
+                    "name": "PitFighterBaseEquipment",
                     "equipment": [
                         {
                             "name": "Dagger",
@@ -712,7 +732,7 @@
                     "name": "PursuerEquipment",
                     "equipment": [
                         {
-                            "name": "Hardened Leather",
+                            "name": "Toughened Leathers",
                             "cost": 5
                         },
                         {
@@ -720,7 +740,7 @@
                             "cost": 5
                         },
                         {
-                            "name": "Javelin",
+                            "name": "Javelins",
                             "cost": 10
                         },
                         {
@@ -1237,21 +1257,6 @@
             ],
             "objectives": [
                 "The Scourge of the Realm"
-            ],
-            "armyRules": [],
-            "units": []
-        },
-        {
-            "name": "Pit Fighters",
-            "startingCapital": 500,
-            "sizeLimit": 15,
-            "alignments": [
-                "Lawful/Neutral",
-                "Neutral",
-                "Neutral/Chaotic"
-            ],
-            "objectives": [
-                "The Celestial Protectorate"
             ],
             "armyRules": [],
             "units": []

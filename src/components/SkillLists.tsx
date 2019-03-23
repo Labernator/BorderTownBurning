@@ -1,6 +1,5 @@
 import React from 'react';
-import { IMeleeWeapon, IEquiList, IMissileWeapon, IArmour, IMiscallaneous } from '../constants';
-import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous } from '../utilities/utils';
+import { IEquiList } from '../constants';
 export class SkillLists extends React.Component<IEquiList, {}> {
     private skillLists: string[];
     constructor(props: IEquiList) {
@@ -16,16 +15,25 @@ export class SkillLists extends React.Component<IEquiList, {}> {
             )
         })
     }
+    createSkillListsHeader() {
+        return (
+            <tr>
+                <th>Skill Lists</th>
+            </tr>
+        )
+    }
 
     render() {
         const skillListTableRows = this.createSkillListsTableRows();
+        let skillListHeader;
+        if (skillListTableRows.length) {
+            skillListHeader = this.createSkillListsHeader();
+        }
         return (
             <div >
                 <table>
                     <tbody>
-                        <tr>
-                            <th>Skill Lists</th>
-                        </tr>
+                        {skillListHeader}
                         {skillListTableRows}
                     </tbody>
                 </table>
