@@ -57,7 +57,7 @@ export function getRestrictedAlignmentList(selectedArmy: string): string[] {
 
 export function getEquipment(equipmentListNames: string[]): Equipment[] {
     const Army = ArmyList.find((army) => army.name === store.getState().selectedArmy);
-    if (Army !== undefined) {
+    if (Army !== undefined && equipmentListNames.length) {
         return equipmentListNames.reduce((filteredArr, equipmentListName) => {
             const equipmentList = Army.allowedEquipment.find(equipmentList => equipmentList.name === equipmentListName)
             if (equipmentList) {

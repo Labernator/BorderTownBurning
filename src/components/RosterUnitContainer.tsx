@@ -4,12 +4,12 @@ import "rc-select/assets/index.css";
 import { store } from "..";
 import { REMOVE_UNIT_FROM_ROSTER, ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_UNITLIST, SUBTRACT_WARBAND_RATING } from "../actions";
 import { IUnit, ISelectionState } from "../constants";
-import { getEquipment } from "../utilities/utils";
 import { CharacteristicTable } from "./CharacteristicTable";
 import { SkillLists } from "./SkillLists";
 import { Skills } from "./Skills";
 import { UnitEquipment } from "./UnitEquipment";
 import { Equipment } from "./Equipment";
+import { UnitLabel } from "./UnitLabel";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     let counter = 0;
@@ -27,14 +27,14 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
             };
 
             return (
-                <div key={unit.name + counter} style={{ border: "solid" }}>
-                    <button onClick={() => handleClick()} style={{ width: 250 }}>
-                        Remove selected Unit from warband roster
+                <div key={unit.name + counter} style={{ border: "solid", display: "inline-block" }}>
+                    <button onClick={() => handleClick()} style={{ fontWeight: "bold" }}>
+                        X
                     </button>
-                    <div><div>Unit Name</div><input></input></div>
-                    <div>Unit Cost {unit.Price}</div>
-                    <div>Unit Type {unit.name}</div>
-                    <div>Exp {unit.experience}</div>
+                    <UnitLabel title="Unit Type" value={unit.name}></UnitLabel>
+                    <UnitLabel title="Unit Cost" value={unit.Price.toString()}></UnitLabel>
+                    <UnitLabel title="XP" value={unit.experience.toString()}></UnitLabel>
+                    {/* <UnitLabel title="Unit Name" value={unit.Id.toString()}></UnitLabel> */}
                     <Equipment names={unit.equipment}></Equipment>
                     <UnitEquipment unit={unit}></UnitEquipment>
                     <SkillLists names={unit.SkillLists}></SkillLists>

@@ -1,11 +1,20 @@
 .App {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: monospace;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40px;
+.EnabledButton {
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.DisabledButton {
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .App-header {

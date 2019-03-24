@@ -17,6 +17,7 @@ export const REMOVE_UNIT_FROM_ROSTER = 'REMOVE_UNIT_FROM_ROSTER';
 export const ADD_WARBAND_RATING = 'ADD_WARBAND_RATING';
 export const SUBTRACT_WARBAND_RATING = 'SUBTRACT_WARBAND_RATING';
 export const UPDATE_UNIT = 'UPDATE_UNIT';
+export const UPDATE_UNITLIST = 'UPDATE_UNITLIST';
 
 class SetArmy {
     readonly type = SET_ARMY
@@ -72,6 +73,11 @@ class RemoveUnitFromUnitList {
     constructor(public payload: string) { }
 }
 
+class UpdateUnitList {
+    readonly type = UPDATE_UNITLIST
+    constructor(public payload: IUnit[]) { }
+}
+
 class AddUnitToUnitList {
     readonly type = ADD_UNIT_TO_UNITLIST
     constructor(public payload: IUnit) { }
@@ -95,4 +101,4 @@ class UpdateUnit {
 export type StateActions = SetArmy | SetAlignment | SetObjective | RestrictAlignment |
     RestrictObjectives | RestrictUnits | SetUnit | SubtractMoneyFromTreasury | AddMoneyToTreasury |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury |
-    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit;
+    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList;

@@ -529,6 +529,10 @@
                     "experience": 8,
                     "equipment": [
                         "Dagger"
+                    ],
+                    "replaces": [
+                        "Pit Fighter Initiate",
+                        "Pit Fighter Veteran"
                     ]
                 },
                 {

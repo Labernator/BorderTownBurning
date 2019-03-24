@@ -2,7 +2,7 @@ import React from 'react';
 import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitEquipment } from '../constants';
 import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from '../utilities/utils';
 import { store } from '..';
-import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY, SUBTRACT_MONEY_FROM_TREASURY } from '../actions';
+import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from '../actions';
 export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
     private meleeEquipment: IMeleeWeapon[];
     private missileEquipment: IMissileWeapon[];
@@ -18,11 +18,11 @@ export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
         this.miscEquipment = filterMiscallaneous(equipmentNames);
     }
 
-    addArmourToUnit(armour: IArmour) {
+    addItemToUnit(item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) {
         const updateUnit = this.props.unit;
-        updateUnit.equipment.push(armour.name);
+        updateUnit.equipment.push(item.name);
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
-        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: armour.cost });
+        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: item.cost });
     }
     createMeleeTableRows() {
         return this.meleeEquipment.map((weapon) => {
@@ -31,7 +31,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
                     <td>{weapon.name}</td>
                     <td>{weapon.cost}</td>
                     <td>
-                        <button>Add</button>
+                        <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
                     </td>
                 </tr>
             )
@@ -44,7 +44,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
                     <td>{weapon.name}</td>
                     <td>{weapon.cost}</td>
                     <td>
-                        <button>Add</button>
+                        <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
                     </td>
                 </tr>
             )
@@ -57,7 +57,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
                     <td>{armour.name}</td>
                     <td>{armour.cost}</td>
                     <td>
-                        <button onClick={() => this.addArmourToUnit(armour)}>Add</button>
+                        <button onClick={() => this.addItemToUnit(armour)}>Add</button>
                     </td>
                 </tr>
             )
@@ -70,7 +70,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
                     <td>{misc.name}</td>
                     <td>{misc.cost}</td>
                     <td>
-                        <button>Add</button>
+                        <button onClick={() => this.addItemToUnit(misc)}>Add</button>
                     </td>
                 </tr>
             )

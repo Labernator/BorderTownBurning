@@ -6,6 +6,11 @@ export interface IEquiList {
     names: string[];
 }
 
+export interface ILabel {
+    title: string;
+    value: string;
+}
+
 export interface IUnitEquipment {
     unit: IUnit,
 }
@@ -88,6 +93,7 @@ export interface IUnit {
     include: number[];
     experience: number;
     equipment: string[];
+    replaces?: string[];
 }
 
 export interface ICharacteristics {
