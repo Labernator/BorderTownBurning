@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "rc-select/assets/index.css";
 import { store } from "..";
 import { REMOVE_UNIT_FROM_ROSTER, ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_UNITLIST, SUBTRACT_WARBAND_RATING } from "../actions";
-import { IUnit, ISelectionState } from "../constants";
+import { IUnit, IAppState } from "../constants";
 import { CharacteristicTable } from "./CharacteristicTable";
 import { SkillLists } from "./SkillLists";
 import { Skills } from "./Skills";
@@ -48,5 +48,5 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
         <div>{unitDivs}</div>
     );
 };
-const mapStateToProps = (state: ISelectionState) => { ({ warbandRoster: state.warbandRoster }); return {} };
+const mapStateToProps = (state: IAppState) => { ({ warbandRoster: state.warbandRoster }); return {} };
 export const UnitContainer = connect(mapStateToProps)(RosterUnitContainer);

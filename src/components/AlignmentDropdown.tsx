@@ -5,7 +5,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { store } from "..";
 import { SET_ALIGNMENT } from "../actions";
-import { ISelectionState } from "../constants";
+import { IAppState } from "../constants";
 const AlDropdown = ({ listOfAlignments }: { listOfAlignments: string[] }) => {
     const dropDownList = listOfAlignments.map((entry) => <Option key={entry} value={entry}>{entry}</Option>);
 
@@ -22,5 +22,5 @@ const AlDropdown = ({ listOfAlignments }: { listOfAlignments: string[] }) => {
     );
 }
 
-function mapStateToProps(state: ISelectionState) { ({ listOfAlignments: state.listOfAlignments }); return {} };
+function mapStateToProps(state: IAppState) { ({ listOfAlignments: state.listOfAlignments }); return {} };
 export const AlignmentDropdown = connect(mapStateToProps)(AlDropdown);

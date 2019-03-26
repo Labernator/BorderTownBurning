@@ -1,5 +1,5 @@
-import { IArmy, IUnit, Equipment, IMeleeWeapon, IEquipment, IMissileWeapon, IArmour, IMiscallaneous } from "../constants";
 import { store } from "..";
+import { Equipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit } from "../constants";
 
 const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
 const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
@@ -97,15 +97,6 @@ export function getArmySizeLimit(selectedArmy: string): number {
 }
 
 export function getUnits(selectedArmy: string): IUnit[] {
-    const Army = ArmyList.find((army) => army.name === selectedArmy);
-    if (Army !== undefined) {
-        return Army.units;
-    } else {
-        return [];
-    }
-}
-
-export function getUnit(selectedArmy: string): IUnit[] {
     const Army = ArmyList.find((army) => army.name === selectedArmy);
     if (Army !== undefined) {
         return Army.units;

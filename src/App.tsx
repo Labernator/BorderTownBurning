@@ -4,11 +4,11 @@ import { AlignmentDropdown } from "./components/AlignmentDropdown";
 import { ArmyDropdown } from "./components/ArmyDropdown";
 import { ObjectiveDropdown } from "./components/ObjectiveDropdown";
 import { UnitContainer } from "./components/RosterUnitContainer";
-import { ISelectionState } from "./constants";
+import { IAppState } from "./constants";
 import { getArmySizeLimit } from "./utilities/utils";
 import "./App.css";
 import { UnitButtons } from "./components/UnitButtons";
-function App(props: ISelectionState) {
+function App(props: IAppState) {
     let ArmySizeLimit: number = 0;
     if (props.selectedArmy) {
         ArmySizeLimit = getArmySizeLimit(props.selectedArmy);
@@ -36,7 +36,7 @@ function App(props: ISelectionState) {
     )
 }
 
-const mapStateToProps = (state: ISelectionState) => ({
+const mapStateToProps = (state: IAppState) => ({
     listOfAlignments: state.listOfAlignments,
     listOfObjectives: state.listOfObjectives,
     listOfUnits: state.listOfUnits,
@@ -46,7 +46,6 @@ const mapStateToProps = (state: ISelectionState) => ({
     warbandRoster: state.warbandRoster,
     armyTreasury: state.armyTreasury,
     armyStash: state.armyStash,
-    selectedUnit: state.selectedUnit,
     armyCampaignPoints: state.armyCampaignPoints,
     armyWyrdstoneShards: state.armyWyrdstoneShards,
     armyAchievements: state.armyAchievements,

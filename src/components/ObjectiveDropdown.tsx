@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "rc-select/assets/index.css";
 import { store } from "..";
-import { ISelectionState } from "../constants";
+import { IAppState } from "../constants";
 import { SET_OBJECTIVE } from "../actions";
 
 const ODropdown = ({ listOfObjectives }: { listOfObjectives: string[] }) => {
@@ -21,5 +21,5 @@ const ODropdown = ({ listOfObjectives }: { listOfObjectives: string[] }) => {
         </div>
     );
 };
-function mapStateToProps(state: ISelectionState) { ({ listOfObjectives: state.listOfObjectives }); return {} };
+function mapStateToProps(state: IAppState) { ({ listOfObjectives: state.listOfObjectives }); return {} };
 export const ObjectiveDropdown = connect(mapStateToProps)(ODropdown);

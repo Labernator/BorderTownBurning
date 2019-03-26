@@ -1,9 +1,8 @@
-import { IUnit, IEquipment } from "../constants";
+import { IUnit } from "../constants";
 
 export const SET_ARMY = 'SET_ARMY';
 export const SET_ALIGNMENT = 'SET_ALIGNMENT';
 export const SET_OBJECTIVE = 'SET_OBJECTIVE';
-export const SET_UNIT = 'SET_UNIT';
 export const RESTRICT_ALIGNMENTS = 'RESTRICT_ALIGNMENTS';
 export const RESTRICT_OBJECTIVES = 'RESTRICT_OBJECTIVES';
 export const RESTRICT_UNITS = 'RESTRICT_UNITS';
@@ -42,10 +41,6 @@ class RestrictObjectives {
 class RestrictUnits {
     readonly type = RESTRICT_UNITS
     constructor(public payload: IUnit[]) { }
-}
-class SetUnit {
-    readonly type = SET_UNIT
-    constructor(public payload: IUnit | null) { }
 }
 class AddMoneyToTreasury {
     readonly type = ADD_MONEY_TO_TREASURY
@@ -99,6 +94,6 @@ class UpdateUnit {
 
 
 export type StateActions = SetArmy | SetAlignment | SetObjective | RestrictAlignment |
-    RestrictObjectives | RestrictUnits | SetUnit | SubtractMoneyFromTreasury | AddMoneyToTreasury |
+    RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury |
     AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList;

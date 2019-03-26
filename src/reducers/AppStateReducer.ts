@@ -1,5 +1,5 @@
-import { StateActions, SET_ARMY, SET_ALIGNMENT, SET_OBJECTIVE, RESTRICT_ALIGNMENTS, RESTRICT_OBJECTIVES, RESTRICT_UNITS, SET_UNIT, ADD_MONEY_TO_TREASURY, SUBTRACT_MONEY_FROM_TREASURY, ADD_UNIT_TO_ROSTER, REMOVE_UNIT_FROM_ROSTER, REMOVE_UNIT_FROM_UNITLIST, ADD_WARBAND_RATING, RESET_TREASURY, ADD_UNIT_TO_UNITLIST, SUBTRACT_WARBAND_RATING, UPDATE_UNIT, UPDATE_UNITLIST } from "../actions";
-import { initSelectionState, ISelectionState, IUnit } from "../constants";
+import { ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_ROSTER, ADD_UNIT_TO_UNITLIST, ADD_WARBAND_RATING, REMOVE_UNIT_FROM_ROSTER, REMOVE_UNIT_FROM_UNITLIST, RESET_TREASURY, RESTRICT_ALIGNMENTS, RESTRICT_OBJECTIVES, RESTRICT_UNITS, SET_ALIGNMENT, SET_ARMY, SET_OBJECTIVE, StateActions, SUBTRACT_MONEY_FROM_TREASURY, SUBTRACT_WARBAND_RATING, UPDATE_UNIT, UPDATE_UNITLIST } from "../actions";
+import { IAppState, initialState, IUnit } from "../constants";
 const getUnitRating = (unit: IUnit) => {
     let rating = 0;
     if (unit) {
@@ -13,7 +13,7 @@ const getUnitRating = (unit: IUnit) => {
     }
     return rating;
 }
-export function stateReducer(state: ISelectionState = initSelectionState, action: StateActions): ISelectionState {
+export function stateReducer(state: IAppState = initialState, action: StateActions): IAppState {
     switch (action.type) {
         case SET_ARMY:
             return { ...state, selectedArmy: action.payload };
@@ -27,8 +27,6 @@ export function stateReducer(state: ISelectionState = initSelectionState, action
             return { ...state, listOfObjectives: action.payload };
         case RESTRICT_UNITS:
             return { ...state, listOfUnits: action.payload };
-        case SET_UNIT:
-            return { ...state, selectedUnit: action.payload };
         case ADD_UNIT_TO_ROSTER:
             return { ...state, warbandRoster: [...state.warbandRoster, action.payload] }
         case REMOVE_UNIT_FROM_ROSTER:

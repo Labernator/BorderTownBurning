@@ -2,7 +2,7 @@ export interface ICharTable {
     characteristics: ICharacteristics;
 }
 
-export interface IEquiList {
+export interface IList {
     names: string[];
 }
 
@@ -15,11 +15,10 @@ export interface IUnitEquipment {
     unit: IUnit,
 }
 
-export const initSelectionState: ISelectionState = {
+export const initialState: IAppState = {
     selectedArmy: "",
     selectedAlignment: "",
     selectedObjective: "",
-    selectedUnit: null,
     listOfAlignments: [
         "Lawful",
         "Lawful/Neutral",
@@ -64,11 +63,10 @@ export interface IArmy {
     allowedEquipment: EquipmentList[];
 }
 
-export interface ISelectionState {
+export interface IAppState {
     selectedArmy: string;
     selectedAlignment: string;
     selectedObjective: string;
-    selectedUnit: IUnit | null;
     listOfAlignments: string[];
     listOfObjectives: string[];
     listOfUnits: IUnit[];

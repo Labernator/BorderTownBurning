@@ -1,8 +1,8 @@
 import React from 'react';
-import { IEquiList } from '../constants';
-export class Skills extends React.Component<IEquiList, {}> {
+import { IList } from '../constants';
+export class Skills extends React.Component<IList, {}> {
     private skills: string[];
-    constructor(props: IEquiList) {
+    constructor(props: IList) {
         super(props);
         this.skills = props.names;
     }

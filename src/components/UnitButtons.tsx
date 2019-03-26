@@ -1,7 +1,7 @@
 import "rc-select/assets/index.css";
 import React from "react";
 import { connect } from "react-redux";
-import { IUnit, ISelectionState } from "../constants";
+import { IUnit, IAppState } from "../constants";
 import { store } from "..";
 import { ADD_UNIT_TO_ROSTER, SUBTRACT_MONEY_FROM_TREASURY, ADD_WARBAND_RATING, REMOVE_UNIT_FROM_UNITLIST, UPDATE_UNITLIST } from "../actions";
 import { getUnits } from "../utilities/utils";
@@ -88,12 +88,12 @@ const UnitBtn = (props: IUnitButton) => {
         </div>
     );
 };
-let mapStateToProps = (state: ISelectionState) => {
+let mapStateToProps = (state: IAppState) => {
     return {
         listOfUnits: state.listOfUnits,
         warbandRoster: state.warbandRoster
     }
 }
 
-// function mapStateToProps(state: ISelectionState) { ({ listOfUnits: state.listOfUnits }); return {} };
+// function mapStateToProps(state: IAppState) { ({ listOfUnits: state.listOfUnits }); return {} };
 export const UnitButtons = connect(mapStateToProps)(UnitBtn);
