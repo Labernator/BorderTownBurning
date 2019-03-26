@@ -20,13 +20,13 @@ function App(props: IAppState) {
     }
     return (
         <div className="App">
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Army:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.selectedArmy}</div></div>
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Alignment:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.selectedAlignment}</div></div>
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Objective:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.selectedObjective}</div></div>
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Treasury:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.armyTreasury}</div></div>
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Rating:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.warbandRating}</div></div>
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Stashed equipment:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.armyStash}</div></div>
-            <div style={{ display: "inline-flex" }}><div style={{ fontWeight: "bold", fontSize: 16 }}>Bodies:</div><div style={{ marginLeft: 8, marginRight: 8, fontWeight: "normal", fontSize: 16 }}>{props.warbandRoster.length} / {ArmySizeLimit}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Army:</div><div className="AppHeaderContainerContent">{props.selectedArmy}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Alignment:</div><div className="AppHeaderContainerContent">{props.selectedAlignment}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Objective:</div><div className="AppHeaderContainerContent">{props.selectedObjective}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Treasury:</div><div className="AppHeaderContainerContent">{props.armyTreasury}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Rating:</div><div className="AppHeaderContainerContent">{props.warbandRating}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Stashed equipment:</div><div className="AppHeaderContainerContent">{props.armyStash}</div></div>
+            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Bodies:</div><div className="AppHeaderContainerContent">{props.warbandRoster.length} / {ArmySizeLimit}</div></div>
             <ArmyDropdown></ArmyDropdown>
             <AlignmentDropdown listOfAlignments={props.listOfAlignments}></AlignmentDropdown>
             <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown>

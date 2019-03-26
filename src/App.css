@@ -17,45 +17,19 @@
   border-radius: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  /* min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.AppHeaderContainer {
+  display: inline-flex
 }
-
-.App-header-warband-container {
-  display: "inline-block"
-}
-
-.App-header-warband-container-section {
-  float: left;
-  padding-right: 20px;
-  padding-bottom: 10px;
-}
-.App-header-warband-container-section2 {
-  clear: left;
-  padding-right: 20px;
-  padding-bottom: 10px;
-}
-
-.App-button {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 14px;
+.AppHeaderContainerDiv {
   font-weight: bold;
-  background-color: #fff;
-  border-radius: 6px;
-  border: 1px solid #d9d9d9;
-  width: 200px;
-  clear: left;
-  float: left;
+  font-size: 16px
 }
-.App-link {
-  color: #61dafb;
+.AppHeaderContainerContent {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 16px;
 }
+
 .rc-select {
   width: 100%;
   margin-top: 10px;
