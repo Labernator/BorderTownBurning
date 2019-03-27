@@ -13,10 +13,10 @@ function App(props: IAppState) {
     if (Boolean(props.selectedArmy)) {
         ArmySizeLimit = getArmySizeLimit(props.selectedArmy);
     }
-    const moep = {
+    const unitProps = {
         listOfUnits: props.listOfUnits,
-        warbandRoster: props.warbandRoster,
         selectedArmy: props.selectedArmy,
+        warbandRoster: props.warbandRoster,
     };
     return (
         <div className="App">
@@ -51,26 +51,26 @@ function App(props: IAppState) {
             <ArmyDropdown></ArmyDropdown>
             <AlignmentDropdown listOfAlignments={props.listOfAlignments}></AlignmentDropdown>
             <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown>
-            <UnitButtons {...moep}></UnitButtons>
+            <UnitButtons {...unitProps}></UnitButtons>
             <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
         </div>
     );
 }
 
 const mapStateToProps = (state: IAppState) => ({
+    armyAchievements: state.armyAchievements,
+    armyCampaignPoints: state.armyCampaignPoints,
+    armyStash: state.armyStash,
+    armyTreasury: state.armyTreasury,
+    armyWyrdstoneShards: state.armyWyrdstoneShards,
     listOfAlignments: state.listOfAlignments,
     listOfObjectives: state.listOfObjectives,
     listOfUnits: state.listOfUnits,
-    selectedArmy: state.selectedArmy,
     selectedAlignment: state.selectedAlignment,
+    selectedArmy: state.selectedArmy,
     selectedObjective: state.selectedObjective,
-    warbandRoster: state.warbandRoster,
-    armyTreasury: state.armyTreasury,
-    armyStash: state.armyStash,
-    armyCampaignPoints: state.armyCampaignPoints,
-    armyWyrdstoneShards: state.armyWyrdstoneShards,
-    armyAchievements: state.armyAchievements,
     warbandRating: state.warbandRating,
+    warbandRoster: state.warbandRoster,
 });
 
 export const AppContainer = connect(mapStateToProps)(App);

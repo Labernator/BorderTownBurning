@@ -99,7 +99,9 @@
         "return-undefined": false,
         "no-import-side-effect": false,
         "no-unsafe-any": false,
-        "no-submodule-imports": false
+        "no-submodule-imports": false,
+        "newline-per-chained-call": false,
+        "align": false
     },
     "exclude": [
         "node_modules"
