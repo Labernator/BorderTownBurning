@@ -1,10 +1,10 @@
-import React from 'react';
-import { ICharTable } from '../constants';
-export class CharacteristicTable extends React.Component<ICharTable, {}> {
+import React from "react";
+import { ICharTable } from "../constants";
+export class CharacteristicTable extends React.Component<ICharTable> {
     constructor(props: ICharTable) {
         super(props);
     }
-    render() {
+    public render() {
         return (
             <div >
                 <table>
@@ -38,8 +38,6 @@ export class CharacteristicTable extends React.Component<ICharTable, {}> {
                             <th>Initiative</th>
                             <td>{this.props.characteristics.Initiative}</td>
                         </tr>
-
-
                         <tr>
                             <th>Attacks</th>
                             <td>{this.props.characteristics.Attacks}</td>

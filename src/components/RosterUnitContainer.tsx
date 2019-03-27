@@ -20,7 +20,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                 store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: unit });
                 store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: unit.Price });
                 store.dispatch({ type: SUBTRACT_WARBAND_RATING, payload: unit });
-                if (!store.getState().listOfUnits.find(listitem => listitem.name === unit.name)) {
+                if (!Boolean(store.getState().listOfUnits.find((listitem) => listitem.name === unit.name))) {
                     store.dispatch({ type: ADD_UNIT_TO_UNITLIST, payload: unit });
                 }
                 return undefined;
@@ -41,12 +41,13 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <Skills names={unit.Skills}></Skills>
                     <CharacteristicTable characteristics={unit.Characteristics} ></CharacteristicTable>
                 </div>
-            )
+            );
         }
-    })
+    });
     return (
         <div>{unitDivs}</div>
     );
 };
-const mapStateToProps = (state: IAppState) => { ({ warbandRoster: state.warbandRoster }); return {} };
+// tslint:disable-next-line:no-unused-expression
+const mapStateToProps = (state: IAppState) => { ({ warbandRoster: state.warbandRoster }); return {}; };
 export const UnitContainer = connect(mapStateToProps)(RosterUnitContainer);

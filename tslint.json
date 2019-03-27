@@ -98,7 +98,8 @@
         ],
         "return-undefined": false,
         "no-import-side-effect": false,
-        "no-unsafe-any": false
+        "no-unsafe-any": false,
+        "no-submodule-imports": false
     },
     "exclude": [
         "node_modules"

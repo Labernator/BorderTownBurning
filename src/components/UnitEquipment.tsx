@@ -1,9 +1,9 @@
-import React from 'react';
-import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitEquipment } from '../constants';
-import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from '../utilities/utils';
-import { store } from '..';
-import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from '../actions';
-export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
+import React from "react";
+import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitEquipment } from "../constants";
+import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from "../utilities/utils";
+import { store } from "..";
+import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from "../actions";
+export class UnitEquipment extends React.Component<IUnitEquipment> {
     private meleeEquipment: IMeleeWeapon[];
     private missileEquipment: IMissileWeapon[];
     private armourEquipment: IArmour[];
@@ -11,7 +11,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment, {}> {
     constructor(props: IUnitEquipment) {
         super(props);
         const availableEquipment = getEquipment(props.unit.allowedEquipment);
-        const equipmentNames = availableEquipment.map(equipment => equipment.name)
+        const equipmentNames = availableEquipment.map((equipment) => equipment.name);
         this.meleeEquipment = filterMeleeWeapons(equipmentNames);
         this.missileEquipment = filterMissileWeapons(equipmentNames);
         this.armourEquipment = filterArmour(equipmentNames);

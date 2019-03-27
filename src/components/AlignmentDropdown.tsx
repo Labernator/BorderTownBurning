@@ -10,8 +10,8 @@ const AlDropdown = ({ listOfAlignments }: { listOfAlignments: string[] }) => {
     const dropDownList = listOfAlignments.map((entry) => <Option key={entry} value={entry}>{entry}</Option>);
 
     const handleChange = (selectedElement: string) => {
-        store.dispatch({ type: SET_ALIGNMENT, payload: selectedElement })
-    }
+        store.dispatch({ type: SET_ALIGNMENT, payload: selectedElement });
+    };
 
     return (
         <div>
@@ -20,7 +20,8 @@ const AlDropdown = ({ listOfAlignments }: { listOfAlignments: string[] }) => {
             </Select>
         </div>
     );
-}
+};
 
-function mapStateToProps(state: IAppState) { ({ listOfAlignments: state.listOfAlignments }); return {} };
+// tslint:disable-next-line:no-unused-expression
+function mapStateToProps(state: IAppState) { ({ listOfAlignments: state.listOfAlignments }); return {}; }
 export const AlignmentDropdown = connect(mapStateToProps)(AlDropdown);

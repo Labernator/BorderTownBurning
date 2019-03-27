@@ -1,32 +1,16 @@
-import React from 'react';
-import { IList } from '../constants';
-export class SkillLists extends React.Component<IList, {}> {
+import React from "react";
+import { IList } from "../constants";
+export class SkillLists extends React.Component<IList> {
     private skillLists: string[];
     constructor(props: IList) {
         super(props);
         this.skillLists = props.names;
     }
-    createSkillListsTableRows() {
-        return this.skillLists.map((skillList) => {
-            return (
-                <tr key={skillList}>
-                    <td >{skillList}</td>
-                </tr>
-            )
-        })
-    }
-    createSkillListsHeader() {
-        return (
-            <tr>
-                <th>Skill Lists</th>
-            </tr>
-        )
-    }
 
-    render() {
+    public render() {
         const skillListTableRows = this.createSkillListsTableRows();
         let skillListHeader;
-        if (skillListTableRows.length) {
+        if (skillListTableRows.length > 0) {
             skillListHeader = this.createSkillListsHeader();
         }
         return (
@@ -38,6 +22,21 @@ export class SkillLists extends React.Component<IList, {}> {
                     </tbody>
                 </table>
             </div>
+        );
+    }
+    private createSkillListsTableRows() {
+        return this.skillLists.map((skillList) => (
+                <tr key={skillList}>
+                    <td >{skillList}</td>
+                </tr>
+            ),
+        );
+    }
+    private createSkillListsHeader() {
+        return (
+            <tr>
+                <th>Skill Lists</th>
+            </tr>
         );
     }
 }

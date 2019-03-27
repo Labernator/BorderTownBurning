@@ -10,7 +10,7 @@ const ODropdown = ({ listOfObjectives }: { listOfObjectives: string[] }) => {
     const dropDownList = listOfObjectives.map((entry) => <Option key={entry} value={entry}>{entry}</Option>);
 
     const handleChange = (selectedElement: string) => {
-        store.dispatch({ type: SET_OBJECTIVE, payload: selectedElement })
+        store.dispatch({ type: SET_OBJECTIVE, payload: selectedElement });
     };
 
     return (
@@ -21,5 +21,6 @@ const ODropdown = ({ listOfObjectives }: { listOfObjectives: string[] }) => {
         </div>
     );
 };
-function mapStateToProps(state: IAppState) { ({ listOfObjectives: state.listOfObjectives }); return {} };
+// tslint:disable-next-line:no-unused-expression
+function mapStateToProps(state: IAppState) { ({ listOfObjectives: state.listOfObjectives }); return {}; }
 export const ObjectiveDropdown = connect(mapStateToProps)(ODropdown);
