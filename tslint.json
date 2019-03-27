@@ -97,6 +97,8 @@
             180
         ],
         "return-undefined": false,
+        "no-import-side-effect": false,
+        "no-unsafe-any": false
     },
     "exclude": [
         "node_modules"

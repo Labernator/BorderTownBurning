@@ -1,8 +1,8 @@
-import { ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_ROSTER, ADD_UNIT_TO_UNITLIST, ADD_WARBAND_RATING, REMOVE_UNIT_FROM_ROSTER, REMOVE_UNIT_FROM_UNITLIST, RESET_TREASURY, RESTRICT_ALIGNMENTS, RESTRICT_OBJECTIVES, RESTRICT_UNITS, SET_ALIGNMENT, SET_ARMY, SET_OBJECTIVE, StateActions, SUBTRACT_MONEY_FROM_TREASURY, SUBTRACT_WARBAND_RATING, UPDATE_UNIT, UPDATE_UNITLIST } from "../actions";
+import * as Actions from "../actions";
 import { IAppState, initialState, IUnit } from "../constants";
 const getUnitRating = (unit: IUnit) => {
     let rating = 0;
-    if (unit) {
+    if (Boolean(unit)) {
         rating += 5;
         rating += unit.experience;
         if (unit.isLarge) {
@@ -12,44 +12,44 @@ const getUnitRating = (unit: IUnit) => {
         }
     }
     return rating;
-}
-export function stateReducer(state: IAppState = initialState, action: StateActions): IAppState {
+};
+export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
-        case SET_ARMY:
+        case Actions.SET_ARMY:
             return { ...state, selectedArmy: action.payload };
-        case SET_ALIGNMENT:
+        case Actions.SET_ALIGNMENT:
             return { ...state, selectedAlignment: action.payload };
-        case SET_OBJECTIVE:
+        case Actions.SET_OBJECTIVE:
             return { ...state, selectedObjective: action.payload };
-        case RESTRICT_ALIGNMENTS:
+        case Actions.RESTRICT_ALIGNMENTS:
             return { ...state, listOfAlignments: action.payload };
-        case RESTRICT_OBJECTIVES:
+        case Actions.RESTRICT_OBJECTIVES:
             return { ...state, listOfObjectives: action.payload };
-        case RESTRICT_UNITS:
+        case Actions.RESTRICT_UNITS:
             return { ...state, listOfUnits: action.payload };
-        case ADD_UNIT_TO_ROSTER:
-            return { ...state, warbandRoster: [...state.warbandRoster, action.payload] }
-        case REMOVE_UNIT_FROM_ROSTER:
+        case Actions.ADD_UNIT_TO_ROSTER:
+            return { ...state, warbandRoster: [...state.warbandRoster, action.payload] };
+        case Actions.REMOVE_UNIT_FROM_ROSTER:
             return { ...state, warbandRoster: state.warbandRoster.filter((unit) => unit.name !== action.payload.name) };
-        case ADD_MONEY_TO_TREASURY:
+        case Actions.ADD_MONEY_TO_TREASURY:
             return { ...state, armyTreasury: state.armyTreasury + action.payload };
-        case RESET_TREASURY:
+        case Actions.RESET_TREASURY:
             return { ...state, armyTreasury: 0 };
-        case SUBTRACT_MONEY_FROM_TREASURY:
+        case Actions.SUBTRACT_MONEY_FROM_TREASURY:
             return { ...state, armyTreasury: state.armyTreasury - action.payload };
-        case REMOVE_UNIT_FROM_UNITLIST:
+        case Actions.REMOVE_UNIT_FROM_UNITLIST:
             return { ...state, listOfUnits: state.listOfUnits.filter((unit) => unit.name !== action.payload) };
-        case ADD_UNIT_TO_UNITLIST:
+        case Actions.ADD_UNIT_TO_UNITLIST:
             return { ...state, listOfUnits: [...state.listOfUnits, action.payload] };
-        case UPDATE_UNITLIST:
+        case Actions.UPDATE_UNITLIST:
             return { ...state, listOfUnits: action.payload };
-        case ADD_WARBAND_RATING:
+        case Actions.ADD_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating + getUnitRating(action.payload) };
-        case SUBTRACT_WARBAND_RATING:
+        case Actions.SUBTRACT_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating - getUnitRating(action.payload) };
-        case UPDATE_UNIT:
+        case Actions.UPDATE_UNIT:
             const unitIndex = state.warbandRoster.findIndex((unit) => unit.name === action.payload.name);
-            return { ...state, warbandRoster: [...state.warbandRoster.slice(0, unitIndex), action.payload, ...state.warbandRoster.slice(unitIndex + 1)] }
+            return { ...state, warbandRoster: [...state.warbandRoster.slice(0, unitIndex), action.payload, ...state.warbandRoster.slice(unitIndex + 1)] };
         default:
             return state;
     }

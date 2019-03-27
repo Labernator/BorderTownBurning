@@ -9,31 +9,52 @@ import { getArmySizeLimit } from "./utilities/utils";
 import "./App.css";
 import { UnitButtons } from "./components/UnitButtons";
 function App(props: IAppState) {
-    let ArmySizeLimit: number = 0;
-    if (props.selectedArmy) {
+    let ArmySizeLimit = 0;
+    if (Boolean(props.selectedArmy)) {
         ArmySizeLimit = getArmySizeLimit(props.selectedArmy);
     }
     const moep = {
         listOfUnits: props.listOfUnits,
         warbandRoster: props.warbandRoster,
-        selectedArmy: props.selectedArmy
-    }
+        selectedArmy: props.selectedArmy,
+    };
     return (
         <div className="App">
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Army:</div><div className="AppHeaderContainerContent">{props.selectedArmy}</div></div>
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Alignment:</div><div className="AppHeaderContainerContent">{props.selectedAlignment}</div></div>
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Objective:</div><div className="AppHeaderContainerContent">{props.selectedObjective}</div></div>
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Treasury:</div><div className="AppHeaderContainerContent">{props.armyTreasury}</div></div>
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Rating:</div><div className="AppHeaderContainerContent">{props.warbandRating}</div></div>
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Stashed equipment:</div><div className="AppHeaderContainerContent">{props.armyStash}</div></div>
-            <div className="AppHeaderContainer"><div className="AppHeaderContainerDiv">Bodies:</div><div className="AppHeaderContainerContent">{props.warbandRoster.length} / {ArmySizeLimit}</div></div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Army:</div>
+                <div className="AppHeaderContainerContent">{props.selectedArmy}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Alignment:</div>
+                <div className="AppHeaderContainerContent">{props.selectedAlignment}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Objective:</div>
+                <div className="AppHeaderContainerContent">{props.selectedObjective}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Treasury:</div>
+                <div className="AppHeaderContainerContent">{props.armyTreasury}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Rating:</div>
+                <div className="AppHeaderContainerContent">{props.warbandRating}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Stashed equipment:</div>
+                <div className="AppHeaderContainerContent">{props.armyStash}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Bodies:</div>
+                <div className="AppHeaderContainerContent">{props.warbandRoster.length} / {ArmySizeLimit}</div>
+            </div>
             <ArmyDropdown></ArmyDropdown>
             <AlignmentDropdown listOfAlignments={props.listOfAlignments}></AlignmentDropdown>
             <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown>
             <UnitButtons {...moep}></UnitButtons>
             <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
         </div>
-    )
+    );
 }
 
 const mapStateToProps = (state: IAppState) => ({
@@ -49,7 +70,7 @@ const mapStateToProps = (state: IAppState) => ({
     armyCampaignPoints: state.armyCampaignPoints,
     armyWyrdstoneShards: state.armyWyrdstoneShards,
     armyAchievements: state.armyAchievements,
-    warbandRating: state.warbandRating
+    warbandRating: state.warbandRating,
 });
 
 export const AppContainer = connect(mapStateToProps)(App);

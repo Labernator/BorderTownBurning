@@ -12,7 +12,7 @@ export interface ILabel {
 }
 
 export interface IUnitEquipment {
-    unit: IUnit,
+    unit: IUnit;
 }
 
 export const initialState: IAppState = {
@@ -41,15 +41,15 @@ export const initialState: IAppState = {
     armyCampaignPoints: 0,
     armyWyrdstoneShards: 0,
     armyAchievements: [],
-    warbandRating: 0
-}
+    warbandRating: 0,
+};
 
 export interface Equipment {
-    name: string,
-    cost: number
+    name: string;
+    cost: number;
 }
 export interface EquipmentList {
-    name: string,
+    name: string;
     modificationOptions: string[];
     equipment: Equipment[];
 }
@@ -73,10 +73,10 @@ export interface IAppState {
     warbandRoster: IUnit[];
     armyTreasury: number;
     armyStash: string[];
-    armyCampaignPoints: number,
-    armyWyrdstoneShards: number,
-    armyAchievements: string[],
-    warbandRating: number
+    armyCampaignPoints: number;
+    armyWyrdstoneShards: number;
+    armyAchievements: string[];
+    warbandRating: number;
 }
 
 export interface IUnit {
@@ -131,7 +131,7 @@ export interface IArmour extends IEquip {
 }
 
 export interface IMiscallaneous extends IEquip {
-    type: string
+    type: string;
 }
 interface IEquip {
     name: string;

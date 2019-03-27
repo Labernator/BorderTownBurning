@@ -1,50 +1,38 @@
 import { store } from "..";
 import { Equipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit } from "../constants";
+// import * as ArmyJson from "../constants/Armies.json";
+// const ArmyList: IArmy[] = ArmyJson.armies;
 
 const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
 const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
 const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;
 const ArmourEquipment: IArmour[] = require("../constants/Equipment.json").equipment[2].Armour;
 const MiscallaneousEquipment: IMiscallaneous[] = require("../constants/Equipment.json").equipment[3].Miscallaneous;
-export const getMeleeWeapons = (): IMeleeWeapon[] => {
-    return MeleeEquipment;
-}
+export const getMeleeWeapons = (): IMeleeWeapon[] => MeleeEquipment;
+export const getMissileWeapons = (): IMissileWeapon[] => RangeEquipment;
+export const getArmours = (): IArmour[] => ArmourEquipment;
+export const getMisc = (): IMiscallaneous[] => MiscallaneousEquipment;
+export const getArmyList = (): string[] => ArmyList.map((army) => army.name);
 
 export const filterMeleeWeapons = (filterList: string[]): IMeleeWeapon[] => {
     const MeleeWeapons = getMeleeWeapons();
-    return MeleeWeapons ? MeleeWeapons.filter(weapon => filterList.includes(weapon.name)) : [];
-}
-
-export const getMissileWeapons = (): IMissileWeapon[] => {
-    return RangeEquipment;
-}
+    return MeleeWeapons.length > 0 ? MeleeWeapons.filter((weapon) => filterList.includes(weapon.name)) : [];
+};
 
 export const filterMissileWeapons = (filterList: string[]): IMissileWeapon[] => {
-    const RangeEquipment = getMissileWeapons();
-    return RangeEquipment ? RangeEquipment.filter(weapon => filterList.includes(weapon.name)) : [];
-}
-
-export const getArmours = (): IArmour[] => {
-    return ArmourEquipment;
-}
+    const MissileEquipment = getMissileWeapons();
+    return MissileEquipment.length > 0 ? MissileEquipment.filter((weapon) => filterList.includes(weapon.name)) : [];
+};
 
 export const filterArmour = (filterList: string[]): IArmour[] => {
     const Armour = getArmours();
-    return Armour ? Armour.filter(armour => filterList.includes(armour.name)) : [];
-}
-
-export const getMisc = (): IMiscallaneous[] => {
-    return MiscallaneousEquipment;
-}
+    return Armour.length > 0 ? Armour.filter((armour) => filterList.includes(armour.name)) : [];
+};
 
 export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
-    const MiscallaneousEquipment = getMisc();
-    return MiscallaneousEquipment ? MiscallaneousEquipment.filter(misc => filterList.includes(misc.name)) : [];
-}
-
-export const getArmyList = (): string[] => {
-    return ArmyList.map((army) => army.name);
-}
+    const MiscEquipment = getMisc();
+    return MiscEquipment.length > 0 ? MiscEquipment.filter((misc) => filterList.includes(misc.name)) : [];
+};
 
 export function getRestrictedAlignmentList(selectedArmy: string): string[] {
     const Army = ArmyList.find((army) => army.name === selectedArmy);
@@ -57,10 +45,10 @@ export function getRestrictedAlignmentList(selectedArmy: string): string[] {
 
 export function getEquipment(equipmentListNames: string[]): Equipment[] {
     const Army = ArmyList.find((army) => army.name === store.getState().selectedArmy);
-    if (Army !== undefined && equipmentListNames.length) {
+    if (Army !== undefined && equipmentListNames.length > 0) {
         return equipmentListNames.reduce((filteredArr, equipmentListName) => {
-            const equipmentList = Army.allowedEquipment.find(equipmentList => equipmentList.name === equipmentListName)
-            if (equipmentList) {
+            const equipmentList = Army.allowedEquipment.find((equiList) => equiList.name === equipmentListName);
+            if (equipmentList !== undefined) {
                 filteredArr = filteredArr.concat(equipmentList.equipment);
             }
             return filteredArr;
