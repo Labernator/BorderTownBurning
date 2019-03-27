@@ -29,8 +29,7 @@ export class SkillLists extends React.Component<IList> {
                 <tr key={skillList}>
                     <td >{skillList}</td>
                 </tr>
-            ),
-        );
+        ));
     }
     private createSkillListsHeader() {
         return (

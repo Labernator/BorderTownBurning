@@ -1,6 +1,6 @@
 import React from "react";
 import { IList } from "../constants";
-export class Skills extends React.Component<IList, {}> {
+export class Skills extends React.Component<IList> {
     private skills: string[];
     constructor(props: IList) {
         super(props);
@@ -29,8 +29,7 @@ export class Skills extends React.Component<IList, {}> {
                 <tr key={skill}>
                     <td>{skill}</td>
                 </tr>
-            ),
-        );
+        ));
     }
     private createSkillsHeader() {
         return (

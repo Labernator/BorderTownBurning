@@ -70,13 +70,12 @@ const UnitBtn = (props: IUnitButton) => {
     };
     const dropDownList = props.listOfUnits.map((unit: IUnit) => {
         if (unit.Price > store.getState().armyTreasury) {
-            return <button disabled title="You don't have enough funds to buy this unit." key={unit.name} onClick={() => addUnitToRoster(unit)} className="DisabledButton">{unit.name} ({unit.Price})</button>;
+            const notEnoughFunds = "You don't have enough funds to buy this unit.";
+            return <button disabled title={notEnoughFunds} key={unit.name} onClick={() => addUnitToRoster(unit)} className="DisabledButton">{unit.name} ({unit.Price})</button>;
         } else {
             return <button key={unit.name} onClick={() => addUnitToRoster(unit)} className="EnabledButton">{unit.name} ({unit.Price})</button>;
         }
-    }
-
-    );
+    });
     return (
         <div>
             {dropDownList}

@@ -18,99 +18,32 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
         this.miscEquipment = filterMiscallaneous(equipmentNames);
     }
 
-    addItemToUnit(item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) {
-        const updateUnit = this.props.unit;
-        updateUnit.equipment.push(item.name);
-        store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
-        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: item.cost });
-    }
-    createMeleeTableRows() {
-        return this.meleeEquipment.map((weapon) => {
-            return (
-                <tr key={weapon.name}>
-                    <td>{weapon.name}</td>
-                    <td>{weapon.cost}</td>
-                    <td>
-                        <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
-                    </td>
-                </tr>
-            )
-        })
-    }
-    createMissileTableRows() {
-        return this.missileEquipment.map((weapon) => {
-            return (
-                <tr key={weapon.name}>
-                    <td>{weapon.name}</td>
-                    <td>{weapon.cost}</td>
-                    <td>
-                        <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
-                    </td>
-                </tr>
-            )
-        })
-    }
-    createArmorTableRows() {
-        return this.armourEquipment.map((armour) => {
-            return (
-                <tr key={armour.name}>
-                    <td>{armour.name}</td>
-                    <td>{armour.cost}</td>
-                    <td>
-                        <button onClick={() => this.addItemToUnit(armour)}>Add</button>
-                    </td>
-                </tr>
-            )
-        })
-    }
-    createMiscTableRows() {
-        return this.miscEquipment.map((misc) => {
-            return (
-                <tr key={misc.name}>
-                    <td>{misc.name}</td>
-                    <td>{misc.cost}</td>
-                    <td>
-                        <button onClick={() => this.addItemToUnit(misc)}>Add</button>
-                    </td>
-                </tr>
-            )
-        })
-    }
-    createTh(input: string) {
-        return (
-            <tr key={input}>
-                <th>{input}</th>
-                <th>Cost</th>
-            </tr>
-        )
-    }
-    createTableHeader(input: string) {
-        return (
-            <tr key={input}>
-                <th colSpan={3}>{input}</th>
-            </tr>
-        )
-    }
-
-    render() {
+    public render() {
         const meleeTableRows = this.createMeleeTableRows();
-        let meleeHeader, meleeTableHeader, missileHeader, missileTableHeader, armourHeader, armourTableHeader, miscTableHeader, miscHeader;
-        if (meleeTableRows.length) {
+        let meleeHeader;
+        let meleeTableHeader;
+        let missileHeader;
+        let missileTableHeader;
+        let armourHeader;
+        let armourTableHeader;
+        let miscTableHeader;
+        let miscHeader;
+        if (meleeTableRows.length > 0) {
             meleeTableHeader = this.createTableHeader("Melee Weapons");
             meleeHeader = this.createTh("Weapon");
         }
         const missileTableRows = this.createMissileTableRows();
-        if (missileTableRows.length) {
+        if (missileTableRows.length > 0) {
             missileTableHeader = this.createTableHeader("Missile Weapons");
             missileHeader = this.createTh("Weapon");
         }
         const armourRows = this.createArmorTableRows();
-        if (armourRows.length) {
+        if (armourRows.length > 0) {
             armourTableHeader = this.createTableHeader("Armours");
             armourHeader = this.createTh("Armour");
         }
         const miscRows = this.createMiscTableRows();
-        if (miscRows.length) {
+        if (miscRows.length > 0) {
             miscTableHeader = this.createTableHeader("Miscallaneous Equipment");
             miscHeader = this.createTh("Misc");
         }
@@ -133,6 +66,72 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
                     </tbody>
                 </table>
             </div>
+        );
+    }
+
+    private addItemToUnit(item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) {
+        const updateUnit = this.props.unit;
+        updateUnit.equipment.push(item.name);
+        store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
+        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: item.cost });
+    }
+    private createMeleeTableRows() {
+        return this.meleeEquipment.map((weapon) => (
+            <tr key={weapon.name}>
+                <td>{weapon.name}</td>
+                <td>{weapon.cost}</td>
+                <td>
+                    <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
+                </td>
+            </tr>
+        ));
+    }
+    private createMissileTableRows() {
+        return this.missileEquipment.map((weapon) => (
+            <tr key={weapon.name}>
+                <td>{weapon.name}</td>
+                <td>{weapon.cost}</td>
+                <td>
+                    <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
+                </td>
+            </tr>
+        ));
+    }
+    private createArmorTableRows() {
+        return this.armourEquipment.map((armour) => (
+                <tr key={armour.name}>
+                    <td>{armour.name}</td>
+                    <td>{armour.cost}</td>
+                    <td>
+                        <button onClick={() => this.addItemToUnit(armour)}>Add</button>
+                    </td>
+                </tr>
+        ));
+    }
+    private createMiscTableRows() {
+        return this.miscEquipment.map((misc) => (
+                <tr key={misc.name}>
+                    <td>{misc.name}</td>
+                    <td>{misc.cost}</td>
+                    <td>
+                        <button onClick={() => this.addItemToUnit(misc)}>Add</button>
+                    </td>
+                </tr>
+        ));
+    }
+    private createTh(input: string) {
+        return (
+            <tr key={input}>
+                <th>{input}</th>
+                <th>Cost</th>
+            </tr>
+        );
+    }
+    private createTableHeader(input: string) {
+        return (
+            <tr key={input}>
+                <th colSpan={3}>{input}</th>
+            </tr>
         );
     }
 }

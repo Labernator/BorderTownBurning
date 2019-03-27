@@ -25,9 +25,9 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                 }
                 return undefined;
             };
-
+            const uniqueKey = `${unit.name}${counter}`;
             return (
-                <div key={unit.name + counter} style={{ border: "solid", display: "inline-block" }}>
+                <div key={uniqueKey} style={{ border: "solid", display: "inline-block" }}>
                     <button onClick={() => handleClick()} style={{ fontWeight: "bold" }}>
                         X
                     </button>
