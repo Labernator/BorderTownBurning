@@ -35,8 +35,29 @@ export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
     return MiscEquipment.length > 0 ? MiscEquipment.filter((misc) => filterList.includes(misc.name)) : [];
 };
 
-export function getEquipment = (equipmentName: string): IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous {
-}
+export const getEquipmentByName = (equipmentName: string): IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous | undefined => {
+    const MeleeWeapons = getMeleeWeapons();
+    const MissileEquipment = getMissileWeapons();
+    const Armour = getArmours();
+    const MiscEquipment = getMisc();
+    const meleeWeapon = MeleeWeapons.find((melee) => melee.name === equipmentName);
+    if (meleeWeapon !== undefined) {
+        return meleeWeapon;
+    }
+    const missileWeapon = MissileEquipment.find((missile) => missile.name === equipmentName);
+    if (missileWeapon !== undefined) {
+        return missileWeapon;
+    }
+    const foundArmour = Armour.find((armour) => armour.name === equipmentName);
+    if (foundArmour !== undefined) {
+        return foundArmour;
+    }
+    const miscEquipment = MiscEquipment.find((misc) => misc.name === equipmentName);
+    if (miscEquipment !== undefined) {
+        return miscEquipment;
+    }
+    return undefined;
+};
 
 export function getRestrictedAlignmentList(selectedArmy: string): string[] {
     const Army = ArmyList.find((army) => army.name === selectedArmy);

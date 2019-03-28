@@ -2,6 +2,7 @@ import React from "react";
 import { IUnitEquipment } from "../constants";
 import { store } from "..";
 import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY } from "../actions";
+import { getEquipmentByName } from "../utilities/utils";
 export class Equipment extends React.Component<IUnitEquipment> {
     private readonly equipment: string[];
     constructor(props: IUnitEquipment) {
@@ -30,10 +31,14 @@ export class Equipment extends React.Component<IUnitEquipment> {
         const updateUnit = this.props.unit;
         const firstFoundIndex = updateUnit.equipment.findIndex((equip) => equip === equipmentName);
         if (firstFoundIndex !== -1) {
-            const itemValue = updateUnit.equipment[firstFoundIndex].
+            const originalEquipment = getEquipmentByName(equipmentName);
+            let cost = 0;
+            if (originalEquipment !== undefined) {
+                cost = originalEquipment.cost;
+            }
             updateUnit.equipment.splice(firstFoundIndex);
             store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
-            store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: item.cost });
+            store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: cost });
         }
     }
     private getEquipmentContainer() {
