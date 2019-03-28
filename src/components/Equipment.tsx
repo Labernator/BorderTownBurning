@@ -1,7 +1,7 @@
 import React from "react";
 import { IList } from "../constants";
 export class Equipment extends React.Component<IList> {
-    private equipment: string[];
+    private readonly equipment: string[];
     constructor(props: IList) {
         super(props);
         this.equipment = props.names;
@@ -15,11 +15,11 @@ export class Equipment extends React.Component<IList> {
         }
         return (
             <div >
+                <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
                 <table>
                     <tbody>
-                        {equiHeader}
                         {equiTableRows}
-                        <tr><td><button onClick={() => this.showEquipment()} style={{ width: 150 }}>buy extra equipment</button></td></tr>
+                        <tr><td><button onClick={() => this.showEquipment()} className="EnabledButton">buy additional equipment</button></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -33,10 +33,10 @@ export class Equipment extends React.Component<IList> {
     }
     private createEquipmentTableRows() {
         return this.equipment.map((equi) => (
-                <tr key={equi}>
-                    <td>{equi}</td>
-                </tr>
-            ),
+            <tr key={equi}>
+                <td>{equi}</td>
+            </tr>
+        ),
         );
     }
     private createEquipmentHeader() {

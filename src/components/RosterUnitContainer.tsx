@@ -16,7 +16,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     const unitDivs = warbandRoster.map((unit) => {
         counter++;
         if (unit.name !== "") {
-            const handleClick = () => {
+            const removeUnit = () => {
                 store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: unit });
                 store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: unit.Price });
                 store.dispatch({ type: SUBTRACT_WARBAND_RATING, payload: unit });
@@ -28,7 +28,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
             const uniqueKey = `${unit.name}${counter}`;
             return (
                 <div key={uniqueKey} style={{ border: "solid", display: "inline-block" }}>
-                    <button onClick={() => handleClick()} style={{ fontWeight: "bold" }}>
+                    <button onClick={removeUnit} className="EnabledButton">
                         X
                     </button>
                     <UnitLabel title="Unit Type" value={unit.name}></UnitLabel>
