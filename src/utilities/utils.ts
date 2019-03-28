@@ -1,7 +1,6 @@
 import { store } from "..";
 import { Equipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, IEquipment } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
-import * as EquipmentJson from "../constants/Equipment.json";
 const ArmyList = ArmyJson.armies as IArmy[];
 
 // const ArmyList: IArmy[] = require("../constants/Armies.json").armies;

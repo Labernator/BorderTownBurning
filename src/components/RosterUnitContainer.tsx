@@ -34,7 +34,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <UnitLabel title="Unit Type" value={unit.name}></UnitLabel>
                     <UnitLabel title="Unit Cost" value={unit.Price.toString()}></UnitLabel>
                     <UnitLabel title="XP" value={unit.experience.toString()}></UnitLabel>
-                    <Equipment names={unit.equipment}></Equipment>
+                    <Equipment unit={unit}></Equipment>
                     <UnitEquipment unit={unit}></UnitEquipment>
                     <SkillLists names={unit.SkillLists}></SkillLists>
                     <Skills names={unit.Skills}></Skills>
