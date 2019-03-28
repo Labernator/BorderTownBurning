@@ -7,6 +7,7 @@ import { stateReducer } from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 
 export const store = createStore(stateReducer);
+// tslint:disable-next-line:no-console
 console.log(store.getState());
 
 ReactDOM.render(

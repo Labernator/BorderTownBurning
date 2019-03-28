@@ -35,6 +35,9 @@ export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
     return MiscEquipment.length > 0 ? MiscEquipment.filter((misc) => filterList.includes(misc.name)) : [];
 };
 
+export function getEquipment = (equipmentName: string): IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous {
+}
+
 export function getRestrictedAlignmentList(selectedArmy: string): string[] {
     const Army = ArmyList.find((army) => army.name === selectedArmy);
     if (Army !== undefined) {
