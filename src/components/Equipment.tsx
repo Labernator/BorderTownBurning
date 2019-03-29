@@ -9,9 +9,7 @@ export class Equipment extends React.Component<IUnitEquipment> {
         super(props);
         this.equipment = props.unit.equipment;
     }
-
     public render() {
-        const equiTableRows = this.createEquipmentTableRows();
         const equipmentList = this.getEquipmentContainer();
         return (
             <div >
@@ -36,7 +34,7 @@ export class Equipment extends React.Component<IUnitEquipment> {
             if (originalEquipment !== undefined) {
                 cost = originalEquipment.cost;
             }
-            updateUnit.equipment.splice(firstFoundIndex);
+            updateUnit.equipment.splice(firstFoundIndex, 1);
             store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
             store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: cost });
         }
@@ -48,13 +46,5 @@ export class Equipment extends React.Component<IUnitEquipment> {
                 <button onClick={() => this.removeItem(equi)} >X</button>
             </div>
         ));
-    }
-    private createEquipmentTableRows() {
-        return this.equipment.map((equi) => (
-            <tr key={equi}>
-                <td>{equi}</td>
-            </tr>
-        ),
-        );
     }
 }
