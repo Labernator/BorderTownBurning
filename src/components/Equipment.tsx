@@ -9,7 +9,6 @@ export class Equipment extends React.Component<IUnitEquipment> {
         super(props);
         this.equipment = props.unit.equipment;
     }
-
     public render() {
         const equipmentList = this.getEquipmentContainer();
         return (
