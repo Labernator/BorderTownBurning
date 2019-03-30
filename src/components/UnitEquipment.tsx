@@ -4,10 +4,10 @@ import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallan
 import { store } from "..";
 import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from "../actions";
 export class UnitEquipment extends React.Component<IUnitEquipment> {
-    private meleeEquipment: IMeleeWeapon[];
-    private missileEquipment: IMissileWeapon[];
-    private armourEquipment: IArmour[];
-    private miscEquipment: IMiscallaneous[];
+    private readonly meleeEquipment: IMeleeWeapon[];
+    private readonly missileEquipment: IMissileWeapon[];
+    private readonly armourEquipment: IArmour[];
+    private readonly miscEquipment: IMiscallaneous[];
     constructor(props: IUnitEquipment) {
         super(props);
         const availableEquipment = getEquipment(props.unit.allowedEquipment);
@@ -99,24 +99,24 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
     }
     private createArmorTableRows() {
         return this.armourEquipment.map((armour) => (
-                <tr key={armour.name}>
-                    <td>{armour.name}</td>
-                    <td>{armour.cost}</td>
-                    <td>
-                        <button onClick={() => this.addItemToUnit(armour)}>Add</button>
-                    </td>
-                </tr>
+            <tr key={armour.name}>
+                <td>{armour.name}</td>
+                <td>{armour.cost}</td>
+                <td>
+                    <button onClick={() => this.addItemToUnit(armour)}>Add</button>
+                </td>
+            </tr>
         ));
     }
     private createMiscTableRows() {
         return this.miscEquipment.map((misc) => (
-                <tr key={misc.name}>
-                    <td>{misc.name}</td>
-                    <td>{misc.cost}</td>
-                    <td>
-                        <button onClick={() => this.addItemToUnit(misc)}>Add</button>
-                    </td>
-                </tr>
+            <tr key={misc.name}>
+                <td>{misc.name}</td>
+                <td>{misc.cost}</td>
+                <td>
+                    <button onClick={() => this.addItemToUnit(misc)}>Add</button>
+                </td>
+            </tr>
         ));
     }
     private createTh(input: string) {

@@ -19,8 +19,6 @@ const ArDropdown = () => {
         store.dispatch({ type: Actions.RESTRICT_ALIGNMENTS, payload: getRestrictedAlignmentList(selectedElement) });
         store.dispatch({ type: Actions.RESTRICT_OBJECTIVES, payload: getRestrictedObjectiveList(selectedElement) });
         store.dispatch({ type: Actions.RESTRICT_UNITS, payload: getUnits(selectedElement) });
-        // tslint:disable-next-line:no-console
-        console.log(store.getState());
     };
 
     return (

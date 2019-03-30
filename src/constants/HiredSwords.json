@@ -2,7 +2,7 @@
     "hiredSwords": [
         {
             "name": "Dwarf Runesmith Journeyman",
-            "Characteristics": {
+            "characteristics": {
                 "Movement": 3,
                 "WeaponSkill": 4,
                 "BallisticSkill": 3,
@@ -13,8 +13,16 @@
                 "Attacks": 1,
                 "Leadership": 9
             },
-            "Alignment": ["Lawful", "Lawful/Neutral", "Neutral"],
-            "Exclude": ["Dark Elves", "Shadow Warriors", "Forest Walker"],
+            "Alignment": [
+                "Lawful",
+                "Lawful/Neutral",
+                "Neutral"
+            ],
+            "Exclude": [
+                "Dark Elves",
+                "Shadow Warriors",
+                "Forest Walker"
+            ],
             "Race": "Dwarf",
             "HiringCost": 30,
             "UpkeepCost": 15,
@@ -27,7 +35,7 @@
                 "Armour",
                 "Armourer"
             ],
-            "SkillLists": [
+            "skillLists": [
                 "Strength",
                 "Combat",
                 "Speed",
@@ -44,7 +52,7 @@
         },
         {
             "name": "Halfling Scout",
-            "Characteristics": {
+            "characteristics": {
                 "Movement": 4,
                 "WeaponSkill": 2,
                 "BallisticSkill": 4,
@@ -55,7 +63,11 @@
                 "Attacks": 1,
                 "Leadership": 8
             },
-            "Alignment": ["Lawful", "Lawful/Neutral", "Neutral"],
+            "Alignment": [
+                "Lawful",
+                "Lawful/Neutral",
+                "Neutral"
+            ],
             "Exclude": [],
             "Race": "Halfling",
             "HiringCost": 15,
@@ -64,7 +76,7 @@
             "Skills": [
                 "Cook"
             ],
-            "SkillLists": [
+            "skillLists": [
                 "Shooting",
                 "Speed",
                 "Halfling"
@@ -81,7 +93,7 @@
         },
         {
             "name": "Dark Elf Sorceress",
-            "Characteristics": {
+            "characteristics": {
                 "Movement": 5,
                 "WeaponSkill": 4,
                 "BallisticSkill": 4,
@@ -92,8 +104,19 @@
                 "Attacks": 1,
                 "Leadership": 8
             },
-            "Alignment": ["Neutral", "Neutral/Chaotic", "Chaotic"],
-            "Exclude": ["Dark Elves","Forest Walker","Shadow Warriors", "Dwarf Treasure Hunter", "Dwarf Ranger", "Kislevit"],
+            "Alignment": [
+                "Neutral",
+                "Neutral/Chaotic",
+                "Chaotic"
+            ],
+            "Exclude": [
+                "Dark Elves",
+                "Forest Walker",
+                "Shadow Warriors",
+                "Dwarf Treasure Hunter",
+                "Dwarf Ranger",
+                "Kislevit"
+            ],
             "Race": "Elf",
             "HiringCost": 65,
             "UpkeepCost": 15,
@@ -101,9 +124,11 @@
             "Skills": [
                 "Outcast",
                 "Excellent Sight",
-                "Kindred Hatred", "Tolerant", "Magic User"
+                "Kindred Hatred",
+                "Tolerant",
+                "Magic User"
             ],
-            "SkillLists": [
+            "skillLists": [
                 "Shooting",
                 "Speed",
                 "Halfling"

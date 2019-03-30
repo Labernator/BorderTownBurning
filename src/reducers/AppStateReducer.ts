@@ -8,7 +8,7 @@ const getUnitRating = (unit: IUnit) => {
         if (unit.isLarge) {
             rating += 20;
         } else {
-            rating += unit.Price > 60 ? 5 : unit.Price > 80 ? 10 : unit.Price > 100 ? 15 : 0;
+            rating += unit.price > 60 ? 5 : unit.price > 80 ? 10 : unit.price > 100 ? 15 : 0;
         }
     }
     return rating;
@@ -16,11 +16,13 @@ const getUnitRating = (unit: IUnit) => {
 export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
         case Actions.SET_ARMY:
-            return { ...state, selectedArmy: action.payload };
+            return { ...state, armyType: action.payload };
+        case Actions.SET_ARMYNAME:
+            return { ...state, armyName: action.payload };
         case Actions.SET_ALIGNMENT:
-            return { ...state, selectedAlignment: action.payload };
+            return { ...state, armyAlignment: action.payload };
         case Actions.SET_OBJECTIVE:
-            return { ...state, selectedObjective: action.payload };
+            return { ...state, armyObjective: action.payload };
         case Actions.RESTRICT_ALIGNMENTS:
             return { ...state, listOfAlignments: action.payload };
         case Actions.RESTRICT_OBJECTIVES:
@@ -37,12 +39,16 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
             return { ...state, armyTreasury: 0 };
         case Actions.SUBTRACT_MONEY_FROM_TREASURY:
             return { ...state, armyTreasury: state.armyTreasury - action.payload };
+        case Actions.SET_TREASURY:
+            return { ...state, armyTreasury: action.payload };
         case Actions.REMOVE_UNIT_FROM_UNITLIST:
             return { ...state, listOfUnits: state.listOfUnits.filter((unit) => unit.name !== action.payload) };
         case Actions.ADD_UNIT_TO_UNITLIST:
             return { ...state, listOfUnits: [...state.listOfUnits, action.payload] };
         case Actions.UPDATE_UNITLIST:
             return { ...state, listOfUnits: action.payload };
+        case Actions.SET_WARBAND_RATING:
+            return { ...state, warbandRating: action.payload };
         case Actions.ADD_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating + getUnitRating(action.payload) };
         case Actions.SUBTRACT_WARBAND_RATING:

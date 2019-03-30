@@ -16,9 +16,15 @@ export interface IUnitEquipment {
 }
 
 export const initialState: IAppState = {
-    selectedArmy: "",
-    selectedAlignment: "",
-    selectedObjective: "",
+    armyAchievements: [],
+    armyAlignment: "",
+    armyCampaignPoints: 0,
+    armyName: "",
+    armyObjective: "",
+    armyStash: [],
+    armyTreasury: 0,
+    armyType: "",
+    armyWyrdstoneShards: 0,
     listOfAlignments: [
         "Lawful",
         "Lawful/Neutral",
@@ -35,13 +41,8 @@ export const initialState: IAppState = {
         "The Damned Shall Burn",
     ],
     listOfUnits: [],
-    warbandRoster: [],
-    armyTreasury: 0,
-    armyStash: [],
-    armyCampaignPoints: 0,
-    armyWyrdstoneShards: 0,
-    armyAchievements: [],
     warbandRating: 0,
+    warbandRoster: [],
 };
 
 export interface Equipment {
@@ -64,9 +65,10 @@ export interface IArmy {
 }
 
 export interface IAppState {
-    selectedArmy: string;
-    selectedAlignment: string;
-    selectedObjective: string;
+    armyType: string;
+    armyName: string;
+    armyAlignment: string;
+    armyObjective: string;
     listOfAlignments: string[];
     listOfObjectives: string[];
     listOfUnits: IUnit[];
@@ -81,12 +83,12 @@ export interface IAppState {
 
 export interface IUnit {
     name: string;
-    Characteristics: ICharacteristics;
-    Price: number;
+    characteristics: ICharacteristics;
+    price: number;
     isHero: boolean;
     isLarge: boolean;
-    Skills: string[];
-    SkillLists: string[];
+    skills: string[];
+    skillLists: string[];
     allowedEquipment: string[];
     include: number[];
     experience: number;

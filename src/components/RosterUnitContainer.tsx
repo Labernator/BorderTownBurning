@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "rc-select/assets/index.css";
 import { store } from "..";
-import { REMOVE_UNIT_FROM_ROSTER, ADD_MONEY_TO_TREASURY, ADD_UNIT_TO_UNITLIST, SUBTRACT_WARBAND_RATING } from "../actions";
+import * as Actions from "../actions";
 import { IUnit, IAppState } from "../constants";
 import { CharacteristicTable } from "./CharacteristicTable";
 import { SkillLists } from "./SkillLists";
@@ -17,11 +17,11 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
         counter++;
         if (unit.name !== "") {
             const removeUnit = () => {
-                store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: unit });
-                store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: unit.Price });
-                store.dispatch({ type: SUBTRACT_WARBAND_RATING, payload: unit });
+                store.dispatch({ type: Actions.REMOVE_UNIT_FROM_ROSTER, payload: unit });
+                store.dispatch({ type: Actions.ADD_MONEY_TO_TREASURY, payload: unit.price });
+                store.dispatch({ type: Actions.SUBTRACT_WARBAND_RATING, payload: unit });
                 if (!Boolean(store.getState().listOfUnits.find((listitem) => listitem.name === unit.name))) {
-                    store.dispatch({ type: ADD_UNIT_TO_UNITLIST, payload: unit });
+                    store.dispatch({ type: Actions.ADD_UNIT_TO_UNITLIST, payload: unit });
                 }
                 return undefined;
             };
@@ -32,13 +32,13 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                         X
                     </button>
                     <UnitLabel title="Unit Type" value={unit.name}></UnitLabel>
-                    <UnitLabel title="Unit Cost" value={unit.Price.toString()}></UnitLabel>
+                    <UnitLabel title="Unit Cost" value={unit.price.toString()}></UnitLabel>
                     <UnitLabel title="XP" value={unit.experience.toString()}></UnitLabel>
                     <Equipment unit={unit}></Equipment>
                     <UnitEquipment unit={unit}></UnitEquipment>
-                    <SkillLists names={unit.SkillLists}></SkillLists>
-                    <Skills names={unit.Skills}></Skills>
-                    <CharacteristicTable characteristics={unit.Characteristics} ></CharacteristicTable>
+                    <SkillLists names={unit.skillLists}></SkillLists>
+                    <Skills names={unit.skills}></Skills>
+                    <CharacteristicTable characteristics={unit.characteristics} ></CharacteristicTable>
                 </div>
             );
         }

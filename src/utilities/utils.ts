@@ -58,8 +58,8 @@ export const getEquipmentByName = (equipmentName: string): IMeleeWeapon | IMissi
     return undefined;
 };
 
-export function getRestrictedAlignmentList(selectedArmy: string): string[] {
-    const Army = ArmyList.find((army) => army.name === selectedArmy);
+export function getRestrictedAlignmentList(armyType: string): string[] {
+    const Army = ArmyList.find((army) => army.name === armyType);
     if (Army !== undefined) {
         return Army.alignments;
     } else {
@@ -68,7 +68,7 @@ export function getRestrictedAlignmentList(selectedArmy: string): string[] {
 }
 
 export function getEquipment(equipmentListNames: string[]): Equipment[] {
-    const Army = ArmyList.find((army) => army.name === store.getState().selectedArmy);
+    const Army = ArmyList.find((army) => army.name === store.getState().armyType);
     if (Army !== undefined && equipmentListNames.length > 0) {
         return equipmentListNames.reduce((filteredArr, equipmentListName) => {
             const equipmentList = Army.allowedEquipment.find((equiList) => equiList.name === equipmentListName);
@@ -81,8 +81,8 @@ export function getEquipment(equipmentListNames: string[]): Equipment[] {
     return [];
 }
 
-export function getArmyTreasury(selectedArmy: string): number {
-    const Army = ArmyList.find((army) => army.name === selectedArmy);
+export function getArmyTreasury(armyType: string): number {
+    const Army = ArmyList.find((army) => army.name === armyType);
     if (Army !== undefined) {
         return Army.startingCapital;
     } else {
@@ -90,8 +90,8 @@ export function getArmyTreasury(selectedArmy: string): number {
     }
 }
 
-export function getRestrictedObjectiveList(selectedArmy: string): string[] {
-    const Army = ArmyList.find((army) => army.name === selectedArmy);
+export function getRestrictedObjectiveList(armyType: string): string[] {
+    const Army = ArmyList.find((army) => army.name === armyType);
     if (Army !== undefined) {
         return Army.objectives;
     } else {
@@ -99,8 +99,8 @@ export function getRestrictedObjectiveList(selectedArmy: string): string[] {
     }
 }
 
-export function getArmySizeLimit(selectedArmy: string): number {
-    const Army = ArmyList.find((army) => army.name === selectedArmy);
+export function getArmySizeLimit(armyType: string): number {
+    const Army = ArmyList.find((army) => army.name === armyType);
     if (Army !== undefined) {
         return Army.sizeLimit;
     } else {
@@ -108,8 +108,8 @@ export function getArmySizeLimit(selectedArmy: string): number {
     }
 }
 
-export function getUnits(selectedArmy: string): IUnit[] {
-    const Army = ArmyList.find((army) => army.name === selectedArmy);
+export function getUnits(armyType: string): IUnit[] {
+    const Army = ArmyList.find((army) => army.name === armyType);
     if (Army !== undefined) {
         return Army.units;
     } else {

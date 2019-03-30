@@ -1,7 +1,7 @@
 import React from "react";
 import { IList } from "../constants";
 export class SkillLists extends React.Component<IList> {
-    private skillLists: string[];
+    private readonly skillLists: string[];
     constructor(props: IList) {
         super(props);
         this.skillLists = props.names;
@@ -26,9 +26,9 @@ export class SkillLists extends React.Component<IList> {
     }
     private createSkillListsTableRows() {
         return this.skillLists.map((skillList) => (
-                <tr key={skillList}>
-                    <td >{skillList}</td>
-                </tr>
+            <tr key={skillList}>
+                <td >{skillList}</td>
+            </tr>
         ));
     }
     private createSkillListsHeader() {

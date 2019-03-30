@@ -14,7 +14,7 @@
             "units": [
                 {
                     "name": "Beastmen Chief",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -25,20 +25,20 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 65,
+                    "price": 65,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Leader"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Strength",
                         "Combat",
                         "Speed",
                         "Beastmen"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "BeastmenEquipment",
                         "BeastBaseEquipment"
@@ -54,7 +54,7 @@
                 },
                 {
                     "name": "Beastmen Shaman",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -65,19 +65,19 @@
                         "Attacks": 1,
                         "Leadership": 6
                     },
-                    "Price": 45,
+                    "price": 45,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Magic User"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Combat",
                         "Speed",
                         "Beastmen"
                     ],
-                    "Spells": [],
-                    "SpellLists": [
+                    "spells": [],
+                    "spellLists": [
                         "Chaos Rituals"
                     ],
                     "allowedEquipment": [
@@ -95,7 +95,7 @@
                 },
                 {
                     "name": "Centigor",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 8,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -106,22 +106,22 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 80,
+                    "price": 80,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Drunken",
                         "Woodland Dwelling",
                         "Trample",
                         "Quadruped"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Combat",
                         "Strength",
                         "Beastmen"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "UngorEquipment",
                         "BeastBaseEquipment"
@@ -137,7 +137,7 @@
                 },
                 {
                     "name": "Bestigor",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -148,17 +148,17 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 45,
+                    "price": 45,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [],
-                    "SkillLists": [
+                    "skills": [],
+                    "skillLists": [
                         "Combat",
                         "Strength",
                         "Beastmen"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "BeastmenEquipment",
                         "BeastBaseEquipment"
@@ -174,7 +174,7 @@
                 },
                 {
                     "name": "Ungor",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 3,
                         "BallisticSkill": 3,
@@ -185,16 +185,16 @@
                         "Attacks": 1,
                         "Leadership": 6
                     },
-                    "Price": 25,
+                    "price": 25,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Lowest of the Low",
                         "Infighting"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "UngorEquipment",
                         "BeastBaseEquipment"
@@ -210,7 +210,7 @@
                 },
                 {
                     "name": "Gor",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -221,15 +221,15 @@
                         "Attacks": 1,
                         "Leadership": 6
                     },
-                    "Price": 35,
+                    "price": 35,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Infighting"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "BeastmenEquipment",
                         "BeastBaseEquipment"
@@ -245,7 +245,7 @@
                 },
                 {
                     "name": "Warhounds of Chaos",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 7,
                         "WeaponSkill": 4,
                         "BallisticSkill": 0,
@@ -256,15 +256,15 @@
                         "Attacks": 1,
                         "Leadership": 5
                     },
-                    "Price": 15,
+                    "price": 15,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Animal"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": "",
                     "include": [
                         0,
@@ -275,7 +275,7 @@
                 },
                 {
                     "name": "Minotaur",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -286,19 +286,19 @@
                         "Attacks": 3,
                         "Leadership": 8
                     },
-                    "Price": 200,
+                    "price": 200,
                     "isHero": false,
                     "isLarge": true,
-                    "Skills": [
+                    "skills": [
                         "Fear",
                         "Bloodgreed",
                         "Bestial",
                         "Large",
                         "Tough"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "BeastmenEquipment",
                         "BeastBaseEquipment"
@@ -403,7 +403,7 @@
             "units": [
                 {
                     "name": "Pit King",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -414,22 +414,22 @@
                         "Attacks": 2,
                         "Leadership": 8
                     },
-                    "Price": 80,
+                    "price": 80,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Leader",
                         "Pit Fighter"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Academic",
                         "Strength",
                         "Combat",
                         "Speed",
                         "Pit Fighter"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
                         "PitFighterArmourEquipment",
@@ -446,7 +446,7 @@
                 },
                 {
                     "name": "Pit Fighter Veteran",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -457,19 +457,19 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 35,
+                    "price": 35,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Pit Fighter"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Strength",
                         "Combat",
                         "Pit Fighter"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
                         "PitFighterArmourEquipment",
@@ -486,7 +486,7 @@
                 },
                 {
                     "name": "Dwarf Troll Slayer",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -497,10 +497,10 @@
                         "Attacks": 1,
                         "Leadership": 9
                     },
-                    "Price": 50,
+                    "price": 50,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Pit Fighter",
                         "Hard to Kill",
                         "Hard Head",
@@ -508,7 +508,7 @@
                         "Grudgebearers",
                         "Death Wish"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Strength",
                         "Combat",
                         "Academic",
@@ -516,8 +516,8 @@
                         "Troll Slayer",
                         "Pit Fighter"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
                         "TrollSlayerEquipment"
@@ -537,7 +537,7 @@
                 },
                 {
                     "name": "Pit Fighter Initiate",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
                         "BallisticSkill": 2,
@@ -548,17 +548,17 @@
                         "Attacks": 1,
                         "Leadership": 6
                     },
-                    "Price": 15,
+                    "price": 15,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [],
-                    "SkillLists": [
+                    "skills": [],
+                    "skillLists": [
                         "Strength",
                         "Combat",
                         "Pit Fighter"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
                         "PitFighterArmourEquipment",
@@ -575,7 +575,7 @@
                 },
                 {
                     "name": "Pursuer",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 3,
                         "BallisticSkill": 3,
@@ -586,15 +586,15 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 25,
+                    "price": 25,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Pit Fighter"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PursuerEquipment",
                         "PitFighterArmourEquipment",
@@ -611,7 +611,7 @@
                 },
                 {
                     "name": "Pit Fighter",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -622,16 +622,16 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 35,
+                    "price": 35,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Pit Fighter",
                         "Arms master"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
                         "PitFighterArmourEquipment",
@@ -648,7 +648,7 @@
                 },
                 {
                     "name": "Ogre",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 3,
                         "BallisticSkill": 2,
@@ -659,19 +659,19 @@
                         "Attacks": 2,
                         "Leadership": 7
                     },
-                    "Price": 165,
+                    "price": 165,
                     "isHero": false,
                     "isLarge": true,
-                    "Skills": [
+                    "skills": [
                         "Fear",
-                        "Skills",
+                        "skills",
                         "Slow Witted",
                         "Large",
                         "Tough"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "PitFighterEquipment",
                         "PitFighterArmourEquipment",
@@ -845,7 +845,7 @@
             "units": [
                 {
                     "name": "Runesmith",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 5,
                         "BallisticSkill": 4,
@@ -856,10 +856,10 @@
                         "Attacks": 1,
                         "Leadership": 10
                     },
-                    "Price": 85,
+                    "price": 85,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Leader",
                         "Inscribe Runes",
                         "Hard Head",
@@ -868,15 +868,15 @@
                         "Armour",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Academic",
                         "Strength",
                         "Combat",
                         "Shooting",
                         "Dwarven"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenWarriorEquipment",
                         "DwarvenArmourEquipment"
@@ -892,7 +892,7 @@
                 },
                 {
                     "name": "Apprentice Runesmith",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 3,
                         "BallisticSkill": 2,
@@ -903,10 +903,10 @@
                         "Attacks": 1,
                         "Leadership": 8
                     },
-                    "Price": 40,
+                    "price": 40,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Extra Set of Hands",
                         "Hard Head",
                         "Hard to Kill",
@@ -914,15 +914,15 @@
                         "Armour",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Academic",
                         "Strength",
                         "Combat",
                         "Speed",
                         "Dwarven"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenWarriorEquipment",
                         "DwarvenArmourEquipment"
@@ -938,7 +938,7 @@
                 },
                 {
                     "name": "Troll Slayer",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -949,10 +949,10 @@
                         "Attacks": 1,
                         "Leadership": 9
                     },
-                    "Price": 50,
+                    "price": 50,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Deathwish",
                         "Hard Head",
                         "Hard to Kill",
@@ -961,13 +961,13 @@
                         "No Shooting",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Strength",
                         "Combat",
                         "Dwarven"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenWarriorEquipment"
                     ],
@@ -982,7 +982,7 @@
                 },
                 {
                     "name": "Dwarf Clansman",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -993,19 +993,19 @@
                         "Attacks": 1,
                         "Leadership": 9
                     },
-                    "Price": 40,
+                    "price": 40,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Hard Head",
                         "Hard to Kill",
                         "Hate Orcs & Goblins",
                         "Armour",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenWarriorEquipment",
                         "DwarvenArmourEquipment"
@@ -1021,7 +1021,7 @@
                 },
                 {
                     "name": "Dwarf Longbeards",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 5,
                         "BallisticSkill": 3,
@@ -1032,10 +1032,10 @@
                         "Attacks": 1,
                         "Leadership": 9
                     },
-                    "Price": 50,
+                    "price": 50,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Stubborn",
                         "Hard Head",
                         "Hard to Kill",
@@ -1043,9 +1043,9 @@
                         "Armour",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenWarriorEquipment",
                         "DwarvenArmourEquipment"
@@ -1061,7 +1061,7 @@
                 },
                 {
                     "name": "Dwarf Ranger",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -1072,19 +1072,19 @@
                         "Attacks": 1,
                         "Leadership": 9
                     },
-                    "Price": 40,
+                    "price": 40,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Hard Head",
                         "Hard to Kill",
                         "Hate Orcs & Goblins",
                         "Armour",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenRangerEquipment"
                     ],
@@ -1099,7 +1099,7 @@
                 },
                 {
                     "name": "Beardlings",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 3,
                         "BallisticSkill": 2,
@@ -1110,19 +1110,19 @@
                         "Attacks": 1,
                         "Leadership": 8
                     },
-                    "Price": 25,
+                    "price": 25,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Hard Head",
                         "Hard to Kill",
                         "Hate Orcs & Goblins",
                         "Armour",
                         "Distrustful of Sorcery"
                     ],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "DwarvenWarriorEquipment",
                         "DwarvenArmourEquipment"
@@ -1292,7 +1292,7 @@
             "units": [
                 {
                     "name": "Sigmarite Matriarch",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
                         "BallisticSkill": 4,
@@ -1303,22 +1303,22 @@
                         "Attacks": 1,
                         "Leadership": 8
                     },
-                    "Price": 70,
+                    "price": 70,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Leader",
                         "Pray User"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Academic",
                         "Strength",
                         "Combat",
                         "Speed",
                         "Sigmar"
                     ],
-                    "Spells": [],
-                    "SpellLists": [
+                    "spells": [],
+                    "spellLists": [
                         "Prayers of Sigmar"
                     ],
                     "allowedEquipment": [
@@ -1337,7 +1337,7 @@
                 },
                 {
                     "name": "Sister Superior",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
                         "BallisticSkill": 3,
@@ -1348,19 +1348,19 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 35,
+                    "price": 35,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [],
-                    "SkillLists": [
+                    "skills": [],
+                    "skillLists": [
                         "Academic",
                         "Strength",
                         "Combat",
                         "Speed",
                         "Sigmar"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarArmour",
@@ -1377,7 +1377,7 @@
                 },
                 {
                     "name": "Augur",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
                         "BallisticSkill": 2,
@@ -1388,21 +1388,21 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 25,
+                    "price": 25,
                     "isHero": true,
                     "isLarge": false,
-                    "Skills": [
+                    "skills": [
                         "Blessed Sight",
                         "No Armour"
                     ],
-                    "SkillLists": [
+                    "skillLists": [
                         "Academic",
                         "Combat",
                         "Speed",
                         "Sigmar"
                     ],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarHeroEquipment"
@@ -1418,7 +1418,7 @@
                 },
                 {
                     "name": "Novice",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
                         "BallisticSkill": 2,
@@ -1429,13 +1429,13 @@
                         "Attacks": 1,
                         "Leadership": 6
                     },
-                    "Price": 15,
+                    "price": 15,
                     "isHero": false,
                     "isLarge": false,
-                    "Skills": [],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skills": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarArmour"
@@ -1451,7 +1451,7 @@
                 },
                 {
                     "name": "Sigmarite Sister",
-                    "Characteristics": {
+                    "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 3,
                         "BallisticSkill": 3,
@@ -1462,12 +1462,12 @@
                         "Attacks": 1,
                         "Leadership": 7
                     },
-                    "Price": 25,
+                    "price": 25,
                     "isHero": false,
-                    "Skills": [],
-                    "SkillLists": [],
-                    "Spells": [],
-                    "SpellLists": [],
+                    "skills": [],
+                    "skillLists": [],
+                    "spells": [],
+                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarArmour"

@@ -10,6 +10,14 @@
   border-radius: 8px;
 }
 
+.EquipmentDiv {
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 8px;
+  float: left;
+}
+
 .DisabledButton {
   background-color: lightgrey;
   border: 1px solid lightgrey;

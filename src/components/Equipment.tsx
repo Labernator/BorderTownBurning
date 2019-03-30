@@ -11,10 +11,9 @@ export class Equipment extends React.Component<IUnitEquipment> {
     }
 
     public render() {
-        const equiTableRows = this.createEquipmentTableRows();
         const equipmentList = this.getEquipmentContainer();
         return (
-            <div >
+            <div style={{ display: "inline-block" }}>
                 <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
                 {equipmentList}
                 <button onClick={() => this.showAvailableEquipment()} className="EnabledButton">buy additional equipment</button>
@@ -36,25 +35,17 @@ export class Equipment extends React.Component<IUnitEquipment> {
             if (originalEquipment !== undefined) {
                 cost = originalEquipment.cost;
             }
-            updateUnit.equipment.splice(firstFoundIndex);
+            updateUnit.equipment.splice(firstFoundIndex, 1);
             store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
             store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: cost });
         }
     }
     private getEquipmentContainer() {
         return this.equipment.map((equi) => (
-            <div key={equi}>
-                <div>{equi}</div>
+            <div key={equi} className="EquipmentDiv">
+                <div style={{ fontWeight: "bold" }}>{equi}</div>
                 <button onClick={() => this.removeItem(equi)} >X</button>
             </div>
         ));
-    }
-    private createEquipmentTableRows() {
-        return this.equipment.map((equi) => (
-            <tr key={equi}>
-                <td>{equi}</td>
-            </tr>
-        ),
-        );
     }
 }

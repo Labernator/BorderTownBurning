@@ -1,8 +1,8 @@
 import React from "react";
 import { ILabel } from "../constants";
 export class UnitLabel extends React.Component<ILabel> {
-    private title: string;
-    private value: string;
+    private readonly title: string;
+    private readonly value: string;
     constructor(props: ILabel) {
         super(props);
         this.title = props.title;
