@@ -15,7 +15,12 @@ export class Equipment extends React.Component<IUnitEquipment> {
             <div style={{ display: "inline-block" }}>
                 <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
                 {equipmentList}
-                <button onClick={() => this.showAvailableEquipment()} className="EnabledButton">buy additional equipment</button>
+                <button
+                    onClick={() => this.showAvailableEquipment()}
+                    style={{ clear: "both", float: "left", width: "100%" }}
+                    className="EnabledButton">
+                    Buy additional equipment
+                </button>
             </div>
         );
     }
@@ -42,8 +47,11 @@ export class Equipment extends React.Component<IUnitEquipment> {
     private getEquipmentContainer() {
         return this.equipment.map((equi) => (
             <div key={equi} className="EquipmentDiv">
-                <div style={{ fontWeight: "bold" }}>{equi}</div>
-                <button onClick={() => this.removeItem(equi)} >X</button>
+                <div style={{ fontWeight: "bold" }}>
+                    {equi}
+
+                </div>
+                <button title="Sell Equipment" className="EquipmentButton" onClick={() => this.removeItem(equi)} >X</button>
             </div>
         ));
     }

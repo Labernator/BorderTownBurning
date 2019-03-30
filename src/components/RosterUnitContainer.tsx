@@ -27,8 +27,8 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
             };
             const uniqueKey = `${unit.name}${counter}`;
             return (
-                <div key={uniqueKey} style={{ border: "solid", display: "inline-block" }}>
-                    <button onClick={removeUnit} className="EnabledButton">
+                <div key={uniqueKey} style={{ border: "solid", display: "inline-block", position: "relative" }}>
+                    <button style={{ position: "absolute", top: 0, right: 0 }} onClick={removeUnit} className="EnabledButton">
                         X
                     </button>
                     <UnitLabel title="Unit Type" value={unit.name}></UnitLabel>

@@ -81,7 +81,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
                 <td>{weapon.name}</td>
                 <td>{weapon.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
+                    <button onClick={() => this.addItemToUnit(weapon)}>Buy</button>
                 </td>
             </tr>
         ));
@@ -92,7 +92,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
                 <td>{weapon.name}</td>
                 <td>{weapon.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(weapon)}>Add</button>
+                    <button onClick={() => this.addItemToUnit(weapon)}>Buy</button>
                 </td>
             </tr>
         ));
@@ -103,7 +103,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
                 <td>{armour.name}</td>
                 <td>{armour.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(armour)}>Add</button>
+                    <button onClick={() => this.addItemToUnit(armour)}>Buy</button>
                 </td>
             </tr>
         ));
@@ -114,7 +114,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
                 <td>{misc.name}</td>
                 <td>{misc.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(misc)}>Add</button>
+                    <button onClick={() => this.addItemToUnit(misc)}>Buy</button>
                 </td>
             </tr>
         ));
