@@ -2,6 +2,7 @@ import React from "react";
 import * as Actions from "../actions";
 import { store } from "..";
 import { getUnits } from "../utilities/utils";
+import { AppMode } from "../constants";
 
 export class FileDialogue extends React.Component {
 
@@ -42,6 +43,7 @@ export class FileDialogue extends React.Component {
 
   public materializeState = (jsonObject: any) => {
     // fire actions that adjust the state to reflect the json data
+    store.dispatch({ type: Actions.SET_MODE, payload: AppMode.ExistingWarband });
     store.dispatch({ type: Actions.SET_ARMY, payload: jsonObject.type });
     store.dispatch({ type: Actions.SET_ALIGNMENT, payload: jsonObject.alignment });
     store.dispatch({ type: Actions.SET_ARMYNAME, payload: jsonObject.name });
@@ -50,5 +52,6 @@ export class FileDialogue extends React.Component {
     store.dispatch({ type: Actions.SET_OBJECTIVE, payload: jsonObject.objective });
     store.dispatch({ type: Actions.RESTRICT_UNITS, payload: getUnits(jsonObject.type) });
     jsonObject.roster.forEach((element: any) => store.dispatch({ type: Actions.ADD_UNIT_TO_ROSTER, payload: element }));
+    console.log(store.getState());
   }
 }

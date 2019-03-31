@@ -1,5 +1,6 @@
-import { IUnit } from "../constants";
+import { IUnit, AppMode } from "../constants";
 
+export const SET_MODE = "SET_MODE";
 export const SET_ARMY = "SET_ARMY";
 export const SET_ARMYNAME = "SET_ARMYNAME";
 export const SET_ALIGNMENT = "SET_ALIGNMENT";
@@ -106,7 +107,12 @@ class UpdateUnit {
     constructor(public payload: IUnit) { }
 }
 
+class SetMode {
+    public readonly type = SET_MODE;
+    constructor(public payload: AppMode) { }
+}
+
 export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment |
     RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
-    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList;
+    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetMode;

@@ -3,7 +3,7 @@
         {
             "MeleeWeapons": [
                 {
-                    "name": "Dagger",
+                    "type": "Dagger",
                     "cost": 2,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -22,7 +22,7 @@
                     ]
                 },
                 {
-                    "name": "Mace",
+                    "type": "Mace",
                     "cost": 3,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -40,7 +40,7 @@
                     ]
                 },
                 {
-                    "name": "Flail",
+                    "type": "Flail",
                     "cost": 15,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -59,7 +59,7 @@
                     ]
                 },
                 {
-                    "name": "Hammer",
+                    "type": "Hammer",
                     "cost": 3,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -77,7 +77,7 @@
                     ]
                 },
                 {
-                    "name": "Club",
+                    "type": "Club",
                     "cost": 3,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -95,7 +95,7 @@
                     ]
                 },
                 {
-                    "name": "Axe",
+                    "type": "Axe",
                     "cost": 5,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -113,7 +113,7 @@
                     ]
                 },
                 {
-                    "name": "Spear",
+                    "type": "Spear",
                     "cost": 5,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -133,7 +133,7 @@
                     ]
                 },
                 {
-                    "name": "Halberd",
+                    "type": "Halberd",
                     "cost": 10,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -151,7 +151,7 @@
                     ]
                 },
                 {
-                    "name": "Morning Star",
+                    "type": "Morning Star",
                     "cost": 15,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -170,7 +170,7 @@
                     ]
                 },
                 {
-                    "name": "Dwarf Axe",
+                    "type": "Dwarf Axe",
                     "cost": 15,
                     "rarity": 8,
                     "weaponType": "Melee",
@@ -192,7 +192,7 @@
                     ]
                 },
                 {
-                    "name": "Sword",
+                    "type": "Sword",
                     "cost": 10,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -210,7 +210,7 @@
                     ]
                 },
                 {
-                    "name": "Double-handed Weapon",
+                    "type": "Double-handed Weapon",
                     "cost": 15,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -229,7 +229,7 @@
                     ]
                 },
                 {
-                    "name": "Steel Whip",
+                    "type": "Steel Whip",
                     "cost": 10,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -248,7 +248,7 @@
                     ]
                 },
                 {
-                    "name": "Sigmarite Warhammer",
+                    "type": "Sigmarite Warhammer",
                     "cost": 25,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -269,7 +269,7 @@
                     ]
                 },
                 {
-                    "name": "Spiked Gauntlet",
+                    "type": "Spiked Gauntlet",
                     "cost": 15,
                     "rarity": 7,
                     "weaponType": "Melee",
@@ -289,7 +289,7 @@
                     ]
                 },
                 {
-                    "name": "Brass Knuckles",
+                    "type": "Brass Knuckles",
                     "cost": 20,
                     "rarity": 6,
                     "weaponType": "Melee",
@@ -308,7 +308,7 @@
                     ]
                 },
                 {
-                    "name": "War Chain",
+                    "type": "War Chain",
                     "cost": 20,
                     "rarity": 0,
                     "weaponType": "Melee",
@@ -330,7 +330,7 @@
                     ]
                 },
                 {
-                    "name": "Trident",
+                    "type": "Trident",
                     "cost": 15,
                     "rarity": 7,
                     "weaponType": "Melee",
@@ -355,7 +355,7 @@
         {
             "MissileWeapons": [
                 {
-                    "name": "Sling",
+                    "type": "Sling",
                     "cost": 2,
                     "rarity": 0,
                     "weaponType": "Shooting",
@@ -375,7 +375,7 @@
                     ]
                 },
                 {
-                    "name": "Pistol",
+                    "type": "Pistol",
                     "cost": 15,
                     "rarity": 8,
                     "weaponType": "Shooting",
@@ -397,7 +397,7 @@
                     ]
                 },
                 {
-                    "name": "Brace of Pistols",
+                    "type": "Brace of Pistols",
                     "cost": 30,
                     "rarity": 8,
                     "weaponType": "Shooting",
@@ -419,7 +419,7 @@
                     ]
                 },
                 {
-                    "name": "Crossbow",
+                    "type": "Crossbow",
                     "cost": 25,
                     "rarity": 0,
                     "weaponType": "Shooting",
@@ -438,7 +438,7 @@
                     ]
                 },
                 {
-                    "name": "Crossbow Pistol",
+                    "type": "Crossbow Pistol",
                     "cost": 35,
                     "rarity": 9,
                     "weaponType": "Shooting",
@@ -457,7 +457,7 @@
                     ]
                 },
                 {
-                    "name": "Short Bow",
+                    "type": "Short Bow",
                     "cost": 5,
                     "rarity": 0,
                     "weaponType": "Shooting",
@@ -474,7 +474,7 @@
                     ]
                 },
                 {
-                    "name": "Bow",
+                    "type": "Bow",
                     "cost": 10,
                     "rarity": 0,
                     "weaponType": "Shooting",
@@ -491,7 +491,7 @@
                     ]
                 },
                 {
-                    "name": "Long Bow",
+                    "type": "Long Bow",
                     "cost": 15,
                     "rarity": 0,
                     "weaponType": "Shooting",
@@ -508,7 +508,7 @@
                     ]
                 },
                 {
-                    "name": "Elf Bow",
+                    "type": "Elf Bow",
                     "cost": "35 + 3D6",
                     "rarity": 12,
                     "weaponType": "Shooting",
@@ -527,7 +527,7 @@
                     ]
                 },
                 {
-                    "name": "Javelins",
+                    "type": "Javelins",
                     "cost": 15,
                     "rarity": 0,
                     "weaponType": "Shooting",
@@ -546,7 +546,7 @@
                     ]
                 },
                 {
-                    "name": "Throwing Knives",
+                    "type": "Throwing Knives",
                     "cost": 15,
                     "rarity": 5,
                     "weaponType": "Shooting",
@@ -569,7 +569,7 @@
         {
             "Armour": [
                 {
-                    "name": "Light Armour",
+                    "type": "Light Armour",
                     "cost": 20,
                     "rarity": 0,
                     "armourType": "Suit",
@@ -585,7 +585,7 @@
                     ]
                 },
                 {
-                    "name": "Heavy Armour",
+                    "type": "Heavy Armour",
                     "cost": 50,
                     "rarity": 0,
                     "armourType": "Suit",
@@ -601,7 +601,7 @@
                     ]
                 },
                 {
-                    "name": "Gromril Armour",
+                    "type": "Gromril Armour",
                     "cost": 150,
                     "rarity": 11,
                     "armourType": "Suit",
@@ -622,7 +622,7 @@
                     ]
                 },
                 {
-                    "name": "Lamellar Armour",
+                    "type": "Lamellar Armour",
                     "cost": 120,
                     "rarity": 9,
                     "armourType": "Suit",
@@ -638,7 +638,7 @@
                     ]
                 },
                 {
-                    "name": "Helmet",
+                    "type": "Helmet",
                     "cost": 10,
                     "rarity": 0,
                     "armourType": "Head",
@@ -656,7 +656,7 @@
                     ]
                 },
                 {
-                    "name": "Shield",
+                    "type": "Shield",
                     "cost": 5,
                     "rarity": 0,
                     "armourType": "Shield",
@@ -672,7 +672,7 @@
                     ]
                 },
                 {
-                    "name": "Buckler",
+                    "type": "Buckler",
                     "cost": 5,
                     "rarity": 0,
                     "armourType": "Shield",
@@ -690,7 +690,7 @@
                     ]
                 },
                 {
-                    "name": "Pavise",
+                    "type": "Pavise",
                     "cost": 25,
                     "rarity": 8,
                     "armourType": "Shield",
@@ -708,7 +708,7 @@
                     ]
                 },
                 {
-                    "name": "Toughened Leathers",
+                    "type": "Toughened Leathers",
                     "cost": 5,
                     "rarity": 0,
                     "armourType": "Suit",
@@ -726,7 +726,7 @@
                     ]
                 },
                 {
-                    "name": "Ithilmar Armour",
+                    "type": "Ithilmar Armour",
                     "cost": 90,
                     "rarity": 11,
                     "armourType": "Suit",
@@ -744,7 +744,7 @@
                     ]
                 },
                 {
-                    "name": "Chaos Armour",
+                    "type": "Chaos Armour",
                     "cost": 185,
                     "rarity": 13,
                     "armourType": "Suit",
@@ -765,7 +765,7 @@
                     ]
                 },
                 {
-                    "name": "Bracers",
+                    "type": "Bracers",
                     "cost": 20,
                     "rarity": 8,
                     "armourType": "Special",
@@ -786,7 +786,7 @@
                     ]
                 },
                 {
-                    "name": "Reinforced Plate Armour",
+                    "type": "Reinforced Plate Armour",
                     "cost": 95,
                     "rarity": 9,
                     "armourType": "Suit",
@@ -805,7 +805,7 @@
                     ]
                 },
                 {
-                    "name": "Sea Dragon Cloak",
+                    "type": "Sea Dragon Cloak",
                     "cost": "50 + 2D6",
                     "rarity": 10,
                     "armourType": "Cloak",
@@ -825,7 +825,7 @@
                     ]
                 },
                 {
-                    "name": "Elven Cloak",
+                    "type": "Elven Cloak",
                     "cost": "100 + 10*D6",
                     "rarity": 12,
                     "armourType": "Cloak",
@@ -845,7 +845,7 @@
                     ]
                 },
                 {
-                    "name": "Forest Cloak",
+                    "type": "Forest Cloak",
                     "cost": "50",
                     "rarity": 10,
                     "armourType": "Cloak",
@@ -865,7 +865,7 @@
                     ]
                 },
                 {
-                    "name": "Cathayan Silk Clothes",
+                    "type": "Cathayan Silk Clothes",
                     "cost": "75 + 10*D6",
                     "rarity": 12,
                     "armourType": "Cloak",
@@ -889,10 +889,10 @@
         {
             "Miscallaneous": [
                 {
-                    "name": "Dark Venom",
+                    "type": "Dark Venom",
                     "cost": "30+2D6",
                     "rarity": 8,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -907,10 +907,10 @@
                     ]
                 },
                 {
-                    "name": "Garlic",
+                    "type": "Garlic",
                     "cost": "1",
                     "rarity": 0,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -923,10 +923,10 @@
                     ]
                 },
                 {
-                    "name": "Elven Wine",
+                    "type": "Elven Wine",
                     "cost": "50+3D6",
                     "rarity": 10,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": [
@@ -939,10 +939,10 @@
                     ]
                 },
                 {
-                    "name": "Holy Relic",
+                    "type": "Holy Relic",
                     "cost": "15+3D6",
                     "rarity": 6,
-                    "type": "Books & Scrolls",
+                    "genus": "Books & Scrolls",
                     "restrictions": [
                         {
                             "include": [
@@ -956,10 +956,10 @@
                     ]
                 },
                 {
-                    "name": "Holy Tome",
+                    "type": "Holy Tome",
                     "cost": "100+10*D6",
                     "rarity": 10,
-                    "type": "Books & Scrolls",
+                    "genus": "Books & Scrolls",
                     "restrictions": [
                         {
                             "include": [
@@ -973,10 +973,10 @@
                     ]
                 },
                 {
-                    "name": "Blessed Water",
+                    "type": "Blessed Water",
                     "cost": "10+3D6",
                     "rarity": 6,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -989,10 +989,10 @@
                     ]
                 },
                 {
-                    "name": "Bugman's Ale",
+                    "type": "Bugman's Ale",
                     "cost": "50+3D6",
                     "rarity": 9,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1007,10 +1007,10 @@
                     ]
                 },
                 {
-                    "name": "Crimson Shade",
+                    "type": "Crimson Shade",
                     "cost": "35+D6",
                     "rarity": 8,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1021,10 +1021,10 @@
                     ]
                 },
                 {
-                    "name": "Healing Herbs",
+                    "type": "Healing Herbs",
                     "cost": "20+2D6",
                     "rarity": 8,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1035,10 +1035,10 @@
                     ]
                 },
                 {
-                    "name": "Healing Potion",
+                    "type": "Healing Potion",
                     "cost": "30+D6",
                     "rarity": 9,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1049,10 +1049,10 @@
                     ]
                 },
                 {
-                    "name": "Liquor Flask",
+                    "type": "Liquor Flask",
                     "cost": "30+D6",
                     "rarity": 7,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1063,10 +1063,10 @@
                     ]
                 },
                 {
-                    "name": "Madcap Mushrooms",
+                    "type": "Madcap Mushrooms",
                     "cost": "30+3D6",
                     "rarity": 9,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1077,10 +1077,10 @@
                     ]
                 },
                 {
-                    "name": "Mandrake Root",
+                    "type": "Mandrake Root",
                     "cost": "25+D6",
                     "rarity": 8,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1091,10 +1091,10 @@
                     ]
                 },
                 {
-                    "name": "Potion of Strength",
+                    "type": "Potion of Strength",
                     "cost": "30+D6",
                     "rarity": 6,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1105,10 +1105,10 @@
                     ]
                 },
                 {
-                    "name": "Potion of Speed",
+                    "type": "Potion of Speed",
                     "cost": "40+D6",
                     "rarity": 10,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1119,10 +1119,10 @@
                     ]
                 },
                 {
-                    "name": "Spider's Poison",
+                    "type": "Spider's Poison",
                     "cost": "25+2D6",
                     "rarity": 8,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1133,10 +1133,10 @@
                     ]
                 },
                 {
-                    "name": "Tears of Shallaya",
+                    "type": "Tears of Shallaya",
                     "cost": "10+2D6",
                     "rarity": 7,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": []
@@ -1150,10 +1150,10 @@
                     ]
                 },
                 {
-                    "name": "Vial of Pestilence",
+                    "type": "Vial of Pestilence",
                     "cost": "25+2D6",
                     "rarity": 9,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": [
@@ -1166,10 +1166,10 @@
                     ]
                 },
                 {
-                    "name": "Vodka",
+                    "type": "Vodka",
                     "cost": "35+2D6",
                     "rarity": 8,
-                    "type": "Drugs, Poison & Potions",
+                    "genus": "Drugs, Poison & Potions",
                     "restrictions": [
                         {
                             "include": [
@@ -1182,10 +1182,10 @@
                     ]
                 },
                 {
-                    "name": "Net",
+                    "type": "Net",
                     "cost": "5",
                     "rarity": 0,
-                    "type": "Other Equipment",
+                    "genus": "Other Equipment",
                     "restrictions": [
                         {
                             "include": []
@@ -1196,10 +1196,10 @@
                     ]
                 },
                 {
-                    "name": "Rope & Hook",
+                    "type": "Rope & Hook",
                     "cost": "5",
                     "rarity": 0,
-                    "type": "Other Equipment",
+                    "genus": "Other Equipment",
                     "restrictions": [
                         {
                             "include": []
@@ -1210,10 +1210,10 @@
                     ]
                 },
                 {
-                    "name": "Lantern",
+                    "type": "Lantern",
                     "cost": "10",
                     "rarity": 0,
-                    "type": "Other Equipment",
+                    "genus": "Other Equipment",
                     "restrictions": [
                         {
                             "include": []
@@ -1224,10 +1224,24 @@
                     ]
                 },
                 {
-                    "name": "Torch",
+                    "type": "Rosary",
+                    "cost": "10",
+                    "rarity": 6,
+                    "genus": "Other Equipment",
+                    "restrictions": [
+                        {
+                            "include": []
+                        },
+                        {
+                            "exclude": []
+                        }
+                    ]
+                },
+                {
+                    "type": "Torch",
                     "cost": "2",
                     "rarity": 0,
-                    "type": "Other Equipment",
+                    "genus": "Other Equipment",
                     "restrictions": [
                         {
                             "include": []
@@ -1238,10 +1252,10 @@
                     ]
                 },
                 {
-                    "name": "Lock Picks",
+                    "type": "Lock Picks",
                     "cost": "15",
                     "rarity": 8,
-                    "type": "Other Equipment",
+                    "genus": "Other Equipment",
                     "restrictions": [
                         {
                             "include": []

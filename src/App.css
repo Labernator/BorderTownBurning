@@ -10,6 +10,12 @@
   border-radius: 8px;
 }
 
+.BuyButton {
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+}
+
 .EquipmentDiv {
   background-color: white;
   border: 1px solid lightgrey;

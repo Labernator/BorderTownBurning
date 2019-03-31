@@ -1,7 +1,7 @@
 {
     "armies": [
         {
-            "name": "Beastmen",
+            "type": "Beastmen",
             "startingCapital": 500,
             "sizeLimit": 15,
             "alignments": [
@@ -13,7 +13,7 @@
             "armyRules": [],
             "units": [
                 {
-                    "name": "Beastmen Chief",
+                    "type": "Beastmen Chief",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -53,7 +53,7 @@
                     ]
                 },
                 {
-                    "name": "Beastmen Shaman",
+                    "type": "Beastmen Shaman",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -94,7 +94,7 @@
                     ]
                 },
                 {
-                    "name": "Centigor",
+                    "type": "Centigor",
                     "characteristics": {
                         "Movement": 8,
                         "WeaponSkill": 4,
@@ -136,7 +136,7 @@
                     ]
                 },
                 {
-                    "name": "Bestigor",
+                    "type": "Bestigor",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -173,7 +173,7 @@
                     ]
                 },
                 {
-                    "name": "Ungor",
+                    "type": "Ungor",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 3,
@@ -209,7 +209,7 @@
                     ]
                 },
                 {
-                    "name": "Gor",
+                    "type": "Gor",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -244,7 +244,7 @@
                     ]
                 },
                 {
-                    "name": "Warhounds of Chaos",
+                    "type": "Warhounds of Chaos",
                     "characteristics": {
                         "Movement": 7,
                         "WeaponSkill": 4,
@@ -274,7 +274,7 @@
                     "equipment": []
                 },
                 {
-                    "name": "Minotaur",
+                    "type": "Minotaur",
                     "characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 4,
@@ -313,70 +313,70 @@
             ],
             "allowedEquipment": [
                 {
-                    "name": "BeastBaseEquipment",
+                    "type": "BeastBaseEquipment",
                     "equipment": [
                         {
-                            "name": "Dagger",
+                            "type": "Dagger",
                             "cost": 2
                         },
                         {
-                            "name": "Club",
+                            "type": "Club",
                             "cost": 3
                         },
                         {
-                            "name": "Hammer",
+                            "type": "Hammer",
                             "cost": 5
                         },
                         {
-                            "name": "Mace",
+                            "type": "Mace",
                             "cost": 5
                         },
                         {
-                            "name": "Axe",
+                            "type": "Axe",
                             "cost": 5
                         },
                         {
-                            "name": "Shield",
+                            "type": "Shield",
                             "cost": 5
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "UngorEquipment",
+                    "type": "UngorEquipment",
                     "equipment": [
                         {
-                            "name": "Spear",
+                            "type": "Spear",
                             "cost": 5
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "BeastmenEquipment",
+                    "type": "BeastmenEquipment",
                     "equipment": [
                         {
-                            "name": "Halberd",
+                            "type": "Halberd",
                             "cost": 15
                         },
                         {
-                            "name": "Sword",
+                            "type": "Sword",
                             "cost": 10
                         },
                         {
-                            "name": "Double-handed Weapon",
+                            "type": "Double-handed Weapon",
                             "cost": 15
                         },
                         {
-                            "name": "Light Armour",
+                            "type": "Light Armour",
                             "cost": 20
                         },
                         {
-                            "name": "Heavy Armour",
+                            "type": "Heavy Armour",
                             "cost": 50
                         },
                         {
-                            "name": "Helmet",
+                            "type": "Helmet",
                             "cost": 10
                         }
                     ],
@@ -385,7 +385,7 @@
             ]
         },
         {
-            "name": "Pit Fighter",
+            "type": "Pit Fighter",
             "startingCapital": 500,
             "sizeLimit": 15,
             "alignments": [
@@ -402,7 +402,7 @@
             ],
             "units": [
                 {
-                    "name": "Pit King",
+                    "type": "Pit King",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -445,7 +445,7 @@
                     ]
                 },
                 {
-                    "name": "Pit Fighter Veteran",
+                    "type": "Pit Fighter Veteran",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -485,7 +485,7 @@
                     ]
                 },
                 {
-                    "name": "Dwarf Troll Slayer",
+                    "type": "Dwarf Troll Slayer",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -536,7 +536,7 @@
                     ]
                 },
                 {
-                    "name": "Pit Fighter Initiate",
+                    "type": "Pit Fighter Initiate",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
@@ -574,7 +574,7 @@
                     ]
                 },
                 {
-                    "name": "Pursuer",
+                    "type": "Pursuer",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 3,
@@ -610,7 +610,7 @@
                     ]
                 },
                 {
-                    "name": "Pit Fighter",
+                    "type": "Pit Fighter",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -647,7 +647,7 @@
                     ]
                 },
                 {
-                    "name": "Ogre",
+                    "type": "Ogre",
                     "characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 3,
@@ -689,136 +689,136 @@
             ],
             "allowedEquipment": [
                 {
-                    "name": "PitFighterBaseEquipment",
+                    "type": "PitFighterBaseEquipment",
                     "equipment": [
                         {
-                            "name": "Dagger",
+                            "type": "Dagger",
                             "cost": 2
                         },
                         {
-                            "name": "Club",
+                            "type": "Club",
                             "cost": 3
                         },
                         {
-                            "name": "Hammer",
+                            "type": "Hammer",
                             "cost": 5
                         },
                         {
-                            "name": "Mace",
+                            "type": "Mace",
                             "cost": 5
                         },
                         {
-                            "name": "Axe",
+                            "type": "Axe",
                             "cost": 5
                         },
                         {
-                            "name": "Spear",
+                            "type": "Spear",
                             "cost": 5
                         },
                         {
-                            "name": "Sword",
+                            "type": "Sword",
                             "cost": 10
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "PitFighterArmourEquipment",
+                    "type": "PitFighterArmourEquipment",
                     "equipment": [
                         {
-                            "name": "Shield",
+                            "type": "Shield",
                             "cost": 5
                         },
                         {
-                            "name": "Buckler",
+                            "type": "Buckler",
                             "cost": 5
                         },
                         {
-                            "name": "Light Armour",
+                            "type": "Light Armour",
                             "cost": 20
                         },
                         {
-                            "name": "Helmet",
+                            "type": "Helmet",
                             "cost": 10
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "PursuerEquipment",
+                    "type": "PursuerEquipment",
                     "equipment": [
                         {
-                            "name": "Toughened Leathers",
+                            "type": "Toughened Leathers",
                             "cost": 5
                         },
                         {
-                            "name": "Net",
+                            "type": "Net",
                             "cost": 5
                         },
                         {
-                            "name": "Javelins",
+                            "type": "Javelins",
                             "cost": 10
                         },
                         {
-                            "name": "Throwing Knives",
+                            "type": "Throwing Knives",
                             "cost": 15
                         },
                         {
-                            "name": "Trident",
+                            "type": "Trident",
                             "cost": 15
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "PitFighterEquipment",
+                    "type": "PitFighterEquipment",
                     "equipment": [
                         {
-                            "name": "Halberd",
+                            "type": "Halberd",
                             "cost": 15
                         },
                         {
-                            "name": "Double-handed Weapon",
+                            "type": "Double-handed Weapon",
                             "cost": 15
                         },
                         {
-                            "name": "Morning Star",
+                            "type": "Morning Star",
                             "cost": 15
                         },
                         {
-                            "name": "Flail",
+                            "type": "Flail",
                             "cost": 15
                         },
                         {
-                            "name": "War Chain",
+                            "type": "War Chain",
                             "cost": 20
                         },
                         {
-                            "name": "Spiked Gauntlet",
+                            "type": "Spiked Gauntlet",
                             "cost": 15
                         },
                         {
-                            "name": "Brass Knuckles",
+                            "type": "Brass Knuckles",
                             "cost": 20
                         },
                         {
-                            "name": "Heavy Armour",
+                            "type": "Heavy Armour",
                             "cost": 50
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "TrollSlayerEquipment",
+                    "type": "TrollSlayerEquipment",
                     "equipment": [
                         {
-                            "name": "Dwarf Axe",
+                            "type": "Dwarf Axe",
                             "cost": 15
                         }
                     ],
                     "modificationOptions": [
                         {
-                            "name": "Gromril",
+                            "type": "Gromril",
                             "factor": 3
                         }
                     ]
@@ -826,7 +826,7 @@
             ]
         },
         {
-            "name": "Dwarven Rangers",
+            "type": "Dwarven Rangers",
             "startingCapital": 500,
             "sizeLimit": 12,
             "alignments": [
@@ -844,7 +844,7 @@
             ],
             "units": [
                 {
-                    "name": "Runesmith",
+                    "type": "Runesmith",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 5,
@@ -891,7 +891,7 @@
                     ]
                 },
                 {
-                    "name": "Apprentice Runesmith",
+                    "type": "Apprentice Runesmith",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 3,
@@ -937,7 +937,7 @@
                     ]
                 },
                 {
-                    "name": "Troll Slayer",
+                    "type": "Troll Slayer",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -981,7 +981,7 @@
                     ]
                 },
                 {
-                    "name": "Dwarf Clansman",
+                    "type": "Dwarf Clansman",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -1020,7 +1020,7 @@
                     ]
                 },
                 {
-                    "name": "Dwarf Longbeards",
+                    "type": "Dwarf Longbeards",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 5,
@@ -1060,7 +1060,7 @@
                     ]
                 },
                 {
-                    "name": "Dwarf Ranger",
+                    "type": "Dwarf Ranger",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -1098,7 +1098,7 @@
                     ]
                 },
                 {
-                    "name": "Beardlings",
+                    "type": "Beardlings",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 3,
@@ -1139,123 +1139,123 @@
             ],
             "allowedEquipment": [
                 {
-                    "name": "DwarvenWarriorEquipment",
+                    "type": "DwarvenWarriorEquipment",
                     "equipment": [
                         {
-                            "name": "Dagger",
+                            "type": "Dagger",
                             "cost": 2
                         },
                         {
-                            "name": "Mace",
+                            "type": "Mace",
                             "cost": 5
                         },
                         {
-                            "name": "Hammer",
+                            "type": "Hammer",
                             "cost": 5
                         },
                         {
-                            "name": "Axe",
+                            "type": "Axe",
                             "cost": 5
                         },
                         {
-                            "name": "Spear",
+                            "type": "Spear",
                             "cost": 5
                         },
                         {
-                            "name": "Halberd",
+                            "type": "Halberd",
                             "cost": 10
                         },
                         {
-                            "name": "Dwarf Axe",
+                            "type": "Dwarf Axe",
                             "cost": 15
                         },
                         {
-                            "name": "Sword",
+                            "type": "Sword",
                             "cost": 10
                         },
                         {
-                            "name": "Double-handed Weapon",
+                            "type": "Double-handed Weapon",
                             "cost": 15
                         },
                         {
-                            "name": "Pistol",
+                            "type": "Pistol",
                             "cost": 15
                         }
                     ],
                     "modificationOptions": [
                         {
-                            "name": "Gromril",
+                            "type": "Gromril",
                             "factor": 3
                         }
                     ]
                 },
                 {
-                    "name": "DwarvenArmourEquipment",
+                    "type": "DwarvenArmourEquipment",
                     "equipment": [
                         {
-                            "name": "Light Armour",
+                            "type": "Light Armour",
                             "cost": 20
                         },
                         {
-                            "name": "Heavy Armour",
+                            "type": "Heavy Armour",
                             "cost": 50
                         },
                         {
-                            "name": "Shield",
+                            "type": "Shield",
                             "cost": 5
                         },
                         {
-                            "name": "Gromril Armour",
+                            "type": "Gromril Armour",
                             "cost": 75
                         },
                         {
-                            "name": "Helmet",
+                            "type": "Helmet",
                             "cost": 10
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "DwarvenRangerEquipment",
+                    "type": "DwarvenRangerEquipment",
                     "equipment": [
                         {
-                            "name": "Dagger",
+                            "type": "Dagger",
                             "cost": 2
                         },
                         {
-                            "name": "Mace",
+                            "type": "Mace",
                             "cost": 5
                         },
                         {
-                            "name": "Hammer",
+                            "type": "Hammer",
                             "cost": 5
                         },
                         {
-                            "name": "Axe",
+                            "type": "Axe",
                             "cost": 5
                         },
                         {
-                            "name": "Sword",
+                            "type": "Sword",
                             "cost": 10
                         },
                         {
-                            "name": "Crossbow",
+                            "type": "Crossbow",
                             "cost": 25
                         },
                         {
-                            "name": "Light Armour",
+                            "type": "Light Armour",
                             "cost": 20
                         },
                         {
-                            "name": "Heavy Armour",
+                            "type": "Heavy Armour",
                             "cost": 50
                         },
                         {
-                            "name": "Shield",
+                            "type": "Shield",
                             "cost": 5
                         },
                         {
-                            "name": "Helmet",
+                            "type": "Helmet",
                             "cost": 10
                         }
                     ],
@@ -1264,7 +1264,7 @@
             ]
         },
         {
-            "name": "Orcs & Goblins",
+            "type": "Orcs & Goblins",
             "startingCapital": 500,
             "sizeLimit": 20,
             "alignments": [
@@ -1278,7 +1278,7 @@
             "units": []
         },
         {
-            "name": "Sisters of Sigmar",
+            "type": "Sisters of Sigmar",
             "startingCapital": 500,
             "sizeLimit": 15,
             "alignments": [
@@ -1291,7 +1291,7 @@
             "armyRules": [],
             "units": [
                 {
-                    "name": "Sigmarite Matriarch",
+                    "type": "Sigmarite Matriarch",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -1336,7 +1336,7 @@
                     ]
                 },
                 {
-                    "name": "Sister Superior",
+                    "type": "Sister Superior",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -1376,7 +1376,7 @@
                     ]
                 },
                 {
-                    "name": "Augur",
+                    "type": "Augur",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
@@ -1417,7 +1417,7 @@
                     ]
                 },
                 {
-                    "name": "Novice",
+                    "type": "Novice",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
@@ -1450,7 +1450,7 @@
                     ]
                 },
                 {
-                    "name": "Sigmarite Sister",
+                    "type": "Sigmarite Sister",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 3,
@@ -1484,86 +1484,86 @@
             ],
             "allowedEquipment": [
                 {
-                    "name": "SigmarEquipment",
+                    "type": "SigmarEquipment",
                     "equipment": [
                         {
-                            "name": "Dagger",
+                            "type": "Dagger",
                             "cost": 2
                         },
                         {
-                            "name": "Club",
+                            "type": "Club",
                             "cost": 3
                         },
                         {
-                            "name": "Hammer",
+                            "type": "Hammer",
                             "cost": 5
                         },
                         {
-                            "name": "Mace",
+                            "type": "Mace",
                             "cost": 5
                         },
                         {
-                            "name": "Steel Whip",
+                            "type": "Steel Whip",
                             "cost": 10
                         },
                         {
-                            "name": "Flail",
+                            "type": "Flail",
                             "cost": 15
                         },
                         {
-                            "name": "Sigmarite Warhammer",
+                            "type": "Sigmarite Warhammer",
                             "cost": 15
                         },
                         {
-                            "name": "Double-handed Weapon",
+                            "type": "Double-handed Weapon",
                             "cost": 15
                         },
                         {
-                            "name": "Sling",
+                            "type": "Sling",
                             "cost": 2
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "SigmarArmour",
+                    "type": "SigmarArmour",
                     "equipment": [
                         {
-                            "name": "Light Armour",
+                            "type": "Light Armour",
                             "cost": 20
                         },
                         {
-                            "name": "Heavy Armour",
+                            "type": "Heavy Armour",
                             "cost": 50
                         },
                         {
-                            "name": "Shield",
+                            "type": "Shield",
                             "cost": 5
                         },
                         {
-                            "name": "Buckler",
+                            "type": "Buckler",
                             "cost": 5
                         },
                         {
-                            "name": "Helmet",
+                            "type": "Helmet",
                             "cost": 10
                         }
                     ],
                     "modificationOptions": []
                 },
                 {
-                    "name": "SigmarHeroEquipment",
+                    "type": "SigmarHeroEquipment",
                     "equipment": [
                         {
-                            "name": "Holy Tome",
+                            "type": "Holy Tome",
                             "cost": 120
                         },
                         {
-                            "name": "Blessed Water",
+                            "type": "Blessed Water",
                             "cost": 10
                         },
                         {
-                            "name": "Holy Relic",
+                            "type": "Holy Relic",
                             "cost": 15
                         }
                     ],

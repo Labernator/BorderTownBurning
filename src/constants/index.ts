@@ -15,7 +15,13 @@ export interface IUnitEquipment {
     unit: IUnit;
 }
 
+export enum AppMode {
+    Initial,
+    ExistingWarband,
+}
+
 export const initialState: IAppState = {
+    appMode: AppMode.Initial,
     armyAchievements: [],
     armyAlignment: "",
     armyCampaignPoints: 0,
@@ -45,17 +51,18 @@ export const initialState: IAppState = {
     warbandRoster: [],
 };
 
-export interface Equipment {
-    name: string;
+export interface IEquipment {
+    type: string;
     cost: number;
 }
 export interface EquipmentList {
-    name: string;
+    type: string;
     modificationOptions: string[];
-    equipment: Equipment[];
+    equipment: IEquipment[];
 }
 export interface IArmy {
-    name: string;
+    // name: string;
+    type: string;
     sizeLimit: number;
     alignments: string[];
     objectives: string[];
@@ -65,6 +72,7 @@ export interface IArmy {
 }
 
 export interface IAppState {
+    appMode: AppMode;
     armyType: string;
     armyName: string;
     armyAlignment: string;
@@ -82,7 +90,8 @@ export interface IAppState {
 }
 
 export interface IUnit {
-    name: string;
+    // name: string;
+    type: string;
     characteristics: ICharacteristics;
     price: number;
     isHero: boolean;
@@ -108,13 +117,6 @@ export interface ICharacteristics {
     Leadership: number;
 }
 
-export interface IEquipment {
-    MeleeWeapons: IMeleeWeapon[];
-    MissileWeapons: IMissileWeapon[];
-    Armour: IArmour[];
-
-}
-
 export interface IMeleeWeapon extends IEquip {
     weaponType: string;
     strengthModifier: string;
@@ -136,7 +138,7 @@ export interface IMiscallaneous extends IEquip {
     type: string;
 }
 interface IEquip {
-    name: string;
+    type: string;
     cost: number;
     rarity: number;
     rules: string[];

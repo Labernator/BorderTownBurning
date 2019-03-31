@@ -15,6 +15,8 @@ const getUnitRating = (unit: IUnit) => {
 };
 export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
+        case Actions.SET_MODE:
+            return { ...state, appMode: action.payload };
         case Actions.SET_ARMY:
             return { ...state, armyType: action.payload };
         case Actions.SET_ARMYNAME:
@@ -32,7 +34,7 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
         case Actions.ADD_UNIT_TO_ROSTER:
             return { ...state, warbandRoster: [...state.warbandRoster, action.payload] };
         case Actions.REMOVE_UNIT_FROM_ROSTER:
-            return { ...state, warbandRoster: state.warbandRoster.filter((unit) => unit.name !== action.payload.name) };
+            return { ...state, warbandRoster: state.warbandRoster.filter((unit) => unit.type !== action.payload.type) };
         case Actions.ADD_MONEY_TO_TREASURY:
             return { ...state, armyTreasury: state.armyTreasury + action.payload };
         case Actions.RESET_TREASURY:
@@ -42,7 +44,7 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
         case Actions.SET_TREASURY:
             return { ...state, armyTreasury: action.payload };
         case Actions.REMOVE_UNIT_FROM_UNITLIST:
-            return { ...state, listOfUnits: state.listOfUnits.filter((unit) => unit.name !== action.payload) };
+            return { ...state, listOfUnits: state.listOfUnits.filter((unit) => unit.type !== action.payload) };
         case Actions.ADD_UNIT_TO_UNITLIST:
             return { ...state, listOfUnits: [...state.listOfUnits, action.payload] };
         case Actions.UPDATE_UNITLIST:
@@ -54,9 +56,11 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
         case Actions.SUBTRACT_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating - getUnitRating(action.payload) };
         case Actions.UPDATE_UNIT:
-            const unitIndex = state.warbandRoster.findIndex((unit) => unit.name === action.payload.name);
+            const unitIndex = state.warbandRoster.findIndex((unit) => unit.type === action.payload.type);
             return { ...state, warbandRoster: [...state.warbandRoster.slice(0, unitIndex), action.payload, ...state.warbandRoster.slice(unitIndex + 1)] };
         default:
+            // tslint:disable-next-line: no-console
+            console.log(state);
             return state;
     }
 }

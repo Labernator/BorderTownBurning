@@ -64,6 +64,7 @@ function App(props: IAppState) {
 }
 
 const mapStateToProps = (state: IAppState) => ({
+    appMode: state.appMode,
     armyAchievements: state.armyAchievements,
     armyAlignment: state.armyAlignment,
     armyCampaignPoints: state.armyCampaignPoints,

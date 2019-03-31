@@ -11,7 +11,7 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
     constructor(props: IUnitEquipment) {
         super(props);
         const availableEquipment = getEquipment(props.unit.allowedEquipment);
-        const equipmentNames = availableEquipment.map((equipment) => equipment.name);
+        const equipmentNames = availableEquipment.map((equipment) => equipment.type);
         this.meleeEquipment = filterMeleeWeapons(equipmentNames);
         this.missileEquipment = filterMissileWeapons(equipmentNames);
         this.armourEquipment = filterArmour(equipmentNames);
@@ -71,50 +71,61 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
 
     private addItemToUnit(item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) {
         const updateUnit = this.props.unit;
-        updateUnit.equipment.push(item.name);
+        updateUnit.equipment.push(item.type);
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
         store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: item.cost });
     }
+    private createBuyButton(item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) {
+        let buyBtn;
+        if (item.cost <= store.getState().armyTreasury) {
+            buyBtn = <button onClick={() => this.addItemToUnit(item)} className="BuyButton">Buy</button>;
+        } else {
+            buyBtn = <button onClick={() => this.addItemToUnit(item)} className="BuyButton" disabled style={{ background: "lightgray" }} title="Insufficient funds">Buy</button>;
+        }
+        return (
+            buyBtn
+        );
+    }
     private createMeleeTableRows() {
         return this.meleeEquipment.map((weapon) => (
-            <tr key={weapon.name}>
-                <td>{weapon.name}</td>
+            <tr key={weapon.type}>
+                <td>{weapon.type}</td>
                 <td>{weapon.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(weapon)}>Buy</button>
+                    {this.createBuyButton(weapon)}
                 </td>
             </tr>
         ));
     }
     private createMissileTableRows() {
         return this.missileEquipment.map((weapon) => (
-            <tr key={weapon.name}>
-                <td>{weapon.name}</td>
+            <tr key={weapon.type}>
+                <td>{weapon.type}</td>
                 <td>{weapon.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(weapon)}>Buy</button>
+                    {this.createBuyButton(weapon)}
                 </td>
             </tr>
         ));
     }
     private createArmorTableRows() {
         return this.armourEquipment.map((armour) => (
-            <tr key={armour.name}>
-                <td>{armour.name}</td>
+            <tr key={armour.type}>
+                <td>{armour.type}</td>
                 <td>{armour.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(armour)}>Buy</button>
+                    {this.createBuyButton(armour)}
                 </td>
             </tr>
         ));
     }
     private createMiscTableRows() {
         return this.miscEquipment.map((misc) => (
-            <tr key={misc.name}>
-                <td>{misc.name}</td>
+            <tr key={misc.type}>
+                <td>{misc.type}</td>
                 <td>{misc.cost}</td>
                 <td>
-                    <button onClick={() => this.addItemToUnit(misc)}>Buy</button>
+                    {this.createBuyButton(misc)}
                 </td>
             </tr>
         ));
