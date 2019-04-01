@@ -11,15 +11,7 @@
                         "Armour yield",
                         "Off-Hand"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Mace",
@@ -29,15 +21,7 @@
                     "rules": [
                         "Concussion"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Flail",
@@ -48,15 +32,7 @@
                         "Heavy",
                         "Two-handed"
                     ],
-                    "strengthModifier": "+2",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": "+2"
                 },
                 {
                     "type": "Hammer",
@@ -66,15 +42,7 @@
                     "rules": [
                         "Concussion"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Club",
@@ -84,15 +52,7 @@
                     "rules": [
                         "Concussion"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Axe",
@@ -102,15 +62,7 @@
                     "rules": [
                         "Cutting Edge"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Spear",
@@ -122,15 +74,7 @@
                         "Unwieldy",
                         "Cavalry Bonus(1)"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Halberd",
@@ -140,15 +84,7 @@
                     "rules": [
                         "Two-Handed"
                     ],
-                    "strengthModifier": "+1",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": "+1"
                 },
                 {
                     "type": "Morning Star",
@@ -159,15 +95,7 @@
                         "Heavy",
                         "Difficult to Use"
                     ],
-                    "strengthModifier": "+1",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": "+1"
                 },
                 {
                     "type": "Dwarf Axe",
@@ -179,17 +107,12 @@
                         "Parry"
                     ],
                     "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Dwarven Rangers",
-                                "Dwarven Treasure Hunters"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Dwarven Rangers",
+                            "Dwarven Treasure Hunters"
+                        ]
+                    }
                 },
                 {
                     "type": "Sword",
@@ -199,15 +122,7 @@
                     "rules": [
                         "Parry"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Double-handed Weapon",
@@ -218,15 +133,7 @@
                         "Two-Handed",
                         "Strike Last"
                     ],
-                    "strengthModifier": "+2",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": "+2"
                 },
                 {
                     "type": "Steel Whip",
@@ -237,15 +144,7 @@
                         "Cannot Be Parried",
                         "Whipcrack"
                     ],
-                    "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": ""
                 },
                 {
                     "type": "Sigmarite Warhammer",
@@ -257,16 +156,11 @@
                         "Holy Weapon"
                     ],
                     "strengthModifier": "+1",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Sisters of Sigmar"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Sisters of Sigmar"
+                        ]
+                    }
                 },
                 {
                     "type": "Spiked Gauntlet",
@@ -277,16 +171,11 @@
                         "Parry"
                     ],
                     "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Pit Figher"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Pit Fighter"
+                        ]
+                    }
                 },
                 {
                     "type": "Brass Knuckles",
@@ -297,15 +186,7 @@
                         "Pair",
                         "Cumbersome"
                     ],
-                    "strengthModifier": "+1",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "strengthModifier": "+1"
                 },
                 {
                     "type": "War Chain",
@@ -318,16 +199,11 @@
                         "Reach"
                     ],
                     "strengthModifier": "+1",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Pit Figher"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Pit Fighter"
+                        ]
+                    }
                 },
                 {
                     "type": "Trident",
@@ -339,16 +215,11 @@
                         "Parry"
                     ],
                     "strengthModifier": "",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Pit Figher"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Pit Figher"
+                        ]
+                    }
                 }
             ]
         },
@@ -364,15 +235,7 @@
                         "Fire Twice"
                     ],
                     "strength": 3,
-                    "range": 18,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 18
                 },
                 {
                     "type": "Pistol",
@@ -386,15 +249,7 @@
                         "Blackpowder"
                     ],
                     "strength": 4,
-                    "range": 6,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 6
                 },
                 {
                     "type": "Brace of Pistols",
@@ -408,15 +263,7 @@
                         "Blackpowder"
                     ],
                     "strength": 4,
-                    "range": 6,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 6
                 },
                 {
                     "type": "Crossbow",
@@ -427,15 +274,7 @@
                         "Move or Fire"
                     ],
                     "strength": 4,
-                    "range": 30,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 30
                 },
                 {
                     "type": "Crossbow Pistol",
@@ -446,15 +285,7 @@
                         "Hand-to-Hand"
                     ],
                     "strength": 4,
-                    "range": 10,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 10
                 },
                 {
                     "type": "Short Bow",
@@ -463,15 +294,7 @@
                     "weaponType": "Shooting",
                     "rules": [],
                     "strength": 3,
-                    "range": 16,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 16
                 },
                 {
                     "type": "Bow",
@@ -480,15 +303,7 @@
                     "weaponType": "Shooting",
                     "rules": [],
                     "strength": 3,
-                    "range": 24,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 24
                 },
                 {
                     "type": "Long Bow",
@@ -497,15 +312,7 @@
                     "weaponType": "Shooting",
                     "rules": [],
                     "strength": 3,
-                    "range": 30,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 30
                 },
                 {
                     "type": "Elf Bow",
@@ -516,15 +323,7 @@
                         "Cutting Edge"
                     ],
                     "strength": 3,
-                    "range": 36,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 36
                 },
                 {
                     "type": "Javelins",
@@ -535,15 +334,7 @@
                         "Thrown Weapon"
                     ],
                     "strength": "As User",
-                    "range": 8,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 8
                 },
                 {
                     "type": "Throwing Knives",
@@ -554,15 +345,7 @@
                         "Thrown Weapon"
                     ],
                     "strength": "As User",
-                    "range": 6,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "range": 6
                 }
             ]
         },
@@ -574,15 +357,7 @@
                     "rarity": 0,
                     "armourType": "Suit",
                     "rules": [],
-                    "armour": 2,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 2
                 },
                 {
                     "type": "Heavy Armour",
@@ -590,15 +365,7 @@
                     "rarity": 0,
                     "armourType": "Suit",
                     "rules": [],
-                    "armour": 3,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 3
                 },
                 {
                     "type": "Gromril Armour",
@@ -609,17 +376,12 @@
                         "Gromril"
                     ],
                     "armour": 4,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Dwarven Rangers",
-                                "Dwarven Treasure Hunters"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Dwarven Rangers",
+                            "Dwarven Treasure Hunters"
+                        ]
+                    }
                 },
                 {
                     "type": "Lamellar Armour",
@@ -627,15 +389,7 @@
                     "rarity": 9,
                     "armourType": "Suit",
                     "rules": [],
-                    "armour": 4,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 4
                 },
                 {
                     "type": "Helmet",
@@ -645,15 +399,7 @@
                     "rules": [
                         "Avoid Stun"
                     ],
-                    "armour": 0,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 0
                 },
                 {
                     "type": "Shield",
@@ -661,15 +407,7 @@
                     "rarity": 0,
                     "armourType": "Shield",
                     "rules": [],
-                    "armour": 1,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 1
                 },
                 {
                     "type": "Buckler",
@@ -679,15 +417,7 @@
                     "rules": [
                         "Parry"
                     ],
-                    "armour": 0,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 0
                 },
                 {
                     "type": "Pavise",
@@ -697,15 +427,7 @@
                     "rules": [
                         "Cover"
                     ],
-                    "armour": 0,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 0
                 },
                 {
                     "type": "Toughened Leathers",
@@ -714,16 +436,11 @@
                     "armourType": "Suit",
                     "rules": [],
                     "armour": 1,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Used by All"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Used by All"
+                        ]
+                    }
                 },
                 {
                     "type": "Ithilmar Armour",
@@ -733,15 +450,7 @@
                     "rules": [
                         "Light Armour"
                     ],
-                    "armour": 3,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 3
                 },
                 {
                     "type": "Chaos Armour",
@@ -754,15 +463,7 @@
                         "Gift of Chaos",
                         "Spellcasters"
                     ],
-                    "armour": 4,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 4
                 },
                 {
                     "type": "Bracers",
@@ -774,16 +475,11 @@
                         "Parry"
                     ],
                     "armour": 0,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Used by All"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Used by All"
+                        ]
+                    }
                 },
                 {
                     "type": "Reinforced Plate Armour",
@@ -794,15 +490,7 @@
                         "Cumbersome",
                         "Save"
                     ],
-                    "armour": 3,
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "armour": 3
                 },
                 {
                     "type": "Sea Dragon Cloak",
@@ -813,16 +501,11 @@
                         "Scales"
                     ],
                     "armour": 2,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Dark Elves"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Dark Elves"
+                        ]
+                    }
                 },
                 {
                     "type": "Elven Cloak",
@@ -833,16 +516,11 @@
                         "Hard Target"
                     ],
                     "armour": 2,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Used by All"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Used by All"
+                        ]
+                    }
                 },
                 {
                     "type": "Forest Cloak",
@@ -853,16 +531,11 @@
                         "One with the Forest"
                     ],
                     "armour": 2,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Used by All"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Used by All"
+                        ]
+                    }
                 },
                 {
                     "type": "Cathayan Silk Clothes",
@@ -873,16 +546,11 @@
                         "Hard Target"
                     ],
                     "armour": 2,
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Used by All"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Used by All"
+                        ]
+                    }
                 }
             ]
         },
@@ -893,377 +561,207 @@
                     "cost": "30+2D6",
                     "rarity": 8,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": [
-                                "Sisters of Sigmar",
-                                "Warrior Priests",
-                                "Witch Hunters"
-                            ]
-                        }
-                    ]
+                    "restrictions": {
+                        "exclude": [
+                            "Sisters of Sigmar",
+                            "Warrior Priests",
+                            "Witch Hunters"
+                        ]
+                    }
                 },
                 {
                     "type": "Garlic",
                     "cost": "1",
                     "rarity": 0,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": [
-                                "Undead"
-                            ]
-                        }
-                    ]
+                    "restrictions": {
+                        "exclude": [
+                            "Undead"
+                        ]
+                    }
                 },
                 {
                     "type": "Elven Wine",
                     "cost": "50+3D6",
                     "rarity": 10,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Shadow Warriors"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Shadow Warriors"
+                        ]
+                    }
                 },
                 {
                     "type": "Holy Relic",
                     "cost": "15+3D6",
                     "rarity": 6,
                     "genus": "Books & Scrolls",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Sisters of Sigmar",
-                                "Warrior Priests"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Sisters of Sigmar",
+                            "Warrior Priests"
+                        ]
+                    }
                 },
                 {
                     "type": "Holy Tome",
                     "cost": "100+10*D6",
                     "rarity": 10,
                     "genus": "Books & Scrolls",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Sisters of Sigmar",
-                                "Warrior Priests"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Sisters of Sigmar",
+                            "Warrior Priests"
+                        ]
+                    }
                 },
                 {
                     "type": "Blessed Water",
                     "cost": "10+3D6",
                     "rarity": 6,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": [
-                                "Undead"
-                            ]
-                        }
-                    ]
+                    "restrictions": {
+                        "exclude": [
+                            "Undead"
+                        ]
+                    }
                 },
                 {
                     "type": "Bugman's Ale",
                     "cost": "50+3D6",
                     "rarity": 9,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": [
-                                "Dark Elves",
-                                "Shadow Warriors",
-                                "Forest Walker"
-                            ]
-                        }
-                    ]
+                    "restrictions": {
+                        "exclude": [
+                            "Dark Elves",
+                            "Shadow Warriors",
+                            "Forest Walker"
+                        ]
+                    }
                 },
                 {
                     "type": "Crimson Shade",
                     "cost": "35+D6",
                     "rarity": 8,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Healing Herbs",
                     "cost": "20+2D6",
                     "rarity": 8,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Healing Potion",
                     "cost": "30+D6",
                     "rarity": 9,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Liquor Flask",
                     "cost": "30+D6",
                     "rarity": 7,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Madcap Mushrooms",
                     "cost": "30+3D6",
                     "rarity": 9,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Mandrake Root",
                     "cost": "25+D6",
                     "rarity": 8,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Potion of Strength",
                     "cost": "30+D6",
                     "rarity": 6,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Potion of Speed",
                     "cost": "40+D6",
                     "rarity": 10,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Spider's Poison",
                     "cost": "25+2D6",
                     "rarity": 8,
-                    "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Tears of Shallaya",
                     "cost": "10+2D6",
                     "rarity": 7,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": [
-                                "Possessed",
-                                "Undead"
-                            ]
-                        }
-                    ]
+                    "restrictions": {
+                        "exclude": [
+                            "Possessed",
+                            "Undead"
+                        ]
+                    }
                 },
                 {
                     "type": "Vial of Pestilence",
                     "cost": "25+2D6",
                     "rarity": 9,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Skaven"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Skaven"
+                        ]
+                    }
                 },
                 {
                     "type": "Vodka",
                     "cost": "35+2D6",
                     "rarity": 8,
                     "genus": "Drugs, Poison & Potions",
-                    "restrictions": [
-                        {
-                            "include": [
-                                "Kislevit"
-                            ]
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "restrictions": {
+                        "include": [
+                            "Kislevit"
+                        ]
+                    }
                 },
                 {
                     "type": "Net",
                     "cost": "5",
                     "rarity": 0,
-                    "genus": "Other Equipment",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Other Equipment"
                 },
                 {
                     "type": "Rope & Hook",
                     "cost": "5",
                     "rarity": 0,
-                    "genus": "Other Equipment",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Other Equipment"
                 },
                 {
                     "type": "Lantern",
                     "cost": "10",
                     "rarity": 0,
-                    "genus": "Other Equipment",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Other Equipment"
                 },
                 {
                     "type": "Rosary",
                     "cost": "10",
                     "rarity": 6,
-                    "genus": "Other Equipment",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Other Equipment"
                 },
                 {
                     "type": "Torch",
                     "cost": "2",
                     "rarity": 0,
-                    "genus": "Other Equipment",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Other Equipment"
                 },
                 {
                     "type": "Lock Picks",
                     "cost": "15",
                     "rarity": 8,
-                    "genus": "Other Equipment",
-                    "restrictions": [
-                        {
-                            "include": []
-                        },
-                        {
-                            "exclude": []
-                        }
-                    ]
+                    "genus": "Other Equipment"
                 }
             ]
         }

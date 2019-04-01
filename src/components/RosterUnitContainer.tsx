@@ -10,6 +10,7 @@ import { Skills } from "./Skills";
 import { UnitEquipment } from "./UnitEquipment";
 import { Equipment } from "./Equipment";
 import { UnitLabel } from "./UnitLabel";
+import { Experience } from "./Experience";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     let counter = 0;
@@ -33,7 +34,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     </button>
                     <UnitLabel title="Unit Type" value={unit.type}></UnitLabel>
                     <UnitLabel title="Unit Cost" value={unit.price.toString()}></UnitLabel>
-                    <UnitLabel title="XP" value={unit.experience.toString()}></UnitLabel>
+                    <Experience unit={unit}></Experience>
                     <Equipment unit={unit}></Equipment>
                     <UnitEquipment unit={unit}></UnitEquipment>
                     <SkillLists names={unit.skillLists}></SkillLists>

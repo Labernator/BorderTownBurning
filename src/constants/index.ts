@@ -142,5 +142,8 @@ interface IEquip {
     cost: number;
     rarity: number;
     rules: string[];
-    restrictions: string[];
+    restrictions?: {
+        include?: string[];
+        exclude?: string[];
+    }
 }

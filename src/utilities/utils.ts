@@ -32,10 +32,26 @@ export const filterArmour = (filterList: string[]): IArmour[] => {
 export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
     const MiscEquipment = getMisc();
     if (store.getState().appMode === AppMode.ExistingWarband) {
-        // TODO: filter for includes and excludes...
-        // const ArmyType = store.getState().armyType;
-        // MiscEquipment.filter((misc) => misc.restrictions.);
-        return MiscEquipment;
+        const ArmyType = store.getState().armyType;
+        return MiscEquipment.reduce((filteredArr, misc) => {
+            if (misc.restrictions === undefined) {
+                filteredArr = filteredArr.concat(misc);
+            } else {
+                if (misc.restrictions.exclude !== undefined) {
+                    const excluded = misc.restrictions.exclude.find((exclude) => exclude === ArmyType);
+                    if (excluded === undefined) {
+                        filteredArr = filteredArr.concat(misc);
+                    }
+                }
+                if (misc.restrictions.include !== undefined) {
+                    const included = misc.restrictions.include.find((exclude) => exclude === ArmyType);
+                    if (included !== undefined) {
+                        filteredArr = filteredArr.concat(misc);
+                    }
+                }
+            }
+            return filteredArr;
+        }, [] as IMiscallaneous[]);
     }
     return MiscEquipment.length > 0 ? MiscEquipment.filter((misc) => filterList.includes(misc.type)) : [];
 };
