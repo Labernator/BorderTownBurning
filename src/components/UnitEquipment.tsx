@@ -3,6 +3,7 @@ import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitEquipment }
 import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from "../utilities/utils";
 import { store } from "..";
 import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from "../actions";
+let counter = 0;
 export class UnitEquipment extends React.Component<IUnitEquipment> {
     private readonly meleeEquipment: IMeleeWeapon[];
     private readonly missileEquipment: IMissileWeapon[];
@@ -131,8 +132,9 @@ export class UnitEquipment extends React.Component<IUnitEquipment> {
         ));
     }
     private createTh(input: string) {
+        counter++;
         return (
-            <tr key={input}>
+            <tr key={`${input}${counter}`}>
                 <th>{input}</th>
                 <th>Cost</th>
             </tr>

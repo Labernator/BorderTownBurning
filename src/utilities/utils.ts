@@ -138,3 +138,48 @@ export function getUnits(armyType: string): IUnit[] {
         return [];
     }
 }
+
+export const checkLevelUp = (unit: IUnit) => {
+    if (unit.isHero) {
+        switch (unit.experience) {
+            case 2:
+            case 4:
+            case 6:
+            case 8:
+            case 11:
+            case 14:
+            case 17:
+            case 20:
+            case 24:
+            case 28:
+            case 32:
+            case 36:
+            case 41:
+            case 46:
+            case 51:
+            case 57:
+            case 63:
+            case 69:
+            case 76:
+            case 83:
+            case 90: handleHeroLevelUp(unit); break;
+            default: // do nothing
+        }
+    } else {
+        switch (unit.experience) {
+            case 2:
+            case 5:
+            case 9:
+            case 14: handleHenchmenLevelUp(unit); break;
+            default: // do nothing
+        }
+    }
+}
+
+const handleHeroLevelUp = (unit: IUnit) => {
+    // Create new Level Up component with all possible advances
+}
+
+const handleHenchmenLevelUp = (unit: IUnit) => {
+    // Create new Level Up component with all possible advances
+}
