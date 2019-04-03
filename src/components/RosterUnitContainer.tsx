@@ -5,12 +5,11 @@ import { store } from "..";
 import * as Actions from "../actions";
 import { IUnit, IAppState } from "../constants";
 import { CharacteristicTable } from "./CharacteristicTable";
-import { SkillLists } from "./SkillLists";
-import { Skills } from "./Skills";
+import { ListComponent } from "./ListComponent";
 import { UnitEquipment } from "./UnitEquipment";
 import { Equipment } from "./Equipment";
-import { UnitLabel } from "./UnitLabel";
-import { UnitName } from "./UnitName";
+import { UnitLabelComponent } from "./UnitLabel";
+import { UnitNameComponent } from "./UnitName";
 import { Experience } from "./Experience";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
@@ -33,14 +32,14 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <button style={{ position: "absolute", top: 0, right: 0 }} onClick={removeUnit} className="EnabledButton">
                         X
                     </button>
-                    <UnitName unit={unit}></UnitName>
-                    <UnitLabel title="Unit Type" value={unit.type}></UnitLabel>
-                    <UnitLabel title="Unit Cost" value={unit.price.toString()}></UnitLabel>
+                    <UnitNameComponent unit={unit}></UnitNameComponent>
+                    <UnitLabelComponent title="Unit Type" value={unit.type}></UnitLabelComponent>
+                    <UnitLabelComponent title="Unit Cost" value={unit.price.toString()}></UnitLabelComponent>
                     <Experience unit={unit}></Experience>
                     <Equipment unit={unit}></Equipment>
                     <UnitEquipment unit={unit}></UnitEquipment>
-                    <SkillLists names={unit.skillLists}></SkillLists>
-                    <Skills names={unit.skills}></Skills>
+                    <ListComponent names={unit.skillLists} title="Skill Lists"></ListComponent>
+                    <ListComponent names={unit.skills} title="Skills"></ListComponent>
                     <CharacteristicTable characteristics={unit.characteristics} ></CharacteristicTable>
                 </div>
             );

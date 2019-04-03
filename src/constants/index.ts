@@ -4,6 +4,7 @@ export interface ICharTable {
 
 export interface IList {
     names: string[];
+    title: string;
 }
 
 export interface ILabel {
@@ -11,7 +12,7 @@ export interface ILabel {
     value: string;
 }
 
-export interface IUnitEquipment {
+export interface IUnitProps {
     unit: IUnit;
 }
 

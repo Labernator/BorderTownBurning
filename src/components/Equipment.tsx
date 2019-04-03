@@ -1,11 +1,11 @@
 import React from "react";
-import { IUnitEquipment, AppMode } from "../constants";
+import { IUnitProps, AppMode } from "../constants";
 import { store } from "..";
 import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY } from "../actions";
 import { getEquipmentByName } from "../utilities/utils";
-export class Equipment extends React.Component<IUnitEquipment> {
+export class Equipment extends React.Component<IUnitProps> {
     private readonly equipment: string[];
-    constructor(props: IUnitEquipment) {
+    constructor(props: IUnitProps) {
         super(props);
         this.equipment = props.unit.equipment;
     }

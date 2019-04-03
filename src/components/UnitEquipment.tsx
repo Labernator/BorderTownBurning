@@ -1,15 +1,15 @@
 import React from "react";
-import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitEquipment } from "../constants";
+import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitProps } from "../constants";
 import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from "../utilities/utils";
 import { store } from "..";
 import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from "../actions";
 let counter = 0;
-export class UnitEquipment extends React.Component<IUnitEquipment> {
+export class UnitEquipment extends React.Component<IUnitProps> {
     private readonly meleeEquipment: IMeleeWeapon[];
     private readonly missileEquipment: IMissileWeapon[];
     private readonly armourEquipment: IArmour[];
     private readonly miscEquipment: IMiscallaneous[];
-    constructor(props: IUnitEquipment) {
+    constructor(props: IUnitProps) {
         super(props);
         const availableEquipment = getEquipment(props.unit.allowedEquipment);
         const equipmentNames = availableEquipment.map((equipment) => equipment.type);

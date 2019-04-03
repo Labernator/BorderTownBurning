@@ -1,11 +1,11 @@
 import React from "react";
-import { IUnit, IUnitEquipment } from "../constants";
+import { IUnit, IUnitProps } from "../constants";
 import { UPDATE_UNIT } from "../actions";
 import { store } from "..";
 import { checkLevelUp } from "../utilities/utils";
 
-export class Experience extends React.Component<IUnitEquipment> {
-    constructor(props: IUnitEquipment) {
+export class Experience extends React.Component<IUnitProps> {
+    constructor(props: IUnitProps) {
         super(props);
     }
     public addExperience = () => {
