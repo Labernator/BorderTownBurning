@@ -10,6 +10,7 @@ import { Skills } from "./Skills";
 import { UnitEquipment } from "./UnitEquipment";
 import { Equipment } from "./Equipment";
 import { UnitLabel } from "./UnitLabel";
+import { UnitName } from "./UnitName";
 import { Experience } from "./Experience";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
@@ -32,6 +33,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <button style={{ position: "absolute", top: 0, right: 0 }} onClick={removeUnit} className="EnabledButton">
                         X
                     </button>
+                    <UnitName unit={unit}></UnitName>
                     <UnitLabel title="Unit Type" value={unit.type}></UnitLabel>
                     <UnitLabel title="Unit Cost" value={unit.price.toString()}></UnitLabel>
                     <Experience unit={unit}></Experience>

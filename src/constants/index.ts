@@ -61,7 +61,7 @@ export interface EquipmentList {
     equipment: IEquipment[];
 }
 export interface IArmy {
-    // name: string;
+    name?: string;
     type: string;
     sizeLimit: number;
     alignments: string[];
@@ -90,7 +90,7 @@ export interface IAppState {
 }
 
 export interface IUnit {
-    // name: string;
+    name?: string;
     type: string;
     characteristics: ICharacteristics;
     price: number;
