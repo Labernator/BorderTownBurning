@@ -4,13 +4,13 @@ import "rc-select/assets/index.css";
 import { store } from "..";
 import * as Actions from "../actions";
 import { IUnit, IAppState } from "../constants";
-import { CharacteristicTable } from "./CharacteristicTable";
+import { CharacteristicsComponent } from "./CharacteristicTable";
 import { ListComponent } from "./ListComponent";
 import { UnitEquipment } from "./UnitEquipment";
 import { Equipment } from "./Equipment";
 import { UnitLabelComponent } from "./UnitLabel";
 import { UnitNameComponent } from "./UnitName";
-import { Experience } from "./Experience";
+import { ExperienceComponent } from "./Experience";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     let counter = 0;
@@ -35,12 +35,12 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <UnitNameComponent unit={unit}></UnitNameComponent>
                     <UnitLabelComponent title="Unit Type" value={unit.type}></UnitLabelComponent>
                     <UnitLabelComponent title="Unit Cost" value={unit.price.toString()}></UnitLabelComponent>
-                    <Experience unit={unit}></Experience>
+                    <ExperienceComponent unit={unit}></ExperienceComponent>
                     <Equipment unit={unit}></Equipment>
                     <UnitEquipment unit={unit}></UnitEquipment>
                     <ListComponent names={unit.skillLists} title="Skill Lists"></ListComponent>
                     <ListComponent names={unit.skills} title="Skills"></ListComponent>
-                    <CharacteristicTable characteristics={unit.characteristics} ></CharacteristicTable>
+                    <CharacteristicsComponent unit={unit} ></CharacteristicsComponent>
                 </div>
             );
         }

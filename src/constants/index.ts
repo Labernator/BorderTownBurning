@@ -1,7 +1,3 @@
-export interface ICharTable {
-    characteristics: ICharacteristics;
-}
-
 export interface IList {
     names: string[];
     title: string;
@@ -19,6 +15,11 @@ export interface IUnitProps {
 export enum AppMode {
     Initial,
     ExistingWarband,
+}
+
+export interface IRacialMaximums {
+    type: string;
+    characteristics: ICharacteristics;
 }
 
 export const initialState: IAppState = {

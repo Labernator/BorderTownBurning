@@ -1,54 +1,38 @@
 import React from "react";
-import { ICharTable } from "../constants";
-export class CharacteristicTable extends React.Component<ICharTable> {
-    constructor(props: ICharTable) {
-        super(props);
-    }
-    public render() {
-        return (
-            <div >
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Movement</th>
-                            <td>{this.props.characteristics.Movement}</td>
-                        </tr>
-                        <tr>
-                            <th>WeaponSkill</th>
-                            <td>{this.props.characteristics.WeaponSkill}</td>
-                        </tr>
-                        <tr>
-                            <th>BallisticSkill</th>
-                            <td>{this.props.characteristics.BallisticSkill}</td>
-                        </tr>
-                        <tr>
-                            <th>Strength</th>
-                            <td>{this.props.characteristics.Strength}</td>
-                        </tr>
-                        <tr>
-                            <th>Toughness</th>
-                            <td>{this.props.characteristics.Toughness}</td>
-                        </tr>
-                        <tr>
-                            <th>Wounds</th>
-                            <td>{this.props.characteristics.Wounds}</td>
-                        </tr>
+import { IUnitProps } from "../constants";
+import { checkRacialMaximums } from "../utilities/utils";
 
-                        <tr>
-                            <th>Initiative</th>
-                            <td>{this.props.characteristics.Initiative}</td>
-                        </tr>
-                        <tr>
-                            <th>Attacks</th>
-                            <td>{this.props.characteristics.Attacks}</td>
-                        </tr>
-                        <tr>
-                            <th>Leadership</th>
-                            <td>{this.props.characteristics.Leadership}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        );
-    }
-}
+export const CharacteristicsComponent = (props: IUnitProps) => {
+    checkRacialMaximums(props.unit);
+
+    return (
+        <div >
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Movement</th>
+                        <th>WeaponSkill</th>
+                        <th>BallisticSkill</th>
+                        <th>Strength</th>
+                        <th>Toughness</th>
+                        <th>Wounds</th>
+                        <th>Initiative</th>
+                        <th>Attacks</th>
+                        <th>Leadership</th>
+                    </tr>
+                    <tr>
+                        <td>{props.unit.characteristics.Movement}</td>
+                        <td>{props.unit.characteristics.WeaponSkill}</td>
+                        <td>{props.unit.characteristics.BallisticSkill}</td>
+                        <td>{props.unit.characteristics.Strength}</td>
+                        <td>{props.unit.characteristics.Toughness}</td>
+                        <td>{props.unit.characteristics.Wounds}</td>
+                        <td>{props.unit.characteristics.Initiative}</td>
+                        <td>{props.unit.characteristics.Attacks}</td>
+                        <td>{props.unit.characteristics.Leadership}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    )
+};

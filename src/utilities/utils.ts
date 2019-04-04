@@ -1,9 +1,8 @@
 import { store } from "..";
-import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, AppMode } from "../constants";
+import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, AppMode, IRacialMaximums } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
 const ArmyList = ArmyJson.armies as IArmy[];
-
-// const ArmyList: IArmy[] = require("../constants/Armies.json").armies;
+const RacialMaximums: IRacialMaximums[] = require("../constants/RacialMaximums.json").maximums;
 const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
 const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;
 const ArmourEquipment: IArmour[] = require("../constants/Equipment.json").equipment[2].Armour;
@@ -27,6 +26,15 @@ export const filterMissileWeapons = (filterList: string[]): IMissileWeapon[] => 
 export const filterArmour = (filterList: string[]): IArmour[] => {
     const Armour = getArmours();
     return Armour.length > 0 ? Armour.filter((armour) => filterList.includes(armour.type)) : [];
+};
+
+export const checkRacialMaximums = (unit: IUnit) => {
+    const maximums = RacialMaximums.find((max) => max.type === unit.type);
+    if (maximums !== undefined) {
+        if (unit.characteristics.Attacks === maximums.characteristics.Attacks) {
+            // return array in the end...
+        }
+    }
 };
 
 export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
