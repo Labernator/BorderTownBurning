@@ -3,31 +3,9 @@ import { IUnitProps, AppMode } from "../constants";
 import { store } from "..";
 import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY } from "../actions";
 import { getEquipmentByName } from "../utilities/utils";
-export class Equipment extends React.Component<IUnitProps> {
-    private readonly equipment: string[];
-    constructor(props: IUnitProps) {
-        super(props);
-        this.equipment = props.unit.equipment;
-    }
-    public render() {
-        const equipmentList = this.getEquipmentContainer();
-        return (
-            <div style={{ display: "inline-block" }}>
-                <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
-                {equipmentList}
-                <div>
-                    <button
-                        id="BuyEquipmentButton"
-                        onClick={() => this.toggleAvailableEquipment()}
-                        style={{ clear: "both", float: "left", width: "100%" }}
-                        className="BuyButton">
-                        Buy additional equipment
-                    </button>
-                </div>
-            </div>
-        );
-    }
-    private toggleAvailableEquipment() {
+export const EquipmentContainer = (props: IUnitProps) => {
+
+    const toggleAvailableEquipment = () => {
         const equipmenTable = document.getElementById("equipmentTable");
         const equipmentButton = document.getElementById("BuyEquipmentButton");
         if (equipmenTable !== null) {
@@ -43,9 +21,9 @@ export class Equipment extends React.Component<IUnitProps> {
                 }
             }
         }
-    }
-    private removeItem(equipmentName: string) {
-        const updateUnit = this.props.unit;
+    };
+    const removeItem = (equipmentName: string) => {
+        const updateUnit = props.unit;
         const firstFoundIndex = updateUnit.equipment.findIndex((equip) => equip === equipmentName);
         if (firstFoundIndex !== -1) {
             const originalEquipment = getEquipmentByName(equipmentName);
@@ -57,16 +35,31 @@ export class Equipment extends React.Component<IUnitProps> {
             store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
             store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: cost });
         }
-    }
-    private getEquipmentContainer() {
-        return this.equipment.map((equi) => (
+    };
+    const getEquipmentContainer = () => (
+        props.unit.equipment.map((equi) => (
             <div key={equi} className="EquipmentDiv">
                 <div style={{ fontWeight: "bold" }}>
                     {equi}
 
                 </div>
-                <button title="Sell Equipment" className="EquipmentButton" onClick={() => this.removeItem(equi)} >X</button>
+                <button title="Sell Equipment" className="EquipmentButton" onClick={() => removeItem(equi)} >X</button>
             </div>
+        ),
         ));
-    }
-}
+    return (
+        <div style={{ display: "inline-block" }}>
+            <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
+            {getEquipmentContainer()}
+            <div>
+                <button
+                    id="BuyEquipmentButton"
+                    onClick={toggleAvailableEquipment}
+                    style={{ clear: "both", float: "left", width: "100%" }}
+                    className="BuyButton">
+                    Buy additional equipment
+                    </button>
+            </div>
+        </div>
+    );
+};

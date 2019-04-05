@@ -34,5 +34,5 @@ export const CharacteristicsComponent = (props: IUnitProps) => {
                 </tbody>
             </table>
         </div>
-    )
+    );
 };

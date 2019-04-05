@@ -7,7 +7,7 @@ import { IUnit, IAppState } from "../constants";
 import { CharacteristicsComponent } from "./CharacteristicTable";
 import { ListComponent } from "./ListComponent";
 import { UnitEquipment } from "./UnitEquipment";
-import { Equipment } from "./Equipment";
+import { EquipmentContainer } from "./Equipment";
 import { UnitLabelComponent } from "./UnitLabel";
 import { UnitNameComponent } from "./UnitName";
 import { ExperienceComponent } from "./Experience";
@@ -36,7 +36,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <UnitLabelComponent title="Unit Type" value={unit.type}></UnitLabelComponent>
                     <UnitLabelComponent title="Unit Cost" value={unit.price.toString()}></UnitLabelComponent>
                     <ExperienceComponent unit={unit}></ExperienceComponent>
-                    <Equipment unit={unit}></Equipment>
+                    <EquipmentContainer unit={unit}></EquipmentContainer>
                     <UnitEquipment unit={unit}></UnitEquipment>
                     <ListComponent names={unit.skillLists} title="Skill Lists"></ListComponent>
                     <ListComponent names={unit.skills} title="Skills"></ListComponent>
