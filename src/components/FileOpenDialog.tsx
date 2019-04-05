@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as Actions from "../actions";
 import { store } from "..";
 import { getUnits } from "../utilities/utils";
@@ -15,9 +15,9 @@ export const FileDialogue = () => {
     fileSelectorer.addEventListener("change", onChange);
     return fileSelectorer;
   };
-  const componentDidMount = () => {
+  useEffect(() => {
     fileSelector = buildFileSelector();
-  };
+  });
   const onChange = (event: any) => {
     const reader = new FileReader();
     reader.onload = onReaderLoad;
