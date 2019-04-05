@@ -4,7 +4,7 @@ import { store } from "..";
 import { getUnits } from "../utilities/utils";
 import { AppMode } from "../constants";
 
-const FileDialogue = () => {
+export const FileDialogue = () => {
 
   let fileSelector: HTMLInputElement | undefined;
   const buildFileSelector = () => {
