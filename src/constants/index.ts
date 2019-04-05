@@ -1,5 +1,5 @@
 export interface IList {
-    names: string[];
+    names: string[] | undefined;
     title: string;
 }
 
@@ -98,8 +98,10 @@ export interface IUnit {
     price: number;
     isHero: boolean;
     isLarge: boolean;
-    skills: string[];
-    skillLists: string[];
+    skills?: string[];
+    skillLists?: string[];
+    spells?: string[];
+    spellLists?: string[];
     allowedEquipment: string[];
     include: number[];
     experience: number;

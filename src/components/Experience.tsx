@@ -19,7 +19,7 @@ export const ExperienceComponent = (props: IUnitProps) => {
         <div id="xp" style={{ float: "left", width: 200 }}>
             <div style={{ fontWeight: "bold" }}>XP</div>
             <div>{props.unit.experience}</div>
-            <button onClick={() => addExperience}>+</button>
+            <button onClick={addExperience}>+</button>
         </div>
     );
 };

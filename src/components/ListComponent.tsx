@@ -3,13 +3,13 @@ import { IList } from "../constants";
 
 export const ListComponent = (props: IList) => {
     const createTableRows = () => (
-        props.names.map((entry) => (
+        props.names !== undefined ? props.names.map((entry) => (
             <tr key={entry}>
                 <td>{entry}</td>
             </tr>
-        ))
+        )) : []
     );
-    if (props.names.length > 0) {
+    if (props.names != undefined && props.names.length > 0) {
         return (
             <div >
                 <table>
