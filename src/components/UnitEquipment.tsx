@@ -12,15 +12,23 @@ export const UnitEquipment = (props: IUnitProps) => {
     const armourEquipment = filterArmour(equipmentNames);
     const miscEquipment = filterMiscallaneous(equipmentNames);
 
+    const calculateItemCost = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => (
+        props.unit.number !== undefined ? item.cost * props.unit.number : item.cost
+    );
+
     const addItemToUnit = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => {
         const updateUnit = props.unit;
         updateUnit.equipment.push(item.type);
+        console.log("BEFORE ADD");
+        console.log(store.getState());
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
-        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: item.cost });
+        store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: calculateItemCost(item) });
+        console.log("AFTER ADD");
+        console.log(store.getState());
     };
     const createBuyButton = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => {
         let buyBtn;
-        item.cost <= store.getState().armyTreasury ?
+        calculateItemCost(item) <= store.getState().armyTreasury ?
             buyBtn = <button onClick={() => addItemToUnit(item)} className="BuyButton">Buy</button> :
             buyBtn = <button onClick={() => addItemToUnit(item)} className="BuyButton" disabled style={{ background: "lightgray" }} title="Insufficient funds">Buy</button>;
         return (
@@ -118,9 +126,9 @@ export const UnitEquipment = (props: IUnitProps) => {
         miscTableHeader = createTableHeader("Miscallaneous Equipment");
         miscHeader = createTh("Misc");
     }
-
+    const divId = `${props.unit.name}Equipment`;
     return (
-        <div id="equipmentTable" style={{ display: "none", border: "solid" }}>
+        <div id={divId} style={{ display: "none", border: "solid" }}>
             <table>
                 <tbody>
                     {meleeTableHeader}

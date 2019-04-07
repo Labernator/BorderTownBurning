@@ -1292,6 +1292,7 @@
             "units": [
                 {
                     "type": "Sigmarite Matriarch",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -1337,6 +1338,7 @@
                 },
                 {
                     "type": "Sister Superior",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -1351,7 +1353,6 @@
                     "price": 35,
                     "isHero": true,
                     "isLarge": false,
-                    "skills": [],
                     "skillLists": [
                         "Academic",
                         "Strength",
@@ -1359,8 +1360,6 @@
                         "Speed",
                         "Sigmar"
                     ],
-                    "spells": [],
-                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarArmour",
@@ -1377,6 +1376,7 @@
                 },
                 {
                     "type": "Augur",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
@@ -1401,8 +1401,6 @@
                         "Speed",
                         "Sigmar"
                     ],
-                    "spells": [],
-                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarHeroEquipment"
@@ -1418,6 +1416,7 @@
                 },
                 {
                     "type": "Novice",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
@@ -1432,10 +1431,6 @@
                     "price": 15,
                     "isHero": false,
                     "isLarge": false,
-                    "skills": [],
-                    "skillLists": [],
-                    "spells": [],
-                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarArmour"
@@ -1451,6 +1446,7 @@
                 },
                 {
                     "type": "Sigmarite Sister",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 3,
@@ -1464,10 +1460,6 @@
                     },
                     "price": 25,
                     "isHero": false,
-                    "skills": [],
-                    "skillLists": [],
-                    "spells": [],
-                    "spellLists": [],
                     "allowedEquipment": [
                         "SigmarEquipment",
                         "SigmarArmour"
