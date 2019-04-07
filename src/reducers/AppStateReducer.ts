@@ -56,7 +56,7 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
         case Actions.SUBTRACT_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating - getUnitRating(action.payload) };
         case Actions.UPDATE_UNIT:
-            const unitIndex = state.warbandRoster.findIndex((unit) => unit.type === action.payload.type);
+            const unitIndex = state.warbandRoster.findIndex((unit) => unit.name === action.payload.name);
             return { ...state, warbandRoster: [...state.warbandRoster.slice(0, unitIndex), action.payload, ...state.warbandRoster.slice(unitIndex + 1)] };
         default:
             // tslint:disable-next-line: no-console

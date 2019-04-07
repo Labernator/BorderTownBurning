@@ -29,12 +29,20 @@ export const filterArmour = (filterList: string[]): IArmour[] => {
 };
 
 export const checkRacialMaximums = (unit: IUnit) => {
-    const maximums = RacialMaximums.find((max) => max.type === unit.type);
+    const arr = [];
+    const maximums = RacialMaximums.find((max) => max.type === unit.race);
     if (maximums !== undefined) {
-        if (unit.characteristics.Attacks === maximums.characteristics.Attacks) {
-            // return array in the end...
-        }
+        arr.push({ name: "Movement", maxReached: unit.characteristics.Movement === maximums.characteristics.Movement ? true : false });
+        arr.push({ name: "WeaponSkill", maxReached: unit.characteristics.WeaponSkill === maximums.characteristics.WeaponSkill ? true : false });
+        arr.push({ name: "BallisticSkill", maxReached: unit.characteristics.BallisticSkill === maximums.characteristics.BallisticSkill ? true : false });
+        arr.push({ name: "Strength", maxReached: unit.characteristics.Strength === maximums.characteristics.Strength ? true : false });
+        arr.push({ name: "Toughness", maxReached: unit.characteristics.Toughness === maximums.characteristics.Toughness ? true : false });
+        arr.push({ name: "Wounds", maxReached: unit.characteristics.Wounds === maximums.characteristics.Wounds ? true : false });
+        arr.push({ name: "Initiative", maxReached: unit.characteristics.Initiative === maximums.characteristics.Initiative ? true : false });
+        arr.push({ name: "Attacks", maxReached: unit.characteristics.Attacks === maximums.characteristics.Attacks ? true : false });
+        arr.push({ name: "Leadership", maxReached: unit.characteristics.Leadership === maximums.characteristics.Leadership ? true : false });
     }
+    return arr;
 };
 
 export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {

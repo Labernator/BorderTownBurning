@@ -19,6 +19,18 @@ function App(props: IAppState) {
         listOfUnits: props.listOfUnits,
         warbandRoster: props.warbandRoster,
     };
+
+    const getNumberOfWarbandMembers = () => {
+        let unitCount = 0;
+        props.warbandRoster.map((unit) => {
+            if (unit.isHero || unit.number === undefined) {
+                unitCount++;
+            } else {
+                unitCount += unit.number;
+            }
+        });
+        return unitCount;
+    };
     return (
         <div className="App">
             <div className="AppHeaderContainer">
@@ -51,12 +63,12 @@ function App(props: IAppState) {
             </div>
             <div className="AppHeaderContainer">
                 <div className="AppHeaderContainerDiv">Bodies:</div>
-                <div className="AppHeaderContainerContent">{props.warbandRoster.length} / {ArmySizeLimit}</div>
+                <div className="AppHeaderContainerContent">{getNumberOfWarbandMembers()} / {ArmySizeLimit}</div>
             </div>
             <FileDialogue />
-            <ArmyDropdown></ArmyDropdown>
+            {/* <ArmyDropdown></ArmyDropdown>
             <AlignmentDropdown listOfAlignments={props.listOfAlignments}></AlignmentDropdown>
-            <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown>
+            <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown> */}
             <UnitButtons {...unitProps}></UnitButtons>
             <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
         </div>

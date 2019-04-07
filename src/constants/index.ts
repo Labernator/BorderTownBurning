@@ -93,6 +93,7 @@ export interface IAppState {
 
 export interface IUnit {
     name?: string;
+    race: string;
     type: string;
     characteristics: ICharacteristics;
     price: number;
@@ -107,6 +108,7 @@ export interface IUnit {
     experience: number;
     equipment: string[];
     replaces?: string[];
+    number?: number;
 }
 
 export interface ICharacteristics {
@@ -119,6 +121,7 @@ export interface ICharacteristics {
     Initiative: number;
     Attacks: number;
     Leadership: number;
+    [key: string]: number;
 }
 
 export interface IMeleeWeapon extends IEquip {

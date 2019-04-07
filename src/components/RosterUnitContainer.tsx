@@ -11,6 +11,7 @@ import { EquipmentContainer } from "./Equipment";
 import { UnitLabelComponent } from "./UnitLabel";
 import { UnitNameComponent } from "./UnitName";
 import { ExperienceComponent } from "./Experience";
+import { UnitNumberLabelComponent } from "./UnitNumberLabel";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     let counter = 0;
@@ -34,6 +35,7 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     </button>
                     <UnitNameComponent unit={unit}></UnitNameComponent>
                     <UnitLabelComponent title="Unit Type" value={unit.type}></UnitLabelComponent>
+                    <UnitNumberLabelComponent unit={unit}></UnitNumberLabelComponent>
                     <UnitLabelComponent title="Unit Cost" value={unit.price.toString()}></UnitLabelComponent>
                     <ExperienceComponent unit={unit}></ExperienceComponent>
                     <EquipmentContainer unit={unit}></EquipmentContainer>
