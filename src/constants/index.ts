@@ -24,15 +24,15 @@ export interface IRacialMaximums {
 
 export const initialState: IAppState = {
     appMode: AppMode.Initial,
-    armyAchievements: [],
+    campaignAchievements: [],
     armyAlignment: "",
-    armyCampaignPoints: 0,
+    campaignPoints: 0,
     armyName: "",
     armyObjective: "",
     armyStash: [],
     armyTreasury: 0,
     armyType: "",
-    armyWyrdstoneShards: 0,
+    wyrdstoneShards: 0,
     listOfAlignments: [
         "Lawful",
         "Lawful/Neutral",
@@ -85,9 +85,9 @@ export interface IAppState {
     warbandRoster: IUnit[];
     armyTreasury: number;
     armyStash: string[];
-    armyCampaignPoints: number;
-    armyWyrdstoneShards: number;
-    armyAchievements: string[];
+    campaignPoints: number;
+    wyrdstoneShards: number;
+    campaignAchievements: string[];
     warbandRating: number;
 }
 
@@ -152,5 +152,5 @@ interface IEquip {
     restrictions?: {
         include?: string[];
         exclude?: string[];
-    }
+    };
 }

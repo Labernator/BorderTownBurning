@@ -67,6 +67,18 @@ function App(props: IAppState) {
                 <div className="AppHeaderContainerDiv">Bodies:</div>
                 <div className="AppHeaderContainerContent">{getNumberOfWarbandMembers()} / {ArmySizeLimit}</div>
             </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Wyrdstone Shards:</div>
+                <div className="AppHeaderContainerContent">{props.wyrdstoneShards}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Campaign Points:</div>
+                <div className="AppHeaderContainerContent">{props.campaignPoints}</div>
+            </div>
+            <div className="AppHeaderContainer">
+                <div className="AppHeaderContainerDiv">Campaign Achievements:</div>
+                <div className="AppHeaderContainerContent">{props.campaignPoints}</div>
+            </div>
             <FileDialogue />
             <SaveFile/>
             <ArmyDropdown></ArmyDropdown>
@@ -81,15 +93,15 @@ function App(props: IAppState) {
 
 const mapStateToProps = (state: IAppState) => ({
     appMode: state.appMode,
-    armyAchievements: state.armyAchievements,
+    campaignAchievements: state.campaignAchievements,
     armyAlignment: state.armyAlignment,
-    armyCampaignPoints: state.armyCampaignPoints,
+    campaignPoints: state.campaignPoints,
     armyName: state.armyName,
     armyObjective: state.armyObjective,
     armyStash: state.armyStash,
     armyTreasury: state.armyTreasury,
     armyType: state.armyType,
-    armyWyrdstoneShards: state.armyWyrdstoneShards,
+    wyrdstoneShards: state.wyrdstoneShards,
     listOfAlignments: state.listOfAlignments,
     listOfObjectives: state.listOfObjectives,
     listOfUnits: state.listOfUnits,
