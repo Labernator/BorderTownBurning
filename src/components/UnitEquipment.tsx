@@ -19,12 +19,8 @@ export const UnitEquipment = (props: IUnitProps) => {
     const addItemToUnit = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => {
         const updateUnit = props.unit;
         updateUnit.equipment.push(item.type);
-        console.log("BEFORE ADD");
-        console.log(store.getState());
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
         store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: calculateItemCost(item) });
-        console.log("AFTER ADD");
-        console.log(store.getState());
     };
     const createBuyButton = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => {
         let buyBtn;

@@ -7,7 +7,7 @@ export const SaveFile = () => {
          saveData(store.getState(), "warband.json");
       };
 
-      const saveData = (function () {
+      const saveData = (function() {
         const a = document.createElement("a");
         document.body.appendChild(a);
         // a.style = "display: none";

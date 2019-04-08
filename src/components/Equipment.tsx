@@ -6,16 +6,16 @@ import { getEquipmentByName } from "../utilities/utils";
 export const EquipmentContainer = (props: IUnitProps) => {
 
     const toggleAvailableEquipment = () => {
-        const equipmenTable = document.getElementById(`${props.unit.name}Equipment`);
+        const equipmentTable = document.getElementById(`${props.unit.name}Equipment`);
         const equipmentButton = document.getElementById(BuyEquipmentButtonId);
-        if (equipmenTable !== null) {
-            if (equipmenTable.style.display === "none") {
-                equipmenTable.style.display = "block";
+        if (equipmentTable !== null) {
+            if (equipmentTable.style.display === "none") {
+                equipmentTable.style.display = "block";
                 if (equipmentButton !== null) {
                     equipmentButton.innerHTML = "Close equipment panel";
                 }
             } else {
-                equipmenTable.style.display = "none";
+                equipmentTable.style.display = "none";
                 if (equipmentButton !== null) {
                     equipmentButton.innerHTML = "Buy additional equipment";
                 }

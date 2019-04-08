@@ -190,12 +190,18 @@ export const checkLevelUp = (unit: IUnit) => {
             default: // do nothing
         }
     }
-}
+};
 
 const handleHeroLevelUp = (unit: IUnit) => {
     // Create new Level Up component with all possible advances
-}
+    const advanceComponent = document.getElementById(`${unit.name}Advance`);
+    if (advanceComponent !== null) {
+        if (advanceComponent.style.display === "none") {
+            advanceComponent.style.display = "block";
+        }
+    }
+};
 
 const handleHenchmenLevelUp = (unit: IUnit) => {
     // Create new Level Up component with all possible advances
-}
+};

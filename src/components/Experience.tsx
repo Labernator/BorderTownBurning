@@ -3,6 +3,7 @@ import { IUnitProps } from "../constants";
 import { UPDATE_UNIT } from "../actions";
 import { store } from "..";
 import { checkLevelUp } from "../utilities/utils";
+import { AdvanceComponent } from "./AdvanceComponent";
 
 export const ExperienceComponent = (props: IUnitProps) => {
     const addExperience = () => {
@@ -16,10 +17,12 @@ export const ExperienceComponent = (props: IUnitProps) => {
         checkLevelUp(props.unit);
     };
     return (
+
         <div id="xp" style={{ float: "left", width: 200 }}>
             <div style={{ fontWeight: "bold" }}>XP</div>
             <div>{props.unit.experience}</div>
             <button onClick={addExperience}>+</button>
+            <AdvanceComponent unit={props.unit} ></AdvanceComponent>
         </div>
     );
 };
