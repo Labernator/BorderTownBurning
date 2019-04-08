@@ -23,5 +23,6 @@ const AlDropdown = ({ listOfAlignments }: { listOfAlignments: string[] }) => {
 };
 
 // tslint:disable-next-line:no-unused-expression
-function mapStateToProps(state: IAppState) { ({ listOfAlignments: state.listOfAlignments }); return {}; }
-export const AlignmentDropdown = connect(mapStateToProps)(AlDropdown);
+// function mapStateToProps(state: IAppState) { ({ listOfAlignments: state.listOfAlignments }); return {}; }
+// export const AlignmentDropdown = connect(mapStateToProps)(AlDropdown);
+export const AlignmentDropdown = connect()(AlDropdown);

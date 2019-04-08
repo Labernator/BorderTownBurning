@@ -33,21 +33,21 @@ export const initialState: IAppState = {
     armyTreasury: 0,
     armyType: "",
     wyrdstoneShards: 0,
-    listOfAlignments: [
-        "Lawful",
-        "Lawful/Neutral",
-        "Neutral",
-        "Neutral/Chaotic",
-        "Chaotic",
-    ],
-    listOfObjectives: [
-        "The Scion of Chaos",
-        "The Scourge of the Realm",
-        "The Celestial Protectorate",
-        "The Lure of Fortune",
-        "The Silent Threat",
-        "The Damned Shall Burn",
-    ],
+    // listOfAlignments: [
+    //     "Lawful",
+    //     "Lawful/Neutral",
+    //     "Neutral",
+    //     "Neutral/Chaotic",
+    //     "Chaotic",
+    // ],
+    // listOfObjectives: [
+    //     "The Scion of Chaos",
+    //     "The Scourge of the Realm",
+    //     "The Celestial Protectorate",
+    //     "The Lure of Fortune",
+    //     "The Silent Threat",
+    //     "The Damned Shall Burn",
+    // ],
     listOfUnits: [],
     warbandRating: 0,
     warbandRoster: [],
@@ -79,8 +79,8 @@ export interface IAppState {
     armyName: string;
     armyAlignment: string;
     armyObjective: string;
-    listOfAlignments: string[];
-    listOfObjectives: string[];
+    // listOfAlignments: string[];
+    // listOfObjectives: string[];
     listOfUnits: IUnit[];
     warbandRoster: IUnit[];
     armyTreasury: number;

@@ -22,5 +22,6 @@ const ODropdown = ({ listOfObjectives }: { listOfObjectives: string[] }) => {
     );
 };
 // tslint:disable-next-line:no-unused-expression
-function mapStateToProps(state: IAppState) { ({ listOfObjectives: state.listOfObjectives }); return {}; }
-export const ObjectiveDropdown = connect(mapStateToProps)(ODropdown);
+// function mapStateToProps(state: IAppState) { ({ listOfObjectives: state.listOfObjectives }); return {}; }
+// export const ObjectiveDropdown = connect(mapStateToProps)(ODropdown);
+export const ObjectiveDropdown = connect()(ODropdown);

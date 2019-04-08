@@ -1,8 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { AlignmentDropdown } from "./components/AlignmentDropdown";
-import { ArmyDropdown } from "./components/ArmyDropdown";
-import { ObjectiveDropdown } from "./components/ObjectiveDropdown";
 import { UnitContainer } from "./components/RosterUnitContainer";
 import { IAppState } from "./constants";
 import { getArmySizeLimit } from "./utilities/utils";
@@ -81,10 +78,6 @@ function App(props: IAppState) {
             </div>
             <FileDialogue />
             <SaveFile/>
-            <ArmyDropdown></ArmyDropdown>
-            {/* <ArmyDropdown></ArmyDropdown>
-            <AlignmentDropdown listOfAlignments={props.listOfAlignments}></AlignmentDropdown>
-            <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown> */}
             <UnitButtons {...unitProps}></UnitButtons>
             <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
         </div>
@@ -102,8 +95,6 @@ const mapStateToProps = (state: IAppState) => ({
     armyTreasury: state.armyTreasury,
     armyType: state.armyType,
     wyrdstoneShards: state.wyrdstoneShards,
-    listOfAlignments: state.listOfAlignments,
-    listOfObjectives: state.listOfObjectives,
     listOfUnits: state.listOfUnits,
     warbandRating: state.warbandRating,
     warbandRoster: state.warbandRoster,

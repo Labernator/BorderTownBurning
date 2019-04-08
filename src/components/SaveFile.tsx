@@ -1,22 +1,20 @@
 import { store } from "..";
-import React, { useEffect } from "react";
-import { Http2ServerResponse } from "http2";
-import { send } from "q";
+import React from "react";
 
 export const SaveFile = () => {
 
-    const onSaveClick = (event: any) => { 
-         saveData( store.getState(), "warband.json");
+    const onSaveClick = (event: any) => {
+         saveData(store.getState(), "warband.json");
       };
 
-      var saveData = (function () {
-        var a = document.createElement("a");
+      const saveData = (function () {
+        const a = document.createElement("a");
         document.body.appendChild(a);
         // a.style = "display: none";
-        return function (data : any, fileName : any) {
-            var json = JSON.stringify(data),
-                blob = new Blob([json], {type: "octet/stream"}),
-                url = window.URL.createObjectURL(blob);
+        return (data: any, fileName: any) => {
+            const json = JSON.stringify(data);
+            const blob = new Blob([json], {type: "octet/stream"});
+            const url = window.URL.createObjectURL(blob);
             a.href = url;
             a.download = fileName;
             a.click();
