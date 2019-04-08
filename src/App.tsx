@@ -9,6 +9,8 @@ import { getArmySizeLimit } from "./utilities/utils";
 import "./App.css";
 import { UnitButtons } from "./components/UnitButtons";
 import { FileDialogue } from "./components/FileOpenDialog";
+import { SaveFile } from "./components/SaveFile";
+
 function App(props: IAppState) {
     let ArmySizeLimit = 0;
     if (Boolean(props.armyType)) {
@@ -66,6 +68,8 @@ function App(props: IAppState) {
                 <div className="AppHeaderContainerContent">{getNumberOfWarbandMembers()} / {ArmySizeLimit}</div>
             </div>
             <FileDialogue />
+            <SaveFile/>
+            <ArmyDropdown></ArmyDropdown>
             {/* <ArmyDropdown></ArmyDropdown>
             <AlignmentDropdown listOfAlignments={props.listOfAlignments}></AlignmentDropdown>
             <ObjectiveDropdown listOfObjectives={props.listOfObjectives}></ObjectiveDropdown> */}
