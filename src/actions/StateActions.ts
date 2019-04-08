@@ -21,6 +21,9 @@ export const ADD_WARBAND_RATING = "ADD_WARBAND_RATING";
 export const SUBTRACT_WARBAND_RATING = "SUBTRACT_WARBAND_RATING";
 export const UPDATE_UNIT = "UPDATE_UNIT";
 export const UPDATE_UNITLIST = "UPDATE_UNITLIST";
+export const SET_CAMPAIGN_POINTS = "SET_CAMPAIGN_POINTS";
+export const SET_WYRDSTONES = "SET_WYRDSTONES";
+export const SET_ACHIEVEMENTS = "SET_ACHIEVEMENTS";
 
 class SetArmy {
     public readonly type = SET_ARMY;
@@ -112,7 +115,22 @@ class SetMode {
     constructor(public payload: AppMode) { }
 }
 
+class SetAchievements {
+    public readonly type = SET_ACHIEVEMENTS;
+    constructor(public payload: string[]) { }
+}
+
+class SetWyrdstones {
+    public readonly type = SET_WYRDSTONES;
+    constructor(public payload: number) { }
+}
+
+class SetCampaignPoints {
+    public readonly type = SET_CAMPAIGN_POINTS;
+    constructor(public payload: number) { }
+}
+
 export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment |
     RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
-    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetMode;
+    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetMode | SetAchievements | SetWyrdstones | SetCampaignPoints;

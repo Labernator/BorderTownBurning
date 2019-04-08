@@ -74,7 +74,7 @@ function App(props: IAppState) {
             </div>
             <div className="AppHeaderContainer">
                 <div className="AppHeaderContainerDiv">Campaign Achievements:</div>
-                <div className="AppHeaderContainerContent">{props.campaignPoints}</div>
+                <div className="AppHeaderContainerContent">{props.campaignAchievements}</div>
             </div>
             <FileDialogue />
             <SaveFile/>

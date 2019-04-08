@@ -51,6 +51,12 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
             return { ...state, listOfUnits: action.payload };
         case Actions.SET_WARBAND_RATING:
             return { ...state, warbandRating: action.payload };
+        case Actions.SET_WYRDSTONES:
+            return { ...state, wyrdstoneShards: action.payload };
+        case Actions.SET_ACHIEVEMENTS:
+            return { ...state, campaignAchievements: action.payload };
+        case Actions.SET_CAMPAIGN_POINTS:
+            return { ...state, campaignPoints: action.payload };
         case Actions.ADD_WARBAND_RATING:
             return { ...state, warbandRating: state.warbandRating + getUnitRating(action.payload) };
         case Actions.SUBTRACT_WARBAND_RATING:

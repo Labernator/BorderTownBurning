@@ -47,6 +47,9 @@ export const FileDialogue = () => {
     store.dispatch({ type: Actions.SET_WARBAND_RATING, payload: parseInt(jsonObject.rating, 10) });
     store.dispatch({ type: Actions.SET_OBJECTIVE, payload: jsonObject.objective });
     store.dispatch({ type: Actions.RESTRICT_UNITS, payload: getUnits(jsonObject.type) });
+    store.dispatch({ type: Actions.SET_WYRDSTONES, payload: jsonObject.wyrdstoneShards });
+    store.dispatch({ type: Actions.SET_ACHIEVEMENTS, payload: jsonObject.campaignAchievements });
+    store.dispatch({ type: Actions.SET_CAMPAIGN_POINTS, payload: jsonObject.campaignPoints });
     jsonObject.roster.forEach((element: any) => store.dispatch({ type: Actions.ADD_UNIT_TO_ROSTER, payload: element }));
     // tslint:disable-next-line: no-console
     console.log(store.getState());
