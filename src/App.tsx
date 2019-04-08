@@ -7,6 +7,7 @@ import "./App.css";
 import { UnitButtons } from "./components/UnitButtons";
 import { FileDialogue } from "./components/FileOpenDialog";
 import { SaveFile } from "./components/SaveFile";
+import { AppHeaderComponent } from "./components/AppHeaderComponent";
 
 function App(props: IAppState) {
     let ArmySizeLimit = 0;
@@ -30,52 +31,22 @@ function App(props: IAppState) {
         });
         return unitCount;
     };
+    const warbandMemberCount = `${getNumberOfWarbandMembers()} / ${ArmySizeLimit}`;
     return (
         <div className="App">
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Army Name:</div>
-                <div className="AppHeaderContainerContent">{props.armyName}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Army type:</div>
-                <div className="AppHeaderContainerContent">{props.armyType}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Alignment:</div>
-                <div className="AppHeaderContainerContent">{props.armyAlignment}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Objective:</div>
-                <div className="AppHeaderContainerContent">{props.armyObjective}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Treasury:</div>
-                <div className="AppHeaderContainerContent">{props.armyTreasury}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Rating:</div>
-                <div className="AppHeaderContainerContent">{props.warbandRating}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Stashed equipment:</div>
-                <div className="AppHeaderContainerContent">{props.armyStash}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Bodies:</div>
-                <div className="AppHeaderContainerContent">{getNumberOfWarbandMembers()} / {ArmySizeLimit}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Wyrdstone Shards:</div>
-                <div className="AppHeaderContainerContent">{props.wyrdstoneShards}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Campaign Points:</div>
-                <div className="AppHeaderContainerContent">{props.campaignPoints}</div>
-            </div>
-            <div className="AppHeaderContainer">
-                <div className="AppHeaderContainerDiv">Campaign Achievements:</div>
-                <div className="AppHeaderContainerContent">{props.campaignAchievements}</div>
-            </div>
+            <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Type:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Rating:" value={props.warbandRating.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Alignment:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Objective:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Campaign Points:" value={props.campaignPoints.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Campaign Achievements:" value={props.campaignAchievements.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Treasury:" value={props.armyTreasury.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Stash:" value={props.armyStash.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
+            <AppHeaderComponent title="Member Count" value={warbandMemberCount}></AppHeaderComponent>
             <FileDialogue />
             <SaveFile/>
             <UnitButtons {...unitProps}></UnitButtons>
