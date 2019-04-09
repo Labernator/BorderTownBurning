@@ -186,22 +186,32 @@ export const checkLevelUp = (unit: IUnit) => {
             case 2:
             case 5:
             case 9:
-            case 14: handleHenchmenLevelUp(unit); break;
+            case 14: handleHeroLevelUp(unit); break;
             default: // do nothing
         }
     }
 };
 
 const handleHeroLevelUp = (unit: IUnit) => {
-    // Create new Level Up component with all possible advances
-    const advanceComponent = document.getElementById(`${unit.name}Advance`);
-    if (advanceComponent !== null) {
-        if (advanceComponent.style.display === "none") {
-            advanceComponent.style.display = "block";
-        }
-    }
+    toggleComponentVisibility(`${unit.name}Advance`);
+    disableXPButton(`${unit.name}XP`);
 };
 
-const handleHenchmenLevelUp = (unit: IUnit) => {
-    // Create new Level Up component with all possible advances
+const disableXPButton = (componentName: string) => {
+    const component = document.getElementById(componentName);
+    if (component !== null) {
+        component.className = "DisabledButton";
+        component.setAttribute("disabled", "true");
+    }
+}
+
+export const toggleComponentVisibility = (componentName: string) => {
+    const component = document.getElementById(componentName);
+    if (component !== null) {
+        if (component.style.display === "none") {
+            component.style.display = "block";
+        } else if (component.style.display === "block") {
+            component.style.display = "none";
+        }
+    }
 };

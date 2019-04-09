@@ -14,8 +14,7 @@ export const CharacteristicsComponent = (props: IUnitProps) => {
                 {asterix}
             </tr>
         );
-    },
-    );
+    });
     return (
         <div >
             <table>
