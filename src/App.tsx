@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { UnitContainer } from "./components/RosterUnitContainer";
 import { IAppState } from "./constants";
-import { getArmySizeLimit } from "./utilities/utils";
+import { getArmySizeLimit, getNumberOfWarbandMembers } from "./utilities/utils";
 import "./App.css";
 import { UnitButtons } from "./components/UnitButtons";
 import { FileDialogue } from "./components/FileOpenDialog";
@@ -20,18 +20,7 @@ function App(props: IAppState) {
         warbandRoster: props.warbandRoster,
     };
 
-    const getNumberOfWarbandMembers = () => {
-        let unitCount = 0;
-        props.warbandRoster.map((unit) => {
-            if (unit.isHero || unit.number === undefined) {
-                unitCount++;
-            } else {
-                unitCount += unit.number;
-            }
-        });
-        return unitCount;
-    };
-    const warbandMemberCount = `${getNumberOfWarbandMembers()} / ${ArmySizeLimit}`;
+    const warbandMemberCount = `${getNumberOfWarbandMembers(props.warbandRoster)} / ${ArmySizeLimit}`;
     return (
         <div className="App">
             <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>

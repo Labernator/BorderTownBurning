@@ -109,6 +109,7 @@ export interface IUnit {
     equipment: string[];
     replaces?: string[];
     number?: number;
+    isHiredSword?: boolean;
 }
 
 export interface ICharacteristics {

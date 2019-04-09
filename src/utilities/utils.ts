@@ -203,7 +203,7 @@ const disableXPButton = (componentName: string) => {
         component.className = "DisabledButton";
         component.setAttribute("disabled", "true");
     }
-}
+};
 
 export const toggleComponentVisibility = (componentName: string) => {
     const component = document.getElementById(componentName);
@@ -214,4 +214,16 @@ export const toggleComponentVisibility = (componentName: string) => {
             component.style.display = "none";
         }
     }
+};
+
+export const getNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
+    let unitCount = 0;
+    warbandRoster.map((unit) => {
+        if (!unit.isHiredSword && (unit.isHero || unit.number === undefined)) {
+            unitCount++;
+        } else if (unit.number !== undefined) {
+            unitCount += unit.number;
+        }
+    });
+    return unitCount;
 };

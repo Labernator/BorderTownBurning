@@ -69,7 +69,7 @@ const UnitBtn = (props: IUnitButton) => {
         }
         return undefined;
     };
-    const dropDownList = props.listOfUnits.map((unit: IUnit) => {
+    const unitBtns = props.listOfUnits.map((unit: IUnit) => {
         if (unit.price > store.getState().armyTreasury) {
             return <button
                 key={unit.type}
@@ -99,7 +99,7 @@ const UnitBtn = (props: IUnitButton) => {
     });
     return (
         <div>
-            {dropDownList}
+            {unitBtns}
         </div>
     );
 };

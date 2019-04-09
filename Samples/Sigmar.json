@@ -422,6 +422,7 @@
       },
       "price": 0,
       "isHero": true,
+      "isHiredSword": true,
       "isLarge": false,
       "skillLists": [
         "Strength",
