@@ -24,20 +24,19 @@ function App(props: IAppState) {
     return (
         <div className="App">
             <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
-            <AppHeaderComponent title="Type:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Type:" value={props.armyType}></AppHeaderComponent>
             <AppHeaderComponent title="Rating:" value={props.warbandRating.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Alignment:" value={props.armyName}></AppHeaderComponent>
-            <AppHeaderComponent title="Objective:" value={props.armyName}></AppHeaderComponent>
+            <AppHeaderComponent title="Alignment:" value={props.armyAlignment}></AppHeaderComponent>
+            <AppHeaderComponent title="Objective:" value={props.armyObjective}></AppHeaderComponent>
             <AppHeaderComponent title="Campaign Points:" value={props.campaignPoints.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Campaign Achievements:" value={props.campaignAchievements.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
             <AppHeaderComponent title="Treasury:" value={props.armyTreasury.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Stash:" value={props.armyStash.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Member Count" value={warbandMemberCount}></AppHeaderComponent>
             <FileDialogue />
-            <SaveFile/>
+            <SaveFile />
             <UnitButtons {...unitProps}></UnitButtons>
             <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
         </div>

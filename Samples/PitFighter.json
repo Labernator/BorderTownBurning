@@ -1,0 +1,100 @@
+{
+    "name": "Splitterdämmerung",
+    "type": "Pit Fighter",
+    "treasury": 0,
+    "sizeLimit": 15,
+    "alignment": "Lawful/Neutral",
+    "objective": "The Celestial Protectorate",
+    "rating": 187,
+    "campaignPoints": 2,
+    "campaignAchievements": "",
+    "wyrdstoneShards": 0,
+    "roster": [
+        {
+            "name": "Helme Haffax",
+            "type": "Pit King",
+            "race": "Human",
+            "characteristics": {
+                "Movement": 4,
+                "WeaponSkill": 4,
+                "BallisticSkill": 3,
+                "Strength": 4,
+                "Toughness": 4,
+                "Wounds": 1,
+                "Initiative": 4,
+                "Attacks": 2,
+                "Leadership": 8
+            },
+            "price": 70,
+            "isHero": true,
+            "isLarge": false,
+            "skills": [
+                "Leader",
+                "Pit Fighter",
+                "Resilient"
+            ],
+            "skillLists": [
+                "Strength",
+                "Academic",
+                "Combat",
+                "Speed",
+                "Special"
+            ],
+            "include": [
+                1,
+                1
+            ],
+            "experience": 26,
+            "equipment": [
+                "Dagger",
+                "Dagger"
+            ],
+            "allowedEquipment": [
+                "PitFighterEquipment",
+                "PitFighterArmourEquipment",
+                "PitFighterBaseEquipment"
+            ]
+        },
+        {
+            "name": "Arzuch",
+            "type": "Ogre Pit Fighter",
+            "race": "Ogre",
+            "characteristics": {
+                "Movement": 6,
+                "WeaponSkill": 3,
+                "BallisticSkill": 2,
+                "Strength": 4,
+                "Toughness": 4,
+                "Wounds": 3,
+                "Initiative": 3,
+                "Attacks": 2,
+                "Leadership": 7
+            },
+            "price": 165,
+            "isHero": false,
+            "isLarge": true,
+            "skills": [
+                "Pit Fighter",
+                "Fear",
+                "Large",
+                "Slow Witted",
+                "Tough"
+            ],
+            "include": [
+                0,
+                1
+            ],
+            "experience": 0,
+            "equipment": [
+                "Dagger",
+                "Dagger",
+                "Heavy Armour"
+            ],
+            "allowedEquipment": [
+                "PitFighterEquipment",
+                "PitFighterArmourEquipment",
+                "PitFighterBaseEquipment"
+            ]
+        }
+    ]
+}
