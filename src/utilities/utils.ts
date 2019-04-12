@@ -1,7 +1,9 @@
 import { store } from "..";
-import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, AppMode, IRacialMaximums } from "../constants";
+import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, AppMode, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
+import * as SkillsJson from "../constants/Skills.json";
 const ArmyList = ArmyJson.armies as IArmy[];
+const SkillLists = SkillsJson.SkillLists as ISkillList[];
 const RacialMaximums: IRacialMaximums[] = require("../constants/RacialMaximums.json").maximums;
 const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
 const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;
@@ -227,3 +229,18 @@ export const getNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
     });
     return unitCount;
 };
+
+export const getSkills = (listNames: string[]) => {
+    const skills = listNames.reduce((acc: ISkill[], listname) => {
+        const listOfSkills = getSkillsForList(listname);
+        return acc.concat(listOfSkills);
+    }, []);
+    return skills;
+};
+
+const getSkillsForList = (listName: string) => (SkillLists.reduce((acc: ISkill[], list) => {
+    if (list.name === listName) {
+        acc = list.list;
+    }
+    return acc;
+}, []));

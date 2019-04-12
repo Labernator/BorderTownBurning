@@ -24,15 +24,15 @@ export interface IRacialMaximums {
 
 export const initialState: IAppState = {
     appMode: AppMode.Initial,
-    campaignAchievements: [],
     armyAlignment: "",
-    campaignPoints: 0,
     armyName: "",
     armyObjective: "",
     armyStash: [],
     armyTreasury: 0,
     armyType: "",
-    wyrdstoneShards: 0,
+    campaignAchievements: [],
+    campaignPoints: 0,
+    listOfUnits: [],
     // listOfAlignments: [
     //     "Lawful",
     //     "Lawful/Neutral",
@@ -48,9 +48,9 @@ export const initialState: IAppState = {
     //     "The Silent Threat",
     //     "The Damned Shall Burn",
     // ],
-    listOfUnits: [],
     warbandRating: 0,
     warbandRoster: [],
+    wyrdstoneShards: 0,
 };
 
 export interface IEquipment {
@@ -62,6 +62,20 @@ export interface EquipmentList {
     modificationOptions: string[];
     equipment: IEquipment[];
 }
+export interface ISkill {
+    name: string;
+    text: string;
+    prerequisite?: {
+        type: string;
+        condition: number | string;
+        lookup?: string;
+    };
+}
+export interface ISkillList {
+    name: string;
+    list: ISkill[];
+}
+
 export interface IArmy {
     name?: string;
     type: string;

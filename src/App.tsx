@@ -45,18 +45,19 @@ function App(props: IAppState) {
 
 const mapStateToProps = (state: IAppState) => ({
     appMode: state.appMode,
-    campaignAchievements: state.campaignAchievements,
+
     armyAlignment: state.armyAlignment,
-    campaignPoints: state.campaignPoints,
     armyName: state.armyName,
     armyObjective: state.armyObjective,
     armyStash: state.armyStash,
     armyTreasury: state.armyTreasury,
     armyType: state.armyType,
-    wyrdstoneShards: state.wyrdstoneShards,
+    campaignAchievements: state.campaignAchievements,
+    campaignPoints: state.campaignPoints,
     listOfUnits: state.listOfUnits,
     warbandRating: state.warbandRating,
     warbandRoster: state.warbandRoster,
+    wyrdstoneShards: state.wyrdstoneShards,
 });
 
 export const AppContainer = connect(mapStateToProps)(App);

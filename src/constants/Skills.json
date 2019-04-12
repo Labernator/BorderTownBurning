@@ -1,0 +1,96 @@
+{
+    "SkillLists": [
+        {
+            "name": "Combat",
+            "list": [
+                {
+                    "name": "Axe Master",
+                    "text": "The warrior may parry with normal axes as per normal parrying rules."
+                },
+                {
+                    "name": "Disarm",
+                    "text": "The hero may exchange his normal attacks for a single special attack: Declare what weapon is attempted to disarm. The attack is executed at -2 WS (-3 for Two-Handed Weapon). If the to-hit roll is successful, the opponent must fight without the designated weapon until he recovers it. The foe recovers his weapon in the first Recovery Phase out of close combat. Not vs. natural weaponry."
+                },
+                {
+                    "name": "Drive Chariot",
+                    "text": "The hero may Charge with its chariot."
+                },
+                {
+                    "name": "Expert Axeman",
+                    "text": "Re-roll all failed hits with an Axe when charging."
+                },
+                {
+                    "name": "Expert Swordsman",
+                    "text": "The hero may re-roll to-hit rolls with swords (normal swords or weeping blades) when charging."
+                },
+                {
+                    "name": "Combat Master",
+                    "text": "The hero is immune to ‘All Alone’ test and gains an additional Attack when fighting two or more enemies at once.",
+                    "prerequisite": {
+                        "type": "skill",
+                        "condition": 2,
+                        "lookup": "combat"
+                    }
+                },
+                {
+                    "name": "Finishing Move",
+                    "text": "The hero may exchange his normal attacks for a single special attack: This attack is made at +2 Strength (any other Strength Bonus also applies e.g. Mighty Blow, weapon bonus, etc.) The blow is resolved last AFTER Two-Handed Weapons.",
+                    "prerequisite": {
+                        "type": "characteristic",
+                        "condition": 2,
+                        "lookup": "Attacks"
+                    }
+                },
+                {
+                    "name": "Follow Thru",
+                    "text": "In any Hand-to-Hand combat where all of the warrior’s foes are knocked down, stunned, or taken out of action the warrior may opt to move up to 2 inches in any direction. This move can bring him into base contact with another model, and he will fight in the next close combat phase, but neither model counts as charging. This move is executed at the very end of the close combat phase after everyone has finished striking. If multiple models have this skill, then they move in Initiative order. Simultaneous movers from opposing forces within range automatically move to intercept one another."
+                },
+                {
+                    "name": "Pugilist",
+                    "text": "The model always gets an extra attack when fighting barehanded or with one weapon and no shield or buckler. Off-hand attacks have no penalty to hit."
+                },
+                {
+                    "name": "Strike to Injure",
+                    "text": "The hero adds +1 to all injury rolls.",
+                    "prerequisite": {
+                        "type": "skill",
+                        "condition": 2,
+                        "lookup": "combat"
+                    }
+                },
+                {
+                    "name": "Shield Smash",
+                    "text": "Gain an additional attack (resolved at the warriors strength) when using a Shield or Buckler. This attack is resolved at -1 to hit and cannot cause critical hits."
+                },
+                {
+                    "name": "Step Aside",
+                    "text": "The hero gains a special 5+ save against wounds suffered in close combat (as long as he is not wearing heavy armor)."
+                },
+                {
+                    "name": "Sweeping Blow",
+                    "text": "The hero may exchange his normal attacks for a single special attack (if equipped with a two-handed weapon including halberds, flails, etc.): All models in base contact have to take an Initiative test. If the test is failed, the model is hit. No Strength bonuses from weapons are applied when rolling to wound and rolling for armor saves."
+                },
+                {
+                    "name": "Two Weapon master",
+                    "text": "The hero ignores the -2 to hit penalty for off-hand weapons."
+                },
+                {
+                    "name": "Weapons Training",
+                    "text": "The Hero may use any close combat weapon, not just those in the equipment options.",
+                    "prerequisite": {
+                        "type": "special",
+                        "condition": "any weapon"
+                    }
+                },
+                {
+                    "name": "Web of Steel",
+                    "text": "The hero gains +1 to rolls on the Critical Hit tables."
+                },
+                {
+                    "name": "Whip Master",
+                    "text": "The hero may reroll all to-hit rolls when using a whip."
+                }
+            ]
+        }
+    ]
+}

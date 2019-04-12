@@ -1,6 +1,6 @@
 import React from "react";
 import { IUnitProps } from "../constants";
-import { checkRacialMaximums, toggleComponentVisibility } from "../utilities/utils";
+import { checkRacialMaximums, toggleComponentVisibility, getSkills } from "../utilities/utils";
 import { UPDATE_UNIT } from "../actions";
 import { store } from "..";
 
@@ -20,7 +20,13 @@ export const AdvanceComponent = (props: IUnitProps) => {
             xpBtn.className = "EnabledButton";
         }
     };
-
+    const advanceSkill = () => {
+        if (props.unit.skillLists !== undefined) {
+            const skills = getSkills(props.unit.skillLists);
+            skills.forEach((skill) => skillElements(skill.name));
+        }
+    };
+    const skillElements = (name: string) => (<button>{name}</button>);
     const buttonArray = maxReachedArr.map((item) => {
         if (item.name === "Movement") {
             return undefined;
@@ -29,8 +35,9 @@ export const AdvanceComponent = (props: IUnitProps) => {
         return item.maxReached ? undefined : <button onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
     });
     return (
-        <div id={componentId} style={{ display: "none"}}>
-            <button>Add New Skill</button>
+        <div id={componentId} style={{ display: "none" }}>
+            <button onClick={advanceSkill}>Add New Skill</button>
+            {skillElements}
             {buttonArray}
         </div>
     );
