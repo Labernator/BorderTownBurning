@@ -233,7 +233,7 @@ export const getNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
 export const getSkills = (listNames: string[]) => {
     const skills = listNames.reduce((acc: ISkill[], listname) => {
         const listOfSkills = getSkillsForList(listname);
-        return acc.concat(listOfSkills);
+        return acc = listOfSkills;
     }, []);
     return skills;
 };
