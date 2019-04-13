@@ -6,10 +6,11 @@ export const CharacteristicsComponent = (props: IUnitProps) => {
     const maxReachedArr = checkRacialMaximums(props.unit);
     const tableContent = maxReachedArr.map((item) => {
         const value = props.unit.characteristics[item.name];
+        const trKey = `${props.unit.name}${item.name}`;
         const asterix = item.maxReached ?
             <td title="This value has already reached its maximum and cannot be advanced any further">{`${value}*`}</td> : <td>{value}</td>;
         return (
-            <tr>
+            <tr key={trKey}>
                 <th>{item.name}</th>
                 {asterix}
             </tr>

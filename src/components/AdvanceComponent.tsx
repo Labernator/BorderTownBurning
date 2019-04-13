@@ -32,12 +32,13 @@ export const AdvanceComponent = (props: IUnitProps) => {
             return undefined;
         }
         const btnText = `Add +1 ${item.name}`;
-        return item.maxReached ? undefined : <button onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
+        const btnKey = `${props.unit.name}${item.name}`;
+        return item.maxReached ? undefined : <button key={btnKey} onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
     });
     return (
         <div id={componentId} style={{ display: "none" }}>
-            <button onClick={advanceSkill}>Add New Skill</button>
-            {skillElements}
+            <button onClick={() => advanceSkill()}>Add New Skill</button>
+            {/* {skillElements} */}
             {buttonArray}
         </div>
     );
