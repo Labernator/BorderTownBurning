@@ -79,6 +79,7 @@
         "no-switch-case-fall-through": true,
         "strict-boolean-expressions": {
             "options": [
+                "allow-string",
                 "allow-boolean-or-undefined"
             ]
         },

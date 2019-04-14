@@ -12,6 +12,8 @@ import { UnitLabelComponent } from "./UnitLabel";
 import { UnitNameComponent } from "./UnitName";
 import { ExperienceComponent } from "./Experience";
 import { UnitNumberLabelComponent } from "./UnitNumberLabel";
+import { ToggleContent } from "./ToggleComponent";
+import { Modal } from "./Modal";
 
 const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
     let counter = 0;
@@ -39,10 +41,18 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <UnitLabelComponent title="Unit Cost" value={unit.price.toString()}></UnitLabelComponent>
                     <ExperienceComponent unit={unit}></ExperienceComponent>
                     <EquipmentContainer unit={unit}></EquipmentContainer>
-                    <UnitEquipment unit={unit}></UnitEquipment>
                     <ListComponent names={unit.skillLists} title="Skill Lists"></ListComponent>
                     <ListComponent names={unit.skills} title="Skills"></ListComponent>
                     <CharacteristicsComponent unit={unit} ></CharacteristicsComponent>
+                    <ToggleContent
+                        toggle={(show: any) => <button onClick={show}>Open</button>}
+                        content={(hide: any) => (
+                            <Modal>
+                            There is no spoon.<br/>
+                            <button onClick={hide}>Close</button>
+                            </Modal>
+                        )}
+                    />
                 </div>
             );
         }

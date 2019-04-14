@@ -157,7 +157,7 @@ export function getUnits(armyType: string): IUnit[] {
     }
 }
 
-export const checkLevelUp = (unit: IUnit) => {
+export const isAdvancing = (unit: IUnit) => {
     if (unit.isHero) {
         switch (unit.experience) {
             case 2:
@@ -180,40 +180,16 @@ export const checkLevelUp = (unit: IUnit) => {
             case 69:
             case 76:
             case 83:
-            case 90: handleHeroLevelUp(unit); break;
-            default: // do nothing
+            case 90: return true;
+            default: return false;
         }
     } else {
         switch (unit.experience) {
             case 2:
             case 5:
             case 9:
-            case 14: handleHeroLevelUp(unit); break;
-            default: // do nothing
-        }
-    }
-};
-
-const handleHeroLevelUp = (unit: IUnit) => {
-    toggleComponentVisibility(`${unit.name}Advance`);
-    disableXPButton(`${unit.name}XP`);
-};
-
-const disableXPButton = (componentName: string) => {
-    const component = document.getElementById(componentName);
-    if (component !== null) {
-        component.className = "DisabledButton";
-        component.setAttribute("disabled", "true");
-    }
-};
-
-export const toggleComponentVisibility = (componentName: string) => {
-    const component = document.getElementById(componentName);
-    if (component !== null) {
-        if (component.style.display === "none") {
-            component.style.display = "block";
-        } else if (component.style.display === "block") {
-            component.style.display = "none";
+            case 14: return true;
+            default: return false;
         }
     }
 };

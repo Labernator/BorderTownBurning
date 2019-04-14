@@ -23,6 +23,7 @@ function App(props: IAppState) {
     const warbandMemberCount = `${getNumberOfWarbandMembers(props.warbandRoster)} / ${ArmySizeLimit}`;
     return (
         <div className="App">
+        <div id="modal-root"></div>
             <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
             <AppHeaderComponent title="Type:" value={props.armyType}></AppHeaderComponent>
             <AppHeaderComponent title="Rating:" value={props.warbandRating.toString()}></AppHeaderComponent>

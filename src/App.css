@@ -3,6 +3,15 @@
   font-family: monospace;
 }
 
+.modal {
+  position: fixed;
+  top: 12px;
+  padding: 12px;
+  background-color: #f3f3f3;
+  border: 1px solid grey;
+  z-index: 1;
+}
+
 .EnabledButton {
   background-color: white;
   border: 1px solid lightgrey;

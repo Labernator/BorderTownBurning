@@ -124,18 +124,30 @@ export const UnitEquipment = (props: IUnitProps) => {
     }
     const divId = `${props.unit.name}Equipment`;
     return (
-        <div id={divId} style={{ display: "none", border: "solid" }}>
+        <div id={divId} style={{ display: "inline-flex" }}>
             <table>
                 <tbody>
                     {meleeTableHeader}
                     {meleeHeader}
                     {meleeTableRows}
+                </tbody>
+            </table>
+            <table>
+                <tbody>
                     {missileTableHeader}
                     {missileHeader}
                     {missileTableRows}
+                </tbody>
+            </table>
+            <table>
+                <tbody>
                     {armourTableHeader}
                     {armourHeader}
                     {armourRows}
+                </tbody>
+            </table>
+            <table>
+                <tbody>
                     {miscTableHeader}
                     {miscHeader}
                     {miscRows}

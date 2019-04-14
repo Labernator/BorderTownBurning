@@ -3,6 +3,9 @@ import { IUnitProps, AppMode } from "../constants";
 import { store } from "..";
 import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY } from "../actions";
 import { getEquipmentByName } from "../utilities/utils";
+import { ToggleContent } from "./ToggleComponent";
+import { Modal } from "./Modal";
+import { UnitEquipment } from "./UnitEquipment";
 export const EquipmentContainer = (props: IUnitProps) => {
 
     const toggleAvailableEquipment = () => {
@@ -58,13 +61,21 @@ export const EquipmentContainer = (props: IUnitProps) => {
             <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
             {getEquipmentContainer()}
             <div>
-                <button
-                    id={BuyEquipmentButtonId}
-                    onClick={toggleAvailableEquipment}
-                    style={{ clear: "both", float: "left", width: "100%" }}
-                    className="BuyButton">
-                    Buy additional equipment
-                    </button>
+                <ToggleContent
+                    toggle={(show: any) =>
+                        <button
+                            id={BuyEquipmentButtonId}
+                            onClick={show}
+                            style={{ clear: "both", float: "left", width: "100%" }}
+                            className="BuyButton">Buy additional equipment
+                        </button>}
+                    content={(hide: any) => (
+                        <Modal>
+                            <UnitEquipment unit={props.unit}></UnitEquipment>
+                            <button onClick={hide}>Close</button>
+                        </Modal>
+                    )}
+                />
             </div>
         </div>
     );

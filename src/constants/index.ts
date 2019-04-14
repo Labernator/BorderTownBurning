@@ -12,6 +12,11 @@ export interface IUnitProps {
     unit: IUnit;
 }
 
+export interface IAdvance {
+    unit: IUnit;
+    callback: any;
+}
+
 export enum AppMode {
     Initial,
     ExistingWarband,
