@@ -18,7 +18,6 @@ export const ExperienceComponent = (props: IUnitProps) => {
         }
     };
     return (
-
         <div  style={{ float: "left", width: 200 }}>
             <div style={{ fontWeight: "bold" }}>XP</div>
             <div>{props.unit.experience}</div>
@@ -32,7 +31,6 @@ export const ExperienceComponent = (props: IUnitProps) => {
                 content={(hide: any) => (
                     <Modal>
                         <AdvanceComponent unit={props.unit} callback={hide}></AdvanceComponent>
-                        <button onClick={hide}>Close</button>
                     </Modal>
                 )}
             />

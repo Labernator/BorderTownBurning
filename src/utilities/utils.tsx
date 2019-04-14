@@ -1,4 +1,5 @@
 import { store } from "..";
+import React from "react";
 import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, AppMode, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
 import * as SkillsJson from "../constants/Skills.json";
@@ -209,7 +210,7 @@ export const getNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
 export const getSkills = (listNames: string[]) => {
     const skills = listNames.reduce((acc: ISkill[], listname) => {
         const listOfSkills = getSkillsForList(listname);
-        return acc = listOfSkills;
+        return acc.concat(listOfSkills);
     }, []);
     return skills;
 };
@@ -220,3 +221,11 @@ const getSkillsForList = (listName: string) => (SkillLists.reduce((acc: ISkill[]
     }
     return acc;
 }, []));
+
+export const getSkillButtons = (skillLists: string[] | undefined) => {
+    if (skillLists !== undefined) {
+        const skills = getSkills(skillLists);
+        return skills.map((skill) => skillElements(skill.name));
+    }
+};
+const skillElements = (name: string) => (<button>{name}</button>);

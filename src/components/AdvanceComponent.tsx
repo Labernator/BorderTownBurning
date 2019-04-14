@@ -3,6 +3,9 @@ import { IAdvance } from "../constants";
 import { checkRacialMaximums, getSkills } from "../utilities/utils";
 import { UPDATE_UNIT } from "../actions";
 import { store } from "..";
+import { ToggleContent } from "./ToggleComponent";
+import { Modal } from "./Modal";
+import { SkillsComponent } from "./SkillsComponent";
 
 export const AdvanceComponent = (props: IAdvance) => {
     const componentId = `${props.unit.name}Advance`;
@@ -13,14 +16,6 @@ export const AdvanceComponent = (props: IAdvance) => {
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
         props.callback();
     };
-    const advanceSkill = () => {
-        if (props.unit.skillLists !== undefined) {
-            const skills = getSkills(props.unit.skillLists);
-            skills.forEach((skill) => skillElements(skill.name));
-        }
-    };
-    const skillElements = (name: string) => (<button>{name}</button>);
-
     const buttonArray = maxReachedArr.map((item) => {
         if (item.name === "Movement") {
             return undefined;
@@ -31,8 +26,21 @@ export const AdvanceComponent = (props: IAdvance) => {
     });
     return (
         <div id={componentId}>
-            <button onClick={advanceSkill}>Add New Skill</button>
             {buttonArray}
+            <ToggleContent
+                toggle={(show: any) =>
+                    <button
+                        id={componentId}
+                        onClick={(show)}
+                        className="EnabledButton">
+                        Add New Skill
+                    </button>}
+                content={(hide: any) => (
+                    <Modal>
+                        <SkillsComponent unit={props.unit} callback={hide}></SkillsComponent>
+                    </Modal>
+                )}
+            />
         </div>
     );
 };
