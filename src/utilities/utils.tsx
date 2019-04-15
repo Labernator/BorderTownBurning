@@ -2,6 +2,7 @@ import { store } from "..";
 import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
 import * as SkillsJson from "../constants/Skills.json";
+import { stateReducer } from "../reducers";
 const ArmyList = ArmyJson.armies as IArmy[];
 const SkillLists = SkillsJson.SkillLists as ISkillList[];
 const RacialMaximums: IRacialMaximums[] = require("../constants/RacialMaximums.json").maximums;
@@ -235,10 +236,10 @@ const getSkillsForList = (listName: string) => (SkillLists.reduce((acc: ISkill[]
 
 const checkSkillPrerequisites = (skill: ISkill, unit: IUnit) => {
     if (skill.prerequisite) {
-        if (skill.prerequisite.type === "characteristic" && skill.prerequisite.lookup) {
+        if (skill.prerequisite.type === "characteristic" && skill.prerequisite.lookup && typeof (skill.prerequisite.lookup) === "string") {
             return unit.characteristics[skill.prerequisite.lookup] >= skill.prerequisite.condition;
         }
-        if (skill.prerequisite.type === "skill" && skill.prerequisite.lookup && unit.skills) {
+        if (skill.prerequisite.type === "skill" && skill.prerequisite.lookup && typeof (skill.prerequisite.lookup) === "string" && unit.skills) {
             if (typeof (skill.prerequisite.condition) === "number") {
                 const skillObjects = getSkillsForList(skill.prerequisite.lookup);
                 const skillCount = skillObjects.filter((skillObject) => unit.skills && unit.skills.includes(skillObject.name)).length;
@@ -265,6 +266,10 @@ const checkSpecialPrerequisites = (skill: ISkill, unit: IUnit) => {
                 return unit.skills ? !unit.skills.includes("No Weapons allowed") : true;
             case "Any Armour":
                 return unit.skills ? !unit.skills.includes("No Armor allowed") : true;
+            case "No no Pain":
+                return unit.skills ? !unit.skills.includes("No Pain") : true;
+            case "Not Sisters of Sigmar":
+                return unit.isHiredSword || store.getState().armyType !== "Sisters of Sigmar";
             default: return true;
         }
     }

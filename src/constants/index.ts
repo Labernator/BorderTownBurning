@@ -58,7 +58,7 @@ export interface ISkill {
     prerequisite?: {
         type: string;
         condition: number | string;
-        lookup?: string;
+        lookup?: string | string[];
     };
 }
 export interface ISkillList {

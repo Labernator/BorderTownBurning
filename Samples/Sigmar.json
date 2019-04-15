@@ -37,7 +37,7 @@
         "Academic",
         "Combat",
         "Speed",
-        "Special"
+        "Sisters of Sigmar"
       ],
       "spells": [
         "Healing Hand"
@@ -91,7 +91,7 @@
         "Academic",
         "Combat",
         "Speed",
-        "Special"
+        "Sisters of Sigmar"
       ],
       "include": [
         0,
@@ -133,7 +133,7 @@
         "Academic",
         "Combat",
         "Speed",
-        "Special"
+        "Sisters of Sigmar"
       ],
       "include": [
         0,
@@ -175,7 +175,7 @@
         "Academic",
         "Combat",
         "Speed",
-        "Special"
+        "Sisters of Sigmar"
       ],
       "include": [
         0,
@@ -217,7 +217,7 @@
         "Academic",
         "Combat",
         "Speed",
-        "Special"
+        "Sisters of Sigmar"
       ],
       "include": [
         0,
@@ -426,7 +426,8 @@
       "isLarge": false,
       "skillLists": [
         "Strength",
-        "Combat"
+        "Combat",
+        "Dwarven"
       ],
       "include": [
         0,
