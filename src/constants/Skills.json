@@ -5,35 +5,42 @@
             "list": [
                 {
                     "name": "Axe Master",
+                    "type": "Combat",
                     "text": "The warrior may parry with normal axes as per normal parrying rules."
                 },
                 {
                     "name": "Disarm",
+                    "type": "Combat",
                     "text": "The hero may exchange his normal attacks for a single special attack: Declare what weapon is attempted to disarm. The attack is executed at -2 WS (-3 for Two-Handed Weapon). If the to-hit roll is successful, the opponent must fight without the designated weapon until he recovers it. The foe recovers his weapon in the first Recovery Phase out of close combat. Not vs. natural weaponry."
                 },
                 {
                     "name": "Drive Chariot",
+                    "type": "Combat",
                     "text": "The hero may Charge with its chariot."
                 },
                 {
                     "name": "Expert Axeman",
+                    "type": "Combat",
                     "text": "Re-roll all failed hits with an Axe when charging."
                 },
                 {
                     "name": "Expert Swordsman",
+                    "type": "Combat",
                     "text": "The hero may re-roll to-hit rolls with swords (normal swords or weeping blades) when charging."
                 },
                 {
                     "name": "Combat Master",
+                    "type": "Combat",
                     "text": "The hero is immune to ‘All Alone’ test and gains an additional Attack when fighting two or more enemies at once.",
                     "prerequisite": {
                         "type": "skill",
                         "condition": 2,
-                        "lookup": "combat"
+                        "lookup": "Combat"
                     }
                 },
                 {
                     "name": "Finishing Move",
+                    "type": "Combat",
                     "text": "The hero may exchange his normal attacks for a single special attack: This attack is made at +2 Strength (any other Strength Bonus also applies e.g. Mighty Blow, weapon bonus, etc.) The blow is resolved last AFTER Two-Handed Weapons.",
                     "prerequisite": {
                         "type": "characteristic",
@@ -43,52 +50,182 @@
                 },
                 {
                     "name": "Follow Thru",
+                    "type": "Combat",
                     "text": "In any Hand-to-Hand combat where all of the warrior’s foes are knocked down, stunned, or taken out of action the warrior may opt to move up to 2 inches in any direction. This move can bring him into base contact with another model, and he will fight in the next close combat phase, but neither model counts as charging. This move is executed at the very end of the close combat phase after everyone has finished striking. If multiple models have this skill, then they move in Initiative order. Simultaneous movers from opposing forces within range automatically move to intercept one another."
                 },
                 {
                     "name": "Pugilist",
+                    "type": "Combat",
                     "text": "The model always gets an extra attack when fighting barehanded or with one weapon and no shield or buckler. Off-hand attacks have no penalty to hit."
                 },
                 {
                     "name": "Strike to Injure",
+                    "type": "Combat",
                     "text": "The hero adds +1 to all injury rolls.",
                     "prerequisite": {
                         "type": "skill",
                         "condition": 2,
-                        "lookup": "combat"
+                        "lookup": "Combat"
                     }
                 },
                 {
                     "name": "Shield Smash",
+                    "type": "Combat",
                     "text": "Gain an additional attack (resolved at the warriors strength) when using a Shield or Buckler. This attack is resolved at -1 to hit and cannot cause critical hits."
                 },
                 {
                     "name": "Step Aside",
+                    "type": "Combat",
                     "text": "The hero gains a special 5+ save against wounds suffered in close combat (as long as he is not wearing heavy armor)."
                 },
                 {
                     "name": "Sweeping Blow",
+                    "type": "Combat",
                     "text": "The hero may exchange his normal attacks for a single special attack (if equipped with a two-handed weapon including halberds, flails, etc.): All models in base contact have to take an Initiative test. If the test is failed, the model is hit. No Strength bonuses from weapons are applied when rolling to wound and rolling for armor saves."
                 },
                 {
                     "name": "Two Weapon master",
+                    "type": "Combat",
                     "text": "The hero ignores the -2 to hit penalty for off-hand weapons."
                 },
                 {
                     "name": "Weapons Training",
+                    "type": "Combat",
                     "text": "The Hero may use any close combat weapon, not just those in the equipment options.",
                     "prerequisite": {
                         "type": "special",
-                        "condition": "any weapon"
+                        "condition": "Any Weapons"
                     }
                 },
                 {
                     "name": "Web of Steel",
+                    "type": "Combat",
                     "text": "The hero gains +1 to rolls on the Critical Hit tables."
                 },
                 {
                     "name": "Whip Master",
+                    "type": "Combat",
                     "text": "The hero may reroll all to-hit rolls when using a whip."
+                }
+            ]
+        },
+        {
+            "name": "Academic",
+            "list": [
+                {
+                    "name": "Alchemist",
+                    "type": "Academic",
+                    "text": "Roll a D6 to see which Alchemist ability the hero gains. If this skill is gained more than once and the roll would grant the same ability as the hero already has, roll again.",
+                    "prerequisite": {
+                        "type": "skill",
+                        "condition": 2,
+                        "lookup": "Academic"
+                    }
+                },
+                {
+                    "name": "Battle Tongue",
+                    "type": "Academic",
+                    "text": "Increases the range of the 'Leader' skill by 6\".",
+                    "prerequisite": {
+                        "type": "skill",
+                        "condition": "Leader",
+                        "lookup": "Academic"
+                    }
+                },
+                {
+                    "name": "Haggle",
+                    "type": "Academic",
+                    "text": "The Hero may deduct 2D6 gold crowns from the price of any single item (to a minimum cost of 1gc) once per post battle sequence."
+                },
+                {
+                    "name": "Hunch",
+                    "type": "Academic",
+                    "text": "The warband may position up to 3 of his men capable of earning experience in any ruined building on the board that is at least 12 inch away from an enemy model and not in the enemy deployment zone.",
+                    "prerequisite": {
+                        "type": "skill",
+                        "condition": "Leader",
+                        "lookup": "Academic"
+                    }
+                },
+                {
+                    "name": "Magical Aptitude",
+                    "type": "Academic",
+                    "text": "The hero may attempt to cast two spells each turn as long as he is not in hand-to-hand combat. After attempting the first spell, he must take a toughness test. If he passes he may attempt a second spell that turn or even cast the same spell twice. If he fails he must roll on the injury table immediately with no saves treating Out Of Action results as Stunned instead.",
+                    "prerequisite": {
+                        "type": "special",
+                        "condition": "Magic User"
+                    }
+                },
+                {
+                    "name": "Medical Knowledge",
+                    "type": "Academic",
+                    "text": "You may reroll the units dice from a roll on the heros serious injury chart for one hero if this hero was not taken out of action."
+                },
+                {
+                    "name": "Mind Focus",
+                    "type": "Academic",
+                    "text": "The hero may reroll one dice roll used in the difficulty roll.",
+                    "prerequisite": {
+                        "type": "special",
+                        "condition": "Magic / Pray User"
+                    }
+                },
+                {
+                    "name": "Pawnbroker",
+                    "type": "Academic",
+                    "text": "Gain an extra 2D6 for every item Sold (up to its full value) if this hero was not taken out of action. "
+                },
+                {
+                    "name": "Scholar",
+                    "type": "Academic",
+                    "text": "The hero may select a spell or prayer instead of determining it randomly when gaining a new spell or prayer OR The difficulty of any spell or prayer the hero already knows is permanently reduced by 1.",
+                    "prerequisite": {
+                        "type": "special",
+                        "condition": "Magic / Pray User"
+                    }
+                },
+                {
+                    "name": "Scribe",
+                    "type": "Academic",
+                    "text": "The hero may make a scroll before the battle and inscribe a single spell or prayer upon it that he is versed in. The scroll may be used just before they are about to cast the spell or prayer and allows the caster +2 to his difficulty roll. Once used the scroll will crumble to dust and is useless. Scrolls may not be saved up from battle to battle if they are not used.",
+                    "prerequisite": {
+                        "type": "special",
+                        "condition": "Magic / Pray User"
+                    }
+                },
+                {
+                    "name": "Sorcery",
+                    "type": "Academic",
+                    "text": "The hero gains +1 to his casting rolls.",
+                    "prerequisite": {
+                        "type": "special",
+                        "condition": "Magic User"
+                    }
+                },
+                {
+                    "name": "Streetwise",
+                    "type": "Academic",
+                    "text": "The hero may add +2 to the roll when searching for rare items."
+                },
+                {
+                    "name": "Tactician",
+                    "type": "Academic",
+                    "text": "In any scenario the warband leader may reposition his warriors after his opponent has set up and may even advance them up to 12 inch onto the board instead of 8 inch.",
+                    "prerequisite": {
+                        "type": "skill",
+                        "condition": "Leader",
+                        "lookup": "Academic"
+                    }
+                },
+                {
+                    "name": "Trap Expert",
+                    "type": "Academic",
+                    "text": "The Hero  will never set off traps himself (but may be subject to their effects if he is too close to one if it goes off). He can attempt to disarm any traps he comes across. He must stop at the trap during his Movement phase, and may do nothing else that turn. To disarm a Simple trap, he must roll 6+ on 2D6. To disarm a Complex trap, he must roll 8+ on 2D6. If unsuccessful, he must test against his Initiative. A failed test means he has inadvertently set off the trap himself! He is also able to restore dud traps or previously de-activated traps back into active traps. To determine what a Dud trap becomes, roll a D6: 1-4: Simple, 5-6: Complex. Obviously a previously disarmed trap will revert back to what it was. If restoring a Simple trap, he must roll a 6+ on 2D6. If restoring a Complex trap, he must roll an 8+. Failure will mean that the trap has failed to activate."
+                },
+                {
+                    "name": "Wyrdstone Hunter",
+                    "type": "Academic",
+                    "text": "You may re-roll one dice when rolling on the Exploration chart."
                 }
             ]
         }

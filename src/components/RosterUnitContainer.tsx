@@ -44,15 +44,6 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <ListComponent names={unit.skillLists} title="Skill Lists"></ListComponent>
                     <ListComponent names={unit.skills} title="Skills"></ListComponent>
                     <CharacteristicsComponent unit={unit} ></CharacteristicsComponent>
-                    <ToggleContent
-                        toggle={(show: any) => <button onClick={show}>Open</button>}
-                        content={(hide: any) => (
-                            <Modal>
-                            There is no spoon.<br/>
-                            <button onClick={hide}>Close</button>
-                            </Modal>
-                        )}
-                    />
                 </div>
             );
         }

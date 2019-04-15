@@ -22,25 +22,25 @@ export const AdvanceComponent = (props: IAdvance) => {
         }
         const btnText = `Add +1 ${item.name}`;
         const btnKey = `${props.unit.name}${item.name}`;
-        return item.maxReached ? undefined : <button key={btnKey} onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
+        return item.maxReached ? undefined : <button className="EnabledButton" key={btnKey} onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
     });
     return (
         <div id={componentId}>
-            {buttonArray}
             <ToggleContent
-                toggle={(show: any) =>
+                toggle={(show: any) => (
                     <button
                         id={componentId}
                         onClick={(show)}
                         className="EnabledButton">
                         Add New Skill
-                    </button>}
+                </button>)}
                 content={(hide: any) => (
                     <Modal>
-                        <SkillsComponent unit={props.unit} callback={hide}></SkillsComponent>
+                        <SkillsComponent unit={props.unit} callbacks={[hide, props.callback]}></SkillsComponent>
                     </Modal>
                 )}
             />
+            {buttonArray}
         </div>
     );
 };

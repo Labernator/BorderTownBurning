@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import * as Actions from "../actions";
 import { store } from "..";
 import { getUnits } from "../utilities/utils";
-import { AppMode } from "../constants";
 
 export const FileDialogue = () => {
 
@@ -39,7 +38,6 @@ export const FileDialogue = () => {
   };
   const materializeState = (jsonObject: any) => {
     // fire actions that adjust the state to reflect the json data
-    store.dispatch({ type: Actions.SET_MODE, payload: AppMode.ExistingWarband });
     store.dispatch({ type: Actions.SET_ARMY, payload: jsonObject.type });
     store.dispatch({ type: Actions.SET_ALIGNMENT, payload: jsonObject.alignment });
     store.dispatch({ type: Actions.SET_ARMYNAME, payload: jsonObject.name });

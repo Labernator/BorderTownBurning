@@ -1,6 +1,5 @@
 import { store } from "..";
-import React from "react";
-import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, AppMode, IRacialMaximums, ISkillList, ISkill } from "../constants";
+import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
 import * as SkillsJson from "../constants/Skills.json";
 const ArmyList = ArmyJson.armies as IArmy[];
@@ -50,29 +49,26 @@ export const checkRacialMaximums = (unit: IUnit) => {
 
 export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
     const MiscEquipment = getMisc();
-    if (store.getState().appMode === AppMode.ExistingWarband) {
-        const ArmyType = store.getState().armyType;
-        return MiscEquipment.reduce((filteredArr, misc) => {
-            if (misc.restrictions === undefined) {
-                filteredArr = filteredArr.concat(misc);
-            } else {
-                if (misc.restrictions.exclude !== undefined) {
-                    const excluded = misc.restrictions.exclude.find((exclude) => exclude === ArmyType);
-                    if (excluded === undefined) {
-                        filteredArr = filteredArr.concat(misc);
-                    }
-                }
-                if (misc.restrictions.include !== undefined) {
-                    const included = misc.restrictions.include.find((exclude) => exclude === ArmyType);
-                    if (included !== undefined) {
-                        filteredArr = filteredArr.concat(misc);
-                    }
+    const ArmyType = store.getState().armyType;
+    return MiscEquipment.reduce((filteredArr, misc) => {
+        if (misc.restrictions === undefined) {
+            filteredArr = filteredArr.concat(misc);
+        } else {
+            if (misc.restrictions.exclude !== undefined) {
+                const excluded = misc.restrictions.exclude.find((exclude) => exclude === ArmyType);
+                if (excluded === undefined) {
+                    filteredArr = filteredArr.concat(misc);
                 }
             }
-            return filteredArr;
-        }, [] as IMiscallaneous[]);
-    }
-    return MiscEquipment.length > 0 ? MiscEquipment.filter((misc) => filterList.includes(misc.type)) : [];
+            if (misc.restrictions.include !== undefined) {
+                const included = misc.restrictions.include.find((exclude) => exclude === ArmyType);
+                if (included !== undefined) {
+                    filteredArr = filteredArr.concat(misc);
+                }
+            }
+        }
+        return filteredArr;
+    }, [] as IMiscallaneous[]);
 };
 
 export const getEquipmentByName = (equipmentName: string): IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous | undefined => {
@@ -207,12 +203,27 @@ export const getNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
     return unitCount;
 };
 
-export const getSkills = (listNames: string[]) => {
-    const skills = listNames.reduce((acc: ISkill[], listname) => {
+export const getSkills = (unit: IUnit) => {
+    if (unit.skillLists === undefined) {
+        return undefined;
+    }
+    const skills = unit.skillLists.reduce((acc: ISkill[], listname) => {
         const listOfSkills = getSkillsForList(listname);
         return acc.concat(listOfSkills);
     }, []);
-    return skills;
+    const filteredSkills = skills.filter((skill) => {
+        let keep = true;
+        // filter out all skills that the unit already has
+        if (unit.skills !== undefined) {
+            keep = !unit.skills.includes(skill.name);
+        }
+        // check if the prerequisites are met
+        if (keep) {
+            keep = checkSkillPrerequisites(skill, unit);
+        }
+        return keep;
+    });
+    return filteredSkills;
 };
 
 const getSkillsForList = (listName: string) => (SkillLists.reduce((acc: ISkill[], list) => {
@@ -222,10 +233,40 @@ const getSkillsForList = (listName: string) => (SkillLists.reduce((acc: ISkill[]
     return acc;
 }, []));
 
-export const getSkillButtons = (skillLists: string[] | undefined) => {
-    if (skillLists !== undefined) {
-        const skills = getSkills(skillLists);
-        return skills.map((skill) => skillElements(skill.name));
+const checkSkillPrerequisites = (skill: ISkill, unit: IUnit) => {
+    if (skill.prerequisite) {
+        if (skill.prerequisite.type === "characteristic" && skill.prerequisite.lookup) {
+            return unit.characteristics[skill.prerequisite.lookup] >= skill.prerequisite.condition;
+        }
+        if (skill.prerequisite.type === "skill" && skill.prerequisite.lookup && unit.skills) {
+            if (typeof (skill.prerequisite.condition) === "number") {
+                const skillObjects = getSkillsForList(skill.prerequisite.lookup);
+                const skillCount = skillObjects.filter((skillObject) => unit.skills && unit.skills.includes(skillObject.name)).length;
+                return skillCount >= skill.prerequisite.condition;
+            } else if (typeof (skill.prerequisite.condition) === "string") {
+                return unit.skills.includes(skill.prerequisite.condition);
+            }
+        }
+        if (skill.prerequisite.type === "special") {
+            return checkSpecialPrerequisites(skill, unit);
+        }
     }
+    return true;
 };
-const skillElements = (name: string) => (<button>{name}</button>);
+
+const checkSpecialPrerequisites = (skill: ISkill, unit: IUnit) => {
+    if (skill.prerequisite) {
+        switch (skill.prerequisite.condition) {
+            case "Magic User":
+                return unit.skills ? unit.skills.includes("Magic User") : false;
+            case "Magic / Pray User":
+                return unit.skills ? unit.skills.includes("Magic User") || unit.skills.includes("Pray User") : false;
+            case "Any Weapons":
+                return unit.skills ? !unit.skills.includes("No Weapons allowed") : true;
+            case "Any Armour":
+                return unit.skills ? !unit.skills.includes("No Armor allowed") : true;
+            default: return true;
+        }
+    }
+    return true;
+};

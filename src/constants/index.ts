@@ -17,9 +17,9 @@ export interface IAdvance {
     callback: any;
 }
 
-export enum AppMode {
-    Initial,
-    ExistingWarband,
+export interface IAdvanceSkill {
+    unit: IUnit;
+    callbacks: any[];
 }
 
 export interface IRacialMaximums {
@@ -28,7 +28,6 @@ export interface IRacialMaximums {
 }
 
 export const initialState: IAppState = {
-    appMode: AppMode.Initial,
     armyAlignment: "",
     armyName: "",
     armyObjective: "",
@@ -38,21 +37,6 @@ export const initialState: IAppState = {
     campaignAchievements: [],
     campaignPoints: 0,
     listOfUnits: [],
-    // listOfAlignments: [
-    //     "Lawful",
-    //     "Lawful/Neutral",
-    //     "Neutral",
-    //     "Neutral/Chaotic",
-    //     "Chaotic",
-    // ],
-    // listOfObjectives: [
-    //     "The Scion of Chaos",
-    //     "The Scourge of the Realm",
-    //     "The Celestial Protectorate",
-    //     "The Lure of Fortune",
-    //     "The Silent Threat",
-    //     "The Damned Shall Burn",
-    // ],
     warbandRating: 0,
     warbandRoster: [],
     wyrdstoneShards: 0,
@@ -69,6 +53,7 @@ export interface EquipmentList {
 }
 export interface ISkill {
     name: string;
+    type: string;
     text: string;
     prerequisite?: {
         type: string;
@@ -93,13 +78,10 @@ export interface IArmy {
 }
 
 export interface IAppState {
-    appMode: AppMode;
     armyType: string;
     armyName: string;
     armyAlignment: string;
     armyObjective: string;
-    // listOfAlignments: string[];
-    // listOfObjectives: string[];
     listOfUnits: IUnit[];
     warbandRoster: IUnit[];
     armyTreasury: number;

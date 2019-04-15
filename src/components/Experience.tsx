@@ -8,7 +8,6 @@ import { ToggleContent } from "./ToggleComponent";
 import { Modal } from "./Modal";
 
 export const ExperienceComponent = (props: IUnitProps) => {
-    const componentId = `${props.unit.name}XP`;
     const addExperience = (callback: any) => {
         const xp = props.unit.experience + 1;
         props.unit.experience = xp;
@@ -18,13 +17,13 @@ export const ExperienceComponent = (props: IUnitProps) => {
         }
     };
     return (
-        <div  style={{ float: "left", width: 200 }}>
+        <div style={{ float: "left", width: 200 }}>
             <div style={{ fontWeight: "bold" }}>XP</div>
             <div>{props.unit.experience}</div>
             <ToggleContent
                 toggle={(show: any) =>
                     <button
-                        id={componentId}
+                        id={`${props.unit.name}XP`}
                         onClick={() => addExperience(show)}
                         className="EnabledButton">+
                     </button>}

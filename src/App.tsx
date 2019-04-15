@@ -23,7 +23,7 @@ function App(props: IAppState) {
     const warbandMemberCount = `${getNumberOfWarbandMembers(props.warbandRoster)} / ${ArmySizeLimit}`;
     return (
         <div className="App">
-        <div id="modal-root"></div>
+            <div id="modal-root"></div>
             <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
             <AppHeaderComponent title="Type:" value={props.armyType}></AppHeaderComponent>
             <AppHeaderComponent title="Rating:" value={props.warbandRating.toString()}></AppHeaderComponent>
@@ -32,7 +32,6 @@ function App(props: IAppState) {
             <AppHeaderComponent title="Campaign Points:" value={props.campaignPoints.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Campaign Achievements:" value={props.campaignAchievements.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Treasury:" value={props.armyTreasury.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Stash:" value={props.armyStash.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
             <AppHeaderComponent title="Member Count" value={warbandMemberCount}></AppHeaderComponent>
@@ -45,8 +44,6 @@ function App(props: IAppState) {
 }
 
 const mapStateToProps = (state: IAppState) => ({
-    appMode: state.appMode,
-
     armyAlignment: state.armyAlignment,
     armyName: state.armyName,
     armyObjective: state.armyObjective,

@@ -15,8 +15,6 @@ const getUnitRating = (unit: IUnit) => {
 };
 export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
-        case Actions.SET_MODE:
-            return { ...state, appMode: action.payload };
         case Actions.SET_ARMY:
             return { ...state, armyType: action.payload };
         case Actions.SET_ARMYNAME:
@@ -25,10 +23,6 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
             return { ...state, armyAlignment: action.payload };
         case Actions.SET_OBJECTIVE:
             return { ...state, armyObjective: action.payload };
-        // case Actions.RESTRICT_ALIGNMENTS:
-        //     return { ...state, listOfAlignments: action.payload };
-        // case Actions.RESTRICT_OBJECTIVES:
-        //     return { ...state, listOfObjectives: action.payload };
         case Actions.RESTRICT_UNITS:
             return { ...state, listOfUnits: action.payload };
         case Actions.ADD_UNIT_TO_ROSTER:

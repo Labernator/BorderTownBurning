@@ -1,37 +1,20 @@
 import React from "react";
-import { IUnitProps, AppMode } from "../constants";
+import { IUnitProps } from "../constants";
 import { store } from "..";
 import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY } from "../actions";
 import { getEquipmentByName } from "../utilities/utils";
 import { ToggleContent } from "./ToggleComponent";
 import { Modal } from "./Modal";
 import { UnitEquipment } from "./UnitEquipment";
+import { AppHeaderComponent } from "./AppHeaderComponent";
 export const EquipmentContainer = (props: IUnitProps) => {
-
-    const toggleAvailableEquipment = () => {
-        const equipmentTable = document.getElementById(`${props.unit.name}Equipment`);
-        const equipmentButton = document.getElementById(BuyEquipmentButtonId);
-        if (equipmentTable !== null) {
-            if (equipmentTable.style.display === "none") {
-                equipmentTable.style.display = "block";
-                if (equipmentButton !== null) {
-                    equipmentButton.innerHTML = "Close equipment panel";
-                }
-            } else {
-                equipmentTable.style.display = "none";
-                if (equipmentButton !== null) {
-                    equipmentButton.innerHTML = "Buy additional equipment";
-                }
-            }
-        }
-    };
     const removeItem = (equipmentName: string) => {
         const updateUnit = props.unit;
         const firstFoundIndex = updateUnit.equipment.findIndex((equip) => equip === equipmentName);
         if (firstFoundIndex !== -1) {
             const originalEquipment = getEquipmentByName(equipmentName);
             let cost = 0;
-            if (store.getState().appMode === AppMode.ExistingWarband && originalEquipment !== undefined) {
+            if (originalEquipment !== undefined) {
                 cost = Math.ceil(originalEquipment.cost / 2);
                 if (props.unit.number !== undefined) {
                     cost = cost * props.unit.number;
@@ -55,7 +38,6 @@ export const EquipmentContainer = (props: IUnitProps) => {
                 </div>
             );
         }));
-    const BuyEquipmentButtonId = `${props.unit.name}BuyButton`;
     return (
         <div style={{ display: "inline-block" }}>
             <div id="EquipmentHeader" className="AppHeaderContainerDiv">Equipment</div>
@@ -64,13 +46,17 @@ export const EquipmentContainer = (props: IUnitProps) => {
                 <ToggleContent
                     toggle={(show: any) =>
                         <button
-                            id={BuyEquipmentButtonId}
+                            id={`${props.unit.name}BuyButton`}
                             onClick={show}
                             style={{ clear: "both", float: "left", width: "100%" }}
                             className="BuyButton">Buy additional equipment
                         </button>}
                     content={(hide: any) => (
                         <Modal>
+                            <div id={`${props.unit.name}Header`} style={{ display: "inline-block", border: "solid", borderWidth: 1, padding: 5 }}>
+                                <AppHeaderComponent title="Treasury:" value={store.getState().armyTreasury.toString()}></AppHeaderComponent>
+                                <AppHeaderComponent title="Equipment:" value={props.unit.equipment.toString()}></AppHeaderComponent>
+                            </div>
                             <UnitEquipment unit={props.unit}></UnitEquipment>
                             <button onClick={hide}>Close</button>
                         </Modal>

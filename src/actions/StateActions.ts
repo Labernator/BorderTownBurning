@@ -1,4 +1,4 @@
-import { IUnit, AppMode } from "../constants";
+import { IUnit } from "../constants";
 
 export const SET_MODE = "SET_MODE";
 export const SET_ARMY = "SET_ARMY";
@@ -110,11 +110,6 @@ class UpdateUnit {
     constructor(public payload: IUnit) { }
 }
 
-class SetMode {
-    public readonly type = SET_MODE;
-    constructor(public payload: AppMode) { }
-}
-
 class SetAchievements {
     public readonly type = SET_ACHIEVEMENTS;
     constructor(public payload: string[]) { }
@@ -133,4 +128,4 @@ class SetCampaignPoints {
 export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment |
     RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
-    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetMode | SetAchievements | SetWyrdstones | SetCampaignPoints;
+    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetAchievements | SetWyrdstones | SetCampaignPoints;
