@@ -454,6 +454,36 @@
                     "text": "The warrior may re-roll any 'Fear' tests and does not need to take 'All alone' tests."
                 }
             ]
+        }, 
+        {
+            "name": "Pit Fighter",
+            "list": [
+                {
+                    "name": "Bulging Biceps",
+                    "type": "Pit Fighter",
+                    "text": "The Pit Fighter may ignore the entire heavy weapons special rule penalty. The Strength bonus will now apply to all rounds in CC. So a Morning Star will give +1 Strength in all turns not only the first one."
+                },
+                {
+                    "name": "Force of Will",
+                    "type": "Pit Fighter",
+                    "text": ""
+                },
+                {
+                    "name": "Arms Master",
+                    "type": "Pit Fighter",
+                    "text":  ""
+                },
+                {
+                    "name": "Body Slam",
+                    "type": "Pit Fighter",
+                    "text": ""                
+                },
+                {
+                    "name": "Grizzled Veteran",
+                    "type": "Pit Fighter",
+                    "text": ""
+                }
+            ]
         }
     ]
 }
