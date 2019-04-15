@@ -1,6 +1,6 @@
 import React from "react";
 import { IAdvance } from "../constants";
-import { checkRacialMaximums, getSkills } from "../utilities/utils";
+import { checkRacialMaximums } from "../utilities/utils";
 import { UPDATE_UNIT } from "../actions";
 import { store } from "..";
 import { ToggleContent } from "./ToggleComponent";
@@ -24,22 +24,39 @@ export const AdvanceComponent = (props: IAdvance) => {
         const btnKey = `${props.unit.name}${item.name}`;
         return item.maxReached ? undefined : <button className="EnabledButton" key={btnKey} onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
     });
+
+    const skillComp = props.unit.isHero || props.unit.isHiredSword ? <ToggleContent
+        toggle={(show: any) => (
+            <button
+                id={componentId}
+                onClick={(show)}
+                className="EnabledButton">
+                Add New Skill
+        </button>)}
+        content={(hide: any) => (
+            <Modal>
+                <SkillsComponent unit={props.unit} callbacks={[hide, props.callback]}></SkillsComponent>
+            </Modal>
+        )}
+    /> :
+        <ToggleContent
+            toggle={(show: any) => (
+                <button
+                    id={componentId}
+                    onClick={(show)}
+                    className="EnabledButton">
+                    Lad's got Talent
+        </button>)}
+            content={(hide: any) => (
+                <Modal>
+                    {/* <SkillsComponent unit={props.unit} callbacks={[hide, props.callback]}></SkillsComponent> */}
+                </Modal>
+            )}
+        />
+        ;
     return (
         <div id={componentId}>
-            <ToggleContent
-                toggle={(show: any) => (
-                    <button
-                        id={componentId}
-                        onClick={(show)}
-                        className="EnabledButton">
-                        Add New Skill
-                </button>)}
-                content={(hide: any) => (
-                    <Modal>
-                        <SkillsComponent unit={props.unit} callbacks={[hide, props.callback]}></SkillsComponent>
-                    </Modal>
-                )}
-            />
+            {skillComp}
             {buttonArray}
         </div>
     );

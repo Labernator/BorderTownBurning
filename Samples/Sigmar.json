@@ -427,11 +427,11 @@
       "skillLists": [
         "Strength",
         "Combat",
-        "Dwarven"
+        "Dwarf"
       ],
       "include": [
         0,
-        100
+        1
       ],
       "experience": 11,
       "equipment": [
