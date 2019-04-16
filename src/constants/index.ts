@@ -8,10 +8,6 @@ export interface ILabel {
     value: string;
 }
 
-export interface IUnitProps {
-    unit: IUnit;
-}
-
 export interface IAdvance {
     unit: IUnit;
     callback: any;

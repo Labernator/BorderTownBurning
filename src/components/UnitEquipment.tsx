@@ -1,11 +1,11 @@
 import React from "react";
-import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnitProps } from "../constants";
+import { IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous, IUnit } from "../constants";
 import { filterMeleeWeapons, filterMissileWeapons, filterArmour, filterMiscallaneous, getEquipment } from "../utilities/utils";
 import { store } from "..";
 import { UPDATE_UNIT, SUBTRACT_MONEY_FROM_TREASURY } from "../actions";
 let counter = 0;
-export const UnitEquipment = (props: IUnitProps) => {
-    const availableEquipment = getEquipment(props.unit.allowedEquipment);
+export const UnitEquipment = ({ unit }: { unit: IUnit }) => {
+    const availableEquipment = getEquipment(unit.allowedEquipment);
     const equipmentNames = availableEquipment.map((equipment) => equipment.type);
     const meleeEquipment = filterMeleeWeapons(equipmentNames);
     const missileEquipment = filterMissileWeapons(equipmentNames);
@@ -13,11 +13,11 @@ export const UnitEquipment = (props: IUnitProps) => {
     const miscEquipment = filterMiscallaneous(equipmentNames);
 
     const calculateItemCost = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => (
-        props.unit.number !== undefined ? item.cost * props.unit.number : item.cost
+        unit.number !== undefined ? item.cost * unit.number : item.cost
     );
 
     const addItemToUnit = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => {
-        const updateUnit = props.unit;
+        const updateUnit = unit;
         updateUnit.equipment.push(item.type);
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
         store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: calculateItemCost(item) });
@@ -122,7 +122,7 @@ export const UnitEquipment = (props: IUnitProps) => {
         miscTableHeader = createTableHeader("Miscallaneous Equipment");
         miscHeader = createTh("Misc");
     }
-    const divId = `${props.unit.name}Equipment`;
+    const divId = `${unit.name}Equipment`;
     return (
         <div id={divId} style={{ display: "inline-flex" }}>
             <table>

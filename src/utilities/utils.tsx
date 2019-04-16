@@ -204,6 +204,18 @@ export const getNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
     return unitCount;
 };
 
+export const getTotalNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
+    let unitCount = 0;
+    warbandRoster.map((unit) => {
+        if (unit.isHero || unit.number === undefined) {
+            unitCount++;
+        } else if (unit.number !== undefined) {
+            unitCount += unit.number;
+        }
+    });
+    return unitCount;
+};
+
 export const getSkills = (unit: IUnit) => {
     if (unit.skillLists === undefined) {
         return undefined;
@@ -235,14 +247,14 @@ const getSkillsForList = (listName: string) => (SkillLists.reduce((acc: ISkill[]
 }, []));
 
 const checkSkillPrerequisites = (skill: ISkill, unit: IUnit) => {
-    if (skill.prerequisite) {
-        if (skill.prerequisite.type === "characteristic" && skill.prerequisite.lookup && typeof (skill.prerequisite.lookup) === "string") {
+    if (skill.prerequisite !== undefined) {
+        if (skill.prerequisite.type === "characteristic" && skill.prerequisite.lookup !== undefined && typeof (skill.prerequisite.lookup) === "string") {
             return unit.characteristics[skill.prerequisite.lookup] >= skill.prerequisite.condition;
         }
-        if (skill.prerequisite.type === "skill" && skill.prerequisite.lookup && typeof (skill.prerequisite.lookup) === "string" && unit.skills) {
+        if (skill.prerequisite.type === "skill" && skill.prerequisite.lookup !== undefined && typeof (skill.prerequisite.lookup) === "string" && unit.skills !== undefined) {
             if (typeof (skill.prerequisite.condition) === "number") {
                 const skillObjects = getSkillsForList(skill.prerequisite.lookup);
-                const skillCount = skillObjects.filter((skillObject) => unit.skills && unit.skills.includes(skillObject.name)).length;
+                const skillCount = skillObjects.filter((skillObject) => unit.skills !== undefined && unit.skills.includes(skillObject.name)).length;
                 return skillCount >= skill.prerequisite.condition;
             } else if (typeof (skill.prerequisite.condition) === "string") {
                 return unit.skills.includes(skill.prerequisite.condition);
@@ -256,22 +268,37 @@ const checkSkillPrerequisites = (skill: ISkill, unit: IUnit) => {
 };
 
 const checkSpecialPrerequisites = (skill: ISkill, unit: IUnit) => {
-    if (skill.prerequisite) {
+    if (skill.prerequisite !== undefined) {
         switch (skill.prerequisite.condition) {
             case "Magic User":
-                return unit.skills ? unit.skills.includes("Magic User") : false;
+                return unit.skills !== undefined ? unit.skills.includes("Magic User") : false;
             case "Magic / Pray User":
-                return unit.skills ? unit.skills.includes("Magic User") || unit.skills.includes("Pray User") : false;
+                return unit.skills !== undefined ? unit.skills.includes("Magic User") || unit.skills.includes("Pray User") : false;
             case "Any Weapons":
-                return unit.skills ? !unit.skills.includes("No Weapons allowed") : true;
+                return unit.skills !== undefined ? !unit.skills.includes("No Weapons allowed") : true;
             case "Any Armour":
-                return unit.skills ? !unit.skills.includes("No Armor allowed") : true;
+                return unit.skills !== undefined ? !unit.skills.includes("No Armor allowed") : true;
             case "No no Pain":
-                return unit.skills ? !unit.skills.includes("No Pain") : true;
+                return unit.skills !== undefined ? !unit.skills.includes("No Pain") : true;
             case "Not Sisters of Sigmar":
                 return unit.isHiredSword || store.getState().armyType !== "Sisters of Sigmar";
             default: return true;
         }
     }
     return true;
+};
+
+export const getGoldFromWyrdstones = (amount: number) => {
+    const warbandSize = getTotalNumberOfWarbandMembers(store.getState().warbandRoster);
+    switch (amount) {
+        case 1: return (warbandSize <= 3) ? 45 : (warbandSize <= 6) ? 40 : (warbandSize <= 9) ? 35 : (warbandSize <= 15) ? 30 : 25;
+        case 2: return (warbandSize <= 3) ? 60 : (warbandSize <= 6) ? 55 : (warbandSize <= 9) ? 50 : (warbandSize <= 12) ? 45 : (warbandSize <= 15) ? 40 : 35;
+        case 3: return (warbandSize <= 3) ? 75 : (warbandSize <= 6) ? 70 : (warbandSize <= 9) ? 65 : (warbandSize <= 12) ? 60 : (warbandSize <= 15) ? 55 : 50;
+        case 4: return (warbandSize <= 3) ? 90 : (warbandSize <= 6) ? 80 : (warbandSize <= 9) ? 70 : (warbandSize <= 12) ? 65 : (warbandSize <= 15) ? 60 : 55;
+        case 5: return (warbandSize <= 3) ? 110 : (warbandSize <= 6) ? 100 : (warbandSize <= 9) ? 90 : (warbandSize <= 12) ? 80 : (warbandSize <= 15) ? 70 : 65;
+        case 6: return (warbandSize <= 3) ? 120 : (warbandSize <= 6) ? 110 : (warbandSize <= 9) ? 100 : (warbandSize <= 12) ? 90 : (warbandSize <= 15) ? 80 : 70;
+        case 7: return (warbandSize <= 3) ? 145 : (warbandSize <= 6) ? 130 : (warbandSize <= 9) ? 120 : (warbandSize <= 12) ? 110 : (warbandSize <= 15) ? 100 : 90;
+        case 0: return 0;
+        default: return (warbandSize <= 3) ? 155 : (warbandSize <= 6) ? 140 : (warbandSize <= 9) ? 130 : (warbandSize <= 12) ? 120 : (warbandSize <= 15) ? 110 : 100;
+    }
 };

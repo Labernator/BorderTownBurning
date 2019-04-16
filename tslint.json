@@ -80,6 +80,7 @@
         "strict-boolean-expressions": {
             "options": [
                 "allow-string",
+                "allow-number",
                 "allow-boolean-or-undefined"
             ]
         },

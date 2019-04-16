@@ -1,5 +1,7 @@
 import * as Actions from "../actions";
 import { IAppState, initialState, IUnit } from "../constants";
+import { store } from "..";
+import { getTotalNumberOfWarbandMembers } from "../utilities/utils";
 const getUnitRating = (unit: IUnit) => {
     let rating = 0;
     if (Boolean(unit)) {
@@ -47,6 +49,10 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
             return { ...state, warbandRating: action.payload };
         case Actions.SET_WYRDSTONES:
             return { ...state, wyrdstoneShards: action.payload };
+        case Actions.ADD_WYRDSTONES:
+            return { ...state, wyrdstoneShards: state.wyrdstoneShards + action.payload };
+        case Actions.SELL_WYRDSTONES:
+            return { ...state, wyrdstoneShards: state.wyrdstoneShards - action.payload };
         case Actions.SET_ACHIEVEMENTS:
             return { ...state, campaignAchievements: action.payload };
         case Actions.SET_CAMPAIGN_POINTS:

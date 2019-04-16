@@ -19,9 +19,9 @@ export const SkillsComponent = (props: IAdvanceSkill) => {
 
     const skillElements = (skill: ISkill) => (
         <button key={`${skill.name}${props.unit.name}`}
-        title={skill.text}
-        onClick={() => advanceSkill(skill.name)}
-        className="EnabledButton">
+            title={skill.text}
+            onClick={() => advanceSkill(skill.name)}
+            className="EnabledButton">
             {skill.name}
         </button>
     );
@@ -29,7 +29,7 @@ export const SkillsComponent = (props: IAdvanceSkill) => {
     if (props.unit.skillLists !== undefined) {
         const skills = getSkills(props.unit);
         if (skills !== undefined) {
-            skillBtns = skills.map((skill) => skillElements(skill));
+            skillBtns = skills.map(skillElements);
         }
     }
     return (
