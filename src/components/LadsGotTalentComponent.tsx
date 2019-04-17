@@ -6,20 +6,17 @@ import { store } from "..";
 
 export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
     const [ladsName, setLadsName] = useState("");
-    const updatedUnit = props.unit;
+    const [ladSkills, setLadSkills] = useState<string[]>([]);
     const onInput = (e: any) => {
         setLadsName(e.target.value);
     };
 
     const onBtnClick = (e: any) => {
-        if (updatedUnit.skillLists === undefined) {
-            updatedUnit.skillLists = [];
-        }
-        updatedUnit.skillLists.push(e.target.textContent);
+        setLadSkills([...ladSkills, e.target.textContent as string]);
         const elem = document.getElementById(e.target.id);
         if (elem !== null && elem.parentNode !== null) {
             const parent = elem.parentNode;
-            if (updatedUnit.skillLists.length !== 2) {
+            if (ladSkills.length !== 2) {
                 parent.removeChild(elem);
             } else {
                 while (parent.firstChild !== null) {
@@ -30,7 +27,7 @@ export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
     };
 
     const createSkillListBtns = () => {
-        if (props.unit.skillLists === undefined && (updatedUnit.skillLists === undefined || updatedUnit.skillLists.length < 2)) {
+        if (props.unit.skillLists === undefined && (ladSkills.length < 2)) {
             return (
                 <div>
                     <div>Select two of the following SkillLists for your hero:</div>
@@ -41,21 +38,15 @@ export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
     };
 
     const advanceLad = () => {
-        if (updatedUnit.number === undefined || updatedUnit.number === 1) {
+        if (props.unit.number === undefined || props.unit.number === 1) {
             store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: props.unit });
             props.callbacks.forEach((callback) => callback());
         } else {
-            const numbers = updatedUnit.number - 1;
+            const numbers = props.unit.number - 1;
             store.dispatch({ type: UPDATE_UNIT, payload: { ...props.unit, number: numbers } });
             props.callbacks[0]();
         }
-        if (props.unit.skillLists === undefined) {
-            updatedUnit.skillLists = getLadsSkillLists();
-        }
-        updatedUnit.isHero = true;
-        updatedUnit.name = ladsName;
-        updatedUnit.number = undefined;
-        store.dispatch({ type: ADD_UNIT_TO_ROSTER, payload: updatedUnit });
+        store.dispatch({ type: ADD_UNIT_TO_ROSTER, payload: { ...props.unit, number: undefined, isHero: true, name: ladsName, skillLists: ladSkills } });
 
     };
 
