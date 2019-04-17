@@ -2,7 +2,6 @@ import { store } from "..";
 import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
 import * as SkillsJson from "../constants/Skills.json";
-import { stateReducer } from "../reducers";
 const ArmyList = ArmyJson.armies as IArmy[];
 const SkillLists = SkillsJson.SkillLists as ISkillList[];
 const RacialMaximums: IRacialMaximums[] = require("../constants/RacialMaximums.json").maximums;
@@ -31,19 +30,70 @@ export const filterArmour = (filterList: string[]): IArmour[] => {
     return Armour.length > 0 ? Armour.filter((armour) => filterList.includes(armour.type)) : [];
 };
 
-export const checkRacialMaximums = (unit: IUnit) => {
-    const arr = [];
+const getUnitMaximums = (unit: IUnit) => {
+    const originalUnit = getUnit(unit.type);
     const maximums = RacialMaximums.find((max) => max.type === unit.race);
     if (maximums !== undefined) {
-        arr.push({ name: "Movement", maxReached: unit.characteristics.Movement === maximums.characteristics.Movement ? true : false });
-        arr.push({ name: "WeaponSkill", maxReached: unit.characteristics.WeaponSkill === maximums.characteristics.WeaponSkill ? true : false });
-        arr.push({ name: "BallisticSkill", maxReached: unit.characteristics.BallisticSkill === maximums.characteristics.BallisticSkill ? true : false });
-        arr.push({ name: "Strength", maxReached: unit.characteristics.Strength === maximums.characteristics.Strength ? true : false });
-        arr.push({ name: "Toughness", maxReached: unit.characteristics.Toughness === maximums.characteristics.Toughness ? true : false });
-        arr.push({ name: "Wounds", maxReached: unit.characteristics.Wounds === maximums.characteristics.Wounds ? true : false });
-        arr.push({ name: "Initiative", maxReached: unit.characteristics.Initiative === maximums.characteristics.Initiative ? true : false });
-        arr.push({ name: "Attacks", maxReached: unit.characteristics.Attacks === maximums.characteristics.Attacks ? true : false });
-        arr.push({ name: "Leadership", maxReached: unit.characteristics.Leadership === maximums.characteristics.Leadership ? true : false });
+        if (!unit.isHero && originalUnit !== undefined) {
+            return {
+                characteristics: {
+                    Movement: unit.characteristics.Movement,
+                    WeaponSkill: Math.min(maximums.characteristics.WeaponSkill, originalUnit.characteristics.WeaponSkill + 1),
+                    BallisticSkill: Math.min(maximums.characteristics.BallisticSkill, originalUnit.characteristics.BallisticSkill + 1),
+                    Strength: Math.min(maximums.characteristics.Strength, originalUnit.characteristics.Strength + 1),
+                    Toughness: unit.characteristics.Toughness,
+                    Wounds: unit.characteristics.Wounds,
+                    Initiative: Math.min(maximums.characteristics.Initiative, originalUnit.characteristics.Initiative + 1),
+                    Attacks: Math.min(maximums.characteristics.Attacks, originalUnit.characteristics.Attacks + 1),
+                    Leadership: Math.min(maximums.characteristics.Leadership, originalUnit.characteristics.Leadership + 1),
+                },
+            };
+        }
+    }
+    return maximums;
+};
+
+export const checkRacialMaximums = (unit: IUnit) => {
+    const arr = [];
+    const maximums = getUnitMaximums(unit);
+
+    if (maximums !== undefined) {
+        arr.push({
+            name: "Movement",
+            maxReached: unit.characteristics.Movement >= maximums.characteristics.Movement ? true : false,
+        });
+        arr.push({
+            name: "WeaponSkill",
+            maxReached: unit.characteristics.WeaponSkill >= maximums.characteristics.WeaponSkill ? true : false,
+        });
+        arr.push({
+            name: "BallisticSkill",
+            maxReached: unit.characteristics.BallisticSkill >= maximums.characteristics.BallisticSkill ? true : false,
+        });
+        arr.push({
+            name: "Strength",
+            maxReached: unit.characteristics.Strength >= maximums.characteristics.Strength ? true : false,
+        });
+        arr.push({
+            name: "Toughness",
+            maxReached: unit.characteristics.Toughness >= maximums.characteristics.Toughness ? true : false,
+        });
+        arr.push({
+            name: "Wounds",
+            maxReached: unit.characteristics.Wounds >= maximums.characteristics.Wounds ? true : false,
+        });
+        arr.push({
+            name: "Initiative",
+            maxReached: unit.characteristics.Initiative >= maximums.characteristics.Initiative ? true : false,
+        });
+        arr.push({
+            name: "Attacks",
+            maxReached: unit.characteristics.Attacks >= maximums.characteristics.Attacks ? true : false,
+        });
+        arr.push({
+            name: "Leadership",
+            maxReached: unit.characteristics.Leadership >= maximums.characteristics.Leadership ? true : false,
+        });
     }
     return arr;
 };
@@ -153,6 +203,11 @@ export function getUnits(armyType: string): IUnit[] {
     } else {
         return [];
     }
+}
+
+export function getUnit(unitType: string) {
+    const units = getUnits(store.getState().armyType);
+    return units.find((unit) => unit.type === unitType);
 }
 
 export const isAdvancing = (unit: IUnit) => {

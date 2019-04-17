@@ -20,6 +20,9 @@ export const AdvanceComponent = (props: IAdvance) => {
         if (item.name === "Movement") {
             return undefined;
         }
+        if (!props.unit.isHero && (item.name === "Toughness" || item.name === "Wounds")) {
+            return undefined;
+        }
         const btnText = `Add +1 ${item.name}`;
         const btnKey = `${props.unit.name}${item.name}`;
         return item.maxReached ? undefined : <button className="EnabledButton" key={btnKey} onClick={() => advanceCharacteristic(item.name)}>{btnText}</button>;
