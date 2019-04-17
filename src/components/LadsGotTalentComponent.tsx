@@ -13,27 +13,28 @@ export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
 
     const onBtnClick = (e: any) => {
         setLadSkills([...ladSkills, e.target.textContent as string]);
-        const elem = document.getElementById(e.target.id);
-        if (elem !== null && elem.parentNode !== null) {
-            const parent = elem.parentNode;
-            if (ladSkills.length !== 2) {
-                parent.removeChild(elem);
-            } else {
-                while (parent.firstChild !== null) {
-                    parent.removeChild(parent.firstChild);
-                }
-            }
-        }
     };
 
     const createSkillListBtns = () => {
-        if (props.unit.skillLists === undefined && (ladSkills.length < 2)) {
-            return (
-                <div>
-                    <div>Select two of the following SkillLists for your hero:</div>
-                    {getLadsSkillLists().map((list) => <button id={`Lad${list}SkillList`} key={`Lad${list}SkillList`} onClick={onBtnClick}>{list}</button>)}
-                </div>
-            );
+        if (props.unit.skillLists === undefined) {
+            if (ladSkills.length < 2) {
+                return (
+                    <div>
+                        <div>Select two of the following SkillLists for your hero:</div>
+                        {getLadsSkillLists().map((list) => {
+                            if (!ladSkills.includes(list)) {
+                                return (<button id={`Lad${list}SkillList`} key={`Lad${list}SkillList`} onClick={onBtnClick}>{list}</button>);
+                            }
+                        })}
+                    </div>
+                );
+            } else if (ladSkills.length === 2) {
+                return (
+                    <div>
+                        <div>You have selected skill lists {ladSkills} </div>
+                    </div>
+                );
+            }
         }
     };
 
