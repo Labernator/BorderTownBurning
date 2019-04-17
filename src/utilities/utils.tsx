@@ -212,37 +212,74 @@ export function getUnit(unitType: string) {
 
 export const isAdvancing = (unit: IUnit) => {
     if (unit.isHero) {
-        switch (unit.experience) {
-            case 2:
-            case 4:
-            case 6:
-            case 8:
-            case 11:
-            case 14:
-            case 17:
-            case 20:
-            case 24:
-            case 28:
-            case 32:
-            case 36:
-            case 41:
-            case 46:
-            case 51:
-            case 57:
-            case 63:
-            case 69:
-            case 76:
-            case 83:
-            case 90: return true;
-            default: return false;
+        if (unit.skills !== undefined && Boolean(unit.skills.find((skill) => skill === "Slow Witted"))) {
+            switch (unit.experience) {
+                case 4:
+                case 8:
+                case 12:
+                case 16:
+                case 22:
+                case 28:
+                case 34:
+                case 40:
+                case 48:
+                case 56:
+                case 64:
+                case 72:
+                case 82:
+                case 92:
+                case 102:
+                case 114:
+                case 126:
+                case 138:
+                case 152:
+                case 166:
+                case 180: return true;
+                default: return false;
+            }
+        } else {
+            switch (unit.experience) {
+                case 2:
+                case 4:
+                case 6:
+                case 8:
+                case 11:
+                case 14:
+                case 17:
+                case 20:
+                case 24:
+                case 28:
+                case 32:
+                case 36:
+                case 41:
+                case 46:
+                case 51:
+                case 57:
+                case 63:
+                case 69:
+                case 76:
+                case 83:
+                case 90: return true;
+                default: return false;
+            }
         }
     } else {
-        switch (unit.experience) {
-            case 2:
-            case 5:
-            case 9:
-            case 14: return true;
-            default: return false;
+        if (unit.skills !== undefined && Boolean(unit.skills.find((skill) => skill === "Slow Witted"))) {
+            switch (unit.experience) {
+                case 4:
+                case 10:
+                case 18:
+                case 28: return true;
+                default: return false;
+            }
+        } else {
+            switch (unit.experience) {
+                case 2:
+                case 5:
+                case 9:
+                case 14: return true;
+                default: return false;
+            }
         }
     }
 };
@@ -270,6 +307,8 @@ export const getTotalNumberOfWarbandMembers = (warbandRoster: IUnit[]) => {
     });
     return unitCount;
 };
+
+export const getHeroCount = () => (store.getState().warbandRoster.filter((unit) => (unit.isHero && !unit.isHiredSword)).length);
 
 export const getSkills = (unit: IUnit) => {
     if (unit.skillLists === undefined) {
@@ -356,4 +395,19 @@ export const getGoldFromWyrdstones = (amount: number) => {
         case 0: return 0;
         default: return (warbandSize <= 3) ? 155 : (warbandSize <= 6) ? 140 : (warbandSize <= 9) ? 130 : (warbandSize <= 12) ? 120 : (warbandSize <= 15) ? 110 : 100;
     }
+};
+
+export const getLadsSkillLists = () => {
+    const heros = store.getState().warbandRoster.filter((unit) => (unit.isHero && !unit.isHiredSword));
+    return heros.reduce((accu: string[], hero) => {
+        if (hero.skillLists !== undefined) {
+            hero.skillLists.forEach((list) => {
+                if (!accu.includes(list)) {
+                    accu.push(list);
+                }
+            });
+        }
+        return accu;
+    }, []);
+
 };

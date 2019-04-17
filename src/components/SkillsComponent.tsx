@@ -1,5 +1,5 @@
 import React from "react";
-import { IAdvanceSkill, ISkill, IAdvance } from "../constants";
+import { IAdvanceSkill, ISkill } from "../constants";
 import { getSkills } from "../utilities/utils";
 import { UPDATE_UNIT } from "../actions";
 import { store } from "..";

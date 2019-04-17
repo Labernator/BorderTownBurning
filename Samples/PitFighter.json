@@ -225,6 +225,43 @@
             ]
         },
         {
+            "name": "Legion",
+            "type": "Pursuer",
+            "race": "Human",
+            "number": 2,
+            "characteristics": {
+                "Movement": 4,
+                "WeaponSkill": 3,
+                "BallisticSkill": 3,
+                "Strength": 3,
+                "Toughness": 3,
+                "Wounds": 1,
+                "Initiative": 4,
+                "Attacks": 2,
+                "Leadership": 7
+            },
+            "price": 25,
+            "isHero": false,
+            "isLarge": false,
+            "skills": [
+                "Pit Fighter"
+            ],
+            "allowedEquipment": [
+                "PursuerEquipment",
+                "PitFighterArmourEquipment",
+                "PitFighterBaseEquipment"
+            ],
+            "include": [
+                0,
+                7
+            ],
+            "experience": 6,
+            "equipment": [
+                "Dagger",
+                "Dagger"
+            ]
+        },
+        {
             "name": "Arzuch",
             "type": "Ogre Pit Fighter",
             "race": "Ogre",
@@ -248,6 +285,11 @@
                 "Large",
                 "Slow Witted",
                 "Tough"
+            ],
+            "skillLists": [
+                "Strength",
+                "Combat",
+                "Pit Fighter"
             ],
             "include": [
                 0,
