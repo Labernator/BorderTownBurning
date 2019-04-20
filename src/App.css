@@ -1,6 +1,19 @@
 .App {
-  text-align: center;
   font-family: monospace;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 31.33%;
+  padding: 1%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .modal {
@@ -12,11 +25,49 @@
   z-index: 1;
 }
 
-.EnabledButton {
+.SelectedInjuryButton {
+  font-family: monospace;
+  background-color: rgb(131, 170, 184);
+  color: antiquewhite;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+}
+
+.heroInjuryButton {
+  font-family: monospace;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding: 3px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: left;
+}
+
+.ContinueButton {
+  font-family: monospace;
+  background-color: rgb(92, 125, 136);
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 8px;
+  color: antiquewhite;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.EnabledInjuryButton {
+  font-family: monospace;
   background-color: white;
   border: 1px solid lightgrey;
   padding: 10px;
   border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
 }
 
 .BuyButton {
@@ -52,10 +103,6 @@
   padding: 10px;
   border-radius: 8px;
 }
-
-.AppHeaderContainer {
-  display: inline-flex
-}
 .AppHeaderContainerDiv {
   font-weight: bold;
   font-size: 16px
@@ -64,6 +111,8 @@
   margin-left: 8px;
   margin-right: 8px;
   font-size: 16px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .rc-select {

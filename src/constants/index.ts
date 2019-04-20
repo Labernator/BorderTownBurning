@@ -1,3 +1,11 @@
+export enum PostSequence {
+    "INJURIES",
+    "EXPERIENCE",
+    "EXPLORATION",
+    "RARES",
+    "HIREANDBUY",
+}
+
 export interface IList {
     names: string[] | undefined;
     title: string;
@@ -107,6 +115,7 @@ export interface IUnit {
     replaces?: string[];
     number?: number;
     isHiredSword?: boolean;
+    injuries?: string[];
 }
 
 export interface ICharacteristics {

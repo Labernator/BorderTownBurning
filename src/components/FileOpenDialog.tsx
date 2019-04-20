@@ -52,5 +52,5 @@ export const FileDialogue = () => {
     // tslint:disable-next-line: no-console
     console.log(store.getState());
   };
-  return <button id="fileBtn" className="EnabledButton" onClick={handleFileSelect}>Select files</button>;
+  return <button id="fileBtn" className="EnabledButton" onClick={handleFileSelect}>Select Army List</button>;
 };

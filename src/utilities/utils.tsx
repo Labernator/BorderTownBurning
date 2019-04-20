@@ -122,6 +122,16 @@ export const filterMiscallaneous = (filterList: string[]): IMiscallaneous[] => {
     }, [] as IMiscallaneous[]);
 };
 
+export const isToughUnit = (unit: IUnit): boolean => (unit.skills !== undefined && unit.skills.includes("Tough"));
+
+export const isWeapon = (value: IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous | undefined): value is IMeleeWeapon => (
+    Boolean(value) && (value as Partial<IMeleeWeapon | IMissileWeapon>).weaponType !== undefined
+);
+
+export const isArmour = (value: IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous | undefined): value is IArmour => (
+    Boolean(value) && (value as Partial<IArmour>).armourType !== undefined
+);
+
 export const getEquipmentByName = (equipmentName: string): IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous | undefined => {
     const MeleeWeapons = getMeleeWeapons();
     const MissileEquipment = getMissileWeapons();

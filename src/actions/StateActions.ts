@@ -22,10 +22,12 @@ export const SUBTRACT_WARBAND_RATING = "SUBTRACT_WARBAND_RATING";
 export const UPDATE_UNIT = "UPDATE_UNIT";
 export const UPDATE_UNITLIST = "UPDATE_UNITLIST";
 export const SET_CAMPAIGN_POINTS = "SET_CAMPAIGN_POINTS";
+export const ADD_CAMPAIGN_POINTS = "ADD_CAMPAIGN_POINTS";
 export const SET_WYRDSTONES = "SET_WYRDSTONES";
 export const ADD_WYRDSTONES = "ADD_WYRDSTONES";
 export const SELL_WYRDSTONES = "SELL_WYRDSTONES";
 export const SET_ACHIEVEMENTS = "SET_ACHIEVEMENTS";
+export const REMOVE_KILLED_HENCHMAN = "REMOVE_KILLED_HENCHMAN";
 
 class SetArmy {
     public readonly type = SET_ARMY;
@@ -137,8 +139,18 @@ class SetCampaignPoints {
     constructor(public payload: number) { }
 }
 
+class RemoveKilledHenchman {
+    public readonly type = REMOVE_KILLED_HENCHMAN;
+    constructor(public payload: IUnit) { }
+}
+
+class AddCampaignPoints {
+    public readonly type = ADD_CAMPAIGN_POINTS;
+    constructor(public payload: number) { }
+}
+
 export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment |
     RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
     AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetAchievements |
-    SetWyrdstones | AddWyrdstones | SellWyrdstones | SetCampaignPoints;
+    SetWyrdstones | AddWyrdstones | SellWyrdstones | SetCampaignPoints | AddCampaignPoints | RemoveKilledHenchman;

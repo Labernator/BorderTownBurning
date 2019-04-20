@@ -11,6 +11,8 @@ import { SaveFile } from "./components/SaveFile";
 import { AppHeaderComponent } from "./components/AppHeaderComponent";
 import { Modal } from "./components/Modal";
 import { ToggleContent } from "./components/ToggleComponent";
+import { HeaderContainer } from "./components/HeaderContainer";
+import { PostGameSequence } from "./components/PostGameSequence";
 
 function App(props: IAppState) {
     let ArmySizeLimit = 0;
@@ -27,7 +29,7 @@ function App(props: IAppState) {
     return (
         <div className="App">
             <div id="modal-root"></div>
-            <ToggleContent
+            {/* <ToggleContent
                 toggle={(show: any) =>
                     <button
                         id={`${props.armyName}Exploration`}
@@ -39,22 +41,14 @@ function App(props: IAppState) {
                         <ExplorationComponent state={props} callback={hide}></ExplorationComponent>
                     </Modal>
                 )}
-            />
-            <AppHeaderComponent title="Army Name:" value={props.armyName}></AppHeaderComponent>
-            <AppHeaderComponent title="Type:" value={props.armyType}></AppHeaderComponent>
-            <AppHeaderComponent title="Rating:" value={props.warbandRating.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Alignment:" value={props.armyAlignment}></AppHeaderComponent>
-            <AppHeaderComponent title="Objective:" value={props.armyObjective}></AppHeaderComponent>
-            <AppHeaderComponent title="Campaign Points:" value={props.campaignPoints.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Campaign Achievements:" value={props.campaignAchievements.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Treasury:" value={props.armyTreasury.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Stash:" value={props.armyStash.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Wyrdstone Shards:" value={props.wyrdstoneShards.toString()}></AppHeaderComponent>
-            <AppHeaderComponent title="Member Count" value={warbandMemberCount}></AppHeaderComponent>
+            /> */}
             <FileDialogue />
-            <SaveFile />
-            <UnitButtons {...unitProps}></UnitButtons>
-            <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
+            <HeaderContainer state={props}></HeaderContainer>
+            <PostGameSequence state={props}></PostGameSequence>
+            {/* <SaveFile /> */}
+            {/* <UnitButtons {...unitProps}></UnitButtons> */}
+            {/* <ArmyListComponent warbandRoster={props.warbandRoster}></ArmyListComponent> */}
+            {/* {<UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>} */}
         </div>
     );
 }
