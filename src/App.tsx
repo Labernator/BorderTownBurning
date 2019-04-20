@@ -44,6 +44,7 @@ function App(props: IAppState) {
             /> */}
             <FileDialogue />
             <HeaderContainer state={props}></HeaderContainer>
+            <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
             <PostGameSequence state={props}></PostGameSequence>
             {/* <SaveFile /> */}
             {/* <UnitButtons {...unitProps}></UnitButtons> */}

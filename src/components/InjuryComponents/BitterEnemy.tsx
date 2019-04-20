@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeroInjuriesEnum } from "./HeroInjuriesDialog";
+import { HeroInjuriesEnum } from "../../constants";
 
 export const BitterEnemyDialog = ({ id, btnClick }: { id: string; btnClick: any }) => {
     const [inputValue, setInputValue] = useState("");
@@ -13,7 +13,7 @@ export const BitterEnemyDialog = ({ id, btnClick }: { id: string; btnClick: any 
                 id={id}
                 value={inputValue}
                 onChange={onInput}></input>
-            <button onClick={(e) => btnClick(e, HeroInjuriesEnum.BITTERENEMY_INPUT.toString(), inputValue)}>ok</button>
+            <button onClick={(e) => btnClick(e, HeroInjuriesEnum.BITTER_ENEMY_INPUT.toString(), inputValue)}>ok</button>
         </div>
     );
 };

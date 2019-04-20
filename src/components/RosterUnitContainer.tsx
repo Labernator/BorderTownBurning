@@ -49,7 +49,10 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
         }
     });
     return (
-        <div>{unitDivs}</div>
+        <details>
+            <summary className="AppHeaderContainerDiv">Click here to show/side Roster View:</summary>
+            {unitDivs}
+        </details>
     );
 };
 // tslint:disable-next-line:no-unused-expression

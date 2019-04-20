@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IAppState, PostSequence } from "../constants";
-import { HenchmenInjuryComponent } from "./HenchmenInjuryComponent";
-import { HeroInjuryComponent } from "./HeroInjuryComponent";
+import { HenchmenInjuryComponent } from "./InjuryComponents/HenchmenInjuryComponent";
+import { HeroInjuryComponent } from "./InjuryComponents/HeroInjuryComponent";
 
 export const PostGameSequence = ({ state }: { state: IAppState }) => {
     const [postSequenceStep, setPostSequenceStep] = useState(PostSequence.INJURIES);

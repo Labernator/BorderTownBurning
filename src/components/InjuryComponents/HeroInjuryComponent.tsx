@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { IUnit, PostSequence } from "../constants";
-import { ToggleContent } from "./ToggleComponent";
+import { IUnit, PostSequence } from "../../constants";
+import { ToggleContent } from "../ToggleComponent";
 import { InjuriesModal } from "./InjuriesModal";
 import { HeroInjuriesDialog } from "./HeroInjuriesDialog";
-import { isToughUnit } from "../utilities/utils";
+import { isToughUnit } from "../../utilities/utils";
+import { store } from "../..";
+import { StateActions } from "../../actions";
+
+export interface IUpdate {
+    updatingUnit: IUnit;
+    types: any[];
+    payload: any[];
+    // [key: string]: number;
+}
 
 export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warbandRoster: IUnit[]; currentSequence: PostSequence }) => {
     // tslint:disable-next-line:no-object-literal-type-assertion
     const [selectedUnit, setSelectedUnit] = useState({} as IUnit);
-    const [updatedUnits, addUpdatedUnit] = useState([] as IUnit[]);
+    const [updatedUnits, addUpdatedUnit] = useState([] as IUpdate[]);
     const [isOverviewMode, setOverviewMode] = useState(false);
     const toggleButton = (event: any, callback: any) => {
         event.target.className = "SelectedInjuryButton";
@@ -18,19 +27,28 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
         }
         callback();
     };
-    const updateSelectedUnit = (unit: IUnit) => {
-        addUpdatedUnit([...updatedUnits, unit]);
+    const updateSelectedUnit = (update: IUpdate) => {
+        addUpdatedUnit([...updatedUnits, update]);
     };
     const finishHenchmenInjuries = () => {
         setOverviewMode(true);
+        updatedUnits.forEach((updatedUnit) => {
+            for (let i = 0; i < updatedUnit.types.length; i++) {
+                store.dispatch({
+                    type: updatedUnit.types[i],
+                    payload: updatedUnit.payload[i],
+                });
+            }
+        });
+        console.log(store.getState());
     };
 
-    const updatedUnitList = updatedUnits.map((unit) => {
-        const injuryString = unit.injuries !== undefined ? unit.injuries.join(", ") : "no injury";
-        return (<div key={`${unit.name}`}>{`${unit.name} (${unit.type}) has sustained injuries: ${injuryString}`}</div>);
+    const updatedUnitList = updatedUnits.map((update) => {
+        const injuryString = update.updatingUnit.injuries !== undefined ? update.updatingUnit.injuries.join(", ") : "no injury";
+        return (<div key={`${update.updatingUnit.name}`}>{`${update.updatingUnit.name} (${update.updatingUnit.type}) has sustained injuries: ${injuryString}`}</div>);
     });
     const heroList = warbandRoster.map((unit) => {
-        if (Boolean(updatedUnits.find((updated) => updated.name === unit.name))) {
+        if (Boolean(updatedUnits.find((updated) => updated.updatingUnit.name === unit.name))) {
             return;
         }
         if ((unit.isHero && !unit.isHiredSword) || (!unit.isHero && isToughUnit(unit))) {

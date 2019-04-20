@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { IUnit, PostSequence } from "../constants";
-import { store } from "..";
-import { REMOVE_KILLED_HENCHMAN } from "../actions";
-import { isToughUnit } from "../utilities/utils";
+import { IUnit, PostSequence } from "../../constants";
+import { store } from "../..";
+import { REMOVE_KILLED_HENCHMAN } from "../../actions";
+import { isToughUnit } from "../../utilities/utils";
 
 export const HenchmenInjuryComponent = ({ warbandRoster, currentSequence }: { warbandRoster: IUnit[]; currentSequence: PostSequence }) => {
     const [selectedUnits, addSelectedUnit] = useState([] as IUnit[]);
