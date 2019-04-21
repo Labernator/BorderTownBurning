@@ -1,6 +1,6 @@
 import React from "react";
 import { IAppState } from "../constants";
-import { AppHeaderComponent } from "./AppHeaderComponent";
+import { AppHeaderComponent } from "./UtilityComponents/AppHeaderComponent";
 import { TreasuryNumberInputControl } from "./TreasuryNumberInputControl";
 import { WyrdstonesComponent } from "./WyrdstonesComponent";
 

@@ -83,7 +83,7 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
     </div> : <div></div>;
     const overview = updatedUnitList.length === 0 ? <div>No Heros have been injured.</div> : updatedUnitList;
     return (
-        <div id="HeroInjuryContainer" className="PostSequenceContainer">
+        <div id="HeroInjuryContainer" className="PostSequenceComponent">
             <div style={{ fontWeight: "bold", fontSize: 20 }}>PostSequence Step 1b: Hero Injuries </div>
             {overview}
             {heroStuff}

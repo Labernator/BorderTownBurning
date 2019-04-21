@@ -1,45 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { UnitContainer } from "./components/RosterUnitContainer";
-import { ExplorationComponent } from "./components/ExplorationComponent";
+import { UnitSummaryContainer } from "./components/UnitComponents/UnitSummaryContainer";
 import { IAppState } from "./constants";
-import { getArmySizeLimit, getNumberOfWarbandMembers } from "./utilities/utils";
 import "./App.css";
-import { UnitButtons } from "./components/UnitButtons";
 import { FileDialogue } from "./components/FileRepoComponents/FileOpenDialog";
-import { SaveFile } from "./components/FileRepoComponents/SaveFile";
-import { AppHeaderComponent } from "./components/AppHeaderComponent";
-import { Modal } from "./components/Modal";
-import { ToggleContent } from "./components/ToggleComponent";
 import { HeaderContainer } from "./components/HeaderContainer";
 import { PostGameSequence } from "./components/PostGameSequence";
+import { SaveFile } from "./components/FileRepoComponents/SaveFile";
 
-function App(props: IAppState) {
-    let ArmySizeLimit = 0;
-    if (Boolean(props.armyType)) {
-        ArmySizeLimit = getArmySizeLimit(props.armyType);
-    }
-    const unitProps = {
-        armyType: props.armyType,
-        listOfUnits: props.listOfUnits,
-        warbandRoster: props.warbandRoster,
-    };
-
-    const warbandMemberCount = `${getNumberOfWarbandMembers(props.warbandRoster)} / ${ArmySizeLimit}`;
-    return (
-        <div className="App">
-            <div id="modal-root"></div>
+const App = (props: IAppState) => (
+    <div className="App">
+        <div id="modal-root"></div>
+        <div>
             <FileDialogue />
-            <HeaderContainer state={props}></HeaderContainer>
-            <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>
-            <PostGameSequence state={props}></PostGameSequence>
-            {/* <SaveFile /> */}
-            {/* <UnitButtons {...unitProps}></UnitButtons> */}
-            {/* <ArmyListComponent warbandRoster={props.warbandRoster}></ArmyListComponent> */}
-            {/* {<UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>} */}
+            <SaveFile />
         </div>
-    );
-}
+        <HeaderContainer state={props}></HeaderContainer>
+        <UnitSummaryContainer warbandRoster={props.warbandRoster}></UnitSummaryContainer>
+        <PostGameSequence state={props}></PostGameSequence>
+        {/* <UnitButtons {...unitProps}></UnitButtons> */}
+    </div>
+);
 
 const mapStateToProps = (state: IAppState) => ({
     armyAlignment: state.armyAlignment,

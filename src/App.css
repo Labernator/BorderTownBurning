@@ -59,17 +59,39 @@
   font-size: 17px;
 }
 
+.SaveDataButton {
+  float: right;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  background-color: rgb(92, 125, 136);
+  font-family: monospace;
+  color: white;
+}
+.OpenDataButton {
+  float: left;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  background-color: rgb(92, 125, 136);
+  font-family: monospace;
+  color: white;
+}
+
 .PostSequenceModal {
   padding: 12px;
   clear: both;
 }
-.PostSequenceContainer {
+.PostSequenceComponent {
   display: inline-table;
   font-size: 14px;
   clear: both;
   float: left;
 }
-
 .ExperienceUnitContainer {
   overflow: hidden;
   font-family: monospace;
@@ -80,6 +102,15 @@
   font-weight: bold;
   font-size: 14px;
   text-align: left;
+}
+.UnitSummaryContainer {
+  float: right;
+  padding-left: 2%;
+  width: 38%;
+}
+.PostSequenceContainer {
+  float: left;
+  width: 60%;
 }
 
 .EnabledInjuryButton {

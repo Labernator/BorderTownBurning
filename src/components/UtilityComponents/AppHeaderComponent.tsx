@@ -1,5 +1,5 @@
 import React from "react";
-import { ILabel } from "../constants";
+import { ILabel } from "../../constants";
 
 export const AppHeaderComponent = (props: ILabel) => (
     <div>

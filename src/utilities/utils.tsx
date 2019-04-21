@@ -160,15 +160,6 @@ export const getEquipmentByName = (equipmentName: string): IMeleeWeapon | IMissi
     return undefined;
 };
 
-export function getRestrictedAlignmentList(armyType: string): string[] {
-    const Army = ArmyList.find((army) => army.type === armyType);
-    if (Army !== undefined) {
-        return Army.alignments;
-    } else {
-        return [];
-    }
-}
-
 export function getEquipment(equipmentListNames: string[]): IEquipment[] {
     const Army = ArmyList.find((army) => army.type === store.getState().armyType);
     if (Army !== undefined && equipmentListNames.length > 0) {
@@ -196,6 +187,15 @@ export function getRestrictedObjectiveList(armyType: string): string[] {
     const Army = ArmyList.find((army) => army.type === armyType);
     if (Army !== undefined) {
         return Army.objectives;
+    } else {
+        return [];
+    }
+}
+
+export function getRestrictedAlignmentList(armyType: string): string[] {
+    const Army = ArmyList.find((army) => army.type === armyType);
+    if (Army !== undefined) {
+        return Army.alignments;
     } else {
         return [];
     }

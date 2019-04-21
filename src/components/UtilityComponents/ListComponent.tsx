@@ -1,5 +1,5 @@
 import React from "react";
-import { printStringArray } from "../utilities/utils";
+import { printStringArray } from "../../utilities/utils";
 export const ListComponent = ({ title, names }: { title: string; names: string[] | undefined }) => {
     if (names != undefined && names.length > 0) {
         return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { store } from "..";
-import { AppHeaderComponent } from "./AppHeaderComponent";
+import { AppHeaderComponent } from "./UtilityComponents/AppHeaderComponent";
 import { ADD_WYRDSTONES, SELL_WYRDSTONES } from "../actions";
 import { WyrdstoneNumberInputControl } from "./WyrdstoneNumberInputControl";
 

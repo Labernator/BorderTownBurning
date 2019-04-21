@@ -3,7 +3,7 @@ import React from "react";
 
 export const SaveFile = () => {
 
-    const onSaveClick = (event: any) => {
+    const onSaveClick = () => {
         saveData(store.getState(), "warband.json");
     };
 
@@ -22,7 +22,5 @@ export const SaveFile = () => {
         };
     })();
 
-    return <div>
-        <button id="saveBtn" className="EnabledButton" onClick={onSaveClick}>Save file</button>
-    </div>;
+    return <button id="saveBtn" className="SaveDataButton" onClick={onSaveClick}>Save file</button>;
 };

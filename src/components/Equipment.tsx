@@ -6,7 +6,7 @@ import { getEquipmentByName } from "../utilities/utils";
 import { ToggleContent } from "./ToggleComponent";
 import { Modal } from "./Modal";
 import { UnitEquipment } from "./UnitEquipment";
-import { AppHeaderComponent } from "./AppHeaderComponent";
+import { AppHeaderComponent } from "./UtilityComponents/AppHeaderComponent";
 export const EquipmentContainer = ({ unit }: { unit: IUnit }) => {
     const removeItem = (equipmentName: string) => {
         const updateUnit = unit;
