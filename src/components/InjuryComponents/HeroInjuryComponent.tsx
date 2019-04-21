@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { IUnit, PostSequence } from "../../constants";
 import { ToggleContent } from "../ToggleComponent";
-import { InjuriesModal } from "./InjuriesModal";
+import { PostSequenceModal } from "../PostSequenceModal";
 import { HeroInjuriesDialog } from "./HeroInjuriesDialog";
 import { isToughUnit } from "../../utilities/utils";
 import { store } from "../..";
-import { StateActions } from "../../actions";
 
 export interface IUpdate {
     updatingUnit: IUnit;
@@ -40,6 +39,7 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
                 });
             }
         });
+        // tslint:disable-next-line:no-console
         console.log(store.getState());
     };
 
@@ -63,9 +63,9 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
                                 {`${unit.name} (${unit.type})`}
                             </button>}
                         content={(hide: any) => (
-                            <InjuriesModal parent={`${unit.name}Injury`}>
+                            <PostSequenceModal parent={`${unit.name}Injury`}>
                                 <HeroInjuriesDialog unit={selectedUnit} callback={hide} update={updateSelectedUnit}></HeroInjuriesDialog>
-                            </InjuriesModal>
+                            </PostSequenceModal>
                         )}
                     />
                 </div>
@@ -83,7 +83,7 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
     </div> : <div></div>;
     const overview = updatedUnitList.length === 0 ? <div>No Heros have been injured.</div> : updatedUnitList;
     return (
-        <div id="InjuryContainer" style={{ display: "inline-table", fontSize: 14 }}>
+        <div id="HeroInjuryContainer" className="PostSequenceContainer">
             <div style={{ fontWeight: "bold", fontSize: 20 }}>PostSequence Step 1b: Hero Injuries </div>
             {overview}
             {heroStuff}

@@ -10,7 +10,6 @@ import { UnitEquipment } from "./UnitEquipment";
 import { EquipmentContainer } from "./Equipment";
 import { UnitLabelComponent } from "./UnitLabel";
 import { UnitNameComponent } from "./UnitName";
-import { ExperienceComponent } from "./Experience";
 import { UnitNumberLabelComponent } from "./UnitNumberLabel";
 import { ToggleContent } from "./ToggleComponent";
 import { Modal } from "./Modal";
@@ -39,10 +38,9 @@ const RosterUnitContainer = ({ warbandRoster }: { warbandRoster: IUnit[] }) => {
                     <UnitLabelComponent title="Unit Type" value={unit.type}></UnitLabelComponent>
                     <UnitNumberLabelComponent unit={unit}></UnitNumberLabelComponent>
                     <UnitLabelComponent title="Unit Cost" value={unit.price.toString()}></UnitLabelComponent>
-                    <ExperienceComponent unit={unit}></ExperienceComponent>
                     <EquipmentContainer unit={unit}></EquipmentContainer>
-                    <ListComponent names={unit.skillLists} title="Skill Lists"></ListComponent>
-                    <ListComponent names={unit.skills} title="Skills"></ListComponent>
+                    <ListComponent title="Skill Lists" names={unit.skillLists}></ListComponent>
+                    <ListComponent title={"Skills"} names={unit.skills} ></ListComponent>
                     <CharacteristicsComponent unit={unit} ></CharacteristicsComponent>
                 </div>
             );

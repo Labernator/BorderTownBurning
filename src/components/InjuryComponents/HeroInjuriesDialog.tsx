@@ -254,7 +254,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                     types: [UPDATE_UNIT, ADD_CAMPAIGN_POINTS],
                     payload: [{
                         ...unit,
-                        experience: unit.experience + 1,
+                        experience: unit.experience + 2,
                         skills: [...skills, "Blackblood"],
                     },
                         1,
@@ -323,22 +323,23 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
     const injuryList: HeroInjuriesEnum[] = getInjuryList();
 
     const renderDivs = injuryList.map((injury) => {
-        if (injury === HeroInjuriesEnum.BITTER_ENEMY_INPUT) {
-            return <BitterEnemyDialog id={`${unit.name}BitterEnemy`} btnClick={handleBtnClick}></BitterEnemyDialog>;
-        } else if (injury === HeroInjuriesEnum.DEEP_WOUND_INPUT) {
-            return <DeepWoundDialog id={`${unit.name}DeepWound`} btnClick={handleBtnClick}></DeepWoundDialog>;
-        } else if (injury === HeroInjuriesEnum.CAPTURED_INPUT) {
-            return <CapturedDialog id={`${unit.name}Captured`} btnClick={handleBtnClick}></CapturedDialog>;
-        } else {
-            return (
-                <div key={injury.toString()} style={{ display: "grid" }}>
-                    <button
-                        onClick={(e) => handleBtnClick(e, injury.toString())}
-                        className="heroInjuryButton">
-                        {injury.text}
-                    </button>
-                </div>
-            );
+        switch (injury) {
+            case HeroInjuriesEnum.BITTER_ENEMY_INPUT:
+                return <BitterEnemyDialog id={`${unit.name}BitterEnemy`} btnClick={handleBtnClick}></BitterEnemyDialog>;
+            case HeroInjuriesEnum.DEEP_WOUND_INPUT:
+                return <DeepWoundDialog id={`${unit.name}DeepWound`} btnClick={handleBtnClick}></DeepWoundDialog>;
+            case HeroInjuriesEnum.CAPTURED_INPUT:
+                return <CapturedDialog id={`${unit.name}Captured`} btnClick={handleBtnClick}></CapturedDialog>;
+            default:
+                return (
+                    <div key={injury.toString()} style={{ display: "grid" }}>
+                        <button
+                            onClick={(e) => handleBtnClick(e, injury.toString())}
+                            className="heroInjuryButton">
+                            {injury.text}
+                        </button>
+                    </div>
+                );
         }
     });
     return (

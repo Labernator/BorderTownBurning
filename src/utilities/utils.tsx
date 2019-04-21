@@ -2,18 +2,22 @@ import { store } from "..";
 import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
 import * as SkillsJson from "../constants/Skills.json";
+import * as MaxJson from "../constants/RacialMaximums.json";
+import * as EquipmentJson from "../constants/Equipment.json";
 const ArmyList = ArmyJson.armies as IArmy[];
 const SkillLists = SkillsJson.SkillLists as ISkillList[];
-const RacialMaximums: IRacialMaximums[] = require("../constants/RacialMaximums.json").maximums;
-const MeleeEquipment: IMeleeWeapon[] = require("../constants/Equipment.json").equipment[0].MeleeWeapons;
-const RangeEquipment: IMissileWeapon[] = require("../constants/Equipment.json").equipment[1].MissileWeapons;
-const ArmourEquipment: IArmour[] = require("../constants/Equipment.json").equipment[2].Armour;
-const MiscallaneousEquipment: IMiscallaneous[] = require("../constants/Equipment.json").equipment[3].Miscallaneous;
+const RacialMaximums = MaxJson.maximums as IRacialMaximums[];
+const MeleeEquipment = EquipmentJson.equipment[0].MeleeWeapons as IMeleeWeapon[];
+const RangeEquipment = EquipmentJson.equipment[1].MissileWeapons as IMissileWeapon[];
+const ArmourEquipment = EquipmentJson.equipment[2].Armour as IArmour[];
+const MiscallaneousEquipment = EquipmentJson.equipment[3].Miscallaneous as IMiscallaneous[];
 export const getMeleeWeapons = (): IMeleeWeapon[] => MeleeEquipment;
 export const getMissileWeapons = (): IMissileWeapon[] => RangeEquipment;
 export const getArmours = (): IArmour[] => ArmourEquipment;
 export const getMisc = (): IMiscallaneous[] => MiscallaneousEquipment;
 export const getArmyList = (): string[] => ArmyList.map((army) => army.type);
+
+export const printStringArray = (array: string[]) => array.join(", ");
 
 export const filterMeleeWeapons = (filterList: string[]): IMeleeWeapon[] => {
     const MeleeWeapons = getMeleeWeapons();
@@ -220,76 +224,42 @@ export function getUnit(unitType: string) {
     return units.find((unit) => unit.type === unitType);
 }
 
+const isSlowWitted = (skills: string[] | undefined) => (skills !== undefined && Boolean(skills.find((skill) => skill === "Slow Witted")));
+
 export const isAdvancing = (unit: IUnit) => {
+    const slowWitted = isSlowWitted(unit.skills);
     if (unit.isHero) {
-        if (unit.skills !== undefined && Boolean(unit.skills.find((skill) => skill === "Slow Witted"))) {
-            switch (unit.experience) {
-                case 4:
-                case 8:
-                case 12:
-                case 16:
-                case 22:
-                case 28:
-                case 34:
-                case 40:
-                case 48:
-                case 56:
-                case 64:
-                case 72:
-                case 82:
-                case 92:
-                case 102:
-                case 114:
-                case 126:
-                case 138:
-                case 152:
-                case 166:
-                case 180: return true;
-                default: return false;
-            }
-        } else {
-            switch (unit.experience) {
-                case 2:
-                case 4:
-                case 6:
-                case 8:
-                case 11:
-                case 14:
-                case 17:
-                case 20:
-                case 24:
-                case 28:
-                case 32:
-                case 36:
-                case 41:
-                case 46:
-                case 51:
-                case 57:
-                case 63:
-                case 69:
-                case 76:
-                case 83:
-                case 90: return true;
-                default: return false;
-            }
+        switch (unit.experience) {
+            case slowWitted ? 4 : 2:
+            case slowWitted ? 8 : 4:
+            case slowWitted ? 12 : 6:
+            case slowWitted ? 16 : 8:
+            case slowWitted ? 22 : 11:
+            case slowWitted ? 28 : 14:
+            case slowWitted ? 34 : 17:
+            case slowWitted ? 40 : 20:
+            case slowWitted ? 48 : 24:
+            case slowWitted ? 56 : 28:
+            case slowWitted ? 64 : 32:
+            case slowWitted ? 72 : 36:
+            case slowWitted ? 82 : 41:
+            case slowWitted ? 92 : 46:
+            case slowWitted ? 102 : 51:
+            case slowWitted ? 114 : 57:
+            case slowWitted ? 126 : 63:
+            case slowWitted ? 138 : 69:
+            case slowWitted ? 152 : 76:
+            case slowWitted ? 166 : 83:
+            case slowWitted ? 180 : 90: return true;
+            default: return false;
         }
     } else {
-        if (unit.skills !== undefined && Boolean(unit.skills.find((skill) => skill === "Slow Witted"))) {
-            switch (unit.experience) {
-                case 4:
-                case 10:
-                case 18:
-                case 28: return true;
-                default: return false;
-            }
-        } else {
-            switch (unit.experience) {
-                case 2:
-                case 5:
-                case 9:
-                case 14: return true;
-                default: return false;
-            }
+        switch (unit.experience) {
+            case slowWitted ? 4 : 2:
+            case slowWitted ? 10 : 5:
+            case slowWitted ? 18 : 9:
+            case slowWitted ? 28 : 14: return true;
+            default: return false;
         }
     }
 };
@@ -419,5 +389,4 @@ export const getLadsSkillLists = () => {
         }
         return accu;
     }, []);
-
 };

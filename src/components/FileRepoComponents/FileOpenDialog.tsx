@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import * as Actions from "../actions";
-import { store } from "..";
-import { getUnits } from "../utilities/utils";
+import * as Actions from "../../actions";
+import { store } from "../..";
+import { getUnits } from "../../utilities/utils";
 
 export const FileDialogue = () => {
 

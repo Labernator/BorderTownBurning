@@ -316,7 +316,8 @@
                 },
                 {
                     "type": "Elf Bow",
-                    "cost": "35 + 3D6",
+                    "cost": 35,
+                    "variableCost": "3D6",
                     "rarity": 12,
                     "weaponType": "Shooting",
                     "rules": [
@@ -494,7 +495,8 @@
                 },
                 {
                     "type": "Sea Dragon Cloak",
-                    "cost": "50 + 2D6",
+                    "cost": 50,
+                    "variableCost": "2D6",
                     "rarity": 10,
                     "armourType": "Cloak",
                     "rules": [
@@ -509,7 +511,8 @@
                 },
                 {
                     "type": "Elven Cloak",
-                    "cost": "100 + 10*D6",
+                    "cost": 100,
+                    "variableCost": "10*D6",
                     "rarity": 12,
                     "armourType": "Cloak",
                     "rules": [
@@ -524,7 +527,7 @@
                 },
                 {
                     "type": "Forest Cloak",
-                    "cost": "50",
+                    "cost": 50,
                     "rarity": 10,
                     "armourType": "Cloak",
                     "rules": [
@@ -539,11 +542,12 @@
                 },
                 {
                     "type": "Cathayan Silk Clothes",
-                    "cost": "75 + 10*D6",
-                    "rarity": 12,
+                    "cost": 50,
+                    "variableCost": "2D6",
+                    "rarity": 9,
                     "armourType": "Cloak",
                     "rules": [
-                        "Hard Target"
+                        "Prestigious"
                     ],
                     "armour": 2,
                     "restrictions": {
@@ -558,9 +562,11 @@
             "Miscallaneous": [
                 {
                     "type": "Dark Venom",
-                    "cost": "30+2D6",
+                    "cost": 30,
+                    "variableCost": "2D6",
                     "rarity": 8,
                     "genus": "Drugs, Poison & Potions",
+                    "rules": [],
                     "restrictions": {
                         "exclude": [
                             "Sisters of Sigmar",
@@ -571,9 +577,10 @@
                 },
                 {
                     "type": "Garlic",
-                    "cost": "1",
+                    "cost": 1,
                     "rarity": 0,
                     "genus": "Drugs, Poison & Potions",
+                    "rules": [],
                     "restrictions": {
                         "exclude": [
                             "Undead"
@@ -582,9 +589,11 @@
                 },
                 {
                     "type": "Elven Wine",
-                    "cost": "50+3D6",
+                    "cost": 50,
+                    "variableCost": "3D6",
                     "rarity": 10,
                     "genus": "Drugs, Poison & Potions",
+                    "rules": [],
                     "restrictions": {
                         "include": [
                             "Shadow Warriors"
@@ -593,9 +602,11 @@
                 },
                 {
                     "type": "Holy Relic",
-                    "cost": "15+3D6",
+                    "cost": 15,
+                    "variableCost": "3D6",
                     "rarity": 6,
                     "genus": "Books & Scrolls",
+                    "rules": [],
                     "restrictions": {
                         "include": [
                             "Sisters of Sigmar",
@@ -605,8 +616,10 @@
                 },
                 {
                     "type": "Holy Tome",
-                    "cost": "100+10*D6",
-                    "rarity": 10,
+                    "cost": 100,
+                    "variableCost": "10*D6",
+                    "rarity": 8,
+                    "rules": [],
                     "genus": "Books & Scrolls",
                     "restrictions": {
                         "include": [
@@ -617,8 +630,10 @@
                 },
                 {
                     "type": "Blessed Water",
-                    "cost": "10+3D6",
+                    "cost": 10,
+                    "variableCost": "3D6",
                     "rarity": 6,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions",
                     "restrictions": {
                         "exclude": [
@@ -628,7 +643,8 @@
                 },
                 {
                     "type": "Bugman's Ale",
-                    "cost": "50+3D6",
+                    "cost": 50,
+                    "variableCost": "3D6",
                     "rarity": 9,
                     "genus": "Drugs, Poison & Potions",
                     "restrictions": {
@@ -641,62 +657,82 @@
                 },
                 {
                     "type": "Crimson Shade",
-                    "cost": "35+D6",
+                    "cost": 35,
+                    "variableCost": "D6",
                     "rarity": 8,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Healing Herbs",
-                    "cost": "20+2D6",
+                    "cost": 20,
+                    "variableCost": "2D6",
                     "rarity": 8,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Healing Potion",
-                    "cost": "30+D6",
+                    "cost": 30,
+                    "variableCost": "D6",
                     "rarity": 9,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Liquor Flask",
-                    "cost": "30+D6",
+                    "cost": 30,
+                    "variableCost": "D6",
                     "rarity": 7,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Madcap Mushrooms",
-                    "cost": "30+3D6",
+                    "cost": 30,
+                    "variableCost": "3D6",
                     "rarity": 9,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Mandrake Root",
-                    "cost": "25+D6",
+                    "cost": 25,
+                    "variableCost": "D6",
                     "rarity": 8,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Potion of Strength",
-                    "cost": "30+D6",
+                    "cost": 30,
+                    "variableCost": "D6",
                     "rarity": 6,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Potion of Speed",
-                    "cost": "40+D6",
+                    "cost": 40,
+                    "variableCost": "D6",
                     "rarity": 10,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Spider's Poison",
-                    "cost": "25+2D6",
+                    "cost": 25,
+                    "variableCost": "2D6",
                     "rarity": 8,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions"
                 },
                 {
                     "type": "Tears of Shallaya",
-                    "cost": "10+2D6",
+                    "cost": 10,
+                    "variableCost": "2D6",
                     "rarity": 7,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions",
                     "restrictions": {
                         "exclude": [
@@ -707,8 +743,10 @@
                 },
                 {
                     "type": "Vial of Pestilence",
-                    "cost": "25+2D6",
+                    "cost": 25,
+                    "variableCost": "2D6",
                     "rarity": 9,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions",
                     "restrictions": {
                         "include": [
@@ -718,8 +756,10 @@
                 },
                 {
                     "type": "Vodka",
-                    "cost": "35+2D6",
+                    "cost": 35,
+                    "variableCost": "2D6",
                     "rarity": 8,
+                    "rules": [],
                     "genus": "Drugs, Poison & Potions",
                     "restrictions": {
                         "include": [
@@ -729,38 +769,44 @@
                 },
                 {
                     "type": "Net",
-                    "cost": "5",
+                    "cost": 5,
                     "rarity": 0,
+                    "rules": [],
                     "genus": "Other Equipment"
                 },
                 {
                     "type": "Rope & Hook",
-                    "cost": "5",
+                    "cost": 5,
                     "rarity": 0,
+                    "rules": [],
                     "genus": "Other Equipment"
                 },
                 {
                     "type": "Lantern",
-                    "cost": "10",
+                    "cost": 10,
                     "rarity": 0,
+                    "rules": [],
                     "genus": "Other Equipment"
                 },
                 {
                     "type": "Rosary",
-                    "cost": "10",
+                    "cost": 10,
                     "rarity": 6,
+                    "rules": [],
                     "genus": "Other Equipment"
                 },
                 {
                     "type": "Torch",
-                    "cost": "2",
+                    "cost": 2,
                     "rarity": 0,
+                    "rules": [],
                     "genus": "Other Equipment"
                 },
                 {
                     "type": "Lock Picks",
-                    "cost": "15",
+                    "cost": 15,
                     "rarity": 8,
+                    "rules": [],
                     "genus": "Other Equipment"
                 }
             ]

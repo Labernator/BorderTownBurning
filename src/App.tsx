@@ -6,8 +6,8 @@ import { IAppState } from "./constants";
 import { getArmySizeLimit, getNumberOfWarbandMembers } from "./utilities/utils";
 import "./App.css";
 import { UnitButtons } from "./components/UnitButtons";
-import { FileDialogue } from "./components/FileOpenDialog";
-import { SaveFile } from "./components/SaveFile";
+import { FileDialogue } from "./components/FileRepoComponents/FileOpenDialog";
+import { SaveFile } from "./components/FileRepoComponents/SaveFile";
 import { AppHeaderComponent } from "./components/AppHeaderComponent";
 import { Modal } from "./components/Modal";
 import { ToggleContent } from "./components/ToggleComponent";
@@ -29,19 +29,6 @@ function App(props: IAppState) {
     return (
         <div className="App">
             <div id="modal-root"></div>
-            {/* <ToggleContent
-                toggle={(show: any) =>
-                    <button
-                        id={`${props.armyName}Exploration`}
-                        onClick={(show)}
-                        className="EnabledButton">Open Exploration Dialog
-                    </button>}
-                content={(hide: any) => (
-                    <Modal>
-                        <ExplorationComponent state={props} callback={hide}></ExplorationComponent>
-                    </Modal>
-                )}
-            /> */}
             <FileDialogue />
             <HeaderContainer state={props}></HeaderContainer>
             <UnitContainer warbandRoster={props.warbandRoster}></UnitContainer>

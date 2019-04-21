@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { IAdvanceSkill } from "../constants";
-import { getLadsSkillLists } from "../utilities/utils";
-import { UPDATE_UNIT, REMOVE_UNIT_FROM_ROSTER, ADD_UNIT_TO_ROSTER } from "../actions";
-import { store } from "..";
+import { IUnit } from "../../constants";
+import { getLadsSkillLists, printStringArray } from "../../utilities/utils";
+import { UPDATE_UNIT, REMOVE_UNIT_FROM_ROSTER, ADD_UNIT_TO_ROSTER } from "../../actions";
+import { store } from "../..";
 
-export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
+export const LadsGotTalentComponent = ({ unit, callbacks }: { unit: IUnit; callbacks: any[] }) => {
     const [ladsName, setLadsName] = useState("");
     const [ladSkills, setLadSkills] = useState<string[]>([]);
     const onInput = (e: any) => {
@@ -16,7 +16,7 @@ export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
     };
 
     const createSkillListBtns = () => {
-        if (props.unit.skillLists === undefined) {
+        if (unit.skillLists === undefined) {
             if (ladSkills.length < 2) {
                 return (
                     <div>
@@ -31,7 +31,7 @@ export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
             } else if (ladSkills.length === 2) {
                 return (
                     <div>
-                        <div>You have selected skill lists {ladSkills} </div>
+                        <div>You have selected skill lists {printStringArray(ladSkills)} </div>
                     </div>
                 );
             }
@@ -39,25 +39,23 @@ export const LadsGotTalentComponent = (props: IAdvanceSkill) => {
     };
 
     const advanceLad = () => {
-        if (props.unit.number === undefined || props.unit.number === 1) {
-            store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: props.unit });
-            props.callbacks.forEach((callback) => callback());
+        if (unit.number === undefined || unit.number === 1) {
+            store.dispatch({ type: REMOVE_UNIT_FROM_ROSTER, payload: unit });
+            callbacks.forEach((callback) => callback());
         } else {
-            const numbers = props.unit.number - 1;
-            store.dispatch({ type: UPDATE_UNIT, payload: { ...props.unit, number: numbers } });
-            props.callbacks[0]();
+            const numbers = unit.number - 1;
+            store.dispatch({ type: UPDATE_UNIT, payload: { ...unit, number: numbers } });
+            callbacks[0]();
         }
-        store.dispatch({ type: ADD_UNIT_TO_ROSTER, payload: { ...props.unit, number: undefined, isHero: true, name: ladsName, skillLists: ladSkills } });
+        store.dispatch({ type: ADD_UNIT_TO_ROSTER, payload: { ...unit, number: undefined, isHero: true, name: ladsName, skillLists: ladSkills } });
 
     };
 
-    const componentId = `${props.unit.name}Skills`;
-
     return (
-        <div id={componentId}>
+        <div id={`${unit.name}Skills`}>
             <div>Give your newly appointed Hero a Name:</div>
             <input
-                id={`${props.unit.name}Lad`}
+                id={`${unit.name}Lad`}
                 value={ladsName}
                 onChange={onInput}
             />

@@ -6,24 +6,9 @@ export enum PostSequence {
     "HIREANDBUY",
 }
 
-export interface IList {
-    names: string[] | undefined;
-    title: string;
-}
-
 export interface ILabel {
     title: string;
     value: string;
-}
-
-export interface IAdvance {
-    unit: IUnit;
-    callback: any;
-}
-
-export interface IAdvanceSkill {
-    unit: IUnit;
-    callbacks: any[];
 }
 
 export interface IRacialMaximums {
@@ -154,6 +139,7 @@ export interface IMiscallaneous extends IEquip {
 interface IEquip {
     type: string;
     cost: number;
+    variableCost?: string;
     rarity: number;
     rules: string[];
     restrictions?: {

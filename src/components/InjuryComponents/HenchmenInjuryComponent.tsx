@@ -73,7 +73,7 @@ export const HenchmenInjuryComponent = ({ warbandRoster, currentSequence }: { wa
         ;
 
     return (
-        <div id="InjuryContainer" style={{ display: "inline-table", fontSize: 14 }}>
+        <div id="HenchmenInjuryContainer" className="PostSequenceContainer">
             {returnElement}
         </div>
     );

@@ -59,6 +59,29 @@
   font-size: 17px;
 }
 
+.PostSequenceModal {
+  padding: 12px;
+  clear: both;
+}
+.PostSequenceContainer {
+  display: inline-table;
+  font-size: 14px;
+  clear: both;
+  float: left;
+}
+
+.ExperienceUnitContainer {
+  overflow: hidden;
+  font-family: monospace;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding: 3px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+}
+
 .EnabledInjuryButton {
   font-family: monospace;
   background-color: white;
