@@ -10,6 +10,7 @@ export interface IUpdate {
     updatingUnit: IUnit;
     types: any[];
     payload: any[];
+    injuryString: string;
     // [key: string]: number;
 }
 
@@ -29,7 +30,7 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
     const updateSelectedUnit = (update: IUpdate) => {
         addUpdatedUnit([...updatedUnits, update]);
     };
-    const finishHenchmenInjuries = () => {
+    const finishHeroInjuries = () => {
         setOverviewMode(true);
         updatedUnits.forEach((updatedUnit) => {
             for (let i = 0; i < updatedUnit.types.length; i++) {
@@ -43,10 +44,10 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
         console.log(store.getState());
     };
 
-    const updatedUnitList = updatedUnits.map((update) => {
-        const injuryString = update.updatingUnit.injuries !== undefined ? update.updatingUnit.injuries.join(", ") : "no injury";
-        return (<div key={`${update.updatingUnit.name}`}>{`${update.updatingUnit.name} (${update.updatingUnit.type}) has sustained injuries: ${injuryString}`}</div>);
-    });
+    const updatedUnitList = updatedUnits.map((update) => (
+        <div key={`${update.updatingUnit.name}`}>
+            {update.injuryString}
+        </div>));
     const heroList = warbandRoster.map((unit) => {
         if (Boolean(updatedUnits.find((updated) => updated.updatingUnit.name === unit.name))) {
             return;
@@ -77,7 +78,7 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
         <div>and choose which injuries they sustained:</div>
         {heroList}
         <div style={{ display: "grid", paddingTop: 10 }}>
-            <button className={"ContinueButton"} style={{ display: "grid" }} onClick={finishHenchmenInjuries}>Continue</button>
+            <button className={"ContinueButton"} style={{ display: "grid" }} onClick={finishHeroInjuries}>Continue</button>
             <div>*Note: dead heros are removed from your Roster</div>
         </div>
     </div> : <div></div>;

@@ -18,6 +18,8 @@ export const UnitSummaryContainer = ({ warbandRoster }: { warbandRoster: IUnit[]
                     <UnitEquipmentComponent unit={unit}></UnitEquipmentComponent>
                     <ListComponent title="Skill Lists" names={unit.skillLists}></ListComponent>
                     <ListComponent title={"Skills"} names={unit.skills} ></ListComponent>
+                    <ListComponent title="Spell Lists" names={unit.spellLists}></ListComponent>
+                    <ListComponent title={"Spells"} names={unit.spells} ></ListComponent>
                     <Characteristics unit={unit} ></Characteristics>
                 </div>
             );

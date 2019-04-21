@@ -11,11 +11,11 @@ import { SaveFile } from "./components/FileRepoComponents/SaveFile";
 const App = (props: IAppState) => (
     <div className="App">
         <div id="modal-root"></div>
+        <HeaderContainer state={props}></HeaderContainer>
         <div>
             <FileDialogue />
             <SaveFile />
         </div>
-        <HeaderContainer state={props}></HeaderContainer>
         <UnitSummaryContainer warbandRoster={props.warbandRoster}></UnitSummaryContainer>
         <PostGameSequence state={props}></PostGameSequence>
         {/* <UnitButtons {...unitProps}></UnitButtons> */}

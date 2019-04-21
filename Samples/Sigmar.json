@@ -45,10 +45,6 @@
       "spellLists": [
         "Prayers of Sigmar"
       ],
-      "include": [
-        1,
-        1
-      ],
       "experience": 22,
       "equipment": [
         "Dagger",
@@ -93,10 +89,6 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "include": [
-        0,
-        1
-      ],
       "experience": 2,
       "equipment": [
         "Dagger",
@@ -134,10 +126,6 @@
         "Combat",
         "Speed",
         "Sisters of Sigmar"
-      ],
-      "include": [
-        0,
-        3
       ],
       "experience": 12,
       "equipment": [
@@ -177,10 +165,6 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "include": [
-        0,
-        3
-      ],
       "experience": 10,
       "equipment": [
         "Dagger",
@@ -219,10 +203,6 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "include": [
-        0,
-        3
-      ],
       "experience": 11,
       "equipment": [
         "Dagger",
@@ -258,10 +238,6 @@
         "Strength",
         "Combat"
       ],
-      "include": [
-        0,
-        100
-      ],
       "experience": 2,
       "equipment": [
         "Dagger",
@@ -292,10 +268,6 @@
       "price": 15,
       "isHero": false,
       "isLarge": false,
-      "include": [
-        0,
-        10
-      ],
       "experience": 5,
       "equipment": [
         "Dagger",
@@ -325,10 +297,6 @@
       "price": 15,
       "isHero": false,
       "isLarge": false,
-      "include": [
-        0,
-        10
-      ],
       "experience": 2,
       "equipment": [
         "Dagger",
@@ -358,10 +326,6 @@
       "price": 15,
       "isHero": false,
       "isLarge": false,
-      "include": [
-        0,
-        10
-      ],
       "experience": 2,
       "equipment": [
         "Dagger",
@@ -391,10 +355,6 @@
       "price": 15,
       "isHero": false,
       "isLarge": false,
-      "include": [
-        0,
-        10
-      ],
       "experience": 2,
       "equipment": [
         "Dagger",
@@ -420,7 +380,7 @@
         "Attacks": 1,
         "Leadership": 10
       },
-      "price": 0,
+      "price": 30,
       "isHero": true,
       "isHiredSword": true,
       "isLarge": false,
@@ -428,10 +388,6 @@
         "Strength",
         "Combat",
         "Dwarf"
-      ],
-      "include": [
-        0,
-        1
       ],
       "experience": 11,
       "equipment": [

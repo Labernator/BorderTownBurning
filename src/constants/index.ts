@@ -81,6 +81,20 @@ export interface IAppState {
     warbandRating: number;
 }
 
+export interface IExportState {
+    armyType: string;
+    armyName: string;
+    armyAlignment: string;
+    armyObjective: string;
+    warbandRoster: IUnit[];
+    armyTreasury: number;
+    armyStash: string[];
+    campaignPoints: number;
+    wyrdstoneShards: number;
+    campaignAchievements: string[];
+    warbandRating: number;
+}
+
 export interface IUnit {
     name?: string;
     race: string;

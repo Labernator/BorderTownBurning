@@ -20,6 +20,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                     updatingUnit: unit,
                     types: [REMOVE_UNIT_FROM_ROSTER],
                     payload: [unit],
+                    injuryString: `${unit.name} (${unit.type}) was killed`,
                 });
                 callback();
                 break;
@@ -32,9 +33,9 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.LEGWOUND.value],
                         characteristics: { ...unit.characteristics, Movement: unit.characteristics.Movement - 1 },
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has sustained a leg wound and lost 1 movement`,
                 });
                 callback();
-                update(unit);
                 break;
             case HeroInjuriesEnum.ARMWOUND.toString():
                 setMode(InjuryState.ArmWound);
@@ -47,9 +48,9 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.ARMWOUND_AMPUTATION.value],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has lost the an arm.`,
                 });
                 callback();
-                update(unit);
                 break;
             case HeroInjuriesEnum.SMASHEDLEG_MISS.toString():
             case HeroInjuriesEnum.ARMWOUND_MISS.toString():
@@ -60,9 +61,9 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.MISSESNEXTGAME.value],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) will miss the next game.`,
                 });
                 callback();
-                update(unit);
                 break;
             case HeroInjuriesEnum.MADNESS.toString():
                 setMode(InjuryState.Madness);
@@ -76,6 +77,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.MADNESS_FRENZY.value],
                         skills: [...skills, "Frenzy"],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has gone mad and is frenzied from now on.`,
                 });
                 callback();
                 break;
@@ -88,6 +90,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.MADNESS_STUPIDITY.value],
                         skills: [...skills, "Stupidity"],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has gone mad and is stupid from now on.`,
                 });
                 callback();
                 break;
@@ -103,6 +106,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         skills: [...skills, HeroInjuriesEnum.SMASHEDLEG.value],
                         injuries: [...injuries, HeroInjuriesEnum.SMASHEDLEG_RUNNING.value],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has a smashed leg and cannot run anymore.`,
                 });
                 callback();
                 break;
@@ -115,6 +119,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.CHESTWOUND.value],
                         characteristics: { ...unit.characteristics, Toughness: unit.characteristics.Toughness - 1 },
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has sustained a chest wound and lost 1 toughness`,
                 });
                 callback();
                 break;
@@ -124,6 +129,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         updatingUnit: unit,
                         types: [REMOVE_UNIT_FROM_ROSTER],
                         payload: [unit],
+                        injuryString: `${unit.name} (${unit.type}) was killed`,
                     });
                 } else {
                     update({
@@ -133,6 +139,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                             ...unit,
                             injuries: [...injuries, HeroInjuriesEnum.BLINDEDINONEEYE.value],
                             characteristics: { ...unit.characteristics, BallisticSkill: unit.characteristics.BallisticSkill - 1 },
+                            injuryString: `${unit.name} (${unit.type}) has sustained a wound to the eyes and lost 1 ballistic skill.`,
                         }],
                     });
                 }
@@ -146,6 +153,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.OLDBATTLEWOUND.value],
                         skills: [...skills, HeroInjuriesEnum.OLDBATTLEWOUND.value],
+                        injuryString: `${unit.name} (${unit.type}) was hit on an old battle wound and will now have to check every battle.`,
                     }],
                 });
                 callback();
@@ -158,6 +166,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.NERVOUSCONDITION.value],
                         characteristics: { ...unit.characteristics, Initiative: unit.characteristics.Initiative - 1 },
+                        injuryString: `${unit.name} (${unit.type}) has sustained a nervous condition and lost 1 initiative`,
                     }],
                 });
                 callback();
@@ -170,6 +179,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.HANDINJURY.value],
                         characteristics: { ...unit.characteristics, WeaponSkill: unit.characteristics.WeaponSkill - 1 },
+                        injuryString: `${unit.name} (${unit.type}) has sustained a hand injury and lost 1 toughness`,
                     }],
                 });
                 callback();
@@ -185,11 +195,17 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, `Misses next ${inputValue} games`],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has sustained a deep wound and will miss the next ${inputValue} games.`,
                 });
                 callback();
                 break;
             case HeroInjuriesEnum.ROBBED.toString():
-                store.dispatch({ type: UPDATE_UNIT, payload: { ...unit, equipment: [] } });
+                update({
+                    updatingUnit: unit,
+                    type: [UPDATE_UNIT],
+                    payload: [{ ...unit, equipment: [] }],
+                    injuryString: `${unit.name} (${unit.type}) was robbed and lost all inventory (weapons, armour, other equipment).`,
+                 });
                 callback();
                 break;
             case HeroInjuriesEnum.BITTERENEMY.toString():
@@ -203,6 +219,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         skills: [...skills, `${HeroInjuriesEnum.BITTER_ENEMY_INPUT.value} (${inputValue})`],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) now is the bitter enemy of ${inputValue}.`,
                 });
                 callback();
                 break;
@@ -218,6 +235,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                     updatingUnit: unit,
                     types: [SUBTRACT_MONEY_FROM_TREASURY],
                     payload: [costs],
+                    injuryString: `${unit.name} (${unit.type}) was captured and bought back for ${inputValue}.`,
                 });
                 callback();
                 break;
@@ -230,6 +248,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.HARDENED.value],
                         skills: [...skills, "Immune to Fear"],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) now is Immune to Fear.`,
                 });
                 callback();
                 break;
@@ -242,6 +261,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.HORRIBLESCARS.value],
                         skills: [...skills, "Fear"],
                     }],
+                    injuryString: `${unit.name} (${unit.type}) now causes Fear.`,
                 });
                 callback();
                 break;
@@ -259,6 +279,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                     },
                         1,
                     ],
+                    injuryString: `${unit.name} (${unit.type}) has slain the Lord of the Pit!`,
                 });
                 callback();
                 break;
@@ -276,6 +297,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         equipment: survivedEquipment,
                     }],
+                    injuryString: `${unit.name} (${unit.type}) was beaten in the pit and lost his weapons and armour.`,
                 });
                 callback();
                 break;
@@ -288,6 +310,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         injuries: [...injuries, HeroInjuriesEnum.SURVIVED.value],
                         experience: unit.experience + 1,
                     }],
+                    injuryString: `${unit.name} (${unit.type}) gained 1 XP for being lucky.`,
                 });
                 callback();
                 break;

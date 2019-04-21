@@ -104,6 +104,7 @@
   text-align: left;
 }
 .UnitSummaryContainer {
+  clear: both;
   float: right;
   padding-left: 2%;
   width: 38%;

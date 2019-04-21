@@ -1,10 +1,25 @@
 import { store } from "../..";
 import React from "react";
+import { IExportState } from "../../constants";
 
 export const SaveFile = () => {
 
     const onSaveClick = () => {
-        saveData(store.getState(), "warband.json");
+        const appState = store.getState();
+        const exportState: IExportState = {
+            armyType: appState.armyType,
+            armyAlignment: appState.armyAlignment,
+            armyObjective: appState.armyObjective,
+            armyStash: appState.armyStash,
+            armyTreasury: appState.armyTreasury,
+            armyName: appState.armyName,
+            wyrdstoneShards: appState.wyrdstoneShards,
+            warbandRating: appState.warbandRating,
+            campaignAchievements: appState.campaignAchievements,
+            campaignPoints: appState.campaignPoints,
+            warbandRoster: appState.warbandRoster,
+        };
+        saveData(exportState, "warband.json");
     };
 
     const saveData = (() => {
