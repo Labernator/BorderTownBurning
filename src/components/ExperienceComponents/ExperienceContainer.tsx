@@ -2,7 +2,7 @@ import React from "react";
 import { IUnit, PostSequence } from "../../constants";
 import { AddExperienceButton } from "./AddExperienceButton";
 
-export const ExperienceComponent = ({ warbandRoster, currentSequence }: { warbandRoster: IUnit[]; currentSequence: PostSequence }) => {
+export const ExperienceContainer = ({ warbandRoster, currentSequence }: { warbandRoster: IUnit[]; currentSequence: PostSequence }) => {
     const continueToNextStep = () => (/*TODO*/"");
     const content = warbandRoster.map((unit) => (
         <div key={`${unit.name}AddExp`} id={`${unit.name}AddExp`} className="ExperienceUnitContainer">

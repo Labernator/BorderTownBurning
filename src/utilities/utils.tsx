@@ -377,6 +377,26 @@ export const getGoldFromWyrdstones = (amount: number) => {
     }
 };
 
+export const getWyrdstonesFromExplorationRoll = (amount: number) => {
+    if (amount < 5) {
+        return 1;
+    } else if (amount <= 11) {
+        return 2;
+    } else if (amount <= 17) {
+        return 3;
+    } else if (amount <= 24) {
+        return 4;
+    } else if (amount <= 30) {
+        return 5;
+    } else if (amount <= 35) {
+        return 6;
+    } else if (amount > 35) {
+        return 7;
+    } else {
+        return 0;
+    }
+};
+
 export const getLadsSkillLists = () => {
     const heros = store.getState().warbandRoster.filter((unit) => (unit.isHero && !unit.isHiredSword));
     return heros.reduce((accu: string[], hero) => {
