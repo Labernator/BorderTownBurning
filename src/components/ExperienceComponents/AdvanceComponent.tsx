@@ -3,10 +3,10 @@ import { IUnit } from "../../constants";
 import { checkRacialMaximums, getHeroCount } from "../../utilities/utils";
 import { UPDATE_UNIT } from "../../actions";
 import { store } from "../..";
-import { ToggleContent } from "../ToggleComponent";
+import { ToggleContent } from "../UtilityComponents/ToggleComponent";
 import { SkillsComponent } from "./SkillsComponent";
 import { LadsGotTalentComponent } from "./LadsGotTalentComponent";
-import { PostSequenceModal } from "../PostSequenceModal";
+import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 
 export const AdvanceComponent = ({ unit, callback }: { unit: IUnit; callback: any }) => {
     const advanceCharacteristic = (characteristic: string) => {

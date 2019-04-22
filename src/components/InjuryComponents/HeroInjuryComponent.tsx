@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IUnit, PostSequence } from "../../constants";
-import { ToggleContent } from "../ToggleComponent";
-import { PostSequenceModal } from "../PostSequenceModal";
+import { ToggleContent } from "../UtilityComponents/ToggleComponent";
+import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 import { HeroInjuriesDialog } from "./HeroInjuriesDialog";
 import { isToughUnit } from "../../utilities/utils";
 import { store } from "../..";

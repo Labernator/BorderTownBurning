@@ -3,8 +3,8 @@ import { IUnit } from "../constants";
 import { store } from "..";
 import { UPDATE_UNIT, ADD_MONEY_TO_TREASURY } from "../actions";
 import { getEquipmentByName } from "../utilities/utils";
-import { ToggleContent } from "./ToggleComponent";
-import { Modal } from "./Modal";
+import { ToggleContent } from "./UtilityComponents/ToggleComponent";
+import { Modal } from "./UtilityComponents/Modal";
 import { UnitEquipment } from "./UnitEquipment";
 import { AppHeaderComponent } from "./UtilityComponents/AppHeaderComponent";
 export const EquipmentContainer = ({ unit }: { unit: IUnit }) => {

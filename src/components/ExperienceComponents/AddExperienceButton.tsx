@@ -4,8 +4,8 @@ import { UPDATE_UNIT } from "../../actions";
 import { store } from "../..";
 import { isAdvancing } from "../../utilities/utils";
 import { AdvanceComponent } from "./AdvanceComponent";
-import { ToggleContent } from "../ToggleComponent";
-import { PostSequenceModal } from "../PostSequenceModal";
+import { ToggleContent } from "../UtilityComponents/ToggleComponent";
+import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 
 export const AddExperienceButton = ({ unit }: { unit: IUnit }) => {
     const addExperience = (callback: any) => {
