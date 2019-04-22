@@ -103,7 +103,8 @@
         "no-unsafe-any": false,
         "no-submodule-imports": false,
         "newline-per-chained-call": false,
-        "align": false
+        "align": false,
+        "object-literal-sort-keys": false
     },
     "exclude": [
         "node_modules"

@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import { IUnit, PostSequence } from "../../constants";
+import { IUnit, PostSequence, IUpdate } from "../../constants";
 import { ToggleContent } from "../UtilityComponents/ToggleComponent";
 import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 import { HeroInjuriesDialog } from "./HeroInjuriesDialog";
 import { isToughUnit } from "../../utilities/utils";
 import { store } from "../..";
-
-export interface IUpdate {
-    updatingUnit: IUnit;
-    types: any[];
-    payload: any[];
-    injuryString: string;
-    // [key: string]: number;
-}
 
 export const HeroInjuryComponent = ({ warbandRoster, callback }: { warbandRoster: IUnit[]; callback: any }) => {
     // tslint:disable-next-line:no-object-literal-type-assertion

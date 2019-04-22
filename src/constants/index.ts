@@ -7,6 +7,13 @@ export enum PostSequence {
     "HIREANDBUY",
 }
 
+export interface IUpdate {
+    updatingUnit: IUnit;
+    types: any[];
+    payload: any[];
+    injuryString: string;
+}
+
 export interface ILabel {
     title: string;
     value: string;

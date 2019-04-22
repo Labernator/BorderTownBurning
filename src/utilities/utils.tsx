@@ -224,41 +224,40 @@ export function getUnit(unitType: string) {
     return units.find((unit) => unit.type === unitType);
 }
 
-const isSlowWitted = (skills: string[] | undefined) => (skills !== undefined && Boolean(skills.find((skill) => skill === "Slow Witted")));
+export const isUnitSlowWitted = (skills: string[] | undefined) => (skills !== undefined && Boolean(skills.find((skill) => skill === "Slow Witted")));
 
-export const isAdvancing = (unit: IUnit) => {
-    const slowWitted = isSlowWitted(unit.skills);
-    if (unit.isHero) {
-        switch (unit.experience) {
-            case slowWitted ? 4 : 2:
-            case slowWitted ? 8 : 4:
-            case slowWitted ? 12 : 6:
-            case slowWitted ? 16 : 8:
-            case slowWitted ? 22 : 11:
-            case slowWitted ? 28 : 14:
-            case slowWitted ? 34 : 17:
-            case slowWitted ? 40 : 20:
-            case slowWitted ? 48 : 24:
-            case slowWitted ? 56 : 28:
-            case slowWitted ? 64 : 32:
-            case slowWitted ? 72 : 36:
-            case slowWitted ? 82 : 41:
-            case slowWitted ? 92 : 46:
-            case slowWitted ? 102 : 51:
-            case slowWitted ? 114 : 57:
-            case slowWitted ? 126 : 63:
-            case slowWitted ? 138 : 69:
-            case slowWitted ? 152 : 76:
-            case slowWitted ? 166 : 83:
-            case slowWitted ? 180 : 90: return true;
+export const isAdvancing = (isHero: boolean, experience: number, isSlowWitted: boolean) => {
+    if (isHero) {
+        switch (experience) {
+            case isSlowWitted ? 4 : 2:
+            case isSlowWitted ? 8 : 4:
+            case isSlowWitted ? 12 : 6:
+            case isSlowWitted ? 16 : 8:
+            case isSlowWitted ? 22 : 11:
+            case isSlowWitted ? 28 : 14:
+            case isSlowWitted ? 34 : 17:
+            case isSlowWitted ? 40 : 20:
+            case isSlowWitted ? 48 : 24:
+            case isSlowWitted ? 56 : 28:
+            case isSlowWitted ? 64 : 32:
+            case isSlowWitted ? 72 : 36:
+            case isSlowWitted ? 82 : 41:
+            case isSlowWitted ? 92 : 46:
+            case isSlowWitted ? 102 : 51:
+            case isSlowWitted ? 114 : 57:
+            case isSlowWitted ? 126 : 63:
+            case isSlowWitted ? 138 : 69:
+            case isSlowWitted ? 152 : 76:
+            case isSlowWitted ? 166 : 83:
+            case isSlowWitted ? 180 : 90: return true;
             default: return false;
         }
     } else {
-        switch (unit.experience) {
-            case slowWitted ? 4 : 2:
-            case slowWitted ? 10 : 5:
-            case slowWitted ? 18 : 9:
-            case slowWitted ? 28 : 14: return true;
+        switch (experience) {
+            case isSlowWitted ? 4 : 2:
+            case isSlowWitted ? 10 : 5:
+            case isSlowWitted ? 18 : 9:
+            case isSlowWitted ? 28 : 14: return true;
             default: return false;
         }
     }
