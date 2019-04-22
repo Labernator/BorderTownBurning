@@ -9,7 +9,9 @@ import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 
 export const AddExperienceButton = ({ unit }: { unit: IUnit }) => {
     const addExperience = (callback: any) => {
-        store.dispatch({ type: UPDATE_UNIT, payload: { ...unit, experience: unit.experience + 1 } });
+        const xp = unit.experience + 1;
+        unit.experience = xp;
+        store.dispatch({ type: UPDATE_UNIT, payload: { ...unit, experience: xp } });
         if (isAdvancing(unit)) {
             callback();
         }
