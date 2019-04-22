@@ -4,7 +4,7 @@ import { store } from "../..";
 import { REMOVE_KILLED_HENCHMAN } from "../../actions";
 import { isToughUnit } from "../../utilities/utils";
 
-export const HenchmenInjuryComponent = ({ warbandRoster, currentSequence }: { warbandRoster: IUnit[]; currentSequence: PostSequence }) => {
+export const HenchmenInjuryComponent = ({ warbandRoster, callback }: { warbandRoster: IUnit[]; callback: any }) => {
     const [selectedUnits, addSelectedUnit] = useState([] as IUnit[]);
     const [isOverviewMode, setOverviewMode] = useState(false);
     // React.MouseEvent<HTMLButtonElement>
@@ -20,6 +20,7 @@ export const HenchmenInjuryComponent = ({ warbandRoster, currentSequence }: { wa
             store.dispatch({ type: REMOVE_KILLED_HENCHMAN, payload: unit });
         });
         setOverviewMode(true);
+        callback(PostSequence.HERO_INJURIES);
     };
     const henchmenList = warbandRoster.reduce((accumulator, unit) => {
         if ((!unit.isHero && !isToughUnit(unit)) || (unit.isHero && unit.isHiredSword)) {

@@ -14,18 +14,18 @@ export interface IUpdate {
     // [key: string]: number;
 }
 
-export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warbandRoster: IUnit[]; currentSequence: PostSequence }) => {
+export const HeroInjuryComponent = ({ warbandRoster, callback }: { warbandRoster: IUnit[]; callback: any }) => {
     // tslint:disable-next-line:no-object-literal-type-assertion
     const [selectedUnit, setSelectedUnit] = useState({} as IUnit);
     const [updatedUnits, addUpdatedUnit] = useState([] as IUpdate[]);
     const [isOverviewMode, setOverviewMode] = useState(false);
-    const toggleButton = (event: any, callback: any) => {
+    const toggleButton = (event: any, toggleCallback: any) => {
         event.target.className = "SelectedInjuryButton";
         const clickedUnit = warbandRoster.find((unit) => unit.name === event.target.id);
         if (clickedUnit !== undefined) {
             setSelectedUnit(clickedUnit);
         }
-        callback();
+        toggleCallback();
     };
     const updateSelectedUnit = (update: IUpdate) => {
         addUpdatedUnit([...updatedUnits, update]);
@@ -40,8 +40,7 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
                 });
             }
         });
-        // tslint:disable-next-line:no-console
-        console.log(store.getState());
+        callback(PostSequence.EXPERIENCE);
     };
 
     const updatedUnitList = updatedUnits.map((update) => (
@@ -81,12 +80,10 @@ export const HeroInjuryComponent = ({ warbandRoster, currentSequence }: { warban
             <button className={"ContinueButton"} style={{ display: "grid" }} onClick={finishHeroInjuries}>Continue</button>
             <div>*Note: dead heros are removed from your Roster</div>
         </div>
-    </div> : <div></div>;
-    const overview = updatedUnitList.length === 0 ? <div>No Heros have been injured.</div> : updatedUnitList;
+    </div> : updatedUnitList.length === 0 ? <div>No Heros have been injured.</div> : updatedUnitList;
     return (
         <div id="HeroInjuryContainer" className="PostSequenceComponent">
             <div style={{ fontWeight: "bold", fontSize: 20 }}>PostSequence Step 1b: Hero Injuries </div>
-            {overview}
             {heroStuff}
         </div>
     );

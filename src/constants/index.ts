@@ -1,5 +1,6 @@
 export enum PostSequence {
-    "INJURIES",
+    "HENCHMEN_INJURIES",
+    "HERO_INJURIES",
     "EXPERIENCE",
     "EXPLORATION",
     "RARES",

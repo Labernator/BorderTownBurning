@@ -48,7 +48,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.ARMWOUND_AMPUTATION.value],
                     }],
-                    injuryString: `${unit.name} (${unit.type}) has lost the an arm.`,
+                    injuryString: `${unit.name} (${unit.type}) has lost an arm.`,
                 });
                 callback();
                 break;
@@ -129,7 +129,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         updatingUnit: unit,
                         types: [REMOVE_UNIT_FROM_ROSTER],
                         payload: [unit],
-                        injuryString: `${unit.name} (${unit.type}) was killed`,
+                        injuryString: `${unit.name} (${unit.type}) was blinded in both eyes and has to retire.`,
                     });
                 } else {
                     update({
@@ -139,8 +139,8 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                             ...unit,
                             injuries: [...injuries, HeroInjuriesEnum.BLINDEDINONEEYE.value],
                             characteristics: { ...unit.characteristics, BallisticSkill: unit.characteristics.BallisticSkill - 1 },
-                            injuryString: `${unit.name} (${unit.type}) has sustained a wound to the eyes and lost 1 ballistic skill.`,
                         }],
+                        injuryString: `${unit.name} (${unit.type}) has lost and eye and 1 ballistic skill.`,
                     });
                 }
                 callback();
@@ -153,8 +153,8 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.OLDBATTLEWOUND.value],
                         skills: [...skills, HeroInjuriesEnum.OLDBATTLEWOUND.value],
-                        injuryString: `${unit.name} (${unit.type}) was hit on an old battle wound and will now have to check every battle.`,
                     }],
+                    injuryString: `${unit.name} (${unit.type}) was hit on an old battle wound and will now have to check every battle.`,
                 });
                 callback();
                 break;
@@ -166,8 +166,8 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.NERVOUSCONDITION.value],
                         characteristics: { ...unit.characteristics, Initiative: unit.characteristics.Initiative - 1 },
-                        injuryString: `${unit.name} (${unit.type}) has sustained a nervous condition and lost 1 initiative`,
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has sustained a nervous condition and lost 1 initiative`,
                 });
                 callback();
                 break;
@@ -179,8 +179,8 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                         ...unit,
                         injuries: [...injuries, HeroInjuriesEnum.HANDINJURY.value],
                         characteristics: { ...unit.characteristics, WeaponSkill: unit.characteristics.WeaponSkill - 1 },
-                        injuryString: `${unit.name} (${unit.type}) has sustained a hand injury and lost 1 toughness`,
                     }],
+                    injuryString: `${unit.name} (${unit.type}) has sustained a hand injury and lost 1 toughness`,
                 });
                 callback();
                 break;
@@ -205,7 +205,7 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                     type: [UPDATE_UNIT],
                     payload: [{ ...unit, equipment: [] }],
                     injuryString: `${unit.name} (${unit.type}) was robbed and lost all inventory (weapons, armour, other equipment).`,
-                 });
+                });
                 callback();
                 break;
             case HeroInjuriesEnum.BITTERENEMY.toString():
@@ -315,6 +315,12 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                 callback();
                 break;
             default: // unit recovered
+                update({
+                    updatingUnit: unit,
+                    types: [UPDATE_UNIT],
+                    payload: [unit],
+                    injuryString: `${unit.name} (${unit.type}) has fully recovered.`,
+                });
                 callback();
         }
 

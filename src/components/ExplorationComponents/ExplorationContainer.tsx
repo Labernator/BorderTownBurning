@@ -3,7 +3,6 @@ import { ExplorationChartComponent } from "./ExplorationChartComponent";
 
 export const ExplorationContainer = () => {
     const continueToNextStep = () => (/*TODO*/"");
-
     return (
         <div id="ExplorationContainer" className="PostSequenceComponent">
             <div style={{ fontWeight: "bold", fontSize: 20 }}>PostSequence Step 3: Exploration </div>
