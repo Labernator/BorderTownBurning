@@ -49,10 +49,10 @@ export const AdvanceComponent = ({ unit, callback, advanceUpdate }: { unit: IUni
     );
 
     const getLadsComponent = (additionalCallback: any) => (
-        <LadsGotTalentComponent unit={unit} callbacks={[additionalCallback, callback]}></LadsGotTalentComponent>
+        <LadsGotTalentComponent unit={unit} callbacks={[additionalCallback, callback]} advanceUpdate={advanceUpdate}></LadsGotTalentComponent>
     );
     const getSkillsComponent = (additionalCallback: any) => (
-        <SkillsComponent unit={unit} callbacks={[additionalCallback, callback]}></SkillsComponent>
+        <SkillsComponent unit={unit} callbacks={[additionalCallback, callback]} advanceUpdate={advanceUpdate}></SkillsComponent>
     );
 
     const ladsComponent = getHeroCount() < 6 ? getToggleComponent("Lad's got Talent", getLadsComponent) : undefined;

@@ -4,7 +4,7 @@ import { getLadsSkillLists, printStringArray } from "../../utilities/utils";
 import { UPDATE_UNIT, REMOVE_UNIT_FROM_ROSTER, ADD_UNIT_TO_ROSTER } from "../../actions";
 import { store } from "../..";
 
-export const LadsGotTalentComponent = ({ unit, callbacks }: { unit: IUnit; callbacks: any[] }) => {
+export const LadsGotTalentComponent = ({ unit, callbacks, advanceUpdate }: { unit: IUnit; callbacks: any[]; advanceUpdate: any }) => {
     const [ladsName, setLadsName] = useState("");
     const [ladSkills, setLadSkills] = useState<string[]>([]);
     const onInput = (e: any) => {

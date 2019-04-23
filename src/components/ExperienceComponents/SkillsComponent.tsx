@@ -4,7 +4,7 @@ import { getSkills } from "../../utilities/utils";
 import { UPDATE_UNIT } from "../../actions";
 import { store } from "../..";
 
-export const SkillsComponent = ({ unit, callbacks }: { unit: IUnit; callbacks: any[] }) => {
+export const SkillsComponent = ({ unit, callbacks, advanceUpdate }: { unit: IUnit; callbacks: any[]; advanceUpdate: any }) => {
     let skillBtns;
 
     const advanceSkill = (skillName: string) => {
@@ -17,6 +17,7 @@ export const SkillsComponent = ({ unit, callbacks }: { unit: IUnit; callbacks: a
             },
         });
         callbacks.forEach((callback) => callback());
+        advanceUpdate(unit, skillName, "skill");
     };
 
     const skillElements = (skill: ISkill) => (

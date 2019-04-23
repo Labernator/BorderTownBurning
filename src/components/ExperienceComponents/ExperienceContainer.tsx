@@ -51,6 +51,17 @@ export const ExperienceContainer = ({ warbandRoster, callback }: { warbandRoster
                 addUpdatedUnit([...updatedUnits.slice(0, itemIndex), alreadyExistingUnit, ...updatedUnits.slice(itemIndex + 1)]);
             }
         }
+        if (type === "skill") {
+            const itemIndex = updatedUnits.findIndex((item) => item.unitName === unit.name);
+            if (itemIndex >= 0) {
+                const alreadyExistingUnit = updatedUnits[itemIndex];
+                if (alreadyExistingUnit.skillAdvance === undefined) {
+                    alreadyExistingUnit.skillAdvance = [];
+                }
+                alreadyExistingUnit.skillAdvance.push(advance);
+                addUpdatedUnit([...updatedUnits.slice(0, itemIndex), alreadyExistingUnit, ...updatedUnits.slice(itemIndex + 1)]);
+            }
+        }
     };
     const unitList = warbandRoster.map((unit) => (
         <div key={`${unit.name}AddExp`} id={`${unit.name}AddExp`} className="ExperienceUnitContainer">
@@ -62,7 +73,7 @@ export const ExperienceContainer = ({ warbandRoster, callback }: { warbandRoster
                         toggle={(show: any) => <button onClick={() => addExperience(unit, show)}>+</button>}
                         content={(hide: any) => (
                             <PostSequenceModal parent={`${unit.name}AddExp`}>
-                                <AdvanceComponent unit={unit} callback={hide} advanceUpdate={updateCallback}></AdvanceComponent>
+                                <AdvanceComponent unit={unit} callback={hide} advanceUpdate={updateCallback} />
                             </PostSequenceModal>
                         )}
                     />
@@ -73,8 +84,10 @@ export const ExperienceContainer = ({ warbandRoster, callback }: { warbandRoster
 
     const summaryText = updatedUnits.map((entry) => {
         const text = `${entry.unitName} gained ${entry.experienceGained} XP`;
-        const addText = entry.characteristicAdvance !== undefined ? ` which resulted in +1 ${entry.characteristicAdvance}` : "";
-        return (<div key={`${entry.unitName}expGained`}>{text}{addText}</div>);
+        const inBetween = entry.characteristicAdvance !== undefined || entry.skillAdvance !== undefined ? " which resulted in " : "";
+        const characteristicAdvance = entry.characteristicAdvance !== undefined ? `+1 ${entry.characteristicAdvance}` : "";
+        const skillAdvance = entry.skillAdvance !== undefined ? `a new skill '${entry.skillAdvance}'` : "";
+        return (<div key={`${entry.unitName}expGained`}>{text}{inBetween}{characteristicAdvance}{skillAdvance}</div>);
     });
     const content = isOverviewMode ?
         <div>

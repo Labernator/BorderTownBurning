@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { getWyrdstonesFromExplorationRoll } from "../../utilities/utils";
 import { store } from "../..";
 import { ADD_WYRDSTONES } from "../../actions/StateActions";
+import { ExplorationSteps } from "./ExplorationContainer";
 
-export const ExplorationChartComponent = () => {
+export const ExplorationChartComponent = ({ finishWorkflow }: { finishWorkflow: any }) => {
     const [explorationValue, setExplorationValue] = useState("");
     const [explorationError, setExplorationError] = useState("");
     const [isOverview, shownOverview] = useState(false);
     const ok = () => {
         store.dispatch({ type: ADD_WYRDSTONES, payload: getWyrdstonesFromInput() });
         shownOverview(true);
+        finishWorkflow(ExplorationSteps.ExplorationMultiples);
     };
     const getWyrdstonesFromInput = () => getWyrdstonesFromExplorationRoll(parseInt(explorationValue, 10));
     const onInput = (e: any) => {
