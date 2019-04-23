@@ -1,23 +1,35 @@
-import React, { useState, Component } from "react";
-import { getWyrdstonesFromExplorationRoll } from "../../utilities/utils";
-import { store } from "../..";
-import { ADD_WYRDSTONES } from "../../actions/StateActions";
+import React, { useState } from "react";
 import { ExplorationSteps } from "./ExplorationContainer";
+import { HeroMultiplesEnum } from "../../constants";
 
 export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkflow: any }) => {
-    const [explorationValue, setExplorationValue] = useState("");
-    const [explorationError, setExplorationError] = useState("");
     const [isOverview, shownOverview] = useState(false);
     const ok = () => {
         // store.dispatch({ type: ADD_WYRDSTONES, payload: getWyrdstonesFromInput() });
         shownOverview(true);
-        finishWorkflow(ExplorationSteps.ExplorationMultiples);
+        finishWorkflow(ExplorationSteps.SellWyrdstones);
     };
+
+    const handleBtnClick = (input: string) => { };
+
+    const multiplesList: HeroMultiplesEnum[] = HeroMultiplesEnum.getBasicProps();
+
+    const renderDivs = multiplesList.map((multiple) =>
+        (
+            <div key={multiple.toString()} style={{ display: "grid" }}>
+                <button
+                    onClick={(e) => handleBtnClick(multiple.toString())}
+                    className="heroInjuryButton">
+                    {multiple.text}
+                </button>
+            </div>
+        ));
     const content = (overviewMode: boolean) => {
         if (!overviewMode) {
             return (
                 <div id="ExplorationChartComponent">
                     <div>If you rolled any multiples (doubles, triples, etc.), please select the highest multiple from the list below:</div>
+                    {renderDivs}
                     <button style={{ clear: "both", float: "left" }} onClick={ok}>Ok</button>
                 </div>
             );

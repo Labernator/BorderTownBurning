@@ -319,3 +319,78 @@ export class HeroInjuriesEnum {
         return this.key;
     }
 }
+
+export class HeroMultiplesEnum {
+    public static readonly WATERING_HOLE = new HeroMultiplesEnum("WATERING_HOLE", 11, "11 Watering Hole");
+    public static readonly RAZED_VILLAGE = new HeroMultiplesEnum("RAZED_VILLAGE", 22, "22 Razed Village");
+    public static readonly MORTALLY_WOUNDED_WARRIOR = new HeroMultiplesEnum("MORTALLY_WOUNDED_WARRIOR", 33, "33 Mortally Wounded Warrior");
+    public static readonly DISCARDED_SATTLE_BAG = new HeroMultiplesEnum("DISCARDED_SATTLE_BAG", 44, "44 Discarded Sattle Bag");
+    public static readonly STATUE = new HeroMultiplesEnum("STATUE", 55, "55 Statue");
+    public static readonly RUNAWAY_HORSE = new HeroMultiplesEnum("RUNAWAY_HORSE", 66, "66 Runaway Horse");
+    public static readonly TREMBLING_BUSHES = new HeroMultiplesEnum("TREMBLING_BUSHES", 111, "111 Trembling Bushes");
+    public static readonly WOUNDED_EXPLORER = new HeroMultiplesEnum("WOUNDED_EXPLORER", 222, "222 Wounded Explorer");
+    public static readonly UNSCRUPULOUS_THIEF = new HeroMultiplesEnum("UNSCRUPULOUS_THIEF", 333, "333 Unscrupulous Thief");
+    public static readonly DRAGON_MONK = new HeroMultiplesEnum("DRAGON_MONK", 444, "444 Dragon Monk");
+    public static readonly SECLUDED_COTTAGE = new HeroMultiplesEnum("SECLUDED_COTTAGE", 555, "555 Secluded Cottage");
+    public static readonly SLAVE_MINE = new HeroMultiplesEnum("SLAVE_MINE", 666, "666 Slave Mine");
+    public static readonly CRASHED_CARAVAN = new HeroMultiplesEnum("CRASHED_CARAVAN", 1111, "1111 Crashed Caravan");
+    public static readonly TREE_OF_WOE = new HeroMultiplesEnum("TREE_OF_WOE", 2222, "2222 Tree of Woe");
+    public static readonly TEMPLE_OF_SKULLS = new HeroMultiplesEnum("TEMPLE_OF_SKULLS", 3333, "3333 Temple of Skulls");
+    public static readonly KHAZAG_HORSEMEN = new HeroMultiplesEnum("KHAZAG_HORSEMEN", 4444, "4444 Khazag Horsemen");
+    public static readonly UNLIKELY_GUIDE = new HeroMultiplesEnum("UNLIKELY_GUIDE", 5555, "5555 Unlikely Guide");
+    public static readonly MUTATING_VAULT = new HeroMultiplesEnum("MUTATING_VAULT", 6666, "6666 Mutating Vault");
+    public static readonly ABANDONED_TRADING_POST = new HeroMultiplesEnum("ABANDONED_TRADING_POST", 11111, "11111 Abandoned Trading Post");
+    public static readonly BORDER_PATROL = new HeroMultiplesEnum("BORDER_PATROL", 22222, "22222 Border Patrol");
+    public static readonly FALLEN_PRIEST = new HeroMultiplesEnum("FALLEN_PRIEST", 33333, "33333 Fallen Priest");
+    public static readonly MAGNIFICENT_TOTEM = new HeroMultiplesEnum("MAGNIFICENT_TOTEM", 44444, "44444 Magnificent Totem");
+    public static readonly GHARTOKS_TOMB = new HeroMultiplesEnum("GHARTOKS_TOMB", 55555, "55555 Ghartok's Tomb");
+    public static readonly SATCHEL_OF_MAPS = new HeroMultiplesEnum("SATCHEL_OF_MAPS", 66666, "66666 Satchel of Maps");
+    public static readonly KHANS_RETINUE = new HeroMultiplesEnum("KHANS_RETINUE", 111111, "111111 Khan's retinue");
+    public static readonly SLAUGHTERED_CONVOY = new HeroMultiplesEnum("SLAUGHTERED_CONVOY", 222222, "222222 Slaughtered Convoy");
+    public static readonly HERDSTONE = new HeroMultiplesEnum("HERDSTONE", 333333, "333333 Herdstone");
+    public static readonly GIANTS_CARCASS = new HeroMultiplesEnum("GIANTS_CARCASS", 444444, "444444 Giant's Carcass");
+    public static readonly CHAOS_CHAMPION = new HeroMultiplesEnum("CHAOS_CHAMPION", 555555, "555555 Chaos Champion");
+    public static readonly TAINTED_ONES = new HeroMultiplesEnum("TAINTED_ONES", 666666, "666666 Tainted Ones");
+
+    public static getBasicProps() {
+        return [
+            this.WATERING_HOLE,
+            this.RAZED_VILLAGE,
+            this.MORTALLY_WOUNDED_WARRIOR,
+            this.DISCARDED_SATTLE_BAG,
+            this.STATUE,
+            this.RUNAWAY_HORSE,
+            this.TREMBLING_BUSHES,
+            this.WOUNDED_EXPLORER,
+            this.UNSCRUPULOUS_THIEF,
+            this.DRAGON_MONK,
+            this.SECLUDED_COTTAGE,
+            this.SLAVE_MINE,
+            this.CRASHED_CARAVAN,
+            this.TREE_OF_WOE,
+            this.TEMPLE_OF_SKULLS,
+            this.KHAZAG_HORSEMEN,
+            this.UNLIKELY_GUIDE,
+            this.MUTATING_VAULT,
+            this.ABANDONED_TRADING_POST,
+            this.BORDER_PATROL,
+            this.FALLEN_PRIEST,
+            this.MAGNIFICENT_TOTEM,
+            this.GHARTOKS_TOMB,
+            this.SATCHEL_OF_MAPS,
+            this.KHANS_RETINUE,
+            this.SLAUGHTERED_CONVOY,
+            this.HERDSTONE,
+            this.GIANTS_CARCASS,
+            this.CHAOS_CHAMPION,
+            this.TAINTED_ONES,
+        ];
+    }
+    // private to disallow creating other instances of this type
+    private constructor(private readonly key: string, public readonly value: number, public readonly text: string) {
+    }
+
+    public toString() {
+        return this.key;
+    }
+}

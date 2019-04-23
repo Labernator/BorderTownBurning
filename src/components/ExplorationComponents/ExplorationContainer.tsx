@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { ExplorationChartComponent } from "./ExplorationChartComponent";
 import { ExplorationMultiplesComponent } from "./ExplorationMultiplesComponent";
+import { ExplorationWyrdstoneComponent } from "./ExplorationWyrdstoneComponent";
 
 export enum ExplorationSteps {
     ExplorationChart,
     ExplorationMultiples,
+    SellWyrdstones,
 }
 
 export const ExplorationContainer = () => {
@@ -23,6 +25,13 @@ export const ExplorationContainer = () => {
                     <div>
                         <ExplorationChartComponent finishWorkflow={continueToNextSupStep} />
                         <ExplorationMultiplesComponent finishWorkflow={continueToNextSupStep} />
+                    </div>);
+            case ExplorationSteps.SellWyrdstones:
+                return (
+                    <div>
+                        <ExplorationChartComponent finishWorkflow={continueToNextSupStep} />
+                        <ExplorationMultiplesComponent finishWorkflow={continueToNextSupStep} />
+                        <ExplorationWyrdstoneComponent finishWorkflow={continueToNextStep} />
                     </div>);
             default:
                 return <div></div>;
