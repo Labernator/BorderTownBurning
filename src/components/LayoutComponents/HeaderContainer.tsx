@@ -1,7 +1,7 @@
 import React from "react";
-import { IAppState } from "../constants";
-import { getNumberOfWarbandMembers, getArmySizeLimit } from "../utilities/utils";
-import { AppHeaderComponent } from "./UtilityComponents/AppHeaderComponent";
+import { IAppState } from "../../constants";
+import { getNumberOfWarbandMembers, getArmySizeLimit } from "../../utilities/utils";
+import { AppHeaderComponent } from "../UtilityComponents/AppHeaderComponent";
 
 export const HeaderContainer = ({ state }: { state: IAppState }) => {
     const warbandMemberCount = `${getNumberOfWarbandMembers(state.warbandRoster)} / ${getArmySizeLimit(state.armyType)}`;

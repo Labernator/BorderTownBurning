@@ -4,8 +4,8 @@ import { UnitSummaryContainer } from "./components/UnitComponents/UnitSummaryCon
 import { IAppState } from "./constants";
 import "./App.css";
 import { FileDialogue } from "./components/FileRepoComponents/FileOpenDialog";
-import { HeaderContainer } from "./components/HeaderContainer";
-import { PostGameSequence } from "./components/PostGameSequence";
+import { HeaderContainer } from "./components/LayoutComponents/HeaderContainer";
+import { PostGameSequence } from "./components/LayoutComponents/PostGameSequence";
 import { SaveFile } from "./components/FileRepoComponents/SaveFile";
 
 const App = (props: IAppState) => (
