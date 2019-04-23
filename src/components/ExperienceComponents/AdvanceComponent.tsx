@@ -8,7 +8,7 @@ import { SkillsComponent } from "./SkillsComponent";
 import { LadsGotTalentComponent } from "./LadsGotTalentComponent";
 import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 
-export const AdvanceComponent = ({ unit, callback }: { unit: IUnit; callback: any }) => {
+export const AdvanceComponent = ({ unit, callback, advanceUpdate }: { unit: IUnit; callback: any; advanceUpdate: any }) => {
     const advanceCharacteristic = (characteristic: string) => {
         store.dispatch({
             type: UPDATE_UNIT,
@@ -17,6 +17,7 @@ export const AdvanceComponent = ({ unit, callback }: { unit: IUnit; callback: an
                 characteristics: { ...unit.characteristics, [characteristic]: unit.characteristics[characteristic] + 1 },
             },
         });
+        advanceUpdate(unit, characteristic, "characteristic");
         callback();
     };
     const advanceOptions = checkRacialMaximums(unit).map((item) => {
