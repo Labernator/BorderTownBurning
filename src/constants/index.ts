@@ -118,7 +118,7 @@ export interface IUnit {
     allowedEquipment: string[];
     include: number[];
     experience: number;
-    equipment: string[];
+    equipment?: string[];
     replaces?: string[];
     number?: number;
     isHiredSword?: boolean;

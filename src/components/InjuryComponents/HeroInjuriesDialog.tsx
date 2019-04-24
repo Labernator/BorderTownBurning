@@ -284,12 +284,12 @@ export const HeroInjuriesDialog = ({ unit, callback, update }: { unit: IUnit; ca
                 callback();
                 break;
             case HeroInjuriesEnum.GETINTHERING_LOSS_SURVIVED.toString():
-                const survivedEquipment = unit.equipment.filter((equi) => {
+                const survivedEquipment = unit.equipment !== undefined ? unit.equipment.filter((equi) => {
                     const equip = getEquipmentByName(equi);
                     if (!(isArmour(equip) || isWeapon(equip))) {
                         return equip;
                     }
-                });
+                }) : [];
                 update({
                     updatingUnit: unit,
                     types: [UPDATE_UNIT],

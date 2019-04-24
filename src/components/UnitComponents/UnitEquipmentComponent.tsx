@@ -7,6 +7,7 @@ export const UnitEquipmentComponent = ({ unit }: { unit: IUnit }) => {
     const editEquipment = () => {
         window.alert("Todo - bring up equipmentDialog");
     };
+    const unitEquipment = unit.equipment !== undefined ? unit.equipment : [];
     return (
         <div id={`${unit.name}_EquipmentContainer`} style={{ clear: "both" }}>
             <div>
@@ -15,7 +16,7 @@ export const UnitEquipmentComponent = ({ unit }: { unit: IUnit }) => {
                     <EditComponent tooltip={"Click here to change the equipment"} />
                 </div>
             </div>
-            <div style={{ clear: "both" }}>{printStringArray(unit.equipment)}</div>
+            <div style={{ clear: "both" }}>{printStringArray(unitEquipment)}</div>
         </div>
     );
 };

@@ -7,6 +7,7 @@ export enum ExplorationSteps {
     ExplorationChart,
     ExplorationMultiples,
     SellWyrdstones,
+    allDone,
 }
 
 export const ExplorationContainer = () => {

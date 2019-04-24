@@ -18,7 +18,7 @@ export const UnitEquipment = ({ unit }: { unit: IUnit }) => {
 
     const addItemToUnit = (item: IArmour | IMeleeWeapon | IMissileWeapon | IMiscallaneous) => {
         const updateUnit = unit;
-        updateUnit.equipment.push(item.type);
+        updateUnit.equipment ? updateUnit.equipment.push(item.type) : undefined;
         store.dispatch({ type: UPDATE_UNIT, payload: updateUnit });
         store.dispatch({ type: SUBTRACT_MONEY_FROM_TREASURY, payload: calculateItemCost(item) });
     };

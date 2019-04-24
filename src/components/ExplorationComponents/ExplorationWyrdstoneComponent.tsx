@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { getGoldFromWyrdstones } from "../../utilities/utils";
 import { store } from "../..";
 import { ADD_MONEY_TO_TREASURY, SELL_WYRDSTONES } from "../../actions/StateActions";
-import { ExplorationSteps } from "./ExplorationContainer";
 
 export const ExplorationWyrdstoneComponent = ({ finishWorkflow }: { finishWorkflow: any }) => {
     const [wyrdstoneValue, setWyrdstoneValue] = useState("0");
@@ -12,7 +11,7 @@ export const ExplorationWyrdstoneComponent = ({ finishWorkflow }: { finishWorkfl
         store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: getGoldFromWyrdstones(parseInt(wyrdstoneValue, 10)) });
         store.dispatch({ type: SELL_WYRDSTONES, payload: parseInt(wyrdstoneValue, 10) });
         shownOverview(true);
-        finishWorkflow(ExplorationSteps.ExplorationMultiples);
+        finishWorkflow();
     };
     const onInput = (e: any) => {
         const re = /^[0-9\b]+$/;
@@ -50,7 +49,7 @@ export const ExplorationWyrdstoneComponent = ({ finishWorkflow }: { finishWorkfl
                 <div id="ExplorationChartComponent">
                     <div
                         style={{ paddingLeft: 10, float: "right" }}>
-                        {` You sold ${wyrdstoneValue} and got ${getGoldFromWyrdstones(parseInt(wyrdstoneValue, 10))} gold coins for your treasury.`}
+                        {` You sold ${wyrdstoneValue} Wyrdstones and got ${getGoldFromWyrdstones(parseInt(wyrdstoneValue, 10))} gold coins for your treasury.`}
                     </div>
                 </div>
             );

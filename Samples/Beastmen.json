@@ -1,14 +1,14 @@
 {
-  "name": "Johannas Orphanage",
-  "type": "Sisters of Sigmar",
-  "treasury": 12,
+  "name": "The Horde",
+  "type": "Beastmen",
+  "treasury": 27,
   "sizeLimit": 15,
-  "alignment": "Lawful",
-  "objective": "The Celestial Protectorate",
-  "rating": 175,
-  "campaignPoints": 2,
+  "alignment": "Chaotic",
+  "objective": "The Scion of Chaos",
+  "rating": 149,
+  "campaignPoints": 3,
   "campaignAchievements": "",
-  "wyrdstoneShards": 1,
+  "wyrdstoneShards": 0,
   "roster": [
     {
       "name": "Kuzzak",
@@ -45,6 +45,45 @@
       "injuries": [
         "Blinded in One Eye",
         "Leg Wound"
+      ]
+    },
+    {
+      "name": "Brahak",
+      "type": "Beastmen Shaman",
+      "race": "Beastman",
+      "characteristics": {
+        "Movement": 5,
+        "WeaponSkill": 4,
+        "BallisticSkill": 3,
+        "Strength": 3,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 4,
+        "Attacks": 2,
+        "Leadership": 7
+      },
+      "price": 50,
+      "isHero": true,
+      "isLarge": false,
+      "skills": [
+        "Magic User"
+      ],
+      "skillLists": [
+        "Strength",
+        "Combat",
+        "Speed",
+        "Beastmen"
+      ],
+      "spells": [
+        "Eye of God"
+      ],
+      "spellLists": [
+        "Lesser Chaos"
+      ],
+      "experience": 14,
+      "equipment": [
+        "Club",
+        "Club"
       ]
     },
     {
@@ -141,6 +180,116 @@
         "Halberd",
         "Light Armour"
       ]
+    },
+    {
+      "name": "Machschuk",
+      "type": "Gor",
+      "race": "Beastman",
+      "characteristics": {
+        "Movement": 5,
+        "WeaponSkill": 4,
+        "BallisticSkill": 3,
+        "Strength": 3,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 4,
+        "Attacks": 1,
+        "Leadership": 6
+      },
+      "price": 35,
+      "isHero": true,
+      "isLarge": false,
+      "skills": [
+        "Infighting"
+      ],
+      "skillLists": [
+        "Combat",
+        "Beastmen"
+      ],
+      "experience": 2,
+      "equipment": [
+        "Club",
+        "Club"
+      ]
+    },
+    {
+      "name": "Gor_Group_1",
+      "type": "Gor",
+      "race": "Beastman",
+      "characteristics": {
+        "Movement": 5,
+        "WeaponSkill": 4,
+        "BallisticSkill": 3,
+        "Strength": 4,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 3,
+        "Attacks": 1,
+        "Leadership": 6
+      },
+      "price": 25,
+      "isHero": false,
+      "isLarge": false,
+      "skills": [
+        "Infighting"
+      ],
+      "experience": 2,
+      "equipment": [
+        "Club",
+        "Club"
+      ]
+    },
+    {
+      "name": "Gor_Group_2",
+      "type": "Gor",
+      "race": "Beastman",
+      "number": 2,
+      "characteristics": {
+        "Movement": 5,
+        "WeaponSkill": 5,
+        "BallisticSkill": 3,
+        "Strength": 3,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 3,
+        "Attacks": 1,
+        "Leadership": 6
+      },
+      "price": 25,
+      "isHero": false,
+      "isLarge": false,
+      "skills": [
+        "Infighting"
+      ],
+      "experience": 2,
+      "equipment": [
+        "Club",
+        "Sword"
+      ]
+    },
+    {
+      "name": "Beasthounds",
+      "type": "Gor",
+      "race": "Beastman",
+      "number": 5,
+      "characteristics": {
+        "Movement": 7,
+        "WeaponSkill": 4,
+        "BallisticSkill": 0,
+        "Strength": 4,
+        "Toughness": 3,
+        "Wounds": 1,
+        "Initiative": 3,
+        "Attacks": 1,
+        "Leadership": 5
+      },
+      "price": 15,
+      "isHero": false,
+      "isLarge": false,
+      "skills": [
+        "Animals"
+      ],
+      "experience": 0
     }
   ]
 }

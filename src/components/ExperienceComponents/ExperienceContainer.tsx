@@ -63,32 +63,36 @@ export const ExperienceContainer = ({ warbandRoster, callback }: { warbandRoster
             }
         }
     };
-    const unitList = warbandRoster.map((unit) => (
-        <div key={`${unit.name}AddExp`} id={`${unit.name}AddExp`} className="ExperienceUnitContainer">
-            <div style={{ paddingLeft: 10, float: "left" }}>{unit.name}</div>
-            <div style={{ float: "right" }}>
-                <div style={{ fontWeight: "bold", float: "left" }}>{unit.experience} XP</div>
-                <div style={{ paddingLeft: 10, float: "right" }}>
-                    <ToggleContent
-                        toggle={(show: any) => <button onClick={() => addExperience(unit, show)}>+</button>}
-                        content={(hide: any) => (
-                            <PostSequenceModal parent={`${unit.name}AddExp`}>
-                                <AdvanceComponent unit={unit} callback={hide} advanceUpdate={updateCallback} />
-                            </PostSequenceModal>
-                        )}
-                    />
+    const unitList = warbandRoster.map((unit) => {
+        if (unit.skills === undefined || (unit.skills !== undefined && !unit.skills.includes("Animals"))) {
+            return (
+                <div key={`${unit.name}AddExp`} id={`${unit.name}AddExp`} className="ExperienceUnitContainer">
+                    <div style={{ paddingLeft: 10, float: "left" }}>{unit.name}</div>
+                    <div style={{ float: "right" }}>
+                        <div style={{ fontWeight: "bold", float: "left" }}>{unit.experience} XP</div>
+                        <div style={{ paddingLeft: 10, float: "right" }}>
+                            <ToggleContent
+                                toggle={(show: any) => <button onClick={() => addExperience(unit, show)}>+</button>}
+                                content={(hide: any) => (
+                                    <PostSequenceModal parent={`${unit.name}AddExp`}>
+                                        <AdvanceComponent unit={unit} callback={hide} advanceUpdate={updateCallback} />
+                                    </PostSequenceModal>
+                                )}
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    ));
+            )
+        }
+    });
 
-    const summaryText = updatedUnits.map((entry) => {
+    const summaryText = updatedUnits.length > 0 ? updatedUnits.map((entry) => {
         const text = `${entry.unitName} gained ${entry.experienceGained} XP`;
         const inBetween = entry.characteristicAdvance !== undefined || entry.skillAdvance !== undefined ? " which resulted in " : "";
         const characteristicAdvance = entry.characteristicAdvance !== undefined ? `+1 ${entry.characteristicAdvance}` : "";
         const skillAdvance = entry.skillAdvance !== undefined ? `a new skill '${entry.skillAdvance}'` : "";
         return (<div key={`${entry.unitName}expGained`}>{text}{inBetween}{characteristicAdvance}{skillAdvance}</div>);
-    });
+    }) : <div>No unit has gained experience.</div>;
     const content = isOverviewMode ?
         <div>
             {summaryText}
