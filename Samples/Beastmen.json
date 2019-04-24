@@ -1,0 +1,51 @@
+{
+  "name": "Johannas Orphanage",
+  "type": "Sisters of Sigmar",
+  "treasury": 12,
+  "sizeLimit": 15,
+  "alignment": "Lawful",
+  "objective": "The Celestial Protectorate",
+  "rating": 175,
+  "campaignPoints": 2,
+  "campaignAchievements": "",
+  "wyrdstoneShards": 1,
+  "roster": [
+    {
+      "name": "Kuzzak",
+      "type": "Beastmen Chief",
+      "race": "Beastman",
+      "characteristics": {
+        "Movement": 4,
+        "WeaponSkill": 4,
+        "BallisticSkill": 2,
+        "Strength": 4,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 4,
+        "Attacks": 1,
+        "Leadership": 7
+      },
+      "price": 70,
+      "isHero": true,
+      "isLarge": false,
+      "skills": [
+        "Leader"
+      ],
+      "skillLists": [
+        "Strength",
+        "Combat",
+        "Speed",
+        "Beastmen"
+      ],
+      "experience": 22,
+      "equipment": [
+        "Dagger",
+        "Club"
+      ],
+      "injuries": [
+        "Blinded in One Eye",
+        "Leg Wound"
+      ]
+    }
+  ]
+}

@@ -519,6 +519,45 @@
                     "text": "The hero has a 3+ save on a D6 to avoid being stunned. If the save is made, treat a Stunned result as Knocked Down instead. This save is 2+ instead of 3+ if a Helmet is worn."
                 }
             ]
+        },
+        {
+            "name": "Beastmen",
+            "list": [
+                {
+                    "name": "Shaggy Hide",
+                    "type": "Beastmen",
+                    "text": "The Beastman gains a 6+ Armour Save that can be combined with other armour as normal.",
+                },
+                {
+                    "name": "Mutant",
+                    "type": "Beastmen",
+                    "text": "The Beastman may buy one mutation"
+                },
+                {
+                    "name": "Fearless",
+                    "type": "Beastmen",
+                    "text": "The Beastman is Immune to Fear and All Alone tests."
+                },
+                {
+                    "name": "Horned One",
+                    "type": "Beastmen",
+                    "text": "The Beastman gains an additional attack with its base strength when charging"
+                },
+                {
+                    "name": "Manhater",
+                    "type": "Beastmen",
+                    "text": "The Beastman gains Hatred(Humans)"
+                },
+                {
+                    "name": "Bellowing Roar",
+                    "type": "Beastmen",
+                    "text": "May re-roll one failed rout test per battle.",
+                    "prerequisite": {
+                        "type": "unit",
+                        "condition": "Beastmen Chief"
+                    }
+                }
+            ]
         }
     ]
 }
