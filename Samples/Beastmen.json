@@ -46,6 +46,101 @@
         "Blinded in One Eye",
         "Leg Wound"
       ]
+    },
+    {
+      "name": "Equo",
+      "type": "Centigor",
+      "race": "Centigor",
+      "characteristics": {
+        "Movement": 8,
+        "WeaponSkill": 4,
+        "BallisticSkill": 3,
+        "Strength": 4,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 2,
+        "Attacks": 1,
+        "Leadership": 7
+      },
+      "price": 70,
+      "isHero": true,
+      "isLarge": false,
+      "skills": [
+        "Drunken",
+        "Woodland Dwelling",
+        "Trample",
+        "Quadruped",
+        "Sweeping Blow"
+      ],
+      "skillLists": [
+        "Strength",
+        "Combat",
+        "Beastmen"
+      ],
+      "experience": 11,
+      "equipment": [
+        "Club",
+        "Club",
+        "Cathayan Map (Belandysh)"
+      ]
+    },
+    {
+      "name": "Karruk",
+      "type": "Bestigor",
+      "race": "Beastman",
+      "characteristics": {
+        "Movement": 5,
+        "WeaponSkill": 4,
+        "BallisticSkill": 3,
+        "Strength": 4,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 3,
+        "Attacks": 1,
+        "Leadership": 7
+      },
+      "price": 30,
+      "isHero": true,
+      "isLarge": false,
+      "skillLists": [
+        "Strength",
+        "Combat",
+        "Beastmen"
+      ],
+      "experience": 9,
+      "equipment": [
+        "Club",
+        "Club"
+      ]
+    },
+    {
+      "name": "Kekkush",
+      "type": "Bestigor",
+      "race": "Beastman",
+      "characteristics": {
+        "Movement": 5,
+        "WeaponSkill": 4,
+        "BallisticSkill": 3,
+        "Strength": 4,
+        "Toughness": 4,
+        "Wounds": 1,
+        "Initiative": 3,
+        "Attacks": 2,
+        "Leadership": 7
+      },
+      "price": 30,
+      "isHero": true,
+      "isLarge": false,
+      "skillLists": [
+        "Strength",
+        "Combat",
+        "Beastmen"
+      ],
+      "experience": 13,
+      "equipment": [
+        "Halberd",
+        "Light Armour"
+      ]
     }
   ]
 }
