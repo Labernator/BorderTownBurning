@@ -54,8 +54,8 @@ export const AdvanceComponent = ({ unit, callback, advanceUpdate }: { unit: IUni
     const getSkillsComponent = (additionalCallback: any) => (
         <SkillsComponent unit={unit} callbacks={[additionalCallback, callback]} advanceUpdate={advanceUpdate}></SkillsComponent>
     );
-
-    const ladsComponent = getHeroCount() < 6 ? getToggleComponent("Lad's got Talent", getLadsComponent) : undefined;
+    const isBestial = () => unit.skills !== undefined ? unit.skills.includes("Bestial") : false;
+    const ladsComponent = (getHeroCount() < 6 && !isBestial()) ? getToggleComponent("Lad's got Talent", getLadsComponent) : undefined;
     const renderComponent = unit.isHero || unit.isHiredSword ? getToggleComponent("Add New Skill", getSkillsComponent) : ladsComponent;
 
     return (
