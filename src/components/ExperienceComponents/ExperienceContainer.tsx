@@ -82,7 +82,7 @@ export const ExperienceContainer = ({ warbandRoster, callback }: { warbandRoster
                         </div>
                     </div>
                 </div>
-            )
+            );
         }
     });
 

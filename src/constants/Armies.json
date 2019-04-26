@@ -14,6 +14,7 @@
             "units": [
                 {
                     "type": "Beastmen Chief",
+                    "race": "Beastman",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -54,6 +55,7 @@
                 },
                 {
                     "type": "Beastmen Shaman",
+                    "race": "Beastman",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -95,6 +97,7 @@
                 },
                 {
                     "type": "Centigor",
+                    "race": "Beastman",
                     "characteristics": {
                         "Movement": 8,
                         "WeaponSkill": 4,
@@ -137,6 +140,7 @@
                 },
                 {
                     "type": "Bestigor",
+                    "race": "Beastman",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -174,6 +178,7 @@
                 },
                 {
                     "type": "Ungor",
+                    "race": "Beastman",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 3,
@@ -210,6 +215,7 @@
                 },
                 {
                     "type": "Gor",
+                    "race": "Beastman",
                     "characteristics": {
                         "Movement": 5,
                         "WeaponSkill": 4,
@@ -245,6 +251,7 @@
                 },
                 {
                     "type": "Warhounds of Chaos",
+                    "race": "Chaoshounds",
                     "characteristics": {
                         "Movement": 7,
                         "WeaponSkill": 4,
@@ -275,6 +282,7 @@
                 },
                 {
                     "type": "Minotaur",
+                    "race": "Minotaur",
                     "characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 4,
@@ -403,6 +411,7 @@
             "units": [
                 {
                     "type": "Pit King",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -446,6 +455,7 @@
                 },
                 {
                     "type": "Pit Fighter Veteran",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -486,6 +496,7 @@
                 },
                 {
                     "type": "Dwarf Troll Slayer",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -537,6 +548,7 @@
                 },
                 {
                     "type": "Pit Fighter Initiate",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 2,
@@ -575,6 +587,7 @@
                 },
                 {
                     "type": "Pursuer",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 3,
@@ -611,6 +624,7 @@
                 },
                 {
                     "type": "Pit Fighter",
+                    "race": "Human",
                     "characteristics": {
                         "Movement": 4,
                         "WeaponSkill": 4,
@@ -648,6 +662,7 @@
                 },
                 {
                     "type": "Ogre",
+                    "race": "Ogre",
                     "characteristics": {
                         "Movement": 6,
                         "WeaponSkill": 3,
@@ -845,6 +860,7 @@
             "units": [
                 {
                     "type": "Runesmith",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 5,
@@ -892,6 +908,7 @@
                 },
                 {
                     "type": "Apprentice Runesmith",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 3,
@@ -938,6 +955,7 @@
                 },
                 {
                     "type": "Troll Slayer",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -982,6 +1000,7 @@
                 },
                 {
                     "type": "Dwarf Clansman",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -1021,6 +1040,7 @@
                 },
                 {
                     "type": "Dwarf Longbeards",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 5,
@@ -1061,6 +1081,7 @@
                 },
                 {
                     "type": "Dwarf Ranger",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 4,
@@ -1099,6 +1120,7 @@
                 },
                 {
                     "type": "Beardlings",
+                    "race": "Dwarf",
                     "characteristics": {
                         "Movement": 3,
                         "WeaponSkill": 3,
