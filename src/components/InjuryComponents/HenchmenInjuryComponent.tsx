@@ -9,10 +9,17 @@ export const HenchmenInjuryComponent = ({ warbandRoster, callback }: { warbandRo
     const [isOverviewMode, setOverviewMode] = useState(false);
     // React.MouseEvent<HTMLButtonElement>
     const toggleButton = (event: any) => {
-        event.target.className = "SelectedInjuryButton";
         const selectedUnit = warbandRoster.find((unit) => unit.name === event.target.id);
         if (selectedUnit !== undefined) {
-            addSelectedUnit([...selectedUnits, selectedUnit]);
+            if (event.target.className === "EnabledInjuryButton") {
+                event.target.className = "SelectedInjuryButton";
+                addSelectedUnit([...selectedUnits, selectedUnit]);
+            } else {
+                event.target.className = "EnabledInjuryButton";
+                const idx = selectedUnits.findIndex((unit) => unit.name === event.target.id);
+                const newSelectedUnits = [...selectedUnits.slice(0, idx), ...selectedUnits.slice(idx + 1)];
+                addSelectedUnit(newSelectedUnits);
+            }
         }
     };
     const finishHenchmenInjuries = () => {
