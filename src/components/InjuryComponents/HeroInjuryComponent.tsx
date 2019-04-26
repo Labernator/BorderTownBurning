@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { IUnit, PostSequence, IUpdate } from "../../constants";
-import { ToggleContent } from "../UtilityComponents/ToggleComponent";
 import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
 import { HeroInjuriesDialog } from "./HeroInjuriesDialog";
 import { isToughUnit } from "../../utilities/utils";
 import { store } from "../..";
+import { ToggleContents } from "../UtilityComponents/ToggleComponents";
 
 export const HeroInjuryComponent = ({ warbandRoster, callback }: { warbandRoster: IUnit[]; callback: any }) => {
     // tslint:disable-next-line:no-object-literal-type-assertion
@@ -12,12 +12,17 @@ export const HeroInjuryComponent = ({ warbandRoster, callback }: { warbandRoster
     const [updatedUnits, addUpdatedUnit] = useState([] as IUpdate[]);
     const [isOverviewMode, setOverviewMode] = useState(false);
     const toggleButton = (event: any, toggleCallback: any) => {
-        event.target.className = "SelectedInjuryButton";
         const clickedUnit = warbandRoster.find((unit) => unit.name === event.target.id);
         if (clickedUnit !== undefined) {
-            setSelectedUnit(clickedUnit);
+            if (event.target.className === "EnabledInjuryButton") {
+                event.target.className = "SelectedInjuryButton";
+                setSelectedUnit(clickedUnit);
+            } else {
+                event.target.className = "EnabledInjuryButton";
+                setSelectedUnit({} as any as IUnit);
+            }
+            toggleCallback();
         }
-        toggleCallback();
     };
     const updateSelectedUnit = (update: IUpdate) => {
         addUpdatedUnit([...updatedUnits, update]);
@@ -46,12 +51,12 @@ export const HeroInjuryComponent = ({ warbandRoster, callback }: { warbandRoster
         if ((unit.isHero && !unit.isHiredSword) || (!unit.isHero && isToughUnit(unit))) {
             return (
                 <div id={`${unit.name}Injury`} key={`${unit.name}Injury`} style={{ display: "grid" }}>
-                    <ToggleContent
-                        toggle={(show: any) =>
+                    <ToggleContents
+                        toggle={(toggling: any) =>
                             <button
                                 id={unit.name}
                                 className={"EnabledInjuryButton"}
-                                onClick={(e) => { toggleButton(e, show); }}>
+                                onClick={(e) => { toggleButton(e, toggling); }}>
                                 {`${unit.name} (${unit.type})`}
                             </button>}
                         content={(hide: any) => (
