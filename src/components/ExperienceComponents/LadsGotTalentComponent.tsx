@@ -35,6 +35,8 @@ export const LadsGotTalentComponent = ({ unit, callbacks, advanceUpdate }: { uni
                     </div>
                 );
             }
+        } else if (ladSkills.length === 0) {
+            setLadSkills(unit.skillLists);
         }
     };
 
@@ -47,7 +49,8 @@ export const LadsGotTalentComponent = ({ unit, callbacks, advanceUpdate }: { uni
             store.dispatch({ type: UPDATE_UNIT, payload: { ...unit, number: numbers } });
             callbacks[0]();
         }
-        store.dispatch({ type: ADD_UNIT_TO_ROSTER, payload: { ...unit, number: undefined, isHero: true, name: ladsName, skillLists: ladSkills } });
+        const newName = ladsName ? ladsName : (unit.name !== undefined ? unit.name : undefined);
+        store.dispatch({ type: ADD_UNIT_TO_ROSTER, payload: { ...unit, number: undefined, isHero: true, name: newName, skillLists: ladSkills } });
 
     };
 
