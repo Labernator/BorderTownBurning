@@ -1,4 +1,4 @@
-import { IUnit } from "../constants";
+import { IUnit, IAppState } from "../constants";
 
 export const SET_MODE = "SET_MODE";
 export const SET_ARMY = "SET_ARMY";
@@ -29,7 +29,13 @@ export const SELL_WYRDSTONES = "SELL_WYRDSTONES";
 export const SET_ACHIEVEMENTS = "SET_ACHIEVEMENTS";
 export const REMOVE_KILLED_HENCHMAN = "REMOVE_KILLED_HENCHMAN";
 export const SET_VETERAN_EXPERIENCE = "SET_VETERAN_EXPERIENCE";
+export const RESET_APP = "RESET_APP";
+export const SET_APP_INITIAL = "SET_APP_INITIAL";
 
+class SetAppInitial {
+    public readonly type = SET_APP_INITIAL;
+    constructor(public payload: boolean) { }
+}
 class SetArmy {
     public readonly type = SET_ARMY;
     constructor(public payload: string) { }
@@ -155,8 +161,13 @@ class SetVeteranExperience {
     constructor(public payload: number) { }
 }
 
-export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment |
-    RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating |
+class ResetApp {
+    public readonly type = RESET_APP;
+    constructor(public payload: number) { }
+}
+
+export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment | ResetApp |
+    RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating | SetAppInitial |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
     AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetAchievements | SetVeteranExperience |
     SetWyrdstones | AddWyrdstones | SellWyrdstones | SetCampaignPoints | AddCampaignPoints | RemoveKilledHenchman;

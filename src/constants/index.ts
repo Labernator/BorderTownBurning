@@ -34,6 +34,7 @@ export const initialState: IAppState = {
     armyType: "",
     campaignAchievements: [],
     campaignPoints: 0,
+    isInitial: true,
     listOfUnits: [],
     veteranExperience: 0,
     warbandRating: 0,
@@ -77,18 +78,19 @@ export interface IArmy {
 }
 
 export interface IAppState {
-    armyType: string;
-    armyName: string;
     armyAlignment: string;
+    armyName: string;
     armyObjective: string;
+    armyStash: string[];
+    armyTreasury: number;
+    armyType: string;
+    campaignAchievements: string[];
+    campaignPoints: number;
+    isInitial: boolean;
     listOfUnits: IUnit[];
     warbandRoster: IUnit[];
-    armyTreasury: number;
-    armyStash: string[];
-    campaignPoints: number;
     veteranExperience: number;
     wyrdstoneShards: number;
-    campaignAchievements: string[];
     warbandRating: number;
 }
 

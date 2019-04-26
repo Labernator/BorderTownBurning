@@ -1,9 +1,13 @@
 import * as Actions from "../actions";
-import { IAppState, initialState, IUnit } from "../constants";
+import { IAppState, initialState } from "../constants";
 import { getUnitRating } from "../utilities/utils";
 
 export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
+        case Actions.RESET_APP:
+            return initialState;
+        case Actions.SET_APP_INITIAL:
+            return { ...state, isInitial: action.payload };
         case Actions.SET_ARMY:
             return { ...state, armyType: action.payload };
         case Actions.SET_ARMYNAME:
