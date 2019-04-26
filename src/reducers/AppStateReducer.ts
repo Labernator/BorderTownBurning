@@ -1,20 +1,7 @@
 import * as Actions from "../actions";
 import { IAppState, initialState, IUnit } from "../constants";
-import { store } from "..";
-import { getTotalNumberOfWarbandMembers } from "../utilities/utils";
-const getUnitRating = (unit: IUnit) => {
-    let rating = 0;
-    if (Boolean(unit)) {
-        rating += 5;
-        rating += unit.experience;
-        if (unit.isLarge) {
-            rating += 20;
-        } else {
-            rating += unit.price > 60 ? 5 : unit.price > 80 ? 10 : unit.price > 100 ? 15 : 0;
-        }
-    }
-    return rating;
-};
+import { getUnitRating } from "../utilities/utils";
+
 export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
         case Actions.SET_ARMY:

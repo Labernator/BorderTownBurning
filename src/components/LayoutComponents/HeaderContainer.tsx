@@ -1,6 +1,6 @@
 import React from "react";
 import { IAppState } from "../../constants";
-import { getNumberOfWarbandMembers, getArmySizeLimit } from "../../utilities/utils";
+import { getNumberOfWarbandMembers, getArmySizeLimit, getWarbandRating } from "../../utilities/utils";
 import { AppHeaderComponent } from "../UtilityComponents/AppHeaderComponent";
 
 export const HeaderContainer = ({ state }: { state: IAppState }) => {
@@ -13,7 +13,7 @@ export const HeaderContainer = ({ state }: { state: IAppState }) => {
                     <AppHeaderComponent title="Army Name:" value={state.armyName}></AppHeaderComponent>
                     <AppHeaderComponent title="Type:" value={state.armyType}></AppHeaderComponent>
                     <AppHeaderComponent title="Alignment:" value={state.armyAlignment}></AppHeaderComponent>
-                    <AppHeaderComponent title="Rating:" value={state.warbandRating.toString()}></AppHeaderComponent>
+                    <AppHeaderComponent title="Rating:" value={getWarbandRating(state.warbandRoster).toString()}></AppHeaderComponent>
                     <AppHeaderComponent title="Member Count:" value={warbandMemberCount}></AppHeaderComponent>
                 </div >
                 <div className="column">

@@ -409,3 +409,23 @@ export const getLadsSkillLists = () => {
         return accu;
     }, []);
 };
+
+export const getWarbandRating = (warbandRoster: IUnit[]) => warbandRoster.reduce((acc, unit) => {
+    acc += getUnitRating(unit) * (unit.number !== undefined ? unit.number : 1);
+    return acc;
+}
+    , 0);
+
+export const getUnitRating = (unit: IUnit) => {
+    let rating = 0;
+    if (Boolean(unit)) {
+        rating += 5;
+        rating += unit.experience;
+        if (unit.isLarge) {
+            rating += 20;
+        } else {
+            rating += unit.price > 60 ? 5 : unit.price > 80 ? 10 : unit.price > 100 ? 15 : 0;
+        }
+    }
+    return rating;
+};

@@ -53,11 +53,6 @@
         "Helmet",
         "Heavy Armour",
         "Rosary"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarArmour",
-        "SigmarHeroEquipment"
       ]
     },
     {
@@ -93,10 +88,6 @@
       "equipment": [
         "Dagger",
         "Sigmarite Warhammer"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarHeroEquipment"
       ]
     },
     {
@@ -133,11 +124,6 @@
         "Sigmarite Warhammer",
         "Sling",
         "Light Armour"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarHeroEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -171,11 +157,6 @@
         "Sigmarite Warhammer",
         "Sling",
         "Heavy Armour"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarHeroEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -209,11 +190,6 @@
         "Sigmarite Warhammer",
         "Sling",
         "Heavy Armour"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarHeroEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -242,11 +218,6 @@
       "equipment": [
         "Dagger",
         "Dagger"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarHeroEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -272,10 +243,6 @@
       "equipment": [
         "Dagger",
         "Dagger"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -301,10 +268,6 @@
       "equipment": [
         "Dagger",
         "Dagger"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -330,10 +293,6 @@
       "equipment": [
         "Dagger",
         "Dagger"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -359,10 +318,6 @@
       "equipment": [
         "Dagger",
         "Dagger"
-      ],
-      "allowedEquipment": [
-        "SigmarEquipment",
-        "SigmarArmour"
       ]
     },
     {
@@ -394,10 +349,6 @@
         "Gromril Hammer",
         "Dagger",
         "Heavy Armour"
-      ],
-      "allowedEquipment": [
-        "DwarvenWarriorEquipment",
-        "DwarvenArmourEquipment"
       ]
     }
   ]
