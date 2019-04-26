@@ -32,6 +32,7 @@ const mapStateToProps = (state: IAppState) => ({
     campaignAchievements: state.campaignAchievements,
     campaignPoints: state.campaignPoints,
     listOfUnits: state.listOfUnits,
+    veteranExperience: state.veteranExperience,
     warbandRating: state.warbandRating,
     warbandRoster: state.warbandRoster,
     wyrdstoneShards: state.wyrdstoneShards,

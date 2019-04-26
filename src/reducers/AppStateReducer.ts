@@ -68,6 +68,8 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
             return { ...state, campaignAchievements: action.payload };
         case Actions.SET_CAMPAIGN_POINTS:
             return { ...state, campaignPoints: action.payload };
+        case Actions.SET_VETERAN_EXPERIENCE:
+            return { ...state, veteranExperience: action.payload };
         case Actions.ADD_CAMPAIGN_POINTS:
             return { ...state, campaignPoints: state.campaignPoints + action.payload };
         case Actions.ADD_WARBAND_RATING:

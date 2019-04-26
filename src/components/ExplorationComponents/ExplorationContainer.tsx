@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ExplorationChartComponent } from "./ExplorationChartComponent";
 import { ExplorationMultiplesComponent } from "./ExplorationMultiplesComponent";
 import { ExplorationWyrdstoneComponent } from "./ExplorationWyrdstoneComponent";
+import { PostSequence } from "../../constants";
 
 export enum ExplorationSteps {
     ExplorationChart,
@@ -10,12 +11,14 @@ export enum ExplorationSteps {
     allDone,
 }
 
-export const ExplorationContainer = () => {
+export const ExplorationContainer = ({ callback }: { callback: any }) => {
     const [currentStep, setCurrentStep] = useState(ExplorationSteps.ExplorationChart);
     const continueToNextSupStep = (nextStep: ExplorationSteps) => {
         setCurrentStep(nextStep);
     };
-    const continueToNextStep = () => {/* todo */ };
+    const continueToNextStep = () => {
+        callback(PostSequence.VETERANS);
+    };
 
     const getSubComponents = () => {
         switch (currentStep) {
@@ -42,9 +45,9 @@ export const ExplorationContainer = () => {
         <div id="ExplorationContainer" className="PostSequenceComponent">
             <div style={{ fontWeight: "bold", fontSize: 20 }}>PostSequence Step 3: Exploration </div>
             {getSubComponents()}
-            <div style={{ display: "grid", paddingTop: 10, clear: "both" }}>
+            {/* <div style={{ display: "grid", paddingTop: 10, clear: "both" }}>
                 <button className={"ContinueButton"} style={{ display: "grid", clear: "both" }} onClick={continueToNextStep}>Continue</button>
-            </div>
+            </div> */}
         </div>
     );
 };

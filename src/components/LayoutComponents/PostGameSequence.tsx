@@ -4,6 +4,7 @@ import { HenchmenInjuryComponent } from "../InjuryComponents/HenchmenInjuryCompo
 import { HeroInjuryComponent } from "../InjuryComponents/HeroInjuryComponent";
 import { ExperienceContainer } from "../ExperienceComponents/ExperienceContainer";
 import { ExplorationContainer } from "../ExplorationComponents/ExplorationContainer";
+import { VeteransContainer } from "../RaresAndVeterans/VeteransContainer";
 
 export const PostGameSequence = ({ state }: { state: IAppState }) => {
     const [postSequenceStep, setPostSequenceStep] = useState(PostSequence.HENCHMEN_INJURIES);
@@ -38,7 +39,17 @@ export const PostGameSequence = ({ state }: { state: IAppState }) => {
                     <HenchmenInjuryComponent warbandRoster={state.warbandRoster} callback={advanceThroughPostBattle}></HenchmenInjuryComponent>
                     <HeroInjuryComponent warbandRoster={state.warbandRoster} callback={advanceThroughPostBattle}></HeroInjuryComponent>
                     <ExperienceContainer warbandRoster={state.warbandRoster} callback={advanceThroughPostBattle}></ExperienceContainer>
-                    <ExplorationContainer></ExplorationContainer>
+                    <ExplorationContainer callback={advanceThroughPostBattle}></ExplorationContainer>
+                </div>
+            );
+        case PostSequence.VETERANS:
+            return (
+                <div className="PostSequenceContainer">
+                    <HenchmenInjuryComponent warbandRoster={state.warbandRoster} callback={advanceThroughPostBattle}></HenchmenInjuryComponent>
+                    <HeroInjuryComponent warbandRoster={state.warbandRoster} callback={advanceThroughPostBattle}></HeroInjuryComponent>
+                    <ExperienceContainer warbandRoster={state.warbandRoster} callback={advanceThroughPostBattle}></ExperienceContainer>
+                    <ExplorationContainer callback={advanceThroughPostBattle}></ExplorationContainer>
+                    <VeteransContainer callback={advanceThroughPostBattle}></VeteransContainer>
                 </div>
             );
         default: return (<div className="PostSequenceContainer" />);

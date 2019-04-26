@@ -28,6 +28,7 @@ export const ADD_WYRDSTONES = "ADD_WYRDSTONES";
 export const SELL_WYRDSTONES = "SELL_WYRDSTONES";
 export const SET_ACHIEVEMENTS = "SET_ACHIEVEMENTS";
 export const REMOVE_KILLED_HENCHMAN = "REMOVE_KILLED_HENCHMAN";
+export const SET_VETERAN_EXPERIENCE = "SET_VETERAN_EXPERIENCE";
 
 class SetArmy {
     public readonly type = SET_ARMY;
@@ -149,8 +150,13 @@ class AddCampaignPoints {
     constructor(public payload: number) { }
 }
 
+class SetVeteranExperience {
+    public readonly type = SET_VETERAN_EXPERIENCE;
+    constructor(public payload: number) { }
+}
+
 export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment |
     RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
-    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetAchievements |
+    AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetAchievements | SetVeteranExperience |
     SetWyrdstones | AddWyrdstones | SellWyrdstones | SetCampaignPoints | AddCampaignPoints | RemoveKilledHenchman;

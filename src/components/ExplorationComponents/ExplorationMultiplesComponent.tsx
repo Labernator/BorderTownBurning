@@ -10,7 +10,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
         finishWorkflow(ExplorationSteps.SellWyrdstones);
     };
 
-    const handleBtnClick = (input: string) => { };
+    const handleBtnClick = (input: string) => { window.alert("this lacks implementation"); };
 
     const multiplesList: HeroMultiplesEnum[] = HeroMultiplesEnum.getBasicProps();
 

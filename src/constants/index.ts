@@ -3,6 +3,7 @@ export enum PostSequence {
     "HERO_INJURIES",
     "EXPERIENCE",
     "EXPLORATION",
+    "VETERANS",
     "RARES",
     "HIREANDBUY",
 }
@@ -34,6 +35,7 @@ export const initialState: IAppState = {
     campaignAchievements: [],
     campaignPoints: 0,
     listOfUnits: [],
+    veteranExperience: 0,
     warbandRating: 0,
     warbandRoster: [],
     wyrdstoneShards: 0,
@@ -84,6 +86,7 @@ export interface IAppState {
     armyTreasury: number;
     armyStash: string[];
     campaignPoints: number;
+    veteranExperience: number;
     wyrdstoneShards: number;
     campaignAchievements: string[];
     warbandRating: number;

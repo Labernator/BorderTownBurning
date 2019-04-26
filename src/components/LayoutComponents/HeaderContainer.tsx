@@ -20,6 +20,7 @@ export const HeaderContainer = ({ state }: { state: IAppState }) => {
                     <AppHeaderComponent title="Objective:" value={state.armyObjective}></AppHeaderComponent>
                     <AppHeaderComponent title="Campaign Points:" value={state.campaignPoints.toString()}></AppHeaderComponent>
                     <AppHeaderComponent title="Campaign Achievements:" value={state.campaignAchievements.toString()}></AppHeaderComponent>
+                    <AppHeaderComponent title="Veterans Experience available:" value={state.veteranExperience.toString()}></AppHeaderComponent>
                 </div>
                 <div className="column">
                     <AppHeaderComponent title="Treasury:" value={state.armyTreasury.toString()}></AppHeaderComponent>
