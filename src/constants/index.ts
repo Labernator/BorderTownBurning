@@ -8,6 +8,46 @@ export enum PostSequence {
     "HIREANDBUY",
 }
 
+export interface IInputEvent {
+    target: {
+        value: string;
+    };
+}
+
+export interface IExplorationReward {
+    itemText: string;
+    itemName: string;
+    amount: number | DiceEnum;
+    type: IExplorationRewardEnum;
+}
+
+export enum IExplorationRewardEnum {
+    GoldCoins,
+    Item,
+}
+
+export interface IInputValueTypes {
+    itemName: string;
+    dispatch: {
+        type: string;
+        payload: any;
+    };
+}
+export class DiceEnum {
+    public static readonly "D3" = new DiceEnum("D3", 1, 3);
+    public static readonly "D6" = new DiceEnum("D6", 1, 6);
+    public static readonly "2D6" = new DiceEnum("2D6", 2, 12);
+    public static readonly "3D6" = new DiceEnum("3D6", 3, 18);
+    public static readonly "4+D6" = new DiceEnum("4+D6", 3, 18, "4+", "a D6");
+
+    // private to disallow creating other instances of this type
+    private constructor(private readonly key: string, public readonly min: number, public readonly max: number, public readonly condition?: string, public readonly conditionText?: string) {
+    }
+
+    public toString() {
+        return this.key;
+    }
+}
 export interface IUpdate {
     updatingUnit: IUnit;
     types: any[];
@@ -34,12 +74,13 @@ export const initialState: IAppState = {
     armyType: "",
     campaignAchievements: [],
     campaignPoints: 0,
-    isInitial: true,
+
     listOfUnits: [],
     veteranExperience: 0,
     warbandRating: 0,
     warbandRoster: [],
     wyrdstoneShards: 0,
+    xthis: true,
 };
 
 export interface IEquipment {
@@ -81,17 +122,18 @@ export interface IAppState {
     armyAlignment: string;
     armyName: string;
     armyObjective: string;
-    armyStash: string[];
+    armyStash: Array<IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous>;
     armyTreasury: number;
     armyType: string;
     campaignAchievements: string[];
     campaignPoints: number;
-    isInitial: boolean;
+
     listOfUnits: IUnit[];
     warbandRoster: IUnit[];
     veteranExperience: number;
     wyrdstoneShards: number;
     warbandRating: number;
+    xthis: boolean;
 }
 
 export interface IExportState {
@@ -101,7 +143,7 @@ export interface IExportState {
     armyObjective: string;
     warbandRoster: IUnit[];
     armyTreasury: number;
-    armyStash: string[];
+    armyStash: Array<IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous>;
     campaignPoints: number;
     wyrdstoneShards: number;
     campaignAchievements: string[];
@@ -329,7 +371,7 @@ export class HeroMultiplesEnum {
     public static readonly WATERING_HOLE = new HeroMultiplesEnum("WATERING_HOLE", 11, "11 Watering Hole");
     public static readonly RAZED_VILLAGE = new HeroMultiplesEnum("RAZED_VILLAGE", 22, "22 Razed Village");
     public static readonly MORTALLY_WOUNDED_WARRIOR = new HeroMultiplesEnum("MORTALLY_WOUNDED_WARRIOR", 33, "33 Mortally Wounded Warrior");
-    public static readonly DISCARDED_SATTLE_BAG = new HeroMultiplesEnum("DISCARDED_SATTLE_BAG", 44, "44 Discarded Sattle Bag");
+    public static readonly DISCARDED_SADDLE_BAG = new HeroMultiplesEnum("DISCARDED_SADDLE_BAG", 44, "44 Discarded Sattle Bag");
     public static readonly STATUE = new HeroMultiplesEnum("STATUE", 55, "55 Statue");
     public static readonly RUNAWAY_HORSE = new HeroMultiplesEnum("RUNAWAY_HORSE", 66, "66 Runaway Horse");
     public static readonly TREMBLING_BUSHES = new HeroMultiplesEnum("TREMBLING_BUSHES", 111, "111 Trembling Bushes");
@@ -362,7 +404,7 @@ export class HeroMultiplesEnum {
             this.WATERING_HOLE,
             this.RAZED_VILLAGE,
             this.MORTALLY_WOUNDED_WARRIOR,
-            this.DISCARDED_SATTLE_BAG,
+            this.DISCARDED_SADDLE_BAG,
             this.STATUE,
             this.RUNAWAY_HORSE,
             this.TREMBLING_BUSHES,

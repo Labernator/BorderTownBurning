@@ -5,9 +5,9 @@ import { getUnitRating } from "../utilities/utils";
 export function stateReducer(state: IAppState = initialState, action: Actions.StateActions): IAppState {
     switch (action.type) {
         case Actions.RESET_APP:
-            return initialState;
+            return state = initialState;
         case Actions.SET_APP_INITIAL:
-            return { ...state, isInitial: action.payload };
+            return { ...state, xthis: action.payload };
         case Actions.SET_ARMY:
             return { ...state, armyType: action.payload };
         case Actions.SET_ARMYNAME:
@@ -20,6 +20,8 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
             return { ...state, listOfUnits: action.payload };
         case Actions.ADD_UNIT_TO_ROSTER:
             return { ...state, warbandRoster: [...state.warbandRoster, action.payload] };
+        case Actions.ADD_ITEMS_TO_STASH:
+            return { ...state, armyStash: [...state.armyStash, action.payload] };
         case Actions.REMOVE_UNIT_FROM_ROSTER:
             return { ...state, warbandRoster: state.warbandRoster.filter((unit) => unit.type !== action.payload.type) };
         case Actions.ADD_MONEY_TO_TREASURY:

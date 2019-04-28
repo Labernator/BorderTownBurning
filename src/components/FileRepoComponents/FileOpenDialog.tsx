@@ -37,8 +37,10 @@ export const FileDialogue = () => {
     }
   };
   const materializeState = (jsonObject: any) => {
-    store.dispatch({ type: Actions.RESET_APP, payload: 0 });
+    // store.dispatch({ type: Actions.RESET_APP, payload: 0 });
+    console.log(store.getState());
     // fire actions that adjust the state to reflect the json data
+    store.dispatch({ type: Actions.SET_APP_INITIAL, payload: true });
     store.dispatch({ type: Actions.SET_ARMY, payload: jsonObject.type });
     store.dispatch({ type: Actions.SET_ALIGNMENT, payload: jsonObject.alignment });
     store.dispatch({ type: Actions.SET_ARMYNAME, payload: jsonObject.name });

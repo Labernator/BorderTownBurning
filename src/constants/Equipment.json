@@ -808,6 +808,30 @@
                     "rarity": 8,
                     "rules": [],
                     "genus": "Other Equipment"
+                },
+                {
+                    "type": "War Horn",
+                    "cost": 30,
+                    "variableCost": "2D6",
+                    "rarity": 8,
+                    "rules": [
+                        "Hold your Ground"
+                    ],
+                    "genus": "Other Equipment"
+                },
+                {
+                    "type": "Wheelbarrow",
+                    "cost": 5,
+                    "rarity": 5,
+                    "rules": [],
+                    "genus": "Other Equipment"
+                },
+                {
+                    "type": "Victuals",
+                    "cost": 8,
+                    "rarity": 0,
+                    "rules": [],
+                    "genus": "Other Equipment"
                 }
             ]
         }

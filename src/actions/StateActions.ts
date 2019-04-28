@@ -1,4 +1,4 @@
-import { IUnit, IAppState } from "../constants";
+import { IUnit, IMeleeWeapon, IMissileWeapon, IArmour, IMiscallaneous } from "../constants";
 
 export const SET_MODE = "SET_MODE";
 export const SET_ARMY = "SET_ARMY";
@@ -31,6 +31,7 @@ export const REMOVE_KILLED_HENCHMAN = "REMOVE_KILLED_HENCHMAN";
 export const SET_VETERAN_EXPERIENCE = "SET_VETERAN_EXPERIENCE";
 export const RESET_APP = "RESET_APP";
 export const SET_APP_INITIAL = "SET_APP_INITIAL";
+export const ADD_ITEMS_TO_STASH = "ADD_ITEMS_TO_STASH";
 
 class SetAppInitial {
     public readonly type = SET_APP_INITIAL;
@@ -166,7 +167,12 @@ class ResetApp {
     constructor(public payload: number) { }
 }
 
-export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment | ResetApp |
+class AddItemsToStash {
+    public readonly type = ADD_ITEMS_TO_STASH;
+    constructor(public payload: IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous) { }
+}
+
+export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment | ResetApp | AddItemsToStash |
     RestrictObjectives | RestrictUnits | SubtractMoneyFromTreasury | AddMoneyToTreasury | SetWarbandRating | SetAppInitial |
     RemoveUnitFromRoster | AddUnitToRoster | RemoveUnitFromUnitList | AddWarbandRating | ResetTreasury | SetTreasury |
     AddUnitToUnitList | SubtractWarbandRating | UpdateUnit | UpdateUnitList | SetAchievements | SetVeteranExperience |

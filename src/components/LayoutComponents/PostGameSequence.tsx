@@ -13,7 +13,7 @@ export const PostGameSequence = ({ state }: { state: IAppState }) => {
     const advanceThroughPostBattle = (currentSequence: PostSequence) => {
         setPostSequenceStep(currentSequence);
     };
-    if (state.isInitial) {
+    if (state.xthis) {
         store.dispatch({ type: SET_APP_INITIAL, payload: false });
         setPostSequenceStep(PostSequence.HENCHMEN_INJURIES);
     }
