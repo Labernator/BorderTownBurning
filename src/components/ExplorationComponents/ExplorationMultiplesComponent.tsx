@@ -122,7 +122,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                 );
                 setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.STATUE.toString()));
                 break;
-                case HeroMultiplesEnum.RUNAWAY_HORSE:
+            case HeroMultiplesEnum.RUNAWAY_HORSE:
                 setAdditionalRender(
                     <MultiInputControl
                         inputs={[
@@ -156,7 +156,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                 );
                 setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.RUNAWAY_HORSE.toString()));
                 break;
-                case HeroMultiplesEnum.TREMBLING_BUSHES:
+            case HeroMultiplesEnum.TREMBLING_BUSHES:
                 setAdditionalRender(
                     <MultiInputControl
                         inputs={[
@@ -206,7 +206,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                 );
                 setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.SECLUDED_COTTAGE.toString()));
                 break;
-                case HeroMultiplesEnum.CRASHED_CARAVAN:
+            case HeroMultiplesEnum.CRASHED_CARAVAN:
                 setAdditionalRender(
                     <MultiInputControl
                         inputs={[
@@ -257,6 +257,40 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                     />,
                 );
                 setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.CRASHED_CARAVAN.toString()));
+                break;
+            case HeroMultiplesEnum.SLAUGHTERED_CONVOY:
+                setAdditionalRender(
+                    <MultiInputControl
+                        inputs={[
+                            {
+                                itemText: "",
+                                itemName: "GoldCoins",
+                                amount: DiceEnum["3D6*5"],
+                                type: IExplorationRewardEnum.GoldCoins,
+                            },
+                            {
+                                itemText: "",
+                                itemName: "Dagger",
+                                amount: DiceEnum["D6"],
+                                type: IExplorationRewardEnum.Item,
+                            },
+                            {
+                                itemText: "",
+                                itemName: "Heavy Armour",
+                                amount: DiceEnum["5+D6"],
+                                type: IExplorationRewardEnum.Item,
+                            },
+                            {
+                                itemText: "",
+                                itemName: "Cathayan Map",
+                                amount: DiceEnum["4+D6"],
+                                type: IExplorationRewardEnum.Item,
+                            },
+                        ]}
+                        inputCallback={handleMoney}
+                    />,
+                );
+                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.SLAUGHTERED_CONVOY.toString()));
                 break;
             default:
                 window.alert("this lacks implementation");

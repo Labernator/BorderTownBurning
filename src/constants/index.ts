@@ -38,15 +38,21 @@ export class DiceEnum {
     public static readonly "D6" = new DiceEnum("D6", 1, 6);
     public static readonly "2D6" = new DiceEnum("2D6", 2, 12);
     public static readonly "3D6" = new DiceEnum("3D6", 3, 18);
-    public static readonly "4+D6" = new DiceEnum("4+D6", 3, 18, "4+", "a D6");
+    public static readonly "2+D6" = new DiceEnum("2+D6", 3, 18, "a D6", "2+");
+    public static readonly "3+D6" = new DiceEnum("3+D6", 3, 18, "a D6", "3+");
+    public static readonly "4+D6" = new DiceEnum("4+D6", 3, 18, "a D6", "4+");
+    public static readonly "5+D6" = new DiceEnum("5+D6", 3, 18, "a D6", "5+");
+    public static readonly "3D6*5" = new DiceEnum("3D6*5", 3, 18, "3D6 * 5");
+    public static readonly "4D6*2" = new DiceEnum("4D6*2", 3, 18, "4D6 * 2");
 
     // private to disallow creating other instances of this type
     private constructor(
         private readonly key: string,
         public readonly min: number,
         public readonly max: number,
+        public readonly conditionText?: string,
         public readonly condition?: string,
-        public readonly conditionText?: string) {
+    ) {
     }
 
     public toString() {

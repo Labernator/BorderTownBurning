@@ -31,7 +31,6 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
                 });
             }
         });
-        console.log(store.getState());
     };
     const content = inputs.map((input) => {
         const [inputValue, setInputValue] = useState("");
