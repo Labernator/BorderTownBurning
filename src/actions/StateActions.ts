@@ -169,7 +169,7 @@ class ResetApp {
 
 class AddItemsToStash {
     public readonly type = ADD_ITEMS_TO_STASH;
-    constructor(public payload: IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous) { }
+    constructor(public payload: { name: string; amount: number }) { }
 }
 
 export type StateActions = SetArmy | SetArmyName | SetAlignment | SetObjective | RestrictAlignment | ResetApp | AddItemsToStash |

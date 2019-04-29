@@ -7,7 +7,6 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
     const [inputValues, setInputValues] = useState([] as IInputValueTypes[]);
     const continueButtonOnClick = () => {
         inputValues.forEach((input) => {
-            console.log(store.getState());
             if (input.dispatch.type === "ADD_ITEMS_TO_STASH") {
                 store.dispatch({
                     type: ADD_ITEMS_TO_STASH,
@@ -19,9 +18,20 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
                     payload: input.dispatch.payload,
                 });
             }
-            console.log(store.getState());
             inputCallback("continueButtonPressed");
         });
+        inputs.forEach((nonVariableInput) => {
+            if (typeof nonVariableInput.amount === "number") {
+                store.dispatch({
+                    type: ADD_ITEMS_TO_STASH,
+                    payload: {
+                        name: nonVariableInput.itemName,
+                        amount: nonVariableInput.amount,
+                    },
+                });
+            }
+        });
+        console.log(store.getState());
     };
     const content = inputs.map((input) => {
         const [inputValue, setInputValue] = useState("");
@@ -58,7 +68,7 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
         if (typeof input.amount === "number") {
             element = <div id={`${input.itemName}Amount`}>{`You gain +${input.amount} ${input.itemName}`}</div>;
         } else {
-            if (!input.amount.condition) {
+            if (input.amount.condition === undefined) {
                 element = (
                     <div id={`${input.itemName}Amount`}>
                         <div>{`You gain +${input.amount.toString()} ${input.itemName}`}</div>

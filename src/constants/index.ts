@@ -125,7 +125,7 @@ export interface IAppState {
     armyAlignment: string;
     armyName: string;
     armyObjective: string;
-    armyStash: Array<IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous>;
+    armyStash: IArmyStash[];
     armyTreasury: number;
     armyType: string;
     campaignAchievements: string[];
@@ -137,6 +137,11 @@ export interface IAppState {
     warbandRating: number;
 }
 
+export interface IArmyStash {
+    name: string;
+    amount: number;
+}
+
 export interface IExportState {
     armyType: string;
     armyName: string;
@@ -144,7 +149,7 @@ export interface IExportState {
     armyObjective: string;
     warbandRoster: IUnit[];
     armyTreasury: number;
-    armyStash: Array<IMeleeWeapon | IMissileWeapon | IArmour | IMiscallaneous>;
+    armyStash: IArmyStash[];
     campaignPoints: number;
     wyrdstoneShards: number;
     campaignAchievements: string[];
