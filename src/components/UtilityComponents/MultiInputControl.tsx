@@ -66,11 +66,11 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
         };
 
         if (typeof input.amount === "number") {
-            element = <div id={`${input.itemName}Amount`}>{`You gain +${input.amount} ${input.itemName}`}</div>;
+            element = <div key={`${input.itemName}Amount`}>{`You gain +${input.amount} ${input.itemName}`}</div>;
         } else {
             if (input.amount.condition === undefined) {
                 element = (
-                    <div id={`${input.itemName}Amount`}>
+                    <div key={`${input.itemName}Amount`}>
                         <div>{`You gain +${input.amount.toString()} ${input.itemName}`}</div>
                         <div>{`Please enter the value for ${input.amount.toString()} here:`}</div>
                         <input
@@ -82,7 +82,7 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
                 );
             } else {
                 element = (
-                    <div id={`${input.itemName}Amount`}>
+                    <div key={`${input.itemName}Amount`}>
                         <div>{`Roll ${input.amount.conditionText}. On a roll of ${input.amount.condition}, you gain ${input.itemName}`}</div>
                     </div>
                 );
@@ -90,7 +90,7 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
 
         }
         return (
-            <div id={input.itemName}>
+            <div key={input.itemName}>
                 {element}
             </div>
         );
