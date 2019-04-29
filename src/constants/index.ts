@@ -41,7 +41,12 @@ export class DiceEnum {
     public static readonly "4+D6" = new DiceEnum("4+D6", 3, 18, "4+", "a D6");
 
     // private to disallow creating other instances of this type
-    private constructor(private readonly key: string, public readonly min: number, public readonly max: number, public readonly condition?: string, public readonly conditionText?: string) {
+    private constructor(
+        private readonly key: string,
+        public readonly min: number,
+        public readonly max: number,
+        public readonly condition?: string,
+        public readonly conditionText?: string) {
     }
 
     public toString() {
@@ -74,13 +79,11 @@ export const initialState: IAppState = {
     armyType: "",
     campaignAchievements: [],
     campaignPoints: 0,
-
     listOfUnits: [],
     veteranExperience: 0,
     warbandRating: 0,
     warbandRoster: [],
     wyrdstoneShards: 0,
-    xthis: true,
 };
 
 export interface IEquipment {
@@ -127,13 +130,11 @@ export interface IAppState {
     armyType: string;
     campaignAchievements: string[];
     campaignPoints: number;
-
     listOfUnits: IUnit[];
     warbandRoster: IUnit[];
     veteranExperience: number;
     wyrdstoneShards: number;
     warbandRating: number;
-    xthis: boolean;
 }
 
 export interface IExportState {
