@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IInputEvent } from "../../constants";
-import { ADD_MONEY_TO_TREASURY, UPDATE_UNIT,  } from "../../actions";
+import { ADD_MONEY_TO_TREASURY, UPDATE_UNIT } from "../../actions";
 import { store } from "../..";
 
 export const WoundedExplorer = ({ inputCallback }: { inputCallback(value: string): void }) => {
@@ -11,7 +11,7 @@ export const WoundedExplorer = ({ inputCallback }: { inputCallback(value: string
         if (explorationType === "xp") {
             const leader = store.getState().warbandRoster.find((unit) => unit.skills !== undefined && unit.skills.includes("Leader"));
             if (leader !== undefined) {
-                store.dispatch({type: UPDATE_UNIT, payload: { ...leader, experience:  leader.experience + 1 } });
+                store.dispatch({ type: UPDATE_UNIT, payload: { ...leader, experience: leader.experience + 1 } });
             }
             inputCallback("Leader +1 XP.");
         }
@@ -21,7 +21,7 @@ export const WoundedExplorer = ({ inputCallback }: { inputCallback(value: string
         }
         // gain money
         if (explorationType === "gold") {
-            store.dispatch({type: ADD_MONEY_TO_TREASURY, payload: parseInt(inputValue, 10)});
+            store.dispatch({ type: ADD_MONEY_TO_TREASURY, payload: parseInt(inputValue, 10) });
             inputCallback("Gained gold.");
         }
     };
