@@ -76,6 +76,7 @@ export interface IRacialMaximums {
 }
 
 export const initialState: IAppState = {
+    currentStep: PostSequence.HENCHMEN_INJURIES,
     armyAlignment: "",
     armyName: "",
     armyObjective: "",
@@ -127,6 +128,7 @@ export interface IArmy {
 }
 
 export interface IAppState {
+    currentStep: PostSequence;
     armyAlignment: string;
     armyName: string;
     armyObjective: string;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import * as Actions from "../../actions";
 import { store } from "../..";
 import { getUnits } from "../../utilities/utils";
+import { PostSequence } from "../../constants";
 
 export const FileDialogue = () => {
 
@@ -24,8 +25,6 @@ export const FileDialogue = () => {
   };
 
   const onReaderLoad = (event: any) => {
-    // tslint:disable-next-line: no-console
-    console.log(event.target.result);
     const obj = JSON.parse(event.target.result);
     materializeState(obj);
   };
@@ -37,10 +36,9 @@ export const FileDialogue = () => {
     }
   };
   const materializeState = (jsonObject: any) => {
-    // store.dispatch({ type: Actions.RESET_APP, payload: 0 });
-    console.log(store.getState());
     // fire actions that adjust the state to reflect the json data
-    store.dispatch({ type: Actions.SET_APP_INITIAL, payload: true });
+    store.dispatch({ type: Actions.RESET_APP, payload: 0 });
+    store.dispatch({ type: Actions.SET_CURRENT_STEP, payload: PostSequence.HENCHMEN_INJURIES });
     store.dispatch({ type: Actions.SET_ARMY, payload: jsonObject.type });
     store.dispatch({ type: Actions.SET_ALIGNMENT, payload: jsonObject.alignment });
     store.dispatch({ type: Actions.SET_ARMYNAME, payload: jsonObject.name });
@@ -52,8 +50,6 @@ export const FileDialogue = () => {
     store.dispatch({ type: Actions.SET_ACHIEVEMENTS, payload: jsonObject.campaignAchievements });
     store.dispatch({ type: Actions.SET_CAMPAIGN_POINTS, payload: jsonObject.campaignPoints });
     jsonObject.roster.forEach((element: any) => store.dispatch({ type: Actions.ADD_UNIT_TO_ROSTER, payload: element }));
-    // tslint:disable-next-line: no-console
-    console.log(store.getState());
   };
   return <button id="fileBtn" className="OpenDataButton" onClick={handleFileSelect}>Select Army List</button>;
 };

@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { IAppState, PostSequence } from "../../constants";
 import { HenchmenInjuryComponent } from "../InjuryComponents/HenchmenInjuryComponent";
 import { HeroInjuryComponent } from "../InjuryComponents/HeroInjuryComponent";
 import { ExperienceContainer } from "../ExperienceComponents/ExperienceContainer";
 import { ExplorationContainer } from "../ExplorationComponents/ExplorationContainer";
 import { VeteransContainer } from "../RaresAndVeterans/VeteransContainer";
+import { store } from "../..";
+import { SET_CURRENT_STEP } from "../../actions";
 
 export const PostGameSequence = ({ state }: { state: IAppState }) => {
-    const [postSequenceStep, setPostSequenceStep] = useState(PostSequence.HENCHMEN_INJURIES);
     const advanceThroughPostBattle = (currentSequence: PostSequence) => {
-        setPostSequenceStep(currentSequence);
+        store.dispatch({ type: SET_CURRENT_STEP, payload: currentSequence });
     };
-    switch (postSequenceStep) {
+    switch (state.currentStep) {
         case PostSequence.HENCHMEN_INJURIES:
             return (
                 <div className="PostSequenceContainer">
