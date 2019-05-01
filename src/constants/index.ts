@@ -1,4 +1,5 @@
 export enum PostSequence {
+    "INIT",
     "HENCHMEN_INJURIES",
     "HERO_INJURIES",
     "EXPERIENCE",
@@ -76,7 +77,7 @@ export interface IRacialMaximums {
 }
 
 export const initialState: IAppState = {
-    currentStep: PostSequence.HENCHMEN_INJURIES,
+    currentStep: PostSequence.INIT,
     armyAlignment: "",
     armyName: "",
     armyObjective: "",

@@ -2,21 +2,27 @@ import React, { useState } from "react";
 import { IInputValueTypes, IProbabilityReward } from "../../constants";
 import { InputControl } from "./InputControl";
 
+enum ProbEnum {
+    true,
+    false,
+    undefined,
+}
+
 export const PlusInputControl = ({ probabilityReward, callback }: { probabilityReward: IProbabilityReward; callback(inputValueType: IInputValueTypes): void }) => {
-    const [rollValue, setRollValue] = useState(false);
+    const [rollValue, setRollValue] = useState(ProbEnum.undefined);
     let element: JSX.Element;
-    if (rollValue) {
+    if (rollValue === ProbEnum.true) {
         element = <div>
-            <div>{`Roll a D6. On a roll of ${probabilityReward.probability}+, you gain ${probabilityReward.input.amount.toString()} ${probabilityReward.input.itemName}`}</div>
-            <div>{`Please enter the roll of ${probabilityReward.input.amount.toString()} to receive that many ${probabilityReward.input.itemName}`}</div>
             <InputControl input={probabilityReward.input} callback={callback} />
         </div>;
-    } else {
+    } else if (rollValue === ProbEnum.undefined) {
         element = <div>
             <div>{`Roll a D6. On a roll of ${probabilityReward.probability}+, you gain ${probabilityReward.input.amount.toString()} ${probabilityReward.input.itemName}`}</div>
-            <button onClick={() => setRollValue(true)}>Got it!</button>
-            <button onClick={() => setRollValue(false)}>The dice hate me!</button>
+            <button onClick={() => setRollValue(ProbEnum.true)}>Got it!</button>
+            <button onClick={() => setRollValue(ProbEnum.false)}>The dice hate me!</button>
         </div>;
+    } else {
+        element = <div></div>;
     }
     return (
         <div key={probabilityReward.input.itemName}>

@@ -13,6 +13,10 @@ export const PostGameSequence = ({ state }: { state: IAppState }) => {
         store.dispatch({ type: SET_CURRENT_STEP, payload: currentSequence });
     };
     switch (state.currentStep) {
+        case PostSequence.INIT:
+            return (
+                <div></div>
+            );
         case PostSequence.HENCHMEN_INJURIES:
             return (
                 <div className="PostSequenceContainer">

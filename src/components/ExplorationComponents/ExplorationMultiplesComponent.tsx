@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ExplorationSteps } from "./ExplorationContainer";
 import { HeroMultiplesEnum, DiceEnum, IExplorationRewardEnum } from "../../constants";
 import { MultiInputControl } from "../UtilityComponents/MultiInputControl";
-import { store } from "../..";
+import { WoundedExplorer } from "./WoundedExplorer";
 
 export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkflow: any }) => {
     const [isOverview, shownOverview] = useState(false);
@@ -22,361 +22,370 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
     };
 
     const handleBtnClick = (multiple: HeroMultiplesEnum) => {
-
-        switch (multiple) {
-            case HeroMultiplesEnum.WATERING_HOLE:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.WATERING_HOLE.toString()));
-                break;
-            case HeroMultiplesEnum.RAZED_VILLAGE:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["2D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.RAZED_VILLAGE.toString()));
-                break;
-            case HeroMultiplesEnum.MORTALLY_WOUNDED_WARRIOR:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["2D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Wheelbarrow",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.MORTALLY_WOUNDED_WARRIOR.toString()));
-                break;
-            case HeroMultiplesEnum.DISCARDED_SADDLE_BAG:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["2D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Victuals",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.DISCARDED_SADDLE_BAG.toString()));
-                break;
-            case HeroMultiplesEnum.STATUE:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "Lucky Charm",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Axe",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.STATUE.toString()));
-                break;
-            case HeroMultiplesEnum.RUNAWAY_HORSE:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["2D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Rain Coat",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Net",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Garlic",
-                                amount: 2,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.RUNAWAY_HORSE.toString()));
-                break;
-            case HeroMultiplesEnum.TREMBLING_BUSHES:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "Cathayan Silk Clothes",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.TREMBLING_BUSHES.toString()));
-                break;
-            case HeroMultiplesEnum.SECLUDED_COTTAGE:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["2D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Dagger",
-                                amount: DiceEnum["D6"],
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Sword",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "War Horn",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.SECLUDED_COTTAGE.toString()));
-                break;
-            case HeroMultiplesEnum.CRASHED_CARAVAN:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["2D6"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Sword",
-                                amount: DiceEnum["D3"],
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Dagger",
-                                amount: DiceEnum["D6"],
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Spear",
-                                amount: DiceEnum["D3"],
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Shield",
-                                amount: DiceEnum["D6"],
-                                type: IExplorationRewardEnum.Item,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Light Armor",
-                                amount: 1,
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[
-                            {
-                                probability: 4,
-                                input: {
+        if (elementList.length === 1) {
+            setElementList(HeroMultiplesEnum.getBasicProps());
+        } else {
+            switch (multiple) {
+                case HeroMultiplesEnum.WATERING_HOLE:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
                                     itemText: "",
-                                    itemName: "Cathayan Map",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.WATERING_HOLE.toString()));
+                    break;
+                case HeroMultiplesEnum.RAZED_VILLAGE:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["2D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.RAZED_VILLAGE.toString()));
+                    break;
+                case HeroMultiplesEnum.MORTALLY_WOUNDED_WARRIOR:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["2D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Wheelbarrow",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.MORTALLY_WOUNDED_WARRIOR.toString()));
+                    break;
+                case HeroMultiplesEnum.DISCARDED_SADDLE_BAG:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["2D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Victuals",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.DISCARDED_SADDLE_BAG.toString()));
+                    break;
+                case HeroMultiplesEnum.STATUE:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "Lucky Charm",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Axe",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.STATUE.toString()));
+                    break;
+                case HeroMultiplesEnum.RUNAWAY_HORSE:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["2D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Rain Coat",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Net",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Garlic",
+                                    amount: 2,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.RUNAWAY_HORSE.toString()));
+                    break;
+                case HeroMultiplesEnum.TREMBLING_BUSHES:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "Cathayan Silk Clothes",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.TREMBLING_BUSHES.toString()));
+                    break;
+                case HeroMultiplesEnum.WOUNDED_EXPLORER:
+                    setAdditionalRender(
+                        <WoundedExplorer inputCallback={handleMoney} />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.WOUNDED_EXPLORER.toString()));
+                    break;
+                case HeroMultiplesEnum.SECLUDED_COTTAGE:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["2D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Dagger",
                                     amount: DiceEnum["D6"],
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            }]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.CRASHED_CARAVAN.toString()));
-                break;
-            case HeroMultiplesEnum.SLAUGHTERED_CONVOY:
-                setAdditionalRender(
-                    <MultiInputControl
-                        inputs={[
-                            {
-                                itemText: "",
-                                itemName: "GoldCoins",
-                                amount: DiceEnum["3D6*5"],
-                                type: IExplorationRewardEnum.GoldCoins,
-                            },
-                            {
-                                itemText: "",
-                                itemName: "Dagger",
-                                amount: DiceEnum["D6"],
-                                type: IExplorationRewardEnum.Item,
-                            },
-                        ]}
-                        probabilities={[
-                            {
-                                probability: 2,
-                                input: {
+                                {
                                     itemText: "",
-                                    itemName: "Helmet",
-                                    amount: DiceEnum["D3"],
+                                    itemName: "Sword",
+                                    amount: 1,
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 2,
-                                input: {
+                                {
                                     itemText: "",
-                                    itemName: "Shield",
-                                    amount: DiceEnum["D3"],
+                                    itemName: "War Horn",
+                                    amount: 1,
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 3,
-                                input: {
+                            ]}
+                            probabilities={[]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.SECLUDED_COTTAGE.toString()));
+                    break;
+                case HeroMultiplesEnum.CRASHED_CARAVAN:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
+                                    itemText: "",
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["2D6"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                                {
                                     itemText: "",
                                     itemName: "Sword",
                                     amount: DiceEnum["D3"],
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 4,
-                                input: {
+                                {
                                     itemText: "",
-                                    itemName: "Bow",
+                                    itemName: "Dagger",
+                                    amount: DiceEnum["D6"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Spear",
                                     amount: DiceEnum["D3"],
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 4,
-                                input: {
+                                {
                                     itemText: "",
-                                    itemName: "Light Armour",
-                                    amount: DiceEnum["D3"],
+                                    itemName: "Shield",
+                                    amount: DiceEnum["D6"],
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 4,
-                                input: {
+                                {
                                     itemText: "",
-                                    itemName: "Map of Cathay",
+                                    itemName: "Light Armor",
                                     amount: 1,
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 5,
-                                input: {
+                            ]}
+                            probabilities={[
+                                {
+                                    probability: 4,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Cathayan Map",
+                                        amount: DiceEnum["D6"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                }]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.CRASHED_CARAVAN.toString()));
+                    break;
+                case HeroMultiplesEnum.SLAUGHTERED_CONVOY:
+                    setAdditionalRender(
+                        <MultiInputControl
+                            inputs={[
+                                {
                                     itemText: "",
-                                    itemName: "Heavy Armour",
-                                    amount: 1,
+                                    itemName: "GoldCoins",
+                                    amount: DiceEnum["3D6*5"],
+                                    type: IExplorationRewardEnum.GoldCoins,
+                                },
+                                {
+                                    itemText: "",
+                                    itemName: "Dagger",
+                                    amount: DiceEnum["D6"],
                                     type: IExplorationRewardEnum.Item,
                                 },
-                            },
-                            {
-                                probability: 5,
-                                input: {
-                                    itemText: "",
-                                    itemName: "Lesser Artefact",
-                                    amount: 1,
-                                    type: IExplorationRewardEnum.Item,
+                            ]}
+                            probabilities={[
+                                {
+                                    probability: 2,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Helmet",
+                                        amount: DiceEnum["D3"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
                                 },
-                            },
-                            {
-                                probability: 5,
-                                input: {
-                                    itemText: "",
-                                    itemName: "Halberd",
-                                    amount: DiceEnum["D3"],
-                                    type: IExplorationRewardEnum.Item,
+                                {
+                                    probability: 2,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Shield",
+                                        amount: DiceEnum["D3"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
                                 },
-                            },
-                        ]}
-                        inputCallback={handleMoney}
-                    />,
-                );
-                setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.SLAUGHTERED_CONVOY.toString()));
-                break;
-            default:
-                window.alert("this lacks implementation");
+                                {
+                                    probability: 3,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Sword",
+                                        amount: DiceEnum["D3"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                                {
+                                    probability: 4,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Bow",
+                                        amount: DiceEnum["D3"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                                {
+                                    probability: 4,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Light Armour",
+                                        amount: DiceEnum["D3"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                                {
+                                    probability: 4,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Map of Cathay",
+                                        amount: 1,
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                                {
+                                    probability: 5,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Heavy Armour",
+                                        amount: 1,
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                                {
+                                    probability: 5,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Lesser Artefact",
+                                        amount: 1,
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                                {
+                                    probability: 5,
+                                    input: {
+                                        itemText: "",
+                                        itemName: "Halberd",
+                                        amount: DiceEnum["D3"],
+                                        type: IExplorationRewardEnum.Item,
+                                    },
+                                },
+                            ]}
+                            inputCallback={handleMoney}
+                        />,
+                    );
+                    setElementList(elementList.filter((multi) => multi.toString() === HeroMultiplesEnum.SLAUGHTERED_CONVOY.toString()));
+                    break;
+                default:
+                    window.alert("this lacks implementation");
+            }
         }
     };
 
