@@ -35,6 +35,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.GoldCoins,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -51,6 +52,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.GoldCoins,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -73,6 +75,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.Item,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -95,6 +98,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.Item,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -117,6 +121,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.Item,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -151,6 +156,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.Item,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -167,6 +173,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.Item,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -201,6 +208,7 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 type: IExplorationRewardEnum.Item,
                             },
                         ]}
+                        probabilities={[]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -246,13 +254,17 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 amount: 1,
                                 type: IExplorationRewardEnum.Item,
                             },
-                            {
-                                itemText: "",
-                                itemName: "Cathayan Map",
-                                amount: DiceEnum["4+D6"],
-                                type: IExplorationRewardEnum.Item,
-                            },
                         ]}
+                        probabilities={[
+                            {
+                                probability: 4,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Cathayan Map",
+                                    amount: DiceEnum["D6"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            }]}
                         inputCallback={handleMoney}
                     />,
                 );
@@ -274,17 +286,88 @@ export const ExplorationMultiplesComponent = ({ finishWorkflow }: { finishWorkfl
                                 amount: DiceEnum["D6"],
                                 type: IExplorationRewardEnum.Item,
                             },
+                        ]}
+                        probabilities={[
                             {
-                                itemText: "",
-                                itemName: "Heavy Armour",
-                                amount: DiceEnum["5+D6"],
-                                type: IExplorationRewardEnum.Item,
+                                probability: 2,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Helmet",
+                                    amount: DiceEnum["D3"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
                             },
                             {
-                                itemText: "",
-                                itemName: "Cathayan Map",
-                                amount: DiceEnum["4+D6"],
-                                type: IExplorationRewardEnum.Item,
+                                probability: 2,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Shield",
+                                    amount: DiceEnum["D3"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 3,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Sword",
+                                    amount: DiceEnum["D3"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 4,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Bow",
+                                    amount: DiceEnum["D3"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 4,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Light Armour",
+                                    amount: DiceEnum["D3"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 4,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Map of Cathay",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 5,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Heavy Armour",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 5,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Lesser Artefact",
+                                    amount: 1,
+                                    type: IExplorationRewardEnum.Item,
+                                },
+                            },
+                            {
+                                probability: 5,
+                                input: {
+                                    itemText: "",
+                                    itemName: "Halberd",
+                                    amount: DiceEnum["D3"],
+                                    type: IExplorationRewardEnum.Item,
+                                },
                             },
                         ]}
                         inputCallback={handleMoney}

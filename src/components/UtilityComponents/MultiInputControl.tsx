@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { IExplorationReward, IInputValueTypes } from "../../constants";
+import { IExplorationReward, IInputValueTypes, IProbabilityReward } from "../../constants";
 import { ADD_MONEY_TO_TREASURY, ADD_ITEMS_TO_STASH } from "../../actions";
 import { store } from "../..";
 import { InputControl } from "./InputControl";
+import { PlusInputControl } from "./PlusInputControl";
 
-export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorationReward[]; inputCallback(value: string): void }) => {
+export const MultiInputControl = ({ inputs, probabilities, inputCallback }:
+    { inputs: IExplorationReward[]; probabilities: IProbabilityReward[]; inputCallback(value: string): void  }) => {
     const [inputValues, setInputValues] = useState([] as IInputValueTypes[]);
     const continueButtonOnClick = () => {
         inputValues.forEach((input) => {
@@ -35,10 +37,11 @@ export const MultiInputControl = ({ inputs, inputCallback }: { inputs: IExplorat
     };
     const handleCallback = (inputValueType: IInputValueTypes) => setInputValues([...inputValues, inputValueType]);
     const content = inputs.map((input) => <InputControl input={input} callback={handleCallback}></InputControl>);
-
+    const additionalContent = probabilities.map((probability) => <PlusInputControl probabilityReward={probability} callback={handleCallback}></PlusInputControl>);
     return (
         <div>
             {content}
+            {additionalContent}
             <button onClick={continueButtonOnClick}>Continue</button>
         </div>
     );
