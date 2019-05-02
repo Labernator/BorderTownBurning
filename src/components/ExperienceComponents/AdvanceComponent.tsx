@@ -2,7 +2,6 @@ import React from "react";
 import { IUnit, IDispatch } from "../../constants";
 import { getHeroCount, getAdvanceOptions } from "../../utilities/utils";
 import { UPDATE_UNIT } from "../../actions";
-import { store } from "../..";
 import { ToggleContent } from "../UtilityComponents/ToggleComponent";
 import { SkillsComponent } from "./SkillsComponent";
 import { LadsGotTalentComponent } from "./LadsGotTalentComponent";
@@ -21,7 +20,7 @@ export const AdvanceComponent = ({ unit, callback, advanceUpdate }: { unit: IUni
     };
 
     const getLadsComponent = (additionalCallback: any) => (
-        <LadsGotTalentComponent unit={unit} callbacks={[additionalCallback, callback]} advanceUpdate={advanceUpdate}></LadsGotTalentComponent>
+        <LadsGotTalentComponent unit={unit} callbacks={[additionalCallback, callback]} propagateDispatch={advanceUpdate}></LadsGotTalentComponent>
     );
 
     const getSkillsComponent = (additionalCallback: any) => (
