@@ -15,6 +15,10 @@ export interface IInputEvent {
     };
 }
 
+export interface IDispatch {
+    type: string;
+    payload: any;
+}
 export interface IExplorationReward {
     itemText: string;
     itemName: string;

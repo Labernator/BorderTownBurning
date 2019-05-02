@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { IUnit, PostSequence, IUpdate } from "../../constants";
+import { IUnit, PostSequence, IUpdate, IDispatch } from "../../constants";
 import { store } from "../..";
-import { UPDATE_UNIT } from "../../actions";
+import { UPDATE_UNIT, REMOVE_UNIT_FROM_ROSTER } from "../../actions";
 import { isAdvancing, isUnitSlowWitted } from "../../utilities/utils";
 import { ToggleContent } from "../UtilityComponents/ToggleComponent";
 import { PostSequenceModal } from "../UtilityComponents/PostSequenceModal";
@@ -38,30 +38,37 @@ export const ExperienceContainer = ({ warbandRoster, callback }: { warbandRoster
         }
 
     };
-    const updateCallback = (unit: IUnit, advance: string, type: string) => {
+    const updateCallback = (arr: IDispatch[]) => {
         // this should include the advances a unit has made and should be added to the update list
-        if (type === "characteristic") {
-            const itemIndex = updatedUnits.findIndex((item) => item.unitName === unit.name);
-            if (itemIndex >= 0) {
-                const alreadyExistingUnit = updatedUnits[itemIndex];
-                if (alreadyExistingUnit.characteristicAdvance === undefined) {
-                    alreadyExistingUnit.characteristicAdvance = [];
-                }
-                alreadyExistingUnit.characteristicAdvance.push(advance);
-                addUpdatedUnit([...updatedUnits.slice(0, itemIndex), alreadyExistingUnit, ...updatedUnits.slice(itemIndex + 1)]);
+        arr.forEach((dispatchItem) => {
+            if (dispatchItem.type === UPDATE_UNIT) {
+                store.dispatch({ type: dispatchItem.type, payload: dispatchItem.payload });
+            } else if (dispatchItem.type === REMOVE_UNIT_FROM_ROSTER) {
+                store.dispatch({ type: dispatchItem.type, payload: dispatchItem.payload });
             }
-        }
-        if (type === "skill") {
-            const itemIndex = updatedUnits.findIndex((item) => item.unitName === unit.name);
-            if (itemIndex >= 0) {
-                const alreadyExistingUnit = updatedUnits[itemIndex];
-                if (alreadyExistingUnit.skillAdvance === undefined) {
-                    alreadyExistingUnit.skillAdvance = [];
-                }
-                alreadyExistingUnit.skillAdvance.push(advance);
-                addUpdatedUnit([...updatedUnits.slice(0, itemIndex), alreadyExistingUnit, ...updatedUnits.slice(itemIndex + 1)]);
-            }
-        }
+        });
+        // if (type === "characteristic") {
+        //     const itemIndex = updatedUnits.findIndex((item) => item.unitName === unit.name);
+        //     if (itemIndex >= 0) {
+        //         const alreadyExistingUnit = updatedUnits[itemIndex];
+        //         if (alreadyExistingUnit.characteristicAdvance === undefined) {
+        //             alreadyExistingUnit.characteristicAdvance = [];
+        //         }
+        //         alreadyExistingUnit.characteristicAdvance.push(advance);
+        //         addUpdatedUnit([...updatedUnits.slice(0, itemIndex), alreadyExistingUnit, ...updatedUnits.slice(itemIndex + 1)]);
+        //     }
+        // }
+        // if (type === "skill") {
+        //     const itemIndex = updatedUnits.findIndex((item) => item.unitName === unit.name);
+        //     if (itemIndex >= 0) {
+        //         const alreadyExistingUnit = updatedUnits[itemIndex];
+        //         if (alreadyExistingUnit.skillAdvance === undefined) {
+        //             alreadyExistingUnit.skillAdvance = [];
+        //         }
+        //         alreadyExistingUnit.skillAdvance.push(advance);
+        //         addUpdatedUnit([...updatedUnits.slice(0, itemIndex), alreadyExistingUnit, ...updatedUnits.slice(itemIndex + 1)]);
+        //     }
+        // }
     };
     const unitList = warbandRoster.map((unit) => {
         if (unit.skills === undefined || (unit.skills !== undefined && !unit.skills.includes("Animals"))) {

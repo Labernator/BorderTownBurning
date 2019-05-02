@@ -1,23 +1,21 @@
 import React from "react";
-import { ISkill, IUnit } from "../../constants";
+import { ISkill, IUnit, IDispatch } from "../../constants";
 import { getSkills } from "../../utilities/utils";
 import { UPDATE_UNIT } from "../../actions";
-import { store } from "../..";
 
-export const SkillsComponent = ({ unit, callbacks, advanceUpdate }: { unit: IUnit; callbacks: any[]; advanceUpdate: any }) => {
-    let skillBtns;
+export const SkillsComponent = ({ unit, callbacks, propagateDispatch }: { unit: IUnit; callbacks: any[]; propagateDispatch(value: IDispatch[]): void }) => {
+    let skillBtns: JSX.Element[] = [];
 
     const advanceSkill = (skillName: string) => {
         const skills = unit.skills === undefined ? [] : unit.skills;
-        store.dispatch({
+        callbacks.forEach((callback) => callback());
+        propagateDispatch([{
             type: UPDATE_UNIT,
             payload: {
                 ...unit,
                 skills: [...skills, skillName],
             },
-        });
-        callbacks.forEach((callback) => callback());
-        advanceUpdate(unit, skillName, "skill");
+        }]);
     };
 
     const skillElements = (skill: ISkill) => (
@@ -28,7 +26,7 @@ export const SkillsComponent = ({ unit, callbacks, advanceUpdate }: { unit: IUni
             {skill.name}
         </button>
     );
-    const componentId = `${unit.name}Skills`;
+
     if (unit.skillLists !== undefined) {
         const skills = getSkills(unit);
         if (skills !== undefined) {
@@ -36,7 +34,7 @@ export const SkillsComponent = ({ unit, callbacks, advanceUpdate }: { unit: IUni
         }
     }
     return (
-        <div id={componentId}>
+        <div key={`${unit.name}Skills`}>
             {skillBtns}
         </div>
     );
