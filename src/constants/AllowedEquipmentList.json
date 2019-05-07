@@ -1,0 +1,197 @@
+[
+    {
+        "type": "BeastBaseEquipment",
+        "equipment": [
+            "Dagger",
+            "Club",
+            "Hammer",
+            "Mace",
+            "Axe",
+            "Shield"
+        ]
+    },
+    {
+        "type": "UngorEquipment",
+        "equipment": [
+            "Spear"
+        ]
+    },
+    {
+        "type": "BeastmenEquipment",
+        "equipment": [
+            "Halberd",
+            "Sword",
+            "Double-handed Weapon",
+            "Light Armour",
+            "Heavy Armour",
+            "Helmet"
+        ]
+    },
+    {
+        "type": "PitFighterBaseEquipment",
+        "equipment": [
+            "Dagger",
+            "Club",
+            "Hammer",
+            "Mace",
+            "Axe",
+            "Spear",
+            "Sword"
+        ]
+    },
+    {
+        "type": "PitFighterArmourEquipment",
+        "equipment": [
+            "Shield",
+            "Buckler",
+            "Light Armour",
+            "Helmet"
+        ]
+    },
+    {
+        "type": "PursuerEquipment",
+        "equipment": [
+            "Toughened Leathers",
+            "Net",
+            "Javelins",
+            "Throwing Knives",
+            "Trident"
+        ]
+    },
+    {
+        "type": "PitFighterEquipment",
+        "equipment": [
+            "Halberd",
+            "Double-handed Weapon",
+            "Morning Star",
+            "Flail",
+            "War Chain",
+            "Spiked Gauntlet",
+            "Brass Knuckles",
+            "Heavy Armour"
+        ]
+    },
+    {
+        "type": "TrollSlayerEquipment",
+        "equipment": [
+            "Dwarf Axe"
+        ],
+        "modificationOptions": [
+            {
+                "type": "Gromril",
+                "factor": 3
+            }
+        ]
+    },
+    {
+        "type": "DwarvenWarriorEquipment",
+        "equipment": [
+            "Dagger",
+            "Mace",
+            "Hammer",
+            "Axe",
+            "Spear",
+            "Halberd",
+            "Dwarf Axe",
+            "Sword",
+            "Double-handed Weapon",
+            "Pistol"
+        ],
+        "modificationOptions": [
+            {
+                "type": "Gromril",
+                "factor": 3
+            }
+        ]
+    },
+    {
+        "type": "DwarvenArmourEquipment",
+        "equipment": [
+            "Light Armour",
+            "Heavy Armour",
+            "Shield",
+            "Gromril Armour",
+            "Helmet"
+        ]
+    },
+    {
+        "type": "DwarvenRangerEquipment",
+        "equipment": [
+            "Dagger",
+            "Mace",
+            "Hammer",
+            "Axe",
+            "Sword",
+            "Crossbow",
+            "Light Armour",
+            "Heavy Armour",
+            "Shield",
+            "Helmet"
+        ]
+    },
+    {
+        "type": "SigmarEquipment",
+        "equipment": [
+            "Dagger",
+            "Club",
+            "Hammer",
+            "Mace",
+            "Steel Whip",
+            "Flail",
+            "Sigmarite Warhammer",
+            "Double-handed Weapon",
+            "Sling"
+        ]
+    },
+    {
+        "type": "SigmarArmour",
+        "equipment": [
+            "Light Armour",
+            "Heavy Armour",
+            "Shield",
+            "Buckler",
+            "Helmet"
+        ]
+    },
+    {
+        "type": "SigmarHeroEquipment",
+        "equipment": [
+            "Holy Tome",
+            "Blessed Water",
+            "Holy Relic"
+        ]
+    },
+    {
+        "type": "OrcEquipment",
+        "equipment": [
+            "Dagger",
+            "Axe",
+            "Morning Star",
+            "Hand Weapon",
+            "Sword",
+            "Halberd",
+            "Double-handed Weapon",
+            "Crossbow",
+            "Bow",
+            "Light Armour",
+            "Shield",
+            "Helmet"
+        ]
+    },
+    {
+        "type": "GoblinEquipment",
+        "equipment": [
+            "Dagger",
+            "Club",
+            "Spear",
+            "Hand Weapon",
+            "Sword",
+            "Short Bow",
+            "Shield",
+            "Helmet",
+            "Squig Prodder",
+            "Ball & Chain",
+            "Mad Cap Mushrooms"
+        ]
+    }
+]
