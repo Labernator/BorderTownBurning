@@ -6,6 +6,8 @@ export function stateReducer(state: IAppState = initialState, action: Actions.St
     switch (action.type) {
         case Actions.RESET_APP:
             return state = initialState;
+        case Actions.SET_CURRENT_STEP:
+            return { ...state, currentStep: action.payload };
         case Actions.SET_ARMY:
             return { ...state, armyType: action.payload };
         case Actions.SET_ARMYNAME:

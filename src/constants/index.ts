@@ -1,4 +1,5 @@
 export enum PostSequence {
+    "INIT",
     "HENCHMEN_INJURIES",
     "HERO_INJURIES",
     "EXPERIENCE",
@@ -14,6 +15,10 @@ export interface IInputEvent {
     };
 }
 
+export interface IDispatch {
+    type: string;
+    payload: any;
+}
 export interface IExplorationReward {
     itemText: string;
     itemName: string;
@@ -76,6 +81,7 @@ export interface IRacialMaximums {
 }
 
 export const initialState: IAppState = {
+    currentStep: PostSequence.INIT,
     armyAlignment: "",
     armyName: "",
     armyObjective: "",
@@ -127,6 +133,7 @@ export interface IArmy {
 }
 
 export interface IAppState {
+    currentStep: PostSequence;
     armyAlignment: string;
     armyName: string;
     armyObjective: string;

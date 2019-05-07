@@ -6,8 +6,6 @@ import { isToughUnit } from "../../utilities/utils";
 
 export const HenchmenInjuryComponent = ({ warbandRoster, callback }: { warbandRoster: IUnit[]; callback: any }) => {
     const [selectedUnits, addSelectedUnit] = useState([] as IUnit[]);
-    const [isOverviewMode, setOverviewMode] = useState(false);
-    // React.MouseEvent<HTMLButtonElement>
     const toggleButton = (event: any) => {
         const selectedUnit = warbandRoster.find((unit) => unit.name === event.target.id);
         if (selectedUnit !== undefined) {
@@ -26,7 +24,6 @@ export const HenchmenInjuryComponent = ({ warbandRoster, callback }: { warbandRo
         selectedUnits.forEach((unit) => {
             store.dispatch({ type: REMOVE_KILLED_HENCHMAN, payload: unit });
         });
-        setOverviewMode(true);
         callback(PostSequence.HERO_INJURIES);
     };
     const henchmenList = warbandRoster.reduce((accumulator, unit) => {
@@ -62,7 +59,7 @@ export const HenchmenInjuryComponent = ({ warbandRoster, callback }: { warbandRo
         }
     });
     const overview = units.length === 0 ? <div>No Henchmen or Hired Swords have been injured.</div> : units;
-    const returnElement = isOverviewMode ?
+    const returnElement = store.getState().currentStep !== PostSequence.HENCHMEN_INJURIES ?
         <div>
             <div style={{ fontWeight: "bold", fontSize: 20 }}>PostSequence Step 1a: Henchmen & Hired Swords Injuries </div>
             {overview}

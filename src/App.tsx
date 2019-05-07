@@ -23,6 +23,7 @@ const App = (props: IAppState) => (
 );
 
 const mapStateToProps = (state: IAppState) => ({
+    currentStep: state.currentStep,
     armyAlignment: state.armyAlignment,
     armyName: state.armyName,
     armyObjective: state.armyObjective,

@@ -1,3 +1,4 @@
+import React from "react";
 import { store } from "..";
 import { IEquipment, IArmour, IArmy, IMeleeWeapon, IMiscallaneous, IMissileWeapon, IUnit, IRacialMaximums, ISkillList, ISkill } from "../constants";
 import * as ArmyJson from "../constants/Armies.json";
@@ -56,6 +57,20 @@ const getUnitMaximums = (unit: IUnit) => {
     }
     return maximums;
 };
+
+export const getAdvanceOptions = (unit: IUnit, onClickFn: any) => (
+    checkRacialMaximums(unit).map((item) => {
+        if (item.name === "Movement" || (!unit.isHero && (item.name === "Toughness" || item.name === "Wounds"))) {
+            return undefined;
+        }
+        return item.maxReached ? undefined :
+            <button
+                className="EnabledButton"
+                key={`${unit.name}${item.name}`}
+                onClick={() => onClickFn(item.name)}>
+                {`Add +1 ${item.name}`}
+            </button>;
+    }));
 
 export const checkRacialMaximums = (unit: IUnit) => {
     const arr = [];
