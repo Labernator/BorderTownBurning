@@ -1,15 +1,16 @@
 {
-    "name": "Splitterdämmerung",
-    "type": "Pit Fighter",
-    "treasury": 0,
+    "armyName": "Splitterdämmerung",
+    "armyType": "Pit Fighter",
+    "armyTreasury": 0,
     "sizeLimit": 15,
-    "alignment": "Lawful/Neutral",
-    "objective": "The Celestial Protectorate",
-    "rating": 187,
+    "armyAlignment": "Lawful/Neutral",
+    "armyObjective": "The Celestial Protectorate",
+    "warbandRating": 187,
     "campaignPoints": 2,
-    "campaignAchievements": "",
+    "campaignAchievements": [],
     "wyrdstoneShards": 0,
-    "roster": [
+    "warbandStash": [],
+    "warbandRoster": [
         {
             "name": "Helme Haffax",
             "type": "Pit King",
@@ -323,10 +324,6 @@
                 "Strength",
                 "Combat",
                 "Pit Fighter"
-            ],
-            "include": [
-                0,
-                1
             ],
             "experience": 0,
             "equipment": [
