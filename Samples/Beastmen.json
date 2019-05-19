@@ -1,15 +1,16 @@
 {
-  "name": "The Horde",
-  "type": "Beastmen",
-  "treasury": 27,
+  "armyName": "The Horde",
+  "armyType": "Beastmen",
+  "armyTreasury": 27,
   "sizeLimit": 15,
-  "alignment": "Chaotic",
-  "objective": "The Scion of Chaos",
-  "rating": 149,
+  "armyAlignment": "Chaotic",
+  "armyObjective": "The Scion of Chaos",
+  "warbandRating": 149,
   "campaignPoints": 3,
-  "campaignAchievements": "",
+  "campaignAchievements": [],
   "wyrdstoneShards": 0,
-  "roster": [
+  "warbandStash": [],
+  "warbandRoster": [
     {
       "name": "Kuzzak",
       "type": "Beastmen Chief",
