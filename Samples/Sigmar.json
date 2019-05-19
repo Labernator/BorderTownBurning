@@ -1,15 +1,22 @@
 {
-  "name": "Johannas Orphanage",
-  "type": "Sisters of Sigmar",
-  "treasury": 12,
+  "armyName": "Johannas Orphanage",
+  "armyType": "Sisters of Sigmar",
+  "armyTreasury": 1,
   "sizeLimit": 15,
-  "alignment": "Lawful",
-  "objective": "The Celestial Protectorate",
-  "rating": 175,
-  "campaignPoints": 2,
-  "campaignAchievements": "",
+  "actualArmySize": 17,
+  "armyAlignment": "Lawful",
+  "armyObjective": "The Celestial Protectorate",
+  "warbandRating": 233,
+  "campaignPoints": 6,
+  "campaignAchievements": [
+    "Vision I"
+  ],
   "wyrdstoneShards": 1,
-  "roster": [
+  "warbandStash": [
+    "Dagger",
+    "Dagger"
+  ],
+  "warbandRoster": [
     {
       "name": "Johanna von Marienburg",
       "type": "Sigmarite Matriarch",
@@ -30,7 +37,9 @@
       "isLarge": false,
       "skills": [
         "Leader",
-        "Pray User"
+        "Pray User",
+        "Vision",
+        "Utter Determination"
       ],
       "skillLists": [
         "Strength",
@@ -45,7 +54,7 @@
       "spellLists": [
         "Prayers of Sigmar"
       ],
-      "experience": 22,
+      "experience": 26,
       "equipment": [
         "Dagger",
         "Sling",
@@ -76,7 +85,9 @@
       "skills": [
         "Blessed Sight",
         "No Armor allowed",
-        "Step aside"
+        "Step Aside",
+        "Two Weapon Master",
+        "Strike to Injure"
       ],
       "skillLists": [
         "Academic",
@@ -84,9 +95,9 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "experience": 2,
+      "experience": 6,
       "equipment": [
-        "Dagger",
+        "Sigmarite Warhammer",
         "Sigmarite Warhammer"
       ]
     },
@@ -99,7 +110,7 @@
         "WeaponSkill": 4,
         "BallisticSkill": 3,
         "Strength": 3,
-        "Toughness": 3,
+        "Toughness": 4,
         "Wounds": 1,
         "Initiative": 3,
         "Attacks": 1,
@@ -118,12 +129,13 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "experience": 12,
+      "experience": 15,
       "equipment": [
         "Dagger",
         "Sigmarite Warhammer",
         "Sling",
-        "Light Armour"
+        "Light Armour",
+        "Helmet"
       ]
     },
     {
@@ -151,7 +163,7 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "experience": 10,
+      "experience": 12,
       "equipment": [
         "Dagger",
         "Sigmarite Warhammer",
@@ -184,7 +196,7 @@
         "Speed",
         "Sisters of Sigmar"
       ],
-      "experience": 11,
+      "experience": 13,
       "equipment": [
         "Dagger",
         "Sigmarite Warhammer",
