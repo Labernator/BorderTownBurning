@@ -348,7 +348,7 @@
                 {
                     "name": "Fearsome",
                     "type": "Strength",
-                    "text": "The hero causes fear in opposing models."
+                    "text": "The model causes fear in opposing models."
                 },
                 {
                     "name": "Strongman",
@@ -556,6 +556,76 @@
                         "type": "unit",
                         "condition": "Beastmen Chief"
                     }
+                }
+            ]
+        },
+        {
+            "name": "Skaven",
+            "list": [
+                {
+                    "name": "Infiltrator",
+                    "type": "Skaven",
+                    "text": "This Skaven model is not deployed with the others but after opponents have placed their models. It can be placed anywhere on the battlefield as long as it is out of sight of enemies and more than 12\" away from any enemy model."
+                },
+                {
+                    "name": "Wall Runner",
+                    "type": "Skaven",
+                    "text": "The model does not need to take an Initiative test when climbing walls."
+                },
+                {
+                    "name": "Tail Fighting",
+                    "type": "Skaven",
+                    "text": "The Skaven may wield a Shield, Knife or Sword with its tail. The model gains an extra attack with the appropriate weapon or +1 to it's armour save."
+                }
+            ]
+        },
+        {
+            "name": "Generic",
+            "list": [
+                {
+                    "name": "Leader",
+                    "type": "Generic",
+                    "text": "Any model within 6\" may use the Leaders Leadership instead of its own."
+                },
+                {
+                    "name": "Charge",
+                    "type": "Generic",
+                    "text": "The model fights with 2 attacks instead of 1 during the turn they charge."
+                },
+                {
+                    "name": "May not Run",
+                    "type": "Generic",
+                    "text": "This model is slow to react and may not run (but charge as normal)"
+                },
+                {
+                    "name": "Immune to Psychology",
+                    "type": "Generic",
+                    "text": "This model is not affected by psychology (such as fear) and never leave combat."
+                },
+                {
+                    "name": "Immune to Poison",
+                    "type": "Generic",
+                    "text": "This model is not affected by any poison."
+                },
+                {
+                    "name": "No Pain",
+                    "type": "Generic",
+                    "text": "This model treats the 'stunned' result on the injury chart as 'knocked down'."
+                },
+                {
+                    "name": "Drunken",
+                    "type": "Generic",
+                    "text": "Roll a D6 at the start of each turn. At a roll of 1, the unit must test for Stupidity that turn. On a roll of 6, the unit becomes Frenzied for that turn. On a roll or 2-5 nothing happens."
+                },
+                {
+                    "name": "Trample",
+                    "type": "Generic",
+                    "text": "Counts as an additional attack that does not benefit from weapon bonuses or penalties."
+                },
+                {
+                    "name": "Animal",
+                    "type": "Generic",
+                    "text": "The model may not carry loot."
                 }
             ]
         }
